@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Raízes do Nordeste — Rede de lanchonetes com sabores autênticos do Nordeste em todo o Brasil. Peça delivery, visite uma loja ou explore o cardápio.">
   <title>Raízes do Nordeste | Sabor Autêntico do Brasil</title>
+  <link rel="icon" type="image/svg+xml" href="./images/raizes-logo.svg">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
   <!-- ── Navbar ── -->
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Navegação principal">
     <div class="nav-inner">
       <a class="nav-brand" href="#">
-        <span class="brand-mark">RN</span>
+        <img class="brand-mark" src="./images/raizes-logo.svg" alt="">
         <div>
           <span class="brand-name">Raízes do Nordeste</span>
           <span class="brand-sub">Vitrine e vendas</span>
@@ -32,47 +33,32 @@
   <!-- ── Hero ── -->
   <section class="hero">
     <div class="hero-inner">
-      <div>
-        <div class="hero-badge"> Rede nacional</div>
+      <div class="hero-copy">
+        <div class="hero-badge">Feito com sabor nordestino</div>
         <h1 class="hero-title">
-          Sabor do <span>Nordeste</span><br>em cada mordida
+          O sabor do <span>Nordeste</span><br>na sua mesa
         </h1>
         <p class="hero-lead">
-          A maior rede de lanchonetes nordestinas do Brasil — comidas típicas, receitas de família e atendimento acolhedor em lojas por todo o país.
+          Receitas cheias de história, ingredientes marcantes e aquele gostinho de comida feita com carinho.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-amber btn-lg" href="./cliente.html"> Ver cardápio</a>
-          <a class="btn btn-ghost btn-lg" href="./operacional.html">Encontrar loja</a>
+          <a class="btn btn-amber btn-lg" href="./cliente.html">Explorar cardápio <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost btn-lg" href="./operacional.html">Conhecer nossas lojas</a>
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat-item">
-            <span class="hero-stat-num" id="stat-total">—</span>
-            <span class="hero-stat-label">Unidades cadastradas</span>
-          </div>
-          <div class="hero-stat-item">
-            <span class="hero-stat-num" id="stat-active">—</span>
-            <span class="hero-stat-label">Lojas ativas</span>
-          </div>
-          <div class="hero-stat-item">
-            <span class="hero-stat-num" id="stat-states">—</span>
-            <span class="hero-stat-label">Estados</span>
-          </div>
+        <div class="hero-highlights" aria-label="Destaques">
+          <span><span aria-hidden="true">✦</span> Receitas regionais</span>
+          <span><span aria-hidden="true">✦</span> Feito para compartilhar</span>
         </div>
       </div>
-      <div class="showcase-card animate-up">
-        <div class="promo-tag">−35% OFF</div>
-        <h3>Combo Nordeste</h3>
-        <p>Um mix irresistível com lanches, sobremesas e bebidas que representam o melhor da culinária regional.</p>
-        <ul>
-          <li>Sabores 100% tradicionais</li>
-          <li>Entrega em até 40 min</li>
-          <li>Atendimento em toda a rede</li>
-        </ul>
-        <div class="price-box">
-          <strong>R$ 58,44</strong>
-          <del>R$ 89,90</del>
+      <div class="home-carousel" id="home-carousel" aria-roledescription="carrossel" aria-label="Produtos em destaque">
+        <div class="home-carousel-track" id="home-carousel-track" aria-live="polite"></div>
+        <div class="home-carousel-controls">
+          <div class="home-carousel-dots" id="home-carousel-dots" aria-label="Selecionar produto"></div>
+          <div class="home-carousel-arrows">
+            <button class="carousel-arrow" type="button" id="carousel-previous" aria-label="Produto anterior">←</button>
+            <button class="carousel-arrow" type="button" id="carousel-next" aria-label="Próximo produto">→</button>
+          </div>
         </div>
-        <a class="btn btn-primary mt-2" href="./cliente.html" style="width:100%;justify-content:center;margin-top:1rem;">Adicionar ao carrinho</a>
       </div>
     </div>
   </section>
@@ -81,58 +67,61 @@
   <section class="section">
     <div class="section-inner">
       <div class="section-header">
-        <p class="eyebrow">Categorias</p>
-        <h2 class="section-title">Escolha o que você quer</h2>
+        <div>
+          <p class="eyebrow">Um pedacinho do Nordeste</p>
+          <h2 class="section-title">O que dá vontade hoje?</h2>
+        </div>
+        <a class="section-link" href="./cliente.html">Ver cardápio completo <span aria-hidden="true">→</span></a>
       </div>
       <div class="categories-grid">
-        <a class="category-card animate-up" href="./cliente.html" style="text-decoration:none;">
+        <a class="category-card animate-up" href="./cliente.html">
           <span class="category-name">Lanches</span>
-          <span class="category-desc">Tapiocas, pastéis e opções de rua</span>
+          <span class="category-desc">Tapiocas, pastéis e mais</span>
         </a>
-        <a class="category-card animate-up" href="./cliente.html" style="text-decoration:none;">
+        <a class="category-card animate-up" href="./cliente.html">
           <span class="category-name">Pratos</span>
-          <span class="category-desc">Receitas tradicionais do Nordeste</span>
+          <span class="category-desc">Receitas que abraçam</span>
         </a>
-        <a class="category-card animate-up" href="./cliente.html" style="text-decoration:none;">
+        <a class="category-card animate-up" href="./cliente.html">
           <span class="category-name">Sobremesas</span>
-          <span class="category-desc">Cocadas, doces e sobremesas regionais</span>
+          <span class="category-desc">Um docinho pra fechar</span>
         </a>
-        <a class="category-card animate-up" href="./cliente.html" style="text-decoration:none;">
+        <a class="category-card animate-up" href="./cliente.html">
           <span class="category-name">Bebidas</span>
-          <span class="category-desc">Açaí, sucos e reforços do dia</span>
+          <span class="category-desc">Fresquinhas e cheias de fruta</span>
         </a>
-        <a class="category-card animate-up" href="./cliente.html" style="text-decoration:none;">
+        <a class="category-card animate-up" href="./cliente.html">
           <span class="category-name">Ofertas</span>
-          <span class="category-desc">Combos e promoções especiais</span>
+          <span class="category-desc">Combos para aproveitar</span>
         </a>
       </div>
     </div>
   </section>
 
   <!-- ── Produtos em destaque ── -->
-  <section class="section" style="padding-top:0;">
+  <section class="section featured-section">
     <div class="section-inner">
       <div class="section-header">
         <div>
-          <p class="eyebrow">Destaques</p>
-          <h2 class="section-title">Produtos em oferta</h2>
+          <p class="eyebrow">Escolhas da casa</p>
+          <h2 class="section-title">Mais motivos pra provar</h2>
         </div>
-        <a class="btn btn-ghost btn-sm" href="./cliente.html">Ver todos →</a>
+        <a class="section-link" href="./cliente.html">Ver todos <span aria-hidden="true">→</span></a>
       </div>
       <div class="products-grid" id="featured-products"></div>
     </div>
   </section>
 
   <!-- ── CTA ── -->
-  <section class="section" style="padding-top:0;">
+  <section class="section join-section">
     <div class="section-inner">
-      <div class="card" style="background: linear-gradient(135deg, #142b1c, #0f2a1b); border-color: rgba(45,125,82,0.3); text-align:center; padding: 3rem 2rem;">
-        <p class="eyebrow" style="text-align:center;">Gerencie sua loja</p>
-        <h2 class="section-title mb-2" style="font-size:1.75rem; margin-bottom:.75rem;">Faça parte da Rede Raízes</h2>
-        <p class="text-2 mb-4" style="max-width:480px;margin:0 auto 1.5rem;">Acesse o painel administrativo, gerencie estoque, pedidos e acompanhe o desempenho de cada unidade.</p>
-        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <div class="join-card">
+        <p class="eyebrow">Para quem faz acontecer</p>
+        <h2 class="section-title">Tem uma loja? Vamos crescer juntos.</h2>
+        <p class="join-copy">Acesse sua área para acompanhar a operação e cuidar do dia a dia da sua unidade.</p>
+        <div class="join-actions">
           <a class="btn btn-primary btn-lg admin-only-link" data-admin-only href="./admin.html" hidden>Painel admin</a>
-          <a class="btn btn-ghost btn-lg" href="./operacional.html">Perfil da loja</a>
+          <a class="btn btn-ghost btn-lg" href="./operacional.html">Acessar área da loja</a>
         </div>
       </div>
     </div>
@@ -141,7 +130,7 @@
   <!-- ── Footer ── -->
   <footer>
     <div class="footer-inner">
-      <span>Raízes do Nordeste © 2026 — Autenticidade em cada mordida.</span>
+      <span>Raízes do Nordeste © 2026 — Sabor que tem história.</span>
       <div style="display:flex;gap:1rem;">
         <a href="./cliente.html" class="text-muted text-sm" style="text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--brand-light)'" onmouseout="this.style.color=''">Cardápio</a>
         <a href="./admin.html" class="text-muted text-sm admin-only-link" data-admin-only hidden style="text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--brand-light)'" onmouseout="this.style.color=''">Admin</a>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Símbolo Raízes do Nordeste</title>
+  <rect x="3" y="3" width="122" height="122" rx="34" fill="#a9432b"/>
+  <rect x="7" y="7" width="114" height="114" rx="30" fill="none" stroke="#f2c15e" stroke-opacity=".75" stroke-width="2"/>
+  <circle cx="64" cy="52" r="25" fill="#f2c15e"/>
+  <path d="M15 78c15-16 29-17 47-2 16-17 33-16 51 0v34H15z" fill="#39704a"/>
+  <path d="M15 91c17-12 31-11 48 2 17-13 34-14 50-2v19H15z" fill="#254f37"/>
+  <path d="M64 94V58m0 19c-13 0-16-7-16-16m16 25c12 0 16-7 16-16m-16 31c-9 0-12-5-12-11m12 11c9 0 12-5 12-11" fill="none" stroke="#fff8ec" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  <path d="M64 58c-6 0-9 4-9 10m9-2c6 0 9 4 9 10" fill="none" stroke="#fff8ec" stroke-linecap="round" stroke-width="5"/>
+  <path d="M44 109h40" stroke="#f2c15e" stroke-linecap="round" stroke-width="3"/>
+</svg>
