@@ -7,9 +7,12 @@ Aplicação web didática para uma rede fictícia de lanchonetes. O projeto reú
 ## Conteúdo
 
 - [Requisitos e execução](#requisitos-e-execução)
+- [Identidade visual e página inicial](#identidade-visual-e-página-inicial)
 - [Perfis e funcionalidades](#perfis-e-funcionalidades)
+- [Configuração e arquitetura](#configuração-e-arquitetura)
 - [Como os dados são armazenados](#como-os-dados-são-armazenados)
 - [API de unidades](#api-de-unidades)
+- [Publicação](#publicação)
 - [Testes](#testes)
 - [Avaliação acadêmica](#avaliação-acadêmica)
 - [Estrutura do projeto](#estrutura-do-projeto)
@@ -33,19 +36,31 @@ Abra <http://localhost:3000>. O Express serve a aplicação a partir de `public/
 npm start
 ```
 
-No Windows, também é possível executar [`iniciar-servidor.bat`](raizes-do-nordeste/iniciar-servidor.bat) para iniciar o Express e abrir o navegador. O script `test-offline.bat` roda os testes de API e depois chama o iniciador do servidor; não abra o HTML diretamente, pois isso não inicia a API nem disponibiliza as imagens em `src/imagens`.
+No Windows, também é possível executar [`iniciar-servidor.bat`](iniciar-servidor.bat) para iniciar o Express e abrir o navegador. O script `test-offline.bat` roda os testes de API e depois chama o iniciador do servidor. Para usar a API e as imagens de `src/imagens`, acesse a aplicação pelo endereço servido pelo Express, não abra os HTMLs diretamente no navegador.
 
 O servidor usa a variável de ambiente `PORT`, se definida; caso contrário, usa a porta `3000`. Os dados da API são guardados em `data/raizes.json`, criado automaticamente se ainda não existir.
 
-### Publicação no GitHub Pages
+## Identidade visual e página inicial
 
-O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) prepara e publica a interface estática após cada envio para a branch `main` (ou manualmente pela aba **Actions**). Na primeira execução, ele tenta habilitar o GitHub Pages automaticamente; se as permissões do repositório não permitirem, um administrador deve selecionar **Settings → Pages → Build and deployment → Source → GitHub Actions** e executar novamente o workflow. A publicação inclui as imagens de `src/imagens` e os caminhos relativos funcionam também em repositórios publicados em subdiretórios.
+- A identidade usa uma paleta inspirada na paisagem e na culinária nordestina: areia e barro claro nos fundos, terracota na marca, amarelo-sol nos destaques e verde-cacto nos estados de sucesso.
+- A logomarca vetorial própria está em [`public/images/raizes-logo.svg`](public/images/raizes-logo.svg). O mesmo símbolo é usado na navegação das páginas e como favicon.
+- A página inicial (`public/index.html`) organiza a chamada principal, os links para categorias, produtos em oferta e acesso à área da loja.
+- O carrossel de destaque da página inicial é montado a partir do catálogo: mostra até cinco produtos com desconto, imagem, descrição, preço promocional, indicadores e controles anterior/próximo. Ele avança automaticamente, pausa ao passar o mouse ou navegar por teclado e respeita a preferência do sistema por movimento reduzido.
+- O CSS de todas as páginas está centralizado em [`public/style.css`](public/style.css); os tokens de cor e os componentes comuns (botões, navegação, cartões, formulários, métricas e estados) permitem manter uma aparência consistente entre os perfis.
 
-O GitHub Pages não executa o servidor Node/Express. No Pages funcionam as páginas, catálogo, login demonstrativo, carrinho, pedidos e cadastros guardados no `localStorage` daquele navegador; a API de unidades e os indicadores que dependem dela só ficam disponíveis com o servidor local ou um backend hospedado.
+## Perfis e funcionalidades
 
-### Contas demonstrativas
+O fluxo normal começa na página inicial. A navegação leva ao cardápio, ao acesso de conta e às áreas de administração/operação. As três áreas compartilham a tela de login, a exibição da sessão, a navegação e a ação de sair.
 
-Abra **Entrar** ou qualquer área de perfil. Sem sessão, as áreas protegidas encaminham para o login compartilhado. Informe uma das contas abaixo; o sistema identifica o perfil pela conta e abre o respectivo painel.
+- **Visitante:** explora a página inicial, as categorias e o cardápio sem entrar. O carrossel e os destaques usam produtos com desconto do catálogo local.
+- **Cliente** ([`public/cliente.html`](public/cliente.html)): filtra o cardápio por categoria, adiciona produtos ao carrinho, seleciona região, loja, modo de atendimento e pagamento, finaliza um pedido demonstrativo e consulta seu histórico local. É necessário entrar para concluir o pedido.
+- **Administrador** ([`public/admin.html`](public/admin.html)): acompanha indicadores demonstrativos e o inventário, cadastra produtos e substitui fotos.
+- **Loja** ([`public/operacional.html`](public/operacional.html)): acompanha indicadores demonstrativos, tarefas, rotas e distribuição regional de pedidos; também cadastra produtos e substitui fotos.
+- **Login compartilhado** ([`public/login.html`](public/login.html) e [`public/login.js`](public/login.js)): autentica as contas demonstrativas no próprio navegador, abre o painel correspondente e permite criar contas de cliente.
+- **Sessão e perfis** ([`public/auth.js`](public/auth.js)): guarda a sessão no navegador, mostra os controles de entrar/sair e direciona páginas protegidas ao login ou ao painel do perfil atual.
+- **Catálogo** ([`public/products.js`](public/products.js)): fornece 100 produtos iniciais com descrições, categorias, preços, ofertas e itens dos combos. A migração do catálogo adiciona itens padrão que faltarem sem apagar produtos personalizados.
+
+**Contas demonstrativas** — abra **Entrar** e use uma destas contas:
 
 | Perfil | E-mail | Senha | Área |
 |---|---|---|---|
@@ -53,23 +68,27 @@ Abra **Entrar** ou qualquer área de perfil. Sem sessão, as áreas protegidas e
 | Administrador | `admin@raizes.com` | `admin123` | Estoque e gestão da rede |
 | Loja | `loja@raizes.com` | `loja123` | Operação local |
 
-Novas contas criadas no formulário compartilhado são sempre de cliente. A sessão pode ser encerrada pelo botão **Sair** na navegação.
+Novas contas criadas no formulário compartilhado são sempre de cliente. A sessão pode ser encerrada pelo botão **Sair**. Os perfis são uma demonstração visual: o bloqueio de páginas ocorre somente no JavaScript do navegador e não constitui autorização segura.
 
-## Perfis e funcionalidades
+## Configuração e arquitetura
 
-As três áreas compartilham a tela de login, a exibição da sessão, a navegação da aplicação e a ação de sair. Cada perfil tem uma área própria:
+O sistema tem uma interface estática em `public/` e um serviço Express em `src/`. O servidor publica os arquivos do frontend, disponibiliza imagens de `src/imagens` na rota `/imagens/` e monta a API sob `/api`. O frontend e a API têm dados separados: pedidos, produtos e sessões permanecem no navegador; somente unidades são gravadas pelo servidor.
 
-- **Cliente** ([`public/cliente.html`](public/cliente.html)): consulta o cardápio organizado em seções e colunas por categoria, filtra categorias, adiciona produtos ao carrinho, seleciona região, loja, modo de atendimento e pagamento, finaliza pedidos e consulta o histórico local.
-- **Cardápio** ([`public/products.js`](public/products.js)): catálogo inicial compartilhado com 100 opções inspiradas em comidas e bebidas tradicionais nordestinas, cada uma com descrição própria; os combos informam os itens incluídos. Os nomes e textos são combinações próprias de pratos e ingredientes, sem copiar descrições de outros estabelecimentos.
-- **Administrador** ([`public/admin.html`](public/admin.html)): consulta indicadores e inventário demonstrativos, cadastra produtos (inclusive com preço ou estoque zero) e envia fotos.
-- **Loja** ([`public/operacional.html`](public/operacional.html)): consulta indicadores da operação, checklist, rotas e pedidos agrupados por região; também cadastra produtos e envia fotos.
-- **Página inicial** ([`public/index.html`](public/index.html)): apresenta a rede e os produtos em destaque.
-- **Login compartilhado** ([`public/login.html`](public/login.html) e [`public/login.js`](public/login.js)): autentica as contas demonstrativas, direciona conforme o perfil e permite criar uma conta de cliente.
-- **Sessão e perfis** ([`public/auth.js`](public/auth.js)): mantém a sessão no navegador, decide para qual painel cada perfil é encaminhado, protege a navegação entre as áreas no cliente e exibe os controles de sessão.
+Configuração do processo Node:
 
-O link **Administração** é mostrado apenas para o perfil administrativo; o link **Cardápio** está disponível também nos painéis de cliente, loja e administração.
+| Variável | Uso | Padrão |
+|---|---|---|
+| `PORT` | Porta HTTP do servidor Express | `3000` |
+| `RAIZES_DB_PATH` | Caminho alternativo do arquivo de dados JSON (útil para testes) | `data/raizes.json` |
+| `RAIZES_API_ADMIN_TOKEN` | Segredo para autorizar criação de unidades; deve ter ao menos 32 bytes | Não definido; criação desabilitada |
 
-O bloqueio de páginas por perfil acontece somente no JavaScript do navegador. Não constitui controle de acesso seguro: uma pessoa pode alterar os dados locais ou chamar a API diretamente.
+`public/config.js` define a URL-base da API para a origem atual. Pode-se definir `window.__APP_CONFIG__.apiBaseUrl` antes dele para apontar a um backend hospedado; esse serviço também deve ser configurado para aceitar o domínio do frontend no CORS. O GitHub Pages substitui a configuração por uma URL vazia porque não fornece backend.
+
+### Imagens do catálogo
+
+O catálogo tenta usar as imagens de produto geradas em `src/imagens`, disponibilizadas localmente na rota `/imagens/`. Se uma imagem não carregar, a interface usa fotos de fallback por categoria armazenadas em `public/images/products/`; fontes e licenças estão em [`public/images/products/SOURCES.md`](public/images/products/SOURCES.md). No GitHub Pages, o workflow copia as imagens geradas para a pasta estática `imagens/`.
+
+Administrador e loja podem anexar JPG, PNG ou WebP de até 8 MB. O navegador redimensiona a imagem para no máximo 640 × 480 pixels, converte para JPEG e guarda o resultado no `localStorage`. Essa foto é local ao navegador e não é enviada ao servidor.
 
 ## Como os dados são armazenados
 
@@ -92,9 +111,7 @@ Chaves do navegador usadas pela interface:
 
 Os pedidos e produtos não são enviados à API e não são compartilhados entre navegadores. A API armazena apenas unidades.
 
-O catálogo inicial fica em `public/products.js` e é compartilhado pela vitrine, pelo cardápio e pelo inventário. Em navegadores que já tinham a lista demonstrativa anterior, os itens que faltavam são incluídos sem remover produtos personalizados já cadastrados.
-
-O catálogo prioriza as imagens geradas por IA que existirem em `src/imagens`, disponibilizadas pelo Express na rota `/imagens/`. Para os produtos ainda sem imagem gerada, usa fotos locais por categoria; as fontes e licenças dessas fotos estão em [`public/images/products/SOURCES.md`](public/images/products/SOURCES.md). As fotos de fallback são ilustrativas e não garantem representar exatamente o prato servido. Para associar novas imagens, salve-as como PNG, JPG ou WebP usando o nome do produto (por exemplo, `Tapioca de Queijo.png`); as associações explícitas aos arquivos já existentes estão em `public/products.js`. Administrador e loja podem anexar uma foto JPG, PNG ou WebP de até 8 MB ao cadastrar um produto e substituir a foto dos itens existentes; o navegador redimensiona a imagem e a converte para JPEG antes de armazená-la localmente. Produtos e fotos enviadas ficam no `localStorage` do navegador e não são sincronizados ao servidor.
+O catálogo inicial fica em `public/products.js` e é compartilhado pela vitrine, pelo carrossel, pelo cardápio e pelos painéis de estoque. O estado é guardado por origem e navegador; limpar os dados do site ou trocar de navegador remove/oculta as alterações locais. Os pedidos não são enviados à API nem compartilhados entre usuários/dispositivos.
 
 ## API de unidades
 
@@ -178,6 +195,20 @@ Resposta:
 }
 ```
 
+## Publicação
+
+### GitHub Pages
+
+O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) prepara e publica a interface estática após cada envio à branch `main`; também pode ser executado manualmente pela aba **Actions**. Na primeira execução, ele tenta habilitar o GitHub Pages automaticamente. Se as permissões do workflow não permitirem essa alteração, um administrador deve selecionar **Settings → Pages → Build and deployment → Source → GitHub Actions** e executar o workflow novamente.
+
+O artefato do Pages reúne os arquivos de `public/` e copia as imagens de `src/imagens` para `imagens/`. A interface, as imagens locais, o catálogo e os dados demonstrativos do navegador funcionam publicados em um subdiretório. GitHub Pages não executa Node/Express: a API e os indicadores de unidades dependem de um backend separado.
+
+Para este repositório, quando a implantação estiver concluída, o endereço esperado é <https://finantza.github.io/raizes-do-nordeste/>.
+
+### Render
+
+[`render.yaml`](render.yaml) descreve um serviço Node para hospedar o backend Express. Configure `RAIZES_API_ADMIN_TOKEN` como variável secreta do serviço antes de habilitar cadastro de unidades. A API guarda unidades em arquivo JSON local; ambientes que não garantem disco persistente podem perder esse arquivo ao reiniciar ou redeployar. Para uso duradouro, configure armazenamento persistente ou um banco de dados gerenciado.
+
 ## Testes
 
 Execute a suíte automatizada:
@@ -186,7 +217,7 @@ Execute a suíte automatizada:
 npm test
 ```
 
-Os testes usam `node:test` e Supertest para verificar cabeçalhos HTTP básicos, cadastro/listagem, rejeição de unidade duplicada e integridade do catálogo. A suíte da API usa um arquivo temporário isolado, sem alterar `data/raizes.json`.
+Os testes usam `node:test` e Supertest para verificar cabeçalhos HTTP básicos, a rota de imagens, cadastro/listagem de unidades, rejeição de duplicidade, exigência/configuração de token, integridade do catálogo, migração de produtos, imagens e escape de HTML. A suíte da API usa um arquivo temporário isolado, sem alterar `data/raizes.json`.
 
 Roteiro manual complementar:
 
@@ -194,9 +225,10 @@ Roteiro manual complementar:
 2. Faça login com cada conta demonstrativa e confirme que cada uma abre o painel correto.
 3. Em cada painel, confirme que a sessão aparece e que **Sair** encerra a sessão.
 4. Tente abrir diretamente um painel sem sessão; deve ser exibido o login.
-5. No perfil de cliente, confira as imagens do catálogo, filtre os produtos, adicione um ao carrinho e confirme o preço promocional.
-6. Nos perfis de administrador e loja, cadastre um produto com e sem foto e confirme que aparece no inventário e no cardápio.
-7. Com uma unidade de teste, consulte `/api/unidades`; depois tente cadastrá-la novamente e confirme o HTTP `409`.
+5. Na página inicial, confira a marca, a paleta, o carrossel, controles e imagens; verifique o layout em tela estreita e com preferência por movimento reduzido.
+6. No perfil de cliente, confira as imagens do catálogo, filtre os produtos, adicione um ao carrinho e confirme o preço promocional.
+7. Nos perfis de administrador e loja, cadastre um produto com e sem foto e confirme que aparece no inventário e no cardápio.
+8. Com uma unidade de teste, consulte `/api/unidades`; depois tente cadastrá-la novamente e confirme o HTTP `409`.
 
 ## Avaliação acadêmica
 
@@ -222,9 +254,12 @@ raizes-do-nordeste/
 │   ├── admin.js                # Painel e inventário demonstrativo
 │   ├── operacional.html
 │   ├── operacional.js          # Painel operacional da loja
-│   ├── app.js                  # Produtos em destaque da página inicial
+│   ├── app.js                  # Carrossel e destaques da página inicial
 │   ├── config.js               # Configuração de endereço da API
-│   └── style.css               # Estilos compartilhados
+│   ├── images/
+│   │   ├── raizes-logo.svg      # Logomarca vetorial e favicon
+│   │   └── products/            # Fotos de fallback e fontes/licenças
+│   └── style.css               # Paleta e componentes compartilhados
 ├── src/
 │   ├── imagens/                # Imagens de produtos geradas por IA, servidas em /imagens/
 │   ├── routes/
@@ -236,7 +271,8 @@ raizes-do-nordeste/
 │   └── server.js               # Inicialização HTTP
 ├── package.json
 ├── render.yaml                 # Configuração de implantação de demonstração
-└── test-offline.bat            # Verificações e abertura local da interface
+├── test-offline.bat            # Testes e inicialização local
+└── .github/workflows/pages.yml # Publicação da interface no GitHub Pages
 ```
 
 O servidor Express publica `public/`. A pasta `docs/` contém outra cópia de páginas do protótipo e não é a pasta servida pelo servidor atual.
@@ -247,7 +283,7 @@ O servidor Express publica `public/`. A pasta `docs/` contém outra cópia de p�
 - Não há sessão autenticada no servidor, hash de senha, autorização da API ou isolamento de dados por perfil/unidade.
 - As telas de produtos, pedidos e operação usam dados locais e/ou demonstrativos; não representam um sistema transacional integrado.
 - A API de unidades não exige autenticação e guarda os dados em um arquivo JSON local, não em um banco de dados gerenciado.
-- A vitrine consulta os indicadores de unidades na API da mesma origem; produtos e pedidos continuam locais e não são sincronizados com o servidor.
+- A página inicial consulta os indicadores de unidades quando a API está configurada; produtos, sessões e pedidos continuam locais e não são sincronizados com o servidor.
 - O limitador de requisições mantém o histórico em memória e é reiniciado quando o servidor reinicia.
 
 Este projeto é destinado a estudo e demonstração. Antes de qualquer uso real, implemente autenticação e autorização no servidor, armazenamento seguro de credenciais, validações e persistência apropriadas, além de testes para cada novo recurso.
