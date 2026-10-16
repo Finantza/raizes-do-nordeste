@@ -39,7 +39,7 @@ O servidor usa a variável de ambiente `PORT`, se definida; caso contrário, usa
 
 ### Publicação no GitHub Pages
 
-O workflow [`.github/workflows/pages.yml`](raizes-do-nordeste/.github/workflows/pages.yml) publica automaticamente a interface estática após cada envio para a branch `main` (ou manualmente pela aba **Actions**). Nas configurações do repositório, habilite **Settings → Pages → Build and deployment → GitHub Actions**. As imagens em `src/imagens` são incluídas na publicação e os caminhos relativos funcionam também em repositórios publicados em subdiretórios.
+O workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) prepara e publica a interface estática após cada envio para a branch `main` (ou manualmente pela aba **Actions**). Na primeira execução, ele tenta habilitar o GitHub Pages automaticamente; se as permissões do repositório não permitirem, um administrador deve selecionar **Settings → Pages → Build and deployment → Source → GitHub Actions** e executar novamente o workflow. A publicação inclui as imagens de `src/imagens` e os caminhos relativos funcionam também em repositórios publicados em subdiretórios.
 
 O GitHub Pages não executa o servidor Node/Express. No Pages funcionam as páginas, catálogo, login demonstrativo, carrinho, pedidos e cadastros guardados no `localStorage` daquele navegador; a API de unidades e os indicadores que dependem dela só ficam disponíveis com o servidor local ou um backend hospedado.
 
