@@ -1,0 +1,14 @@
+{
+  "nextId": 2,
+  "unidades": [
+    {
+      "id": 1,
+      "codigo": "RN-001",
+      "nome": "Unidade Central",
+      "cidade": "Natal",
+      "estado": "RN",
+      "ativa": 1,
+      "criada_em": "2026-10-16T15:25:20.880Z"
+    }
+  ]
+}

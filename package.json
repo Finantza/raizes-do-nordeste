@@ -1,0 +1,20 @@
+{
+  "name": "raizes-do-nordeste",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Projeto didático incremental para gestão de unidades de uma rede de alimentação.",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "supertest": "^7.0.0"
+  }
+}

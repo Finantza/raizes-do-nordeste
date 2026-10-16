@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore o cardápio da Raízes do Nordeste sem entrar. Faça login para concluir seu pedido.">
+  <title>Cardápio | Raízes do Nordeste</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a class="nav-brand" href="./index.html">
+        <span class="brand-mark">RN</span>
+        <div>
+          <span class="brand-name">Raízes do Nordeste</span>
+          <span class="brand-sub">Cardápio online</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a class="btn btn-ghost btn-sm" href="./index.html">Home</a>
+        <a class="btn btn-ghost btn-sm" href="./cliente.html">Cardápio</a>
+        <a class="btn btn-ghost btn-sm" href="./operacional.html">Lojas</a>
+        <a class="btn btn-ghost btn-sm admin-only-link" data-admin-only href="./admin.html" hidden>Administração</a>
+        <div class="nav-links" id="shared-session-controls"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Page shell ── -->
+  <div class="page-shell">
+
+    <!-- ── Header ── -->
+    <div class="page-header animate-up">
+      <div>
+        <div class="page-header-sub">Cardápio online</div>
+        <h1 class="page-header-title">Cardápio e pedidos</h1>
+      </div>
+      <span class="pill pill-success">Atendimento online</span>
+    </div>
+
+    <!-- ── Carrinho ── -->
+    <div class="grid mb-3" id="top-row">
+      <div class="card animate-up">
+        <div class="card-header">
+          <div>
+            <p class="eyebrow">Carrinho</p>
+            <h2 style="font-size:1rem;font-weight:700;color:var(--text);">Resumo da compra</h2>
+          </div>
+          <button type="button" id="clear-cart" class="btn btn-ghost btn-sm">Limpar</button>
+        </div>
+        <div class="card-body">
+
+          <!-- Opções de entrega e loja -->
+          <div class="grid grid-2 mb-2" style="gap:.75rem;margin-bottom:.75rem;">
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label">Região</label>
+              <select id="customer-region" class="form-control">
+                <option value="Sudeste">Sudeste</option>
+                <option value="Nordeste">Nordeste</option>
+                <option value="Sul">Sul</option>
+                <option value="Centro-Oeste">Centro-Oeste</option>
+                <option value="Norte">Norte</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label">Loja</label>
+              <select id="customer-store" class="form-control">
+                <option value="Loja Centro">Loja Centro</option>
+                <option value="Loja Aeroporto">Loja Aeroporto</option>
+                <option value="Loja Shopping">Loja Shopping</option>
+                <option value="Loja Jardim">Loja Jardim</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label">Endereço</label>
+              <input id="delivery-address" type="text" class="form-control" placeholder="Rua das Flores, 128">
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label">Pagamento</label>
+              <select id="payment-method" class="form-control">
+                <option value="Pix">Pix</option>
+                <option value="Cartão">Cartão</option>
+                <option value="Dinheiro">Dinheiro</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Modo de pedido -->
+          <div class="order-mode-group mb-2" style="margin-bottom:.75rem;">
+            <label class="order-mode-chip">
+              <input type="radio" name="order-mode" value="Delivery" checked>
+             Delivery
+            </label>
+            <label class="order-mode-chip">
+              <input type="radio" name="order-mode" value="Retirada">
+              Retirada
+            </label>
+            <label class="order-mode-chip">
+              <input type="radio" name="order-mode" value="Balcão">
+               Balcão
+            </label>
+          </div>
+
+          <!-- Itens do carrinho -->
+          <div id="cart-items-list"></div>
+
+          <div class="cart-total-row">
+            <span class="cart-total-label">Total</span>
+            <span class="cart-total-value" id="cart-total">R$ 0,00</span>
+          </div>
+          <button id="checkout-order" class="btn btn-amber mt-2" style="width:100%;justify-content:center;margin-top:.75rem;">Finalizar pedido →</button>
+          <p id="checkout-login-notice" class="text-muted text-sm mt-2 mb-0" hidden>
+            Você pode explorar o cardápio sem entrar. <a href="./login.html">Entre ou crie uma conta</a> para concluir a compra.
+          </p>
+          <div id="customer-feedback" class="feedback" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Catálogo ── -->
+    <div class="card mb-3 animate-up" style="animation-delay:.15s">
+      <div class="card-header" style="flex-wrap:wrap;gap:.75rem;">
+        <div>
+          <p class="eyebrow">Cardápio</p>
+          <h2 style="font-size:1rem;font-weight:700;color:var(--text);">Produtos disponíveis</h2>
+        </div>
+        <div class="filter-bar" id="category-filter">
+          <button class="filter-chip active" data-category="Todos" type="button">Todos</button>
+          <button class="filter-chip" data-category="Lanches" type="button">Lanches</button>
+          <button class="filter-chip" data-category="Pratos" type="button">Pratos</button>
+          <button class="filter-chip" data-category="Bebidas" type="button">Bebidas</button>
+          <button class="filter-chip" data-category="Sobremesas" type="button">Sobremesas</button>
+          <button class="filter-chip" data-category="Ofertas" type="button">Ofertas</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="text-muted text-sm mb-2">Fotos ilustrativas; a apresentação do produto pode variar.</p>
+        <div id="customer-catalog"></div>
+      </div>
+    </div>
+
+    <!-- ── Histórico de pedidos ── -->
+    <div class="card animate-up" id="order-history-section" style="animation-delay:.2s">
+      <div class="card-header">
+        <div>
+          <p class="eyebrow">Pedidos</p>
+          <h2 style="font-size:1rem;font-weight:700;color:var(--text);">Histórico de compras</h2>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Loja</th>
+                <th>Itens</th>
+                <th>Total</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="order-history-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /page-shell -->
+
+  <footer>
+    <div class="footer-inner">
+      <span>Raízes do Nordeste © 2026</span>
+      <span class="text-muted text-sm">Cardápio online</span>
+    </div>
+  </footer>
+
+  <script src="./config.js"></script>
+  <script src="./auth.js"></script>
+  <script src="./products.js"></script>
+  <script src="./cliente.js" defer></script>
+</body>
+</html>

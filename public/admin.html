@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administração | Raízes do Nordeste</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-body-tertiary" data-required-role="admin">
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background: linear-gradient(135deg, #123d2f, #1e5c49);">
+    <div class="container py-2">
+      <a class="navbar-brand d-flex align-items-center gap-3" href="./index.html">
+        <span class="brand-mark">RN</span>
+        <div>
+          <span class="d-block fw-bold">Raízes do Nordeste</span>
+          <small class="text-white-50">Administração</small>
+        </div>
+      </a>
+      <div class="d-flex gap-2 flex-wrap align-items-center">
+        <a class="btn btn-outline-light btn-sm" href="./index.html">Início</a>
+        <a class="btn btn-outline-light btn-sm" href="./cliente.html">Cardápio</a>
+        <a class="btn btn-outline-light btn-sm" href="./operacional.html">Perfil da loja</a>
+        <div class="d-flex gap-2" id="shared-session-controls"></div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container page-shell">
+    <div class="top-card mb-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-md-center">
+        <div>
+          <p class="text-uppercase text-success fw-bold small mb-1">Painel administrativo</p>
+          <h1 class="h2 mb-0">Controle de estoque e vendas</h1>
+        </div>
+        <span class="badge bg-success text-white px-3 py-2 rounded-pill">Operação online</span>
+      </div>
+    </div>
+
+    <div class="row g-4 mb-4">
+      <div class="col-12">
+        <section class="card border-0 shadow-sm">
+          <div class="card-body p-4">
+            <p class="eyebrow">Sessão</p>
+            <h2 class="h4 mb-3">Perfil atual</h2>
+            <div id="admin-session-box" class="small text-muted">Nenhum usuário autenticado.</div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="row g-3 mb-4">
+      <div class="col-md-3">
+        <div class="mini-metric">
+          <span class="label">Produtos</span>
+          <strong id="admin-total-produtos">0</strong>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="mini-metric">
+          <span class="label">Estoque</span>
+          <strong id="admin-total-estoque">0</strong>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="mini-metric">
+          <span class="label">Baixo estoque</span>
+          <strong id="admin-baixo-estoque">0</strong>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="mini-metric">
+          <span class="label">Faturamento</span>
+          <strong id="admin-faturamento">R$ 0</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3 mb-4">
+      <div class="col-md-3">
+        <div class="mini-metric">
+          <span class="label">Franquias</span>
+          <strong id="admin-franquias">0</strong>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="mini-metric">
+          <span class="label">Pedidos</span>
+          <strong id="admin-pedidos">0</strong>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="mini-metric">
+          <span class="label">Regiões</span>
+          <strong id="admin-regioes">0</strong>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="mini-metric">
+          <span class="label">Ticket</span>
+          <strong id="admin-ticket">R$ 0</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <section class="card border-0 shadow-sm">
+          <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h2 class="h4 mb-0">Inventário</h2>
+              <button type="button" id="reload-admin" class="btn btn-sm btn-outline-success">Atualizar</button>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-middle mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th>Produto</th>
+                    <th>Categoria</th>
+                    <th>Preço</th>
+                    <th>Estoque</th>
+                    <th>Status</th>
+                    <th>Foto</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-inventory-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-lg-4">
+        <section class="card border-0 shadow-sm h-100">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-3">Adicionar produto</h2>
+            <form id="admin-product-form" class="row g-3">
+              <div class="col-12">
+                <label class="form-label fw-semibold">Nome</label>
+                <input class="form-control" name="nome" required>
+              </div>
+              <div class="col-12">
+                <label class="form-label fw-semibold">Categoria</label>
+                <select class="form-control" name="categoria" required>
+                  <option value="">Selecione a categoria</option>
+                  <option value="Lanches">Lanches</option>
+                  <option value="Pratos">Pratos</option>
+                  <option value="Bebidas">Bebidas</option>
+                  <option value="Sobremesas">Sobremesas</option>
+                  <option value="Ofertas">Ofertas</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Preço</label>
+                <input class="form-control" name="preco" type="number" min="0" step="0.01" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Estoque</label>
+                <input class="form-control" name="estoque" type="number" min="0" required>
+              </div>
+              <div class="col-12">
+                <label class="form-label fw-semibold" for="admin-product-image">Foto do produto (opcional)</label>
+                <input id="admin-product-image" class="form-control" name="imagem" type="file" accept="image/jpeg,image/png,image/webp">
+                <small class="text-muted">JPG, PNG ou WebP; até 8 MB. Sem foto, será usada uma ilustração original.</small>
+                <img id="admin-product-image-preview" class="product-upload-preview" alt="Prévia da foto do produto" hidden>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-success w-100">Salvar item</button>
+              </div>
+            </form>
+            <div id="admin-feedback" class="small mt-3" aria-live="polite"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="row g-4 mt-1">
+      <div class="col-12">
+        <section class="card border-0 shadow-sm">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-3">Desempenho por região</h2>
+            <div id="region-summary" class="row g-3"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="./config.js"></script>
+  <script src="./auth.js"></script>
+  <script src="./products.js"></script>
+  <script src="./admin.js" defer></script>
+</body>
+</html>

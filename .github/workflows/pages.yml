@@ -1,0 +1,45 @@
+name: Publicar no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o projeto
+        uses: actions/checkout@v4
+      - name: Preparar arquivos estaticos
+        run: |
+          mkdir -p _site/imagens
+          cp -R public/. _site/
+          cp -R src/imagens/. _site/imagens/
+          printf 'window.__APP_CONFIG__ = { apiBaseUrl: "" };\n' > _site/config.js
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Enviar artefato do site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Publicar site
+        id: deployment
+        uses: actions/deploy-pages@v4

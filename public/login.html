@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Acesse sua conta Raízes do Nordeste.">
+  <title>Entrar | Raízes do Nordeste</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a class="nav-brand" href="./index.html">
+        <span class="brand-mark">RN</span>
+        <div>
+          <span class="brand-name">Raízes do Nordeste</span>
+          <span class="brand-sub">Acesso à sua conta</span>
+        </div>
+      </a>
+      <div class="nav-links" id="shared-session-controls"></div>
+    </div>
+  </nav>
+
+  <main class="page-shell">
+    <div class="page-header">
+      <div>
+        <div class="page-header-sub">Bem-vindo à rede Raízes</div>
+        <h1 class="page-header-title">Entre na sua conta</h1>
+      </div>
+      <span class="pill pill-success">Acesso para todos os perfis</span>
+    </div>
+
+    <div class="grid grid-2 auth-layout">
+      <section class="card">
+        <div class="card-header">
+          <div>
+            <p class="eyebrow">Login único</p>
+            <h2 style="font-size:1rem;font-weight:700;color:var(--text);">Use seu e-mail e senha</h2>
+          </div>
+        </div>
+        <div class="card-body">
+          <form id="login-form">
+            <div class="form-group">
+              <label class="form-label" for="login-email">E-mail</label>
+              <input id="login-email" name="email" type="email" class="form-control" autocomplete="username" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="login-password">Senha</label>
+              <input id="login-password" name="password" type="password" class="form-control" autocomplete="current-password" required>
+            </div>
+            <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center;">Entrar</button>
+          </form>
+          <div id="login-feedback" class="feedback" aria-live="polite"></div>
+
+          <form id="register-form" hidden>
+            <p class="eyebrow">Nova conta de cliente</p>
+            <div class="form-group">
+              <label class="form-label" for="register-name">Nome</label>
+              <input id="register-name" name="name" class="form-control" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="register-email">E-mail</label>
+              <input id="register-email" name="email" type="email" class="form-control" autocomplete="email" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="register-password">Senha</label>
+              <input id="register-password" name="password" type="password" class="form-control" autocomplete="new-password" required>
+            </div>
+            <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center;">Criar conta</button>
+          </form>
+          <button id="toggle-register" class="btn btn-ghost mt-1" type="button" style="width:100%;justify-content:center;">Criar conta de cliente</button>
+          <div class="demo-hint">Demonstração: cliente@raizes.com / 123456<br>admin@raizes.com / admin123<br>loja@raizes.com / loja123</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-body">
+          <p class="eyebrow">Um acesso, sua área</p>
+          <h2 style="font-size:1.25rem;font-weight:700;color:var(--text);">O sistema identifica seu perfil</h2>
+          <p class="text-2 mt-2">Após entrar, você será direcionado automaticamente às funções disponíveis para cliente, administrador ou equipe da loja.</p>
+          <ul class="text-2 mt-2">
+            <li>Cliente: cardápio, carrinho e pedidos</li>
+            <li>Administrador: estoque e gestão da rede</li>
+            <li>Loja: operação, vendas e entregas</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="./auth.js"></script>
+  <script src="./login.js" defer></script>
+</body>
+</html>
