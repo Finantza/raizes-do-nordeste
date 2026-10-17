@@ -8,28 +8,28 @@ function showFeedback(message, type) {
   feedback.className = `feedback small ${type}`;
 }
 
-loginForm.addEventListener("submit", (event) => {
+loginForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const formData = new FormData(loginForm);
   const email = String(formData.get("email") || "").trim().toLowerCase();
   const password = String(formData.get("password") || "");
-  const user = readUsers().find((item) =>
-    item.email.toLowerCase() === email && item.password === password
-  );
 
-  if (!user) {
-    showFeedback("E-mail ou senha inválidos.", "text-danger");
-    return;
+  try {
+    const { user } = await window.raizesApiRequest("/auth/login", {
+      method: "POST",
+      body: JSON.stringify({ email, password })
+    });
+    const dashboard = getDashboardPath(user.role);
+    if (!dashboard) {
+      showFeedback("Este perfil não possui uma área configurada.", "text-danger");
+      return;
+    }
+    window.location.assign(dashboard);
+  } catch (error) {
+    showFeedback(error.status === 429
+      ? "Muitas tentativas. Aguarde 15 minutos antes de tentar novamente."
+      : error.message || "E-mail ou senha inválidos.", "text-danger");
   }
-
-  const dashboard = getDashboardPath(user.role);
-  if (!dashboard) {
-    showFeedback("Este perfil não possui uma área configurada.", "text-danger");
-    return;
-  }
-
-  setCurrentUser({ name: user.name, email: user.email, role: user.role });
-  window.location.assign(dashboard);
 });
 
 registerToggle.addEventListener("click", () => {
@@ -37,23 +37,27 @@ registerToggle.addEventListener("click", () => {
   registerToggle.textContent = registerForm.hidden ? "Criar conta de cliente" : "Cancelar cadastro";
 });
 
-registerForm.addEventListener("submit", (event) => {
+registerForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const formData = new FormData(registerForm);
   const name = String(formData.get("name") || "").trim();
   const email = String(formData.get("email") || "").trim();
   const password = String(formData.get("password") || "");
-  const users = readUsers();
 
-  if (users.some((user) => user.email.toLowerCase() === email.toLowerCase())) {
-    showFeedback("Este e-mail já está cadastrado.", "text-warning");
-    return;
+  try {
+    await window.raizesApiRequest("/auth/register", {
+      method: "POST",
+      body: JSON.stringify({ name, email, password })
+    });
+    registerForm.reset();
+    registerForm.hidden = true;
+    registerToggle.textContent = "Criar conta de cliente";
+    showFeedback("Conta criada. Entre com seu e-mail e senha.", "text-success");
+  } catch (error) {
+    showFeedback(error.message || "Não foi possível criar a conta.", error.status === 409 ? "text-warning" : "text-danger");
   }
+});
 
-  users.push({ name, email, password, role: "cliente" });
-  localStorage.setItem(AUTH_USERS_KEY, JSON.stringify(users));
-  registerForm.reset();
-  registerForm.hidden = true;
-  registerToggle.textContent = "Criar conta de cliente";
-  showFeedback("Conta criada. Entre com seu e-mail e senha.", "text-success");
+window.raizesAuthReady.then((user) => {
+  if (user) window.location.replace(getDashboardPath(user.role) || "./cliente.html");
 });

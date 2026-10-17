@@ -65,12 +65,12 @@
             </div>
             <div class="form-group">
               <label class="form-label" for="register-password">Senha</label>
-              <input id="register-password" name="password" type="password" class="form-control" autocomplete="new-password" required>
+              <input id="register-password" name="password" type="password" class="form-control" autocomplete="new-password" minlength="8" maxlength="128" required>
             </div>
             <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center;">Criar conta</button>
           </form>
           <button id="toggle-register" class="btn btn-ghost mt-1" type="button" style="width:100%;justify-content:center;">Criar conta de cliente</button>
-          <div class="demo-hint">Demonstração: cliente@raizes.com / 123456<br>admin@raizes.com / admin123<br>loja@raizes.com / loja123</div>
+          <p class="text-muted small mt-2">Novas contas são criadas com o perfil de cliente. A senha deve ter pelo menos 8 caracteres.</p>
         </div>
       </section>
 

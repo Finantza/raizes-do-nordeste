@@ -1,76 +1,86 @@
-// auth.js — Utilitários de autenticação compartilhados entre todas as páginas.
-// Centralizar aqui elimina a duplicação que existia em admin.js, cliente.js e operacional.js.
-const AUTH_CURRENT_USER_KEY = "raizes-storefront-current-user";
 const AUTH_USERS_KEY = "raizes-storefront-users";
-
-const defaultUsers = [
-  { name: "Cliente Demo", email: "cliente@raizes.com", password: "123456", role: "cliente" },
-  { name: "Administrador", email: "admin@raizes.com", password: "admin123", role: "admin" },
-  { name: "Loja Norte", email: "loja@raizes.com", password: "loja123", role: "loja" }
-];
-
 const dashboardPaths = {
   cliente: "./cliente.html",
   admin: "./admin.html",
   loja: "./operacional.html"
 };
+let currentUser = null;
 
-// Retorna a lista de usuários da memória do navegador.
-// Se não houver dados, inicializa com os usuários de demonstração.
-function readUsers() {
-  try {
-    const raw = localStorage.getItem(AUTH_USERS_KEY);
-    const data = raw ? JSON.parse(raw) : [];
-    const users = Array.isArray(data) && data.length ? data : [...defaultUsers];
-    localStorage.setItem(AUTH_USERS_KEY, JSON.stringify(users));
-    return users;
-  } catch {
-    return [...defaultUsers];
+window.raizesApiRequest = async (endpoint, options = {}) => {
+  const baseUrl = window.__APP_CONFIG__?.apiBaseUrl || `${window.location.origin}/api`;
+  const response = await fetch(`${baseUrl}${endpoint}`, {
+    ...options,
+    credentials: "include",
+    headers: {
+      ...(options.body ? { "Content-Type": "application/json" } : {}),
+      ...options.headers
+    }
+  });
+  if (!response.ok) {
+    const body = await response.json().catch(() => ({}));
+    const error = new Error(body.erro || `A solicitação falhou (HTTP ${response.status}).`);
+    error.status = response.status;
+    throw error;
   }
-}
+  return response.status === 204 ? null : response.json();
+};
 
-// Retorna o usuário atualmente autenticado, ou null se nenhum estiver logado.
 function getCurrentUser() {
-  try {
-    const raw = localStorage.getItem(AUTH_CURRENT_USER_KEY);
-    const parsed = JSON.parse(raw || "null");
-    return parsed && parsed.email ? parsed : null;
-  } catch {
-    return null;
-  }
-}
-
-// Persiste o usuário autenticado na memória do navegador.
-function setCurrentUser(user) {
-  localStorage.setItem(AUTH_CURRENT_USER_KEY, JSON.stringify(user));
-}
-
-// Encerra a sessão do usuário atual.
-function clearCurrentUser() {
-  localStorage.removeItem(AUTH_CURRENT_USER_KEY);
+  return currentUser;
 }
 
 function getDashboardPath(role) {
   return dashboardPaths[role] || null;
 }
 
-function setupSharedSession() {
-  const requiredRole = document.body.dataset.requiredRole;
-  const user = getCurrentUser();
-  document.querySelectorAll("[data-admin-only]").forEach((element) => {
-    element.hidden = !user || user.role !== "admin";
-  });
+async function migrateLocalUsers() {
+  const raw = localStorage.getItem(AUTH_USERS_KEY);
+  if (!raw) return;
 
-  if (requiredRole && (!user || user.role !== requiredRole)) {
-    document.body.hidden = true;
-    window.location.replace(user ? (getDashboardPath(user.role) || "./login.html") : "./login.html");
+  let users;
+  try {
+    const parsed = JSON.parse(raw);
+    users = Array.isArray(parsed)
+      ? parsed.filter((user) => user && typeof user.name === "string" && typeof user.email === "string" && typeof user.password === "string")
+      : [];
+  } catch (error) {
+    console.error("Não foi possível ler as contas locais para migração.", error);
     return;
   }
 
+  try {
+    await window.raizesApiRequest("/auth/migrate-local-users", {
+      method: "POST",
+      body: JSON.stringify({ users })
+    });
+    localStorage.removeItem(AUTH_USERS_KEY);
+  } catch (error) {
+    console.error("A migração das contas locais não foi concluída; os dados locais foram mantidos.", error);
+    const feedback = document.querySelector("#login-feedback");
+    if (feedback) {
+      feedback.textContent = "Não foi possível migrar as contas antigas. Os dados foram mantidos; verifique a conexão com o servidor e recarregue a página.";
+      feedback.className = "feedback small text-warning";
+    }
+  }
+}
+
+function setupSharedSession() {
+  const requiredRole = document.body.dataset.requiredRole;
   const controls = document.querySelector("#shared-session-controls");
+  document.querySelectorAll("[data-admin-only]").forEach((element) => {
+    element.hidden = !currentUser || currentUser.role !== "admin";
+  });
+
+  if (requiredRole && (!currentUser || currentUser.role !== requiredRole)) {
+    document.body.hidden = false;
+    window.location.replace(currentUser ? (getDashboardPath(currentUser.role) || "./login.html") : "./login.html");
+    return;
+  }
+  document.body.hidden = false;
   if (!controls) return;
 
-  if (!user) {
+  controls.replaceChildren();
+  if (!currentUser) {
     const loginLink = document.createElement("a");
     loginLink.className = "btn btn-outline-light btn-sm";
     loginLink.href = "./login.html";
@@ -81,19 +91,39 @@ function setupSharedSession() {
 
   const profileLink = document.createElement("a");
   profileLink.className = "btn btn-outline-light btn-sm";
-  profileLink.href = getDashboardPath(user.role) || "./login.html";
-  profileLink.textContent = `${user.name} (${user.role})`;
+  profileLink.href = getDashboardPath(currentUser.role) || "./login.html";
+  profileLink.textContent = `${currentUser.name} (${currentUser.role})`;
 
   const logoutButton = document.createElement("button");
   logoutButton.className = "btn btn-outline-light btn-sm";
   logoutButton.type = "button";
   logoutButton.textContent = "Sair";
-  logoutButton.addEventListener("click", () => {
-    clearCurrentUser();
-    window.location.assign("./login.html");
+  logoutButton.addEventListener("click", async () => {
+    logoutButton.disabled = true;
+    try {
+      await window.raizesApiRequest("/auth/logout", { method: "POST" });
+      window.location.assign("./login.html");
+    } catch (error) {
+      logoutButton.disabled = false;
+      logoutButton.textContent = error.message || "Falha ao sair";
+    }
   });
-
   controls.append(profileLink, logoutButton);
 }
 
-setupSharedSession();
+window.raizesAuthReady = (async () => {
+  const requiredRole = document.body.dataset.requiredRole;
+  if (requiredRole) document.body.hidden = true;
+  await migrateLocalUsers();
+
+  try {
+    const response = await window.raizesApiRequest("/auth/me");
+    currentUser = response.user;
+  } catch (error) {
+    if (error.status !== 401) console.error("Não foi possível consultar a sessão no servidor.", error);
+  }
+
+  localStorage.removeItem("raizes-storefront-current-user");
+  setupSharedSession();
+  return currentUser;
+})();
