@@ -2,7 +2,7 @@
 
 Aplicação web didática para uma rede fictícia de lanchonetes. O projeto reúne uma vitrine, áreas de cliente, administração e operação de loja, além de uma API Express para consultar e cadastrar unidades.
 
-> **Importante:** as telas de perfil e o login são uma demonstração no navegador. Usuários, sessão, produtos, carrinho e pedidos ficam no `localStorage`; esses dados não são autenticados nem autorizados pelo servidor e não devem ser usados com informações reais. A API de unidades é um módulo separado e também não tem autenticação.
+> **Importante:** as telas de perfil e o login são uma demonstração no navegador. Usuários, sessão, produtos, carrinho e pedidos ficam no `localStorage`; esses dados não são autenticados nem autorizados pelo servidor e não devem ser usados com informações reais. A API de unidades é separada: a listagem é pública e o cadastro usa um token administrativo compartilhado.
 
 ## Conteúdo
 
@@ -280,9 +280,9 @@ O servidor Express publica `public/`. A pasta `docs/` contém outra cópia de p�
 ## Segurança e limitações
 
 - O login demonstrativo compara credenciais no navegador e armazena senhas em texto simples no `localStorage`. Não use senhas reais.
-- Não há sessão autenticada no servidor, hash de senha, autorização da API ou isolamento de dados por perfil/unidade.
+- Não há sessão autenticada no servidor, hash de senha ou isolamento de dados por perfil/unidade. A única proteção da API é o token compartilhado exigido para cadastrar unidades; a listagem é pública.
 - As telas de produtos, pedidos e operação usam dados locais e/ou demonstrativos; não representam um sistema transacional integrado.
-- A API de unidades não exige autenticação e guarda os dados em um arquivo JSON local, não em um banco de dados gerenciado.
+- A API de unidades guarda os dados em um arquivo JSON local, não em um banco de dados gerenciado.
 - A página inicial consulta os indicadores de unidades quando a API está configurada; produtos, sessões e pedidos continuam locais e não são sincronizados com o servidor.
 - O limitador de requisições mantém o histórico em memória e é reiniciado quando o servidor reinicia.
 
