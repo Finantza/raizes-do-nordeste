@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { timingSafeEqual } from "node:crypto";
 import db from "../db.js";
+import { requireAuth, requireRole } from "../auth.js";
 
 const router = Router();
 
@@ -37,14 +38,26 @@ const requireAdminToken = (req, res, next) => {
   return next();
 };
 
+const requireAdmin = (req, res, next) => {
+  if (req.get("authorization")) return requireAdminToken(req, res, next);
+  return requireAuth(req, res, (error) => {
+    if (error) return next(error);
+    return requireRole("admin")(req, res, next);
+  });
+};
+
 // Lista todas as unidades cadastradas.
-router.get("/", (_req, res) => {
-  res.json(db.listUnidades());
+router.get("/", async (_req, res, next) => {
+  try {
+    return res.json(await db.listUnidades());
+  } catch (error) {
+    return next(error);
+  }
 });
 
 // Cria uma nova unidade. A validação aqui é importante porque bloqueia dados vazios,
 // inválidos ou suspeitos antes de salvar qualquer coisa no sistema.
-router.post("/", requireAdminToken, (req, res) => {
+router.post("/", requireAdmin, async (req, res, next) => {
   if (!req.body || typeof req.body !== "object" || Array.isArray(req.body)) {
     return res.status(400).json({ erro: "O corpo da requisição deve ser um objeto JSON." });
   }
@@ -82,19 +95,18 @@ router.post("/", requireAdminToken, (req, res) => {
   }
 
   try {
-    const unidadeSalva = db.createUnidade(unidade);
+    const unidadeSalva = await db.createUnidade(unidade);
 
     return res.status(201).json({
       mensagem: "Unidade cadastrada com sucesso.",
       ...unidadeSalva
     });
   } catch (erro) {
-    if (erro && erro.code === "UNIQUE_CONSTRAINT") {
+    if (erro && (erro.code === "UNIQUE_CONSTRAINT" || erro.code === "23505")) {
       return res.status(409).json({ erro: "Já existe uma unidade com esse código." });
     }
 
-    console.error("Falha ao cadastrar unidade:", erro);
-    return res.status(500).json({ erro: "Não foi possível cadastrar a unidade." });
+    return next(erro);
   }
 });
 
