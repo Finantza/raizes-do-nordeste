@@ -1,3 +1,10 @@
+databases:
+  - name: raizes-do-nordeste-db
+    databaseName: raizes
+    user: raizes
+    plan: free
+    region: oregon
+
 services:
   - type: web
     name: raizes-do-nordeste-api
@@ -5,8 +12,16 @@ services:
     plan: free
     region: oregon
     branch: main
-    buildCommand: npm install
+    buildCommand: npm ci
     startCommand: npm start
     envVars:
-      - key: PORT
-        value: 3000
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: raizes-do-nordeste-db
+          property: connectionString
+      - key: RAIZES_SESSION_SECRET
+        generateValue: true
+      - key: RAIZES_API_ADMIN_TOKEN
+        generateValue: true
