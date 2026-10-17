@@ -1,22 +1,15 @@
-// app.js — Lógica da vitrine principal (index.html).
-// Responsável por renderizar os produtos em destaque na página inicial.
-const PRODUCT_STORAGE_KEY = "raizes-storefront-products";
 const featuredProducts = document.querySelector("#featured-products");
 const carousel = document.querySelector("#home-carousel");
 const carouselTrack = document.querySelector("#home-carousel-track");
 const carouselDots = document.querySelector("#home-carousel-dots");
 const carouselPrevious = document.querySelector("#carousel-previous");
 const carouselNext = document.querySelector("#carousel-next");
-
-function readProducts() {
-  try {
-    return window.readRaizesProducts(PRODUCT_STORAGE_KEY);
-  } catch {
-    const defaults = window.mergeRaizesProducts(null);
-    window.saveRaizesProducts(PRODUCT_STORAGE_KEY, defaults);
-    return defaults;
-  }
-}
+const createElement = (tag, className, text) => {
+  const element = document.createElement(tag);
+  if (className) element.className = className;
+  if (text !== undefined) element.textContent = String(text);
+  return element;
+};
 
 function formatMoney(value) {
   return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(Number(value || 0));
@@ -26,53 +19,63 @@ function getDiscountedPrice(product) {
   return Number(product.preco || 0) * (1 - Number(product.offer || 0) / 100);
 }
 
-function renderHomeCarousel() {
+function createProductImage(product, loading = "lazy") {
+  const image = document.createElement("img");
+  image.src = window.getRaizesProductImage(product);
+  image.dataset.productFallback = window.getRaizesProductFallbackImage(product);
+  image.alt = product.nome;
+  image.loading = loading;
+  return image;
+}
+
+function renderHomeCarousel(products) {
   if (!carousel || !carouselTrack || !carouselDots) return;
-
-  const products = readProducts()
-    .filter((product) => Number(product.offer) > 0)
-    .slice(0, 5);
-
-  if (!products.length) {
+  const offers = products.filter((product) => Number(product.offer) > 0).slice(0, 5);
+  if (!offers.length) {
     carousel.hidden = true;
     return;
   }
 
-  carouselTrack.innerHTML = products.map((product, index) => {
-    const discount = Number(product.offer || 0);
-    const price = getDiscountedPrice(product);
-    return `
-      <article class="home-carousel-slide${index === 0 ? " is-active" : ""}"${index === 0 ? "" : " hidden"} aria-label="${index + 1} de ${products.length}">
-        <div class="home-carousel-image">
-          <img src="${window.getRaizesProductImage(product)}" data-product-fallback="${window.getRaizesProductFallbackImage(product)}" alt="${window.escapeRaizesHtml(product.nome)}" ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'}>
-          <span class="promo-tag">-${discount}%</span>
-        </div>
-        <div class="home-carousel-content">
-          <span class="product-category">${window.escapeRaizesHtml(product.categoria)}</span>
-          <h2>${window.escapeRaizesHtml(product.nome)}</h2>
-          <p>${window.escapeRaizesHtml(product.descricao || "Um sabor especial da nossa cozinha.")}</p>
-          <div class="home-carousel-bottom">
-            <div class="price-box">
-              <strong>${formatMoney(price)}</strong>
-              <del>${formatMoney(product.preco)}</del>
-            </div>
-            <a class="btn btn-amber btn-sm" href="./cliente.html">Quero provar <span aria-hidden="true">→</span></a>
-          </div>
-        </div>
-      </article>
-    `;
-  }).join("");
+  const slides = offers.map((product, index) => {
+    const slide = createElement("article", `home-carousel-slide${index === 0 ? " is-active" : ""}`);
+    slide.hidden = index !== 0;
+    slide.setAttribute("aria-label", `${index + 1} de ${offers.length}`);
+    const imageBox = createElement("div", "home-carousel-image");
+    imageBox.append(createProductImage(product, index === 0 ? "eager" : "lazy"));
+    imageBox.firstElementChild.fetchPriority = index === 0 ? "high" : "auto";
+    imageBox.append(createElement("span", "promo-tag", `-${Number(product.offer || 0)}%`));
+    const content = createElement("div", "home-carousel-content");
+    content.append(
+      createElement("span", "product-category", product.categoria),
+      createElement("h2", "", product.nome),
+      createElement("p", "", product.descricao || "Um sabor especial da nossa cozinha.")
+    );
+    const bottom = createElement("div", "home-carousel-bottom");
+    const prices = createElement("div", "price-box");
+    prices.append(createElement("strong", "", formatMoney(getDiscountedPrice(product))));
+    const original = createElement("del", "", formatMoney(product.preco));
+    prices.append(original);
+    const link = createElement("a", "btn btn-amber btn-sm", "Quero provar →");
+    link.href = "./cliente.html";
+    bottom.append(prices, link);
+    content.append(bottom);
+    slide.append(imageBox, content);
+    return slide;
+  });
+  carouselTrack.replaceChildren(...slides);
 
-  carouselDots.innerHTML = products.map((product, index) => `
-    <button class="carousel-dot${index === 0 ? " is-active" : ""}" type="button" data-slide="${index}" aria-label="Mostrar ${window.escapeRaizesHtml(product.nome)}" aria-current="${index === 0 ? "true" : "false"}"></button>
-  `).join("");
-
+  const dots = offers.map((product, index) => {
+    const dot = createElement("button", `carousel-dot${index === 0 ? " is-active" : ""}`);
+    dot.type = "button";
+    dot.dataset.slide = String(index);
+    dot.setAttribute("aria-label", `Mostrar ${product.nome}`);
+    dot.setAttribute("aria-current", String(index === 0));
+    return dot;
+  });
+  carouselDots.replaceChildren(...dots);
   window.bindRaizesProductImageFallbacks(carouselTrack);
 
-  const slides = [...carouselTrack.querySelectorAll(".home-carousel-slide")];
-  const dots = [...carouselDots.querySelectorAll(".carousel-dot")];
   let activeIndex = 0;
-
   const showSlide = (index) => {
     activeIndex = (index + slides.length) % slides.length;
     slides.forEach((slide, slideIndex) => {
@@ -113,33 +116,33 @@ function renderHomeCarousel() {
   }
 }
 
-function renderFeaturedProducts() {
+function renderFeaturedProducts(products) {
   if (!featuredProducts) return;
-
-  const products = readProducts().filter((product) => Number(product.offer) > 0).slice(0, 4);
-  featuredProducts.innerHTML = products.map((product) => {
-    const desconto = Number(product.offer || 0);
-    const precoFinal = getDiscountedPrice(product);
-
-    return `
-      <article class="product-card">
-        <div class="product-label">-${desconto}%</div>
-        <div class="product-image"><img src="${window.getRaizesProductImage(product)}" data-product-fallback="${window.getRaizesProductFallbackImage(product)}" alt="${window.escapeRaizesHtml(product.nome)}" loading="lazy"></div>
-        <div class="product-info">
-          <span class="product-category">${window.escapeRaizesHtml(product.categoria)}</span>
-          <h3>${window.escapeRaizesHtml(product.nome)}</h3>
-          <p class="product-description">${window.escapeRaizesHtml(product.descricao || "")}</p>
-          <div class="product-price">
-            <strong>${formatMoney(precoFinal)}</strong>
-            <small>${formatMoney(product.preco)}</small>
-          </div>
-          <a class="btn btn-ghost btn-sm featured-product-link" href="./cliente.html">Ver no cardápio <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
-    `;
-  }).join("");
+  const offers = products.filter((product) => Number(product.offer) > 0).slice(0, 4);
+  featuredProducts.replaceChildren(...offers.map((product) => {
+    const card = createElement("article", "product-card");
+    card.append(createElement("div", "product-label", `-${Number(product.offer || 0)}%`));
+    const imageBox = createElement("div", "product-image");
+    imageBox.append(createProductImage(product));
+    const info = createElement("div", "product-info");
+    info.append(
+      createElement("span", "product-category", product.categoria),
+      createElement("h3", "", product.nome),
+      createElement("p", "product-description", product.descricao || "")
+    );
+    const prices = createElement("div", "product-price");
+    prices.append(createElement("strong", "", formatMoney(getDiscountedPrice(product))));
+    prices.append(createElement("small", "", formatMoney(product.preco)));
+    const link = createElement("a", "btn btn-ghost btn-sm featured-product-link", "Ver no cardápio →");
+    link.href = "./cliente.html";
+    info.append(prices, link);
+    card.append(imageBox, info);
+    return card;
+  }));
   window.bindRaizesProductImageFallbacks(featuredProducts);
 }
 
-renderHomeCarousel();
-renderFeaturedProducts();
+window.raizesProductsReady.then((products) => {
+  renderHomeCarousel(products);
+  renderFeaturedProducts(products);
+});

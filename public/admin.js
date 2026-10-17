@@ -1,8 +1,4 @@
 // admin.js — Painel administrativo: inventário, métricas e gestão de produtos.
-// Depende de auth.js (carregado antes no HTML) para readUsers / getCurrentUser / setCurrentUser.
-const STORAGE_KEY = "raizes-storefront-products";
-const ORDER_KEY = "raizes-storefront-orders";
-
 const adminSessionBox = document.querySelector("#admin-session-box");
 const inventoryBody = document.querySelector("#admin-inventory-body");
 const totalProdutos = document.querySelector("#admin-total-produtos");
@@ -19,17 +15,16 @@ const productForm = document.querySelector("#admin-product-form");
 const feedback = document.querySelector("#admin-feedback");
 const productImageInput = document.querySelector("#admin-product-image");
 const productImagePreview = document.querySelector("#admin-product-image-preview");
+let orders = [];
+const createElement = (tag, className, text) => {
+  const element = document.createElement(tag);
+  if (className) element.className = className;
+  if (text !== undefined) element.textContent = String(text);
+  return element;
+};
 
-// Reúne a lista de produtos que o sistema usa. Se o navegador ainda não tiver dados,
-// ele cria uma base inicial para que o painel funcione imediatamente.
 function readProducts() {
-  try {
-    return window.readRaizesProducts(STORAGE_KEY);
-  } catch {
-    const defaults = window.mergeRaizesProducts(null);
-    window.saveRaizesProducts(STORAGE_KEY, defaults);
-    return defaults;
-  }
+  return window.raizesProducts;
 }
 
 function renderSessionStatus() {
@@ -42,7 +37,13 @@ function renderSessionStatus() {
     return;
   }
 
-  adminSessionBox.innerHTML = `<strong>${user.name}</strong><br><span>${user.email}</span><br><span class="badge bg-success-subtle text-success">${user.role}</span>`;
+  adminSessionBox.replaceChildren(
+    createElement("strong", "", user.name),
+    document.createElement("br"),
+    createElement("span", "", user.email),
+    document.createElement("br"),
+    createElement("span", "badge bg-success-subtle text-success", user.role)
+  );
   adminSessionBox.className = "small text-success";
 }
 
@@ -50,20 +51,9 @@ function formatMoney(value) {
   return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(Number(value || 0));
 }
 
-function readOrders() {
-  try {
-    const raw = localStorage.getItem(ORDER_KEY);
-    const parsed = JSON.parse(raw || "[]");
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
-}
-
 function renderRegionSummary() {
   if (!regionSummary) return;
 
-  const orders = readOrders();
   const groups = {};
 
   orders.forEach((order) => {
@@ -76,60 +66,74 @@ function renderRegionSummary() {
     if (order.store) groups[region].lojas.add(order.store);
   });
 
-  const regions = Object.entries(groups).length ? Object.entries(groups) : [
-    ["Nordeste", { pedidos: 14, total: 4860, lojas: new Set(["Loja Centro", "Loja Shopping"]) }],
-    ["Sudeste",  { pedidos: 9,  total: 3240, lojas: new Set(["Loja Aeroporto"]) }],
-    ["Sul",      { pedidos: 6,  total: 2190, lojas: new Set(["Loja Jardim"]) }]
-  ];
-
-  regionSummary.innerHTML = regions.map(([region, stats]) => `
-    <div class="col-md-4">
-      <div class="region-card">
-        <h3>${region}</h3>
-        <p>${stats.pedidos} pedidos • ${stats.lojas.size} lojas</p>
-        <p class="fw-semibold text-success">${formatMoney(stats.total)}</p>
-      </div>
-    </div>
-  `).join("");
+  const regions = Object.entries(groups);
+  regionSummary.replaceChildren(...regions.map(([region, stats]) => {
+    const column = createElement("div", "col-md-4");
+    const card = createElement("div", "region-card");
+    card.append(
+      createElement("h3", "", region),
+      createElement("p", "", `${stats.pedidos} pedidos • ${stats.lojas.size} lojas`),
+      createElement("p", "fw-semibold text-success", formatMoney(stats.total))
+    );
+    column.append(card);
+    return column;
+  }));
 }
 
 // Atualiza os números do dashboard e a tabela de produtos.
 function renderAdmin() {
   const products = readProducts();
-  const orders = readOrders();
   const total = products.length;
   const estoqueTotal = products.reduce((sum, p) => sum + Number(p.estoque || 0), 0);
   const lowStock = products.filter((p) => Number(p.estoque || 0) <= 5).length;
   const totalSales = orders.reduce((sum, o) => sum + Number(o.total || 0), 0);
-  const distinctRegions = new Set(orders.map((o) => o.region || "Nordeste")).size || 4;
+  const distinctRegions = new Set(orders.map((o) => o.region)).size;
 
   if (totalProdutos) totalProdutos.textContent = total;
   if (totalEstoque) totalEstoque.textContent = estoqueTotal;
   if (baixoEstoque) baixoEstoque.textContent = lowStock;
-  if (faturamento) faturamento.textContent = formatMoney(totalSales || products.reduce((s, p) => s + Number(p.preco || 0) * Number(p.estoque || 0), 0) * 0.38);
-  if (franquias) franquias.textContent = orders.length ? Math.max(4, new Set(orders.map((o) => o.store || "Loja Central")).size) : 4;
-  if (pedidos) pedidos.textContent = orders.length || 39;
+  if (faturamento) faturamento.textContent = formatMoney(totalSales);
+  if (franquias) franquias.textContent = new Set(orders.map((o) => o.store).filter(Boolean)).size;
+  if (pedidos) pedidos.textContent = orders.length;
   if (regioes) regioes.textContent = distinctRegions;
-  if (ticket) ticket.textContent = formatMoney(orders.length ? totalSales / orders.length : 235.5);
+  if (ticket) ticket.textContent = formatMoney(orders.length ? totalSales / orders.length : 0);
 
   if (!inventoryBody) return;
 
-  inventoryBody.innerHTML = products.map((product) => {
+  inventoryBody.replaceChildren(...products.map((product) => {
     const estoque = Number(product.estoque || 0);
     const status = estoque <= 5 ? "Baixo" : estoque <= 10 ? "Médio" : "OK";
     const statusClass = status === "Baixo" ? "warning" : status === "Médio" ? "secondary" : "success";
-
-    return `
-      <tr>
-        <td class="fw-semibold"><span class="admin-product-cell"><img src="${window.getRaizesProductImage(product)}" data-product-fallback="${window.getRaizesProductFallbackImage(product)}" alt="">${window.escapeRaizesHtml(product.nome)}</span></td>
-        <td>${window.escapeRaizesHtml(product.categoria)}</td>
-        <td>${formatMoney(product.preco)}</td>
-        <td>${product.estoque}</td>
-        <td><span class="status-pill ${statusClass}">${status}</span></td>
-        <td><label class="product-photo-upload">Alterar<input class="existing-product-image" type="file" accept="image/jpeg,image/png,image/webp" data-product-id="${product.id}" aria-label="Alterar foto de ${window.escapeRaizesHtml(product.nome)}"></label></td>
-      </tr>
-    `;
-  }).join("");
+    const row = document.createElement("tr");
+    const productCell = createElement("td", "fw-semibold");
+    const nameWrap = createElement("span", "admin-product-cell");
+    const image = document.createElement("img");
+    image.src = window.getRaizesProductImage(product);
+    image.dataset.productFallback = window.getRaizesProductFallbackImage(product);
+    image.alt = "";
+    nameWrap.append(image, document.createTextNode(product.nome));
+    productCell.append(nameWrap);
+    const statusPill = createElement("span", `status-pill ${statusClass}`, status);
+    const photoLabel = createElement("label", "product-photo-upload", "Alterar");
+    const fileInput = document.createElement("input");
+    fileInput.className = "existing-product-image";
+    fileInput.type = "file";
+    fileInput.accept = "image/jpeg,image/png,image/webp";
+    fileInput.dataset.productId = product.id;
+    fileInput.setAttribute("aria-label", `Alterar foto de ${product.nome}`);
+    photoLabel.append(fileInput);
+    row.append(
+      productCell,
+      createElement("td", "", product.categoria),
+      createElement("td", "", formatMoney(product.preco)),
+      createElement("td", "", product.estoque),
+      document.createElement("td"),
+      createElement("td")
+    );
+    row.cells[4].append(statusPill);
+    row.cells[5].append(photoLabel);
+    return row;
+  }));
 
   window.bindRaizesProductImageFallbacks(inventoryBody);
   renderRegionSummary();
@@ -154,7 +158,14 @@ inventoryBody?.addEventListener("change", async (event) => {
   const input = event.target.closest(".existing-product-image");
   if (!input?.files?.[0]) return;
   try {
-    await window.updateRaizesProductImage(STORAGE_KEY, input.dataset.productId, input.files[0]);
+    const product = readProducts().find((item) => String(item.id) === input.dataset.productId);
+    if (!product) throw new Error("Produto não encontrado.");
+    const imagem = await window.prepareRaizesProductImage(input.files[0]);
+    await window.raizesApiRequest(`/products/${product.id}`, {
+      method: "PUT",
+      body: JSON.stringify({ ...product, imagem })
+    });
+    await window.reloadRaizesProducts();
     if (feedback) {
       feedback.textContent = "Foto do produto atualizada.";
       feedback.className = "small mt-3 text-success";
@@ -199,18 +210,19 @@ productForm?.addEventListener("submit", async (event) => {
   }
 
   try {
-    const products = readProducts();
     const imagem = await window.prepareRaizesProductImage(productImageInput?.files?.[0]);
-    products.push({
-      id: Math.max(Date.now(), ...products.map((product) => Number(product.id) + 1)),
+    await window.raizesApiRequest("/products", {
+      method: "POST",
+      body: JSON.stringify({
       nome,
       categoria,
       preco,
       estoque,
       offer: 0,
       imagem
+      })
     });
-    window.saveRaizesProducts(STORAGE_KEY, products);
+    await window.reloadRaizesProducts();
   } catch (error) {
     if (feedback) {
       feedback.textContent = error instanceof DOMException && error.name === "QuotaExceededError"
@@ -236,5 +248,41 @@ productForm?.addEventListener("submit", async (event) => {
 });
 
 reloadButton?.addEventListener("click", renderAdmin);
-renderSessionStatus();
-renderAdmin();
+
+async function migrateLocalProducts() {
+  const raw = localStorage.getItem("raizes-storefront-products");
+  if (!raw) return;
+  try {
+    const products = JSON.parse(raw);
+    if (!Array.isArray(products)) throw new Error("O catálogo local está inválido.");
+    for (const product of products) {
+      await window.raizesApiRequest("/products/migrate-local", {
+        method: "POST",
+        body: JSON.stringify({ product })
+      });
+    }
+    localStorage.removeItem("raizes-storefront-products");
+    await window.reloadRaizesProducts();
+  } catch (error) {
+    console.error("A migração do catálogo local não foi concluída; os dados locais foram mantidos.", error);
+    if (feedback) {
+      feedback.textContent = "A migração do catálogo local não foi concluída; os dados locais foram mantidos.";
+      feedback.className = "small mt-3 text-warning";
+    }
+  }
+}
+
+Promise.all([window.raizesAuthReady, window.raizesProductsReady]).then(async ([user]) => {
+  if (!user || user.role !== "admin") return;
+  renderSessionStatus();
+  await migrateLocalProducts();
+  try {
+    orders = await window.raizesApiRequest("/orders");
+  } catch (error) {
+    if (feedback) {
+      feedback.textContent = error.message || "Não foi possível carregar pedidos do servidor.";
+      feedback.className = "small mt-3 text-danger";
+    }
+  }
+  renderAdmin();
+}).catch((error) => console.error("Não foi possível inicializar o painel administrativo.", error));

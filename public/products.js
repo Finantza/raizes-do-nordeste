@@ -441,25 +441,23 @@ window.prepareRaizesProductImage = async (file) => {
   }
 };
 
-window.readRaizesProducts = (storageKey) => {
-  const raw = localStorage.getItem(storageKey);
-  const parsed = raw ? JSON.parse(raw) : null;
-  const products = window.mergeRaizesProducts(parsed);
-  if (JSON.stringify(parsed) !== JSON.stringify(products)) {
-    localStorage.setItem(storageKey, JSON.stringify(products));
-  }
+window.raizesProducts = window.RAIZES_DEFAULT_PRODUCTS.map((product) => ({ ...product }));
+window.raizesProductsReady = typeof window.raizesApiRequest !== "function"
+  ? Promise.resolve(window.raizesProducts)
+  : window.raizesApiRequest("/products")
+  .then((products) => {
+    if (!Array.isArray(products)) throw new Error("Resposta inválida do catálogo.");
+    window.raizesProducts = products;
+    return products;
+  })
+  .catch((error) => {
+    console.error("Não foi possível carregar o catálogo do servidor; será exibida a cópia pública inicial.", error);
+    return window.raizesProducts;
+  });
+
+window.reloadRaizesProducts = async () => {
+  const products = await window.raizesApiRequest("/products");
+  if (!Array.isArray(products)) throw new Error("Resposta inválida do catálogo.");
+  window.raizesProducts = products;
   return products;
-};
-
-window.saveRaizesProducts = (storageKey, products) => {
-  localStorage.setItem(storageKey, JSON.stringify(products));
-};
-
-window.updateRaizesProductImage = async (storageKey, productId, file) => {
-  const imagem = await window.prepareRaizesProductImage(file);
-  const products = window.readRaizesProducts(storageKey);
-  const product = products.find((item) => String(item.id) === String(productId));
-  if (!product) throw new Error("Produto não encontrado no catálogo.");
-  product.imagem = imagem;
-  window.saveRaizesProducts(storageKey, products);
 };
