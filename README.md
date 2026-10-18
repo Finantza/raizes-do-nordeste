@@ -46,7 +46,7 @@ Abra <http://localhost:3000>. O Express serve a aplicação a partir de `public/
 npm start
 ```
 
-No Windows, também é possível executar [`iniciar-servidor.bat`](iniciar-servidor.bat) para iniciar o Express e abrir o navegador. O script `test-offline.bat` roda os testes de API e depois chama o iniciador do servidor. Para usar a API e as imagens de `src/imagens`, acesse a aplicação pelo endereço servido pelo Express, não abra os HTMLs diretamente no navegador.
+No Windows, também é possível executar [`iniciar-servidor.bat`](iniciar-servidor.bat) para iniciar o Express e abrir o navegador. O script [`test-offline.bat`](test-offline.bat) roda a suíte completa de testes automatizados, valida a integridade de sintaxe do frontend e dos arquivos estáticos locais e, em seguida, chama o iniciador do servidor (use o parâmetro `--no-server` para apenas rodar a bateria de testes e verificações offline sem abrir o navegador). Para usar a API e as imagens de `src/imagens`, acesse a aplicação pelo endereço servido pelo Express, não abra os HTMLs diretamente no navegador.
 
 O servidor usa a variável de ambiente `PORT`, se definida; caso contrário, usa a porta `3000`. Em desenvolvimento, os dados são guardados em SQLite (`data/raizes.sqlite`); defina `DATABASE_URL` para usar PostgreSQL. Na primeira inicialização, o servidor importa unidades do antigo `data/raizes.json` se o novo banco estiver vazio.
 

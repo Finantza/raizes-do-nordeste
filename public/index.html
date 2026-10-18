@@ -22,7 +22,7 @@
       </a>
       <div class="nav-links">
         <a class="btn btn-ghost btn-sm" href="./cliente.html">Cardápio</a>
-        <a class="btn btn-ghost btn-sm" href="./operacional.html">Nossas lojas</a>
+        <a class="btn btn-ghost btn-sm staff-only-link" data-staff-only href="./operacional.html" hidden>Painel da Loja</a>
         <a class="btn btn-ghost btn-sm admin-only-link" data-admin-only href="./admin.html" hidden>Administração</a>
         <a class="btn btn-amber btn-sm" href="./cliente.html">Pedir agora</a>
         <div class="nav-links" id="shared-session-controls"></div>
@@ -43,14 +43,14 @@
         </p>
         <div class="hero-actions">
           <a class="btn btn-amber btn-lg" href="./cliente.html">Explorar cardápio <span aria-hidden="true">→</span></a>
-          <a class="btn btn-ghost btn-lg" href="./operacional.html">Conhecer nossas lojas</a>
+          <a class="btn btn-ghost btn-lg" href="./cliente.html">Fazer pedido online</a>
         </div>
         <div class="hero-highlights" aria-label="Destaques">
           <span><span aria-hidden="true">✦</span> Receitas regionais</span>
           <span><span aria-hidden="true">✦</span> Feito para compartilhar</span>
         </div>
       </div>
-      <div class="home-carousel" id="home-carousel" aria-roledescription="carrossel" aria-label="Produtos em destaque">
+      <div class="home-carousel" id="home-carousel" role="region" aria-roledescription="carrossel" aria-label="Produtos em destaque">
         <div class="home-carousel-track" id="home-carousel-track" aria-live="polite"></div>
         <div class="home-carousel-controls">
           <div class="home-carousel-dots" id="home-carousel-dots" aria-label="Selecionar produto"></div>
@@ -131,10 +131,10 @@
   <footer>
     <div class="footer-inner">
       <span>Raízes do Nordeste © 2026 — Sabor que tem história.</span>
-      <div style="display:flex;gap:1rem;">
-        <a href="./cliente.html" class="text-muted text-sm" style="text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--brand-light)'" onmouseout="this.style.color=''">Cardápio</a>
-        <a href="./admin.html" class="text-muted text-sm admin-only-link" data-admin-only hidden style="text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--brand-light)'" onmouseout="this.style.color=''">Admin</a>
-        <a href="./operacional.html" class="text-muted text-sm" style="text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--brand-light)'" onmouseout="this.style.color=''">Lojas</a>
+      <div class="footer-links">
+        <a href="./cliente.html" class="text-muted text-sm footer-link">Cardápio</a>
+        <a href="./operacional.html" class="text-muted text-sm footer-link staff-only-link" data-staff-only hidden>Painel da Loja</a>
+        <a href="./admin.html" class="text-muted text-sm footer-link admin-only-link" data-admin-only hidden>Admin</a>
       </div>
     </div>
   </footer>

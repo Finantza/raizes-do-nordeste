@@ -82,8 +82,8 @@ body {
   top: 0;
   z-index: 100;
   background: rgba(255,248,236,0.92);
-  backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
   padding: 0.875rem 0;
 }
@@ -365,8 +365,8 @@ body {
 /* ── Showcase card (hero right) ───────────────────────────────── */
 .showcase-card {
   background: rgba(255,253,248,0.84);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border: 1px solid rgba(169,67,43,0.18);
   border-radius: var(--radius-xl);
   padding: 2rem;
@@ -1159,7 +1159,6 @@ footer {
 .table-responsive {
   max-width: 100%;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 .table-responsive table { min-width: 34rem; }
@@ -1339,6 +1338,7 @@ footer {
   margin-bottom: 1rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1424,6 +1424,7 @@ footer {
 .featured-section .product-description {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1485,6 +1486,256 @@ footer {
   .categories-grid,
   .featured-section .products-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ── Gestão Interna (Produtos, Estoque e Financeiro) ───────────── */
+.module-nav-container {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--surface-2);
+  padding: 0.4rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  margin-bottom: 1.75rem;
+  overflow-x: auto;
+}
+
+.module-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-2);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.module-nav-btn:hover {
+  color: var(--brand);
+  background: rgba(169,67,43,0.06);
+}
+
+.module-nav-btn.is-active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--brand), var(--brand-light));
+  box-shadow: var(--shadow-sm);
+}
+
+.module-nav-btn .tab-badge {
+  background: rgba(255,255,255,0.25);
+  color: inherit;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-pill);
+}
+
+.management-section {
+  display: none;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.management-section.is-active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stats-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.stat-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 4px;
+  background: var(--brand);
+}
+
+.stat-box.stat-success::before { background: var(--success); }
+.stat-box.stat-amber::before { background: var(--amber); }
+.stat-box.stat-danger::before { background: var(--danger); }
+.stat-box.stat-info::before { background: var(--info); }
+
+.stat-box .stat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-3);
+}
+
+.stat-box .stat-value {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.stat-box .stat-sub {
+  font-size: 0.78rem;
+  color: var(--text-2);
+}
+
+.finance-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.finance-type-pagar {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border: 1px solid rgba(180,60,50,0.2);
+}
+
+.finance-type-receber {
+  background: var(--success-soft);
+  color: var(--success);
+  border: 1px solid rgba(57,112,74,0.2);
+}
+
+.stock-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.stock-status-ok { background: var(--success-soft); color: var(--success); }
+.stock-status-atencao { background: var(--warning-soft); color: var(--amber); }
+.stock-status-critico { background: var(--danger-soft); color: var(--danger); }
+
+.table-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.table-action-btn:hover {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+.table-action-btn.btn-pay {
+  background: var(--success-soft);
+  color: var(--success);
+  border-color: rgba(57,112,74,0.25);
+}
+
+.table-action-btn.btn-pay:hover {
+  background: var(--success);
+  color: #fff;
+}
+
+.table-action-btn.btn-del {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border-color: rgba(180,60,50,0.25);
+}
+
+.table-action-btn.btn-del:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filter-pill-btn {
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-pill-btn:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.filter-pill-btn.is-active {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+.movement-in { color: var(--success); font-weight: 700; }
+.movement-out { color: var(--danger); font-weight: 700; }
+.movement-adj { color: var(--amber); font-weight: 700; }
+
+.catalog-category-select { width: auto; padding: 0.35rem 0.75rem; font-size: 0.85rem; }
+.catalog-search-input { max-width: 200px; padding: 0.35rem 0.75rem; font-size: 0.85rem; }
+.catalog-table-wrap { max-height: 580px; overflow-y: auto; }
+.stock-table-wrap { max-height: 480px; overflow-y: auto; }
+.movements-table-wrap { max-height: 380px; overflow-y: auto; }
+.finance-table-wrap { max-height: 520px; overflow-y: auto; }
+.cart-options-grid { gap: 0.75rem; margin-bottom: 0.75rem; }
+.order-mode-group-spacing { margin-bottom: 0.75rem; }
+.card-title-medium { font-size: 1rem; font-weight: 700; color: var(--text); }
+.card-title-large { font-size: 1.25rem; font-weight: 700; color: var(--text); }
+.btn-full { width: 100%; justify-content: center; }
+.auth-demo-box { background: var(--surface-2); border-radius: var(--radius-sm); border: 1px solid var(--border); }
+.auth-demo-label { font-size: 0.85rem; }
+.auth-demo-btn { border: 1px solid var(--border); color: var(--text); }
+.product-thumb-small { width: 36px; height: 36px; border-radius: 6px; object-fit: cover; }
+.table-action-file-label { cursor: pointer; margin: 0; }
+.footer-links { display: flex; gap: 1rem; }
+.footer-link { text-decoration: none; transition: color 0.2s; }
+.footer-link:hover { color: var(--brand-light); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

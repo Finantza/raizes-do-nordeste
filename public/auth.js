@@ -67,14 +67,27 @@ async function migrateLocalUsers() {
 function setupSharedSession() {
   const requiredRole = document.body.dataset.requiredRole;
   const controls = document.querySelector("#shared-session-controls");
+
   document.querySelectorAll("[data-admin-only]").forEach((element) => {
     element.hidden = !currentUser || currentUser.role !== "admin";
   });
+  document.querySelectorAll("[data-loja-only]").forEach((element) => {
+    element.hidden = !currentUser || currentUser.role !== "loja";
+  });
+  document.querySelectorAll("[data-staff-only]").forEach((element) => {
+    element.hidden = !currentUser || !["admin", "loja"].includes(currentUser.role);
+  });
+  document.querySelectorAll("[data-cliente-only]").forEach((element) => {
+    element.hidden = !currentUser || currentUser.role !== "cliente";
+  });
 
-  if (requiredRole && (!currentUser || currentUser.role !== requiredRole)) {
-    document.body.hidden = false;
-    window.location.replace(currentUser ? (getDashboardPath(currentUser.role) || "./login.html") : "./login.html");
-    return;
+  if (requiredRole) {
+    const allowedRoles = requiredRole.split(",").map((r) => r.trim()).filter(Boolean);
+    if (!currentUser || !allowedRoles.includes(currentUser.role)) {
+      document.body.hidden = false;
+      window.location.replace(currentUser ? (getDashboardPath(currentUser.role) || "./login.html") : "./login.html");
+      return;
+    }
   }
   document.body.hidden = false;
   if (!controls) return;

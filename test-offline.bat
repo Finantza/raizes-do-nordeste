@@ -10,66 +10,88 @@ call :check_dependencies
 if not "%ERRORLEVEL%"=="0" exit /b 1
 
 echo.
-echo ================================
-echo Testes offline do prototipo
-echo ================================
+echo ========================================
+echo Testes Offline e Verificacao de Integridade
+echo ========================================
 echo.
 
-node --test src/app.test.js
+echo Executando suite completa de testes automatizados...
+node --test
 if not "%ERRORLEVEL%"=="0" (
   echo.
-  echo Falha nos testes de API.
+  echo [ERRO] Falha nos testes automatizados.
   exit /b 1
 )
 
 echo.
-echo Testes de API concluídos com sucesso.
+echo Testes automatizados concluidos com sucesso.
 echo.
-echo Verificando sintaxe da interface...
+echo Verificando sintaxe de todos os scripts do frontend...
 
-"%ProgramFiles%\nodejs\node.exe" --check public/app.js
-if not "%ERRORLEVEL%"=="0" (
-  echo.
-  echo Falha na sintaxe do front-end.
-  exit /b 1
+set FRONTEND_FILES=public\config.js public\products.js public\auth.js public\app.js public\gestao.js public\admin.js public\operacional.js public\cliente.js public\login.js
+
+for %%F in (%FRONTEND_FILES%) do (
+  if exist "%%F" (
+    node --check "%%F"
+    if not "!ERRORLEVEL!"=="0" (
+      echo.
+      echo [ERRO] Falha na sintaxe do arquivo: %%F
+      exit /b 1
+    )
+    echo  [OK] Sintaxe valida: %%F
+  ) else (
+    echo  [ERRO] Arquivo essencial nao encontrado: %%F
+    exit /b 1
+  )
 )
 
 echo.
-echo Verificando arquivos estaticos...
-if not exist "public\index.html" (
-  echo Arquivo public\index.html nao encontrado.
-  exit /b 1
+echo Verificando arquivos estaticos e paginas da aplicacao...
+
+set REQUIRED_FILES=public\index.html public\login.html public\cliente.html public\admin.html public\operacional.html public\style.css public\images\raizes-logo.svg
+
+for %%F in (%REQUIRED_FILES%) do (
+  if not exist "%%F" (
+    echo  [ERRO] Arquivo estatico nao encontrado: %%F
+    exit /b 1
+  )
+  echo  [OK] Presente no disco: %%F
 )
 
-if not exist "public\style.css" (
-  echo Arquivo public\style.css nao encontrado.
-  exit /b 1
-)
-
 echo.
-echo Tudo pronto para uso offline.
+echo ========================================
+echo Todos os testes e verificacoes passaram!
+echo O prototipo esta 100%% preparado para uso offline.
+echo ========================================
 echo.
 
-echo.
-echo Iniciando o servidor para testes manuais...
+if "%1"=="--no-server" goto :done
+if "%1"=="--ci" goto :done
+if "%1"=="/noserver" goto :done
+
+echo Iniciando o servidor para testes manuais no navegador...
 call "iniciar-servidor.bat"
 exit /b %ERRORLEVEL%
+
+:done
+echo Verificacao offline finalizada com exito.
+exit /b 0
 
 :check_node
 where node >nul 2>nul
 if "%ERRORLEVEL%"=="0" (
-  echo Node.js encontrado.
+  echo Node.js encontrado no sistema.
   exit /b 0
 )
 
-echo Node.js nao encontrado no PATH.
+echo [ERRO] Node.js nao encontrado no PATH.
 exit /b 1
 
 :check_dependencies
 if not exist "node_modules" (
-  echo node_modules nao encontrado. Execute: npm install
+  echo [ERRO] Pasta node_modules nao encontrada. Execute: npm install
   exit /b 1
 )
 
-echo Dependencias encontradas.
+echo Dependencias locais encontradas em node_modules.
 exit /b 0

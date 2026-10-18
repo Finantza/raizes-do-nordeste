@@ -7,14 +7,14 @@
   <link rel="icon" type="image/svg+xml" href="./images/raizes-logo.svg">
   <link rel="stylesheet" href="./style.css">
 </head>
-<body class="bg-body-tertiary" data-required-role="loja">
+<body class="bg-body-tertiary" data-required-role="loja,admin">
   <nav class="navbar navbar-expand-lg shadow-sm">
     <div class="container py-2">
       <a class="navbar-brand d-flex align-items-center gap-3" href="./index.html">
         <img class="brand-mark" src="./images/raizes-logo.svg" alt="">
         <div>
           <span class="d-block fw-bold">Raízes do Nordeste</span>
-          <small class="text-white-50">Perfil interno</small>
+          <small class="text-white-50">Operação da Loja</small>
         </div>
       </a>
       <div class="d-flex gap-2 flex-wrap align-items-center">
@@ -30,190 +30,239 @@
     <div class="top-card mb-4">
       <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-md-center">
         <div>
-          <p class="text-uppercase text-success fw-bold small mb-1">Operação local</p>
-          <h1 class="h2 mb-0">Perfil e rotina da loja</h1>
+          <p class="text-uppercase text-success fw-bold small mb-1">Operação local e Gestão</p>
+          <h1 class="h2 mb-0">Perfil e Rotina da Loja</h1>
         </div>
-        <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">Loja ativa</span>
+        <span class="badge bg-warning text-dark px-3 py-2 rounded-pill">Loja Ativa</span>
       </div>
     </div>
 
-    <div class="row g-4 mb-4">
-      <div class="col-12">
-        <section class="card border-0 shadow-sm">
-          <div class="card-body p-4">
-            <p class="eyebrow">Sessão</p>
-            <h2 class="h4 mb-3">Perfil do operador</h2>
-            <div id="loja-session-box" class="small text-muted">Nenhum usuário autenticado.</div>
-          </div>
-        </section>
-      </div>
+    <!-- Navegação por Módulos (Tabs) -->
+    <div class="module-nav-container mb-4" role="tablist">
+      <button type="button" class="module-nav-btn is-active" data-target-tab="tab-geral" role="tab">
+        <span>🏪 Rotina da Loja</span>
+      </button>
+      <button type="button" class="module-nav-btn" data-target-tab="tab-produtos" role="tab">
+        <span>🍽️ Cadastro de Produtos</span>
+      </button>
+      <button type="button" class="module-nav-btn" data-target-tab="tab-estoque" role="tab">
+        <span>📦 Controle de Estoque</span>
+      </button>
+      <button type="button" class="module-nav-btn" data-target-tab="tab-financeiro" role="tab">
+        <span>💰 Contas a Pagar e Receber</span>
+      </button>
     </div>
 
-    <div class="row g-3 mb-4">
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Vendas hoje</span>
-          <strong id="loja-vendas">0</strong>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Pedidos</span>
-          <strong id="loja-pedidos">0</strong>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Atenção</span>
-          <strong id="loja-atencao">0</strong>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Meta</span>
-          <strong id="loja-meta">82%</strong>
-        </div>
-      </div>
-    </div>
-
-    <div class="row g-3 mb-4">
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Delivery</span>
-          <strong id="loja-delivery">0</strong>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Retirada</span>
-          <strong id="loja-retirada">0</strong>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Região</span>
-          <strong id="loja-regiao">Sudeste</strong>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Lojas ativas</span>
-          <strong id="loja-ativas">0</strong>
-        </div>
-      </div>
-    </div>
-
-    <div class="row g-4 mb-4">
-      <div class="col-lg-5">
-        <section class="card border-0 shadow-sm h-100">
-          <div class="card-body p-4">
-            <h2 class="h4 mb-3">Cadastrar produto</h2>
-            <form id="store-product-form" class="row g-3">
-              <div class="col-12">
-                <label class="form-label fw-semibold" for="store-product-name">Nome</label>
-                <input id="store-product-name" class="form-control" name="nome" maxlength="120" required>
-              </div>
-              <div class="col-12">
-                <label class="form-label fw-semibold" for="store-product-category">Categoria</label>
-                <select id="store-product-category" class="form-control" name="categoria" required>
-                  <option value="">Selecione a categoria</option>
-                  <option value="Lanches">Lanches</option>
-                  <option value="Pratos">Pratos</option>
-                  <option value="Bebidas">Bebidas</option>
-                  <option value="Sobremesas">Sobremesas</option>
-                  <option value="Ofertas">Ofertas</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label fw-semibold" for="store-product-price">Preço (R$)</label>
-                <input id="store-product-price" class="form-control" name="preco" type="number" min="0" step="0.01" required>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label fw-semibold" for="store-product-stock">Estoque</label>
-                <input id="store-product-stock" class="form-control" name="estoque" type="number" min="0" step="1" required>
-              </div>
-              <div class="col-12">
-                <label class="form-label fw-semibold" for="store-product-image">Foto do produto (opcional)</label>
-                <input id="store-product-image" class="form-control" name="imagem" type="file" accept="image/jpeg,image/png,image/webp">
-                <small class="text-muted">JPG, PNG ou WebP; até 8 MB. Sem foto, será usada uma ilustração original.</small>
-                <img id="store-product-image-preview" class="product-upload-preview" alt="Prévia da foto do produto" hidden>
-              </div>
-              <div class="col-12">
-                <button class="btn btn-success w-100" type="submit">Salvar produto</button>
-              </div>
-            </form>
-            <div id="store-product-feedback" class="small mt-3" aria-live="polite"></div>
-          </div>
-        </section>
-      </div>
-      <div class="col-lg-7">
-        <section class="card border-0 shadow-sm">
-          <div class="card-body p-4">
-            <h2 class="h4 mb-3">Produtos da rede</h2>
-            <div class="table-responsive">
-              <table class="table align-middle mb-0">
-                <thead class="table-light">
-                  <tr><th>Produto</th><th>Categoria</th><th>Preço</th><th>Estoque</th><th>Foto</th></tr>
-                </thead>
-                <tbody id="store-products-body"></tbody>
-              </table>
+    <!-- ── TAB 1: ROTINA DA LOJA ── -->
+    <div id="tab-geral" class="management-section is-active">
+      <div class="row g-4 mb-4">
+        <div class="col-12">
+          <section class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <p class="eyebrow">Sessão</p>
+              <h2 class="h4 mb-3">Perfil do operador</h2>
+              <div id="loja-session-box" class="small text-muted">Nenhum usuário autenticado.</div>
             </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Vendas hoje</span>
+            <strong id="loja-vendas">0</strong>
           </div>
-        </section>
+        </div>
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Pedidos</span>
+            <strong id="loja-pedidos">0</strong>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Atenção</span>
+            <strong id="loja-atencao">0</strong>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Meta</span>
+            <strong id="loja-meta">82%</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Delivery</span>
+            <strong id="loja-delivery">0</strong>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Retirada</span>
+            <strong id="loja-retirada">0</strong>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Região</span>
+            <strong id="loja-regiao">Sudeste</strong>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Lojas ativas</span>
+            <strong id="loja-ativas">0</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <section class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="h4 mb-0">Checklist interno</h2>
+                <button class="btn btn-sm btn-outline-success" type="button" id="refresh-loja">Atualizar</button>
+              </div>
+              <div id="loja-list" class="d-grid gap-3"></div>
+            </div>
+          </section>
+        </div>
+
+        <div class="col-lg-5">
+          <section class="card border-0 shadow-sm h-100">
+            <div class="card-body p-4">
+              <h2 class="h4 mb-3">Dados da unidade</h2>
+              <div class="store-card">
+                <strong>Loja Raízes do Nordeste</strong>
+                <p>Atendimento de varejo e delivery</p>
+                <ul>
+                  <li>Rua das Flores, 128 - Centro</li>
+                  <li>Seg a Dom • 08:00 às 20:00</li>
+                  <li>Responsável: equipe de operação</li>
+                </ul>
+              </div>
+              <div id="loja-rotas" class="d-grid gap-2 mt-3"></div>
+              <div class="mt-4">
+                <h3 class="h6 text-uppercase text-muted">Pedidos por região</h3>
+                <div id="regiao-list" class="d-grid gap-2 mt-2"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-1">
+        <div class="col-12">
+          <section class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h2 class="h4 mb-3">Pedidos recebidos</h2>
+              <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                  <thead class="table-light">
+                    <tr><th>Data</th><th>Loja</th><th>Itens</th><th>Total</th><th>Status operacional</th></tr>
+                  </thead>
+                  <tbody id="store-orders-body"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
 
-    <div class="row g-4">
-      <div class="col-lg-7">
-        <section class="card border-0 shadow-sm">
-          <div class="card-body p-4">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <h2 class="h4 mb-0">Checklist interno</h2>
-              <button class="btn btn-sm btn-outline-success" type="button" id="refresh-loja">Atualizar</button>
+    <!-- ── TAB 2: CADASTRO DE PRODUTOS ── -->
+    <div id="tab-produtos" class="management-section">
+      <div class="row g-4 mb-4">
+        <div class="col-lg-5">
+          <section class="card border-0 shadow-sm h-100">
+            <div class="card-body p-4">
+              <h2 class="h4 mb-3">Cadastrar produto</h2>
+              <form id="store-product-form" class="row g-3">
+                <div class="col-12">
+                  <label class="form-label fw-semibold" for="store-product-name">Nome</label>
+                  <input id="store-product-name" class="form-control" name="nome" maxlength="120" required placeholder="Ex: Tapioca de Carne Seca">
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-semibold" for="store-product-category">Categoria</label>
+                  <select id="store-product-category" class="form-control" name="categoria" required>
+                    <option value="">Selecione a categoria</option>
+                    <option value="Lanches">Lanches</option>
+                    <option value="Pratos">Pratos</option>
+                    <option value="Bebidas">Bebidas</option>
+                    <option value="Sobremesas">Sobremesas</option>
+                    <option value="Ofertas">Ofertas</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold" for="store-product-price">Preço (R$)</label>
+                  <input id="store-product-price" class="form-control" name="preco" type="number" min="0" step="0.01" required placeholder="0,00">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold" for="store-product-stock">Estoque</label>
+                  <input id="store-product-stock" class="form-control" name="estoque" type="number" min="0" step="1" required placeholder="Ex: 20">
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-semibold" for="store-product-image">Foto do produto (opcional)</label>
+                  <input id="store-product-image" class="form-control" name="imagem" type="file" accept="image/jpeg,image/png,image/webp">
+                  <small class="text-muted">JPG, PNG ou WebP; até 8 MB.</small>
+                  <img id="store-product-image-preview" class="product-upload-preview mt-2" alt="Prévia da foto" hidden>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-success w-100" type="submit">Salvar produto no catálogo</button>
+                </div>
+              </form>
+              <div id="store-product-feedback" class="small mt-3" aria-live="polite"></div>
             </div>
-            <div id="loja-list" class="d-grid gap-3"></div>
-          </div>
-        </section>
-      </div>
-
-      <div class="col-lg-5">
-        <section class="card border-0 shadow-sm h-100">
-          <div class="card-body p-4">
-            <h2 class="h4 mb-3">Dados da unidade</h2>
-            <div class="store-card">
-              <strong>Loja Raízes do Nordeste</strong>
-              <p>Atendimento de varejo e delivery</p>
-              <ul>
-                <li>Rua das Flores, 128 - Centro</li>
-                <li>Seg a Dom • 08:00 às 20:00</li>
-                <li>Responsável: equipe de operação</li>
-              </ul>
+          </section>
+        </div>
+        <div class="col-lg-7">
+          <section class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                <h2 class="h4 mb-0">Produtos da rede</h2>
+                <div class="d-flex gap-2">
+                  <select id="catalog-category-select" class="form-control catalog-category-select" title="Filtrar por categoria">
+                    <option value="todas">Todas as categorias</option>
+                    <option value="Lanches">Lanches</option>
+                    <option value="Pratos">Pratos</option>
+                    <option value="Bebidas">Bebidas</option>
+                    <option value="Sobremesas">Sobremesas</option>
+                    <option value="Ofertas">Ofertas</option>
+                  </select>
+                  <input type="text" id="catalog-search-input" class="form-control catalog-search-input" placeholder="Buscar produto..." title="Buscar produto por nome">
+                </div>
+              </div>
+              <div class="table-responsive catalog-table-wrap">
+                <table class="table align-middle mb-0">
+                  <thead class="table-light sticky-top">
+                    <tr><th>Produto</th><th>Categoria</th><th>Preço</th><th>Estoque</th><th>Foto</th><th>Excluir</th></tr>
+                  </thead>
+                  <tbody id="catalog-products-body"></tbody>
+                </table>
+              </div>
             </div>
-            <div id="loja-rotas" class="d-grid gap-2 mt-3"></div>
-            <div class="mt-4">
-              <h3 class="h6 text-uppercase text-muted">Pedidos por região</h3>
-              <div id="regiao-list" class="d-grid gap-2 mt-2"></div>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
 
-    <div class="row g-4 mt-1">
-      <div class="col-12">
-        <section class="card border-0 shadow-sm">
-          <div class="card-body p-4">
-            <h2 class="h4 mb-3">Pedidos recebidos</h2>
-            <div class="table-responsive">
-              <table class="table align-middle mb-0">
-                <thead class="table-light">
-                  <tr><th>Data</th><th>Loja</th><th>Itens</th><th>Total</th><th>Status operacional</th></tr>
-                </thead>
-                <tbody id="store-orders-body"></tbody>
-              </table>
-            </div>
-          </div>
-        </section>
+    <!-- ── TAB 3: CONTROLE DE ESTOQUE ── -->
+    <div id="tab-estoque" class="management-section">
+      <div id="estoque-module-content">
+        <div class="card p-4 text-center text-muted">Carregando dados de estoque...</div>
+      </div>
+    </div>
+
+    <!-- ── TAB 4: CONTAS A PAGAR E RECEBER ── -->
+    <div id="tab-financeiro" class="management-section">
+      <div id="financeiro-module-content">
+        <div class="card p-4 text-center text-muted">Carregando dados financeiros...</div>
       </div>
     </div>
   </main>
@@ -221,6 +270,7 @@
   <script src="./config.js"></script>
   <script src="./auth.js"></script>
   <script src="./products.js"></script>
+  <script src="./gestao.js" defer></script>
   <script src="./operacional.js" defer></script>
 </body>
 </html>

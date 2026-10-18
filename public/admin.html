@@ -14,13 +14,13 @@
         <img class="brand-mark" src="./images/raizes-logo.svg" alt="">
         <div>
           <span class="d-block fw-bold">Raízes do Nordeste</span>
-          <small class="text-white-50">Administração</small>
+          <small class="text-white-50">Administração Geral</small>
         </div>
       </a>
       <div class="d-flex gap-2 flex-wrap align-items-center">
         <a class="btn btn-outline-light btn-sm" href="./index.html">Início</a>
         <a class="btn btn-outline-light btn-sm" href="./cliente.html">Cardápio</a>
-        <a class="btn btn-outline-light btn-sm" href="./operacional.html">Perfil da loja</a>
+        <a class="btn btn-outline-light btn-sm" href="./operacional.html">Painel da Loja</a>
         <div class="d-flex gap-2" id="shared-session-controls"></div>
       </div>
     </div>
@@ -30,158 +30,274 @@
     <div class="top-card mb-4">
       <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-md-center">
         <div>
-          <p class="text-uppercase text-success fw-bold small mb-1">Painel administrativo</p>
-          <h1 class="h2 mb-0">Controle de estoque e vendas</h1>
+          <p class="text-uppercase text-success fw-bold small mb-1">Painel Administrativo da Rede</p>
+          <h1 class="h2 mb-0">Gestão e Controle Operacional</h1>
         </div>
-        <span class="badge bg-success text-white px-3 py-2 rounded-pill">Operação online</span>
+        <span class="badge bg-success text-white px-3 py-2 rounded-pill">Perfil Administrativo</span>
       </div>
     </div>
 
-    <div class="row g-4 mb-4">
-      <div class="col-12">
-        <section class="card border-0 shadow-sm">
-          <div class="card-body p-4">
-            <p class="eyebrow">Sessão</p>
-            <h2 class="h4 mb-3">Perfil atual</h2>
-            <div id="admin-session-box" class="small text-muted">Nenhum usuário autenticado.</div>
-          </div>
-        </section>
-      </div>
+    <!-- Navegação por Módulos (Tabs) -->
+    <div class="module-nav-container mb-4" role="tablist">
+      <button type="button" class="module-nav-btn is-active" data-target-tab="tab-geral" role="tab">
+        <span>📊 Visão Geral da Rede</span>
+      </button>
+      <button type="button" class="module-nav-btn" data-target-tab="tab-produtos" role="tab">
+        <span>🍽️ Cadastro de Produtos</span>
+      </button>
+      <button type="button" class="module-nav-btn" data-target-tab="tab-estoque" role="tab">
+        <span>📦 Controle de Estoque</span>
+      </button>
+      <button type="button" class="module-nav-btn" data-target-tab="tab-financeiro" role="tab">
+        <span>💰 Contas a Pagar e Receber</span>
+      </button>
     </div>
 
-    <div class="row g-3 mb-4">
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Produtos</span>
-          <strong id="admin-total-produtos">0</strong>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Estoque</span>
-          <strong id="admin-total-estoque">0</strong>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Baixo estoque</span>
-          <strong id="admin-baixo-estoque">0</strong>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Faturamento</span>
-          <strong id="admin-faturamento">R$ 0</strong>
-        </div>
-      </div>
-    </div>
-
-    <div class="row g-3 mb-4">
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Franquias</span>
-          <strong id="admin-franquias">0</strong>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Pedidos</span>
-          <strong id="admin-pedidos">0</strong>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Regiões</span>
-          <strong id="admin-regioes">0</strong>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="mini-metric">
-          <span class="label">Ticket</span>
-          <strong id="admin-ticket">R$ 0</strong>
-        </div>
-      </div>
-    </div>
-
-    <div class="row g-4">
-      <div class="col-lg-8">
-        <section class="card border-0 shadow-sm">
-          <div class="card-body p-4">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <h2 class="h4 mb-0">Inventário</h2>
-              <button type="button" id="reload-admin" class="btn btn-sm btn-outline-success">Atualizar</button>
+    <!-- ── TAB 1: VISÃO GERAL ── -->
+    <div id="tab-geral" class="management-section is-active">
+      <div class="row g-4 mb-4">
+        <div class="col-12">
+          <section class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <p class="eyebrow">Sessão</p>
+              <h2 class="h4 mb-3">Perfil atual</h2>
+              <div id="admin-session-box" class="small text-muted">Nenhum usuário autenticado.</div>
             </div>
-            <div class="table-responsive">
-              <table class="table align-middle mb-0">
-                <thead class="table-light">
-                  <tr>
-                    <th>Produto</th>
-                    <th>Categoria</th>
-                    <th>Preço</th>
-                    <th>Estoque</th>
-                    <th>Status</th>
-                    <th>Foto</th>
-                  </tr>
-                </thead>
-                <tbody id="admin-inventory-body"></tbody>
-              </table>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
 
-      <div class="col-lg-4">
-        <section class="card border-0 shadow-sm h-100">
-          <div class="card-body p-4">
-            <h2 class="h4 mb-3">Adicionar produto</h2>
-            <form id="admin-product-form" class="row g-3">
-              <div class="col-12">
-                <label class="form-label fw-semibold">Nome</label>
-                <input class="form-control" name="nome" required>
-              </div>
-              <div class="col-12">
-                <label class="form-label fw-semibold">Categoria</label>
-                <select class="form-control" name="categoria" required>
-                  <option value="">Selecione a categoria</option>
-                  <option value="Lanches">Lanches</option>
-                  <option value="Pratos">Pratos</option>
-                  <option value="Bebidas">Bebidas</option>
-                  <option value="Sobremesas">Sobremesas</option>
-                  <option value="Ofertas">Ofertas</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label fw-semibold">Preço</label>
-                <input class="form-control" name="preco" type="number" min="0" step="0.01" required>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label fw-semibold">Estoque</label>
-                <input class="form-control" name="estoque" type="number" min="0" required>
-              </div>
-              <div class="col-12">
-                <label class="form-label fw-semibold" for="admin-product-image">Foto do produto (opcional)</label>
-                <input id="admin-product-image" class="form-control" name="imagem" type="file" accept="image/jpeg,image/png,image/webp">
-                <small class="text-muted">JPG, PNG ou WebP; até 8 MB. Sem foto, será usada uma ilustração original.</small>
-                <img id="admin-product-image-preview" class="product-upload-preview" alt="Prévia da foto do produto" hidden>
-              </div>
-              <div class="col-12">
-                <button class="btn btn-success w-100">Salvar item</button>
-              </div>
-            </form>
-            <div id="admin-feedback" class="small mt-3" aria-live="polite"></div>
+      <div class="row g-3 mb-4">
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Produtos</span>
+            <strong id="admin-total-produtos">0</strong>
           </div>
-        </section>
+        </div>
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Estoque</span>
+            <strong id="admin-total-estoque">0</strong>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Baixo estoque</span>
+            <strong id="admin-baixo-estoque">0</strong>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Faturamento</span>
+            <strong id="admin-faturamento">R$ 0</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Franquias</span>
+            <strong id="admin-franquias">0</strong>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Pedidos</span>
+            <strong id="admin-pedidos">0</strong>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Regiões</span>
+            <strong id="admin-regioes">0</strong>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="mini-metric">
+            <span class="label">Ticket Médio</span>
+            <strong id="admin-ticket">R$ 0</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <section class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="h4 mb-0">Inventário Rápido</h2>
+                <button type="button" id="reload-admin" class="btn btn-sm btn-outline-success">Atualizar</button>
+              </div>
+              <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Produto</th>
+                      <th>Categoria</th>
+                      <th>Preço</th>
+                      <th>Estoque</th>
+                      <th>Status</th>
+                      <th>Foto</th>
+                    </tr>
+                  </thead>
+                  <tbody id="admin-inventory-body"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="col-lg-4">
+          <section class="card border-0 shadow-sm h-100">
+            <div class="card-body p-4">
+              <h2 class="h4 mb-3">Adicionar produto rápido</h2>
+              <form id="admin-product-form" class="row g-3">
+                <div class="col-12">
+                  <label class="form-label fw-semibold" for="admin-quick-name">Nome</label>
+                  <input id="admin-quick-name" class="form-control" name="nome" placeholder="Ex: Tapioca de Carne de Sol" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-semibold" for="admin-quick-category">Categoria</label>
+                  <select id="admin-quick-category" class="form-control" name="categoria" title="Selecione a categoria" required>
+                    <option value="">Selecione a categoria</option>
+                    <option value="Lanches">Lanches</option>
+                    <option value="Pratos">Pratos</option>
+                    <option value="Bebidas">Bebidas</option>
+                    <option value="Sobremesas">Sobremesas</option>
+                    <option value="Ofertas">Ofertas</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold" for="admin-quick-price">Preço</label>
+                  <input id="admin-quick-price" class="form-control" name="preco" type="number" min="0" step="0.01" placeholder="0,00" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold" for="admin-quick-stock">Estoque</label>
+                  <input id="admin-quick-stock" class="form-control" name="estoque" type="number" min="0" placeholder="0" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-semibold" for="admin-product-image">Foto do produto (opcional)</label>
+                  <input id="admin-product-image" class="form-control" name="imagem" type="file" accept="image/jpeg,image/png,image/webp" title="Foto do produto">
+                  <small class="text-muted">JPG, PNG ou WebP; até 8 MB.</small>
+                  <img id="admin-product-image-preview" class="product-upload-preview" alt="Prévia da foto" hidden>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-success w-100">Salvar item</button>
+                </div>
+              </form>
+              <div id="admin-feedback" class="small mt-3" aria-live="polite"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-1">
+        <div class="col-12">
+          <section class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h2 class="h4 mb-3">Desempenho por região</h2>
+              <div id="region-summary" class="row g-3"></div>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
 
-    <div class="row g-4 mt-1">
-      <div class="col-12">
-        <section class="card border-0 shadow-sm">
-          <div class="card-body p-4">
-            <h2 class="h4 mb-3">Desempenho por região</h2>
-            <div id="region-summary" class="row g-3"></div>
+    <!-- ── TAB 2: CADASTRO DE PRODUTOS ── -->
+    <div id="tab-produtos" class="management-section">
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                <h2 class="h4 mb-0">Catálogo de Produtos Cadastrados</h2>
+                <div class="d-flex gap-2">
+                  <select id="catalog-category-select" class="form-control catalog-category-select" title="Filtrar por categoria">
+                    <option value="todas">Todas as categorias</option>
+                    <option value="Lanches">Lanches</option>
+                    <option value="Pratos">Pratos</option>
+                    <option value="Bebidas">Bebidas</option>
+                    <option value="Sobremesas">Sobremesas</option>
+                    <option value="Ofertas">Ofertas</option>
+                  </select>
+                  <input type="text" id="catalog-search-input" class="form-control catalog-search-input" placeholder="Buscar produto..." title="Buscar produto por nome">
+                </div>
+              </div>
+              <div class="table-responsive catalog-table-wrap">
+                <table class="table align-middle mb-0">
+                  <thead class="table-light sticky-top">
+                    <tr>
+                      <th>Produto</th>
+                      <th>Categoria</th>
+                      <th>Preço</th>
+                      <th>Estoque</th>
+                      <th>Foto</th>
+                      <th>Excluir</th>
+                    </tr>
+                  </thead>
+                  <tbody id="catalog-products-body"></tbody>
+                </table>
+              </div>
+            </div>
           </div>
-        </section>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h2 class="h4 mb-3">Cadastrar Novo Produto</h2>
+              <form id="admin-product-form-tab" class="row g-3">
+                <div class="col-12">
+                  <label class="form-label fw-semibold" for="admin-tab-product-name">Nome do Produto</label>
+                  <input id="admin-tab-product-name" class="form-control" name="nome" maxlength="120" required placeholder="Ex: Baião Cremoso com Queijo Coalho">
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-semibold" for="admin-tab-product-category">Categoria</label>
+                  <select id="admin-tab-product-category" class="form-control" name="categoria" title="Selecione a categoria" required>
+                    <option value="">Selecione a categoria</option>
+                    <option value="Lanches">Lanches</option>
+                    <option value="Pratos">Pratos</option>
+                    <option value="Bebidas">Bebidas</option>
+                    <option value="Sobremesas">Sobremesas</option>
+                    <option value="Ofertas">Ofertas</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold" for="admin-tab-product-price">Preço (R$)</label>
+                  <input id="admin-tab-product-price" class="form-control" name="preco" type="number" min="0" step="0.01" required placeholder="0,00">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold" for="admin-tab-product-stock">Estoque Inicial</label>
+                  <input id="admin-tab-product-stock" class="form-control" name="estoque" type="number" min="0" step="1" required placeholder="Ex: 50">
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-semibold" for="admin-tab-product-image">Foto do Produto (opcional)</label>
+                  <input id="admin-tab-product-image" class="form-control" name="imagem" type="file" accept="image/jpeg,image/png,image/webp" title="Foto do produto">
+                  <img id="admin-tab-product-image-preview" class="product-upload-preview mt-2" alt="Prévia" hidden>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-success w-100" type="submit">Salvar Produto no Catálogo</button>
+                </div>
+              </form>
+              <div id="admin-tab-product-feedback" class="small mt-3" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TAB 3: CONTROLE DE ESTOQUE ── -->
+    <div id="tab-estoque" class="management-section">
+      <div id="estoque-module-content">
+        <div class="card p-4 text-center text-muted">Carregando dados de estoque...</div>
+      </div>
+    </div>
+
+    <!-- ── TAB 4: CONTAS A PAGAR E RECEBER ── -->
+    <div id="tab-financeiro" class="management-section">
+      <div id="financeiro-module-content">
+        <div class="card p-4 text-center text-muted">Carregando dados financeiros...</div>
       </div>
     </div>
   </main>
@@ -189,6 +305,7 @@
   <script src="./config.js"></script>
   <script src="./auth.js"></script>
   <script src="./products.js"></script>
+  <script src="./gestao.js" defer></script>
   <script src="./admin.js" defer></script>
 </body>
 </html>

@@ -65,6 +65,31 @@ const schema = usePostgres
         id BIGSERIAL PRIMARY KEY, codigo TEXT NOT NULL UNIQUE, nome TEXT NOT NULL,
         cidade TEXT NOT NULL, estado TEXT NOT NULL, ativa INTEGER NOT NULL, criada_em TEXT NOT NULL
       )`,
+      `CREATE TABLE IF NOT EXISTS estoque_movimentacoes (
+        id BIGSERIAL PRIMARY KEY,
+        product_id BIGINT NOT NULL REFERENCES products(id) ON DELETE CASCADE,
+        tipo TEXT NOT NULL CHECK (tipo IN ('entrada','saida','ajuste')),
+        quantidade INTEGER NOT NULL,
+        estoque_anterior INTEGER NOT NULL,
+        estoque_novo INTEGER NOT NULL,
+        motivo TEXT NOT NULL,
+        usuario_nome TEXT NOT NULL,
+        criado_em TEXT NOT NULL
+      )`,
+      `CREATE TABLE IF NOT EXISTS financeiro_lancamentos (
+        id BIGSERIAL PRIMARY KEY,
+        tipo TEXT NOT NULL CHECK (tipo IN ('pagar','receber')),
+        titulo TEXT NOT NULL,
+        categoria TEXT NOT NULL,
+        valor DOUBLE PRECISION NOT NULL,
+        data_vencimento TEXT NOT NULL,
+        data_pagamento TEXT,
+        status TEXT NOT NULL CHECK (status IN ('pendente','pago')),
+        forma_pagamento TEXT NOT NULL DEFAULT 'Pix',
+        observacoes TEXT,
+        loja TEXT NOT NULL DEFAULT 'Loja Geral',
+        criado_em TEXT NOT NULL
+      )`,
     ]
   : [
       `CREATE TABLE IF NOT EXISTS users (
@@ -91,6 +116,31 @@ const schema = usePostgres
       `CREATE TABLE IF NOT EXISTS unidades (
         id INTEGER PRIMARY KEY AUTOINCREMENT, codigo TEXT NOT NULL UNIQUE, nome TEXT NOT NULL,
         cidade TEXT NOT NULL, estado TEXT NOT NULL, ativa INTEGER NOT NULL, criada_em TEXT NOT NULL
+      )`,
+      `CREATE TABLE IF NOT EXISTS estoque_movimentacoes (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        product_id INTEGER NOT NULL REFERENCES products(id) ON DELETE CASCADE,
+        tipo TEXT NOT NULL CHECK (tipo IN ('entrada','saida','ajuste')),
+        quantidade INTEGER NOT NULL,
+        estoque_anterior INTEGER NOT NULL,
+        estoque_novo INTEGER NOT NULL,
+        motivo TEXT NOT NULL,
+        usuario_nome TEXT NOT NULL,
+        criado_em TEXT NOT NULL
+      )`,
+      `CREATE TABLE IF NOT EXISTS financeiro_lancamentos (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tipo TEXT NOT NULL CHECK (tipo IN ('pagar','receber')),
+        titulo TEXT NOT NULL,
+        categoria TEXT NOT NULL,
+        valor REAL NOT NULL,
+        data_vencimento TEXT NOT NULL,
+        data_pagamento TEXT,
+        status TEXT NOT NULL CHECK (status IN ('pendente','pago')),
+        forma_pagamento TEXT NOT NULL DEFAULT 'Pix',
+        observacoes TEXT,
+        loja TEXT NOT NULL DEFAULT 'Loja Geral',
+        criado_em TEXT NOT NULL
       )`,
     ];
 
@@ -147,12 +197,12 @@ async function initializeDatabase() {
 
   if (process.env.NODE_ENV !== "production") {
     const seeds = [
-      ["RAIZES_DEV_ADMIN_EMAIL", "RAIZES_DEV_ADMIN_PASSWORD", "Administrador", "admin"],
-      ["RAIZES_DEV_STORE_EMAIL", "RAIZES_DEV_STORE_PASSWORD", "Equipe da loja", "loja"]
+      ["RAIZES_DEV_ADMIN_EMAIL", "RAIZES_DEV_ADMIN_PASSWORD", "Administrador", "admin", "admin@raizes.com", "admin12345678"],
+      ["RAIZES_DEV_STORE_EMAIL", "RAIZES_DEV_STORE_PASSWORD", "Equipe da loja", "loja", "loja@raizes.com", "loja12345678"]
     ];
-    for (const [emailKey, passwordKey, name, role] of seeds) {
-      const email = process.env[emailKey]?.trim().toLowerCase();
-      const password = process.env[passwordKey];
+    for (const [emailKey, passwordKey, name, role, defaultEmail, defaultPassword] of seeds) {
+      const email = process.env[emailKey]?.trim().toLowerCase() || (process.env.RAIZES_DB_PATH ? null : defaultEmail);
+      const password = process.env[passwordKey] || (process.env.RAIZES_DB_PATH ? null : defaultPassword);
       if (!email && !password) continue;
       if (!email || !password || password.length < 12) {
         throw new Error(`${emailKey} e ${passwordKey} devem estar definidos, com senha de ao menos 12 caracteres.`);
@@ -164,6 +214,43 @@ async function initializeDatabase() {
           [name, email, await bcrypt.hash(password, 12), role, new Date().toISOString()]
         );
       }
+    }
+  }
+
+  const financeiroCount = await rows("SELECT COUNT(*) AS count FROM financeiro_lancamentos");
+  if (Number(financeiroCount[0].count) === 0 && !process.env.RAIZES_DB_PATH) {
+    const hoje = new Date().toISOString().slice(0, 10);
+    const venc1 = new Date(Date.now() + 3 * 86400000).toISOString().slice(0, 10);
+    const venc2 = new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10);
+    const venc3 = new Date(Date.now() - 2 * 86400000).toISOString().slice(0, 10);
+    const venc4 = new Date(Date.now() + 14 * 86400000).toISOString().slice(0, 10);
+    const defaultFinanceiro = [
+      { tipo: "pagar", titulo: "Fornecedor Queijo de Coalho & Manteiga da Terra", categoria: "Ingredientes", valor: 1450.00, data_vencimento: venc1, data_pagamento: null, status: "pendente", forma_pagamento: "Boleto", observacoes: "Entrega semanal de laticínios regionais", loja: "Loja Centro" },
+      { tipo: "pagar", titulo: "Distribuidora de Carnes & Charque do Sertão", categoria: "Fornecedores", valor: 2380.00, data_vencimento: venc2, data_pagamento: null, status: "pendente", forma_pagamento: "Pix", observacoes: "Lote especial de carne de sol e carne seca", loja: "Loja Centro" },
+      { tipo: "pagar", titulo: "Energia Elétrica & Refrigeração das Câmaras", categoria: "Despesas Fixas", valor: 1120.50, data_vencimento: venc3, data_pagamento: venc3, status: "pago", forma_pagamento: "Débito", observacoes: "Conta mensal de energia", loja: "Loja Centro" },
+      { tipo: "pagar", titulo: "Embalagens Biodegradáveis para Delivery", categoria: "Insumos", valor: 690.00, data_vencimento: venc4, data_pagamento: null, status: "pendente", forma_pagamento: "Pix", observacoes: "Sacolas kraft e caixas térmicas", loja: "Loja Centro" },
+      { tipo: "receber", titulo: "Repasse Semanal Cartões e Maquininhas", categoria: "Vendas", valor: 5420.80, data_vencimento: venc3, data_pagamento: venc3, status: "pago", forma_pagamento: "Transferência", observacoes: "Vendas de balcão e salão", loja: "Loja Centro" },
+      { tipo: "receber", titulo: "Encomenda Coffee Break Corporativo", categoria: "Eventos", valor: 1850.00, data_vencimento: venc1, data_pagamento: null, status: "pendente", forma_pagamento: "Pix", observacoes: "Kit tapiocas, cuscuz e bolos regionais", loja: "Loja Centro" },
+      { tipo: "receber", titulo: "Repasse Delivery Aplicativo Parceiro", categoria: "Delivery", valor: 3190.00, data_vencimento: venc2, data_pagamento: null, status: "pendente", forma_pagamento: "Pix", observacoes: "Fechamento de pedidos online quinzenal", loja: "Loja Centro" }
+    ];
+    for (const item of defaultFinanceiro) {
+      await execute(
+        `INSERT INTO financeiro_lancamentos (tipo,titulo,categoria,valor,data_vencimento,data_pagamento,status,forma_pagamento,observacoes,loja,criado_em)
+         VALUES (?,?,?,?,?,?,?,?,?,?,?)`,
+        [item.tipo, item.titulo, item.categoria, item.valor, item.data_vencimento, item.data_pagamento, item.status, item.forma_pagamento, item.observacoes, item.loja, new Date().toISOString()]
+      );
+    }
+  }
+
+  const movimentacoesCount = await rows("SELECT COUNT(*) AS count FROM estoque_movimentacoes");
+  if (Number(movimentacoesCount[0].count) === 0 && !process.env.RAIZES_DB_PATH) {
+    const sampleProducts = await rows("SELECT id, nome, estoque FROM products LIMIT 3");
+    for (const p of sampleProducts) {
+      await execute(
+        `INSERT INTO estoque_movimentacoes (product_id, tipo, quantidade, estoque_anterior, estoque_novo, motivo, usuario_nome, criado_em)
+         VALUES (?,?,?,?,?,?,?,?)`,
+        [p.id, "entrada", 10, Math.max(0, p.estoque - 10), p.estoque, "Reabastecimento inicial", "Administrador", new Date().toISOString()]
+      );
     }
   }
 }
@@ -339,8 +426,191 @@ function createRateLimiter({ keyPrefix, points, duration }) {
   };
 }
 
+async function listStockMovements(limit = 100) {
+  const safeLimit = Math.min(Math.max(1, Number(limit) || 50), 200);
+  return rows(
+    `SELECT m.id, m.product_id, m.tipo, m.quantidade, m.estoque_anterior, m.estoque_novo,
+            m.motivo, m.usuario_nome, m.criado_em, p.nome AS produto_nome, p.categoria AS produto_categoria
+     FROM estoque_movimentacoes m
+     JOIN products p ON p.id = m.product_id
+     ORDER BY m.id DESC LIMIT ?`,
+    [safeLimit]
+  );
+}
+
+async function registerStockMovement({ productId, tipo, quantidade, motivo, usuarioNome }) {
+  const productRows = await rows("SELECT * FROM products WHERE id = ?", [productId]);
+  if (!productRows.length) {
+    const error = new Error("Produto não encontrado.");
+    error.status = 404;
+    throw error;
+  }
+  const product = productRows[0];
+  const estoqueAnterior = Number(product.estoque || 0);
+  const qtd = Math.max(0, parseInt(quantidade, 10));
+
+  let estoqueNovo = estoqueAnterior;
+  if (tipo === "entrada") {
+    estoqueNovo = estoqueAnterior + qtd;
+  } else if (tipo === "saida") {
+    estoqueNovo = Math.max(0, estoqueAnterior - qtd);
+  } else if (tipo === "ajuste") {
+    estoqueNovo = qtd;
+  } else {
+    const error = new Error("Tipo de movimentação inválido. Use 'entrada', 'saida' ou 'ajuste'.");
+    error.status = 400;
+    throw error;
+  }
+
+  await execute("UPDATE products SET estoque = ? WHERE id = ?", [estoqueNovo, productId]);
+  const createdAt = new Date().toISOString();
+  const insertResult = await execute(
+    `INSERT INTO estoque_movimentacoes (product_id, tipo, quantidade, estoque_anterior, estoque_novo, motivo, usuario_nome, criado_em)
+     VALUES (?,?,?,?,?,?,?,?)${usePostgres ? " RETURNING id" : ""}`,
+    [productId, tipo, qtd, estoqueAnterior, estoqueNovo, motivo || "Ajuste manual", usuarioNome || "Operador", createdAt]
+  );
+  const movementId = usePostgres ? insertResult.rows[0].id : insertResult.lastInsertRowid;
+  const movementRows = await rows(
+    `SELECT m.*, p.nome AS produto_nome, p.categoria AS produto_categoria
+     FROM estoque_movimentacoes m
+     JOIN products p ON p.id = m.product_id
+     WHERE m.id = ?`,
+    [movementId]
+  );
+  return {
+    product: mapProduct({ ...product, estoque: estoqueNovo }),
+    movement: movementRows[0]
+  };
+}
+
+async function getStockSummary() {
+  const products = (await rows("SELECT * FROM products ORDER BY nome ASC")).map(mapProduct);
+  const totalItens = products.reduce((acc, p) => acc + Number(p.estoque || 0), 0);
+  const valorTotal = products.reduce((acc, p) => acc + (Number(p.preco || 0) * Number(p.estoque || 0)), 0);
+  const criticos = products.filter((p) => Number(p.estoque || 0) <= 5);
+  const atencao = products.filter((p) => Number(p.estoque || 0) > 5 && Number(p.estoque || 0) <= 10);
+  const normais = products.filter((p) => Number(p.estoque || 0) > 10);
+
+  return {
+    totalProdutos: products.length,
+    totalItens,
+    valorTotal,
+    totalCriticos: criticos.length,
+    totalAtencao: atencao.length,
+    totalNormais: normais.length,
+    criticos,
+    products
+  };
+}
+
+async function listFinanceiro({ tipo, status, search, limit = 100 } = {}) {
+  const safeLimit = Math.min(Math.max(1, Number(limit) || 100), 500);
+  const conditions = [];
+  const params = [];
+
+  if (tipo && ["pagar", "receber"].includes(tipo)) {
+    conditions.push("tipo = ?");
+    params.push(tipo);
+  }
+  if (status && ["pendente", "pago"].includes(status)) {
+    conditions.push("status = ?");
+    params.push(status);
+  }
+  if (search && typeof search === "string" && search.trim()) {
+    conditions.push("(titulo LIKE ? OR categoria LIKE ? OR observacoes LIKE ?)");
+    const term = `%${search.trim()}%`;
+    params.push(term, term, term);
+  }
+
+  const whereClause = conditions.length ? `WHERE ${conditions.join(" AND ")}` : "";
+  params.push(safeLimit);
+
+  const entries = await rows(
+    `SELECT * FROM financeiro_lancamentos ${whereClause} ORDER BY data_vencimento ASC, id DESC LIMIT ?`,
+    params
+  );
+  return entries;
+}
+
+async function getFinanceiroSummary() {
+  const entries = await rows("SELECT * FROM financeiro_lancamentos");
+  let totalPagarPendente = 0;
+  let totalPagarPago = 0;
+  let totalReceberPendente = 0;
+  let totalReceberPago = 0;
+  let vencidosCount = 0;
+
+  const hoje = new Date().toISOString().slice(0, 10);
+
+  for (const item of entries) {
+    const val = Number(item.valor || 0);
+    if (item.tipo === "pagar") {
+      if (item.status === "pago") totalPagarPago += val;
+      else {
+        totalPagarPendente += val;
+        if (item.data_vencimento < hoje) vencidosCount += 1;
+      }
+    } else if (item.tipo === "receber") {
+      if (item.status === "pago") totalReceberPago += val;
+      else {
+        totalReceberPendente += val;
+        if (item.data_vencimento < hoje) vencidosCount += 1;
+      }
+    }
+  }
+
+  return {
+    totalPagarPendente,
+    totalPagarPago,
+    totalReceberPendente,
+    totalReceberPago,
+    saldoRealizado: totalReceberPago - totalPagarPago,
+    saldoProjetado: (totalReceberPago + totalReceberPendente) - (totalPagarPago + totalPagarPendente),
+    vencidosCount,
+    totalLancamentos: entries.length
+  };
+}
+
+async function createFinanceiroLancamento(data) {
+  const createdAt = new Date().toISOString();
+  const insertResult = await execute(
+    `INSERT INTO financeiro_lancamentos (tipo, titulo, categoria, valor, data_vencimento, data_pagamento, status, forma_pagamento, observacoes, loja, criado_em)
+     VALUES (?,?,?,?,?,?,?,?,?,?,?)${usePostgres ? " RETURNING id" : ""}`,
+    [
+      data.tipo,
+      data.titulo,
+      data.categoria,
+      data.valor,
+      data.dataVencimento,
+      data.dataPagamento || null,
+      data.status || "pendente",
+      data.formaPagamento || "Pix",
+      data.observacoes || "",
+      data.loja || "Loja Geral",
+      createdAt
+    ]
+  );
+  const id = usePostgres ? insertResult.rows[0].id : insertResult.lastInsertRowid;
+  const found = await rows("SELECT * FROM financeiro_lancamentos WHERE id = ?", [id]);
+  return found[0];
+}
+
+async function updateFinanceiroStatus(id, status, dataPagamento = null) {
+  const paymentDate = status === "pago" ? (dataPagamento || new Date().toISOString().slice(0, 10)) : null;
+  await execute(
+    "UPDATE financeiro_lancamentos SET status = ?, data_pagamento = ? WHERE id = ?",
+    [status, paymentDate, id]
+  );
+  const found = await rows("SELECT * FROM financeiro_lancamentos WHERE id = ?", [id]);
+  return found[0] || null;
+}
+
+async function deleteFinanceiroLancamento(id) {
+  return execute("DELETE FROM financeiro_lancamentos WHERE id = ?", [id]);
+}
+
 async function resetDatabase() {
-  for (const table of ["sessions", "orders", "users", "products", "unidades"]) await execute(`DELETE FROM ${table}`);
+  for (const table of ["sessions", "orders", "users", "products", "unidades", "estoque_movimentacoes", "financeiro_lancamentos"]) await execute(`DELETE FROM ${table}`);
   const products = await loadDefaultProducts();
   for (const product of products) {
     await execute(
@@ -356,12 +626,16 @@ async function closeDatabase() {
 }
 
 export {
-  closeDatabase, createOrder, createProduct, createRateLimiter, createSession, createUnidade, createUser,
-  deleteProduct, deleteSession, findSession, findUserByEmail, findUserById, listOrders,
-  listProducts, listUnidades, resetDatabase, updateOrderStatus, updateProduct, upsertProduct
+  closeDatabase, createFinanceiroLancamento, createOrder, createProduct, createRateLimiter, createSession,
+  createUnidade, createUser, deleteFinanceiroLancamento, deleteProduct, deleteSession, findSession,
+  findUserByEmail, findUserById, getFinanceiroSummary, getStockSummary, listFinanceiro, listOrders,
+  listProducts, listStockMovements, listUnidades, registerStockMovement, resetDatabase,
+  updateFinanceiroStatus, updateOrderStatus, updateProduct, upsertProduct
 };
 export default {
-  closeDatabase, createOrder, createProduct, createRateLimiter, createSession, createUnidade, createUser,
-  deleteProduct, deleteSession, findSession, findUserByEmail, findUserById, listOrders,
-  listProducts, listUnidades, resetDatabase, updateOrderStatus, updateProduct, upsertProduct
+  closeDatabase, createFinanceiroLancamento, createOrder, createProduct, createRateLimiter, createSession,
+  createUnidade, createUser, deleteFinanceiroLancamento, deleteProduct, deleteSession, findSession,
+  findUserByEmail, findUserById, getFinanceiroSummary, getStockSummary, listFinanceiro, listOrders,
+  listProducts, listStockMovements, listUnidades, registerStockMovement, resetDatabase,
+  updateFinanceiroStatus, updateOrderStatus, updateProduct, upsertProduct
 };

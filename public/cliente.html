@@ -23,7 +23,7 @@
       <div class="nav-links">
         <a class="btn btn-ghost btn-sm" href="./index.html">Home</a>
         <a class="btn btn-ghost btn-sm" href="./cliente.html">Cardápio</a>
-        <a class="btn btn-ghost btn-sm" href="./operacional.html">Lojas</a>
+        <a class="btn btn-ghost btn-sm staff-only-link" data-staff-only href="./operacional.html" hidden>Painel da Loja</a>
         <a class="btn btn-ghost btn-sm admin-only-link" data-admin-only href="./admin.html" hidden>Administração</a>
         <div class="nav-links" id="shared-session-controls"></div>
       </div>
@@ -48,17 +48,17 @@
         <div class="card-header">
           <div>
             <p class="eyebrow">Carrinho</p>
-            <h2 style="font-size:1rem;font-weight:700;color:var(--text);">Resumo da compra</h2>
+            <h2 class="card-title-medium">Resumo da compra</h2>
           </div>
           <button type="button" id="clear-cart" class="btn btn-ghost btn-sm">Limpar</button>
         </div>
         <div class="card-body">
 
           <!-- Opções de entrega e loja -->
-          <div class="grid grid-2 mb-2" style="gap:.75rem;margin-bottom:.75rem;">
-            <div class="form-group" style="margin-bottom:0;">
-              <label class="form-label">Região</label>
-              <select id="customer-region" class="form-control">
+          <div class="grid grid-2 mb-2 cart-options-grid">
+            <div class="form-group mb-0">
+              <label class="form-label" for="customer-region">Região</label>
+              <select id="customer-region" class="form-control" title="Selecionar região de entrega">
                 <option value="Sudeste">Sudeste</option>
                 <option value="Nordeste">Nordeste</option>
                 <option value="Sul">Sul</option>
@@ -66,22 +66,22 @@
                 <option value="Norte">Norte</option>
               </select>
             </div>
-            <div class="form-group" style="margin-bottom:0;">
-              <label class="form-label">Loja</label>
-              <select id="customer-store" class="form-control">
+            <div class="form-group mb-0">
+              <label class="form-label" for="customer-store">Loja</label>
+              <select id="customer-store" class="form-control" title="Selecionar unidade da loja">
                 <option value="Loja Centro">Loja Centro</option>
                 <option value="Loja Aeroporto">Loja Aeroporto</option>
                 <option value="Loja Shopping">Loja Shopping</option>
                 <option value="Loja Jardim">Loja Jardim</option>
               </select>
             </div>
-            <div class="form-group" style="margin-bottom:0;">
-              <label class="form-label">Endereço</label>
+            <div class="form-group mb-0">
+              <label class="form-label" for="delivery-address">Endereço</label>
               <input id="delivery-address" type="text" class="form-control" placeholder="Rua das Flores, 128">
             </div>
-            <div class="form-group" style="margin-bottom:0;">
-              <label class="form-label">Pagamento</label>
-              <select id="payment-method" class="form-control">
+            <div class="form-group mb-0">
+              <label class="form-label" for="payment-method">Pagamento</label>
+              <select id="payment-method" class="form-control" title="Selecionar forma de pagamento">
                 <option value="Pix">Pix</option>
                 <option value="Cartão">Cartão</option>
                 <option value="Dinheiro">Dinheiro</option>
@@ -90,7 +90,7 @@
           </div>
 
           <!-- Modo de pedido -->
-          <div class="order-mode-group mb-2" style="margin-bottom:.75rem;">
+          <div class="order-mode-group mb-2 order-mode-group-spacing">
             <label class="order-mode-chip">
               <input type="radio" name="order-mode" value="Delivery" checked>
              Delivery
@@ -112,7 +112,7 @@
             <span class="cart-total-label">Total</span>
             <span class="cart-total-value" id="cart-total">R$ 0,00</span>
           </div>
-          <button id="checkout-order" class="btn btn-amber mt-2" style="width:100%;justify-content:center;margin-top:.75rem;">Finalizar pedido →</button>
+          <button id="checkout-order" class="btn btn-amber mt-2 btn-full">Finalizar pedido →</button>
           <p id="checkout-login-notice" class="text-muted text-sm mt-2 mb-0" hidden>
             Você pode explorar o cardápio sem entrar. <a href="./login.html">Entre ou crie uma conta</a> para concluir a compra.
           </p>
@@ -122,11 +122,11 @@
     </div>
 
     <!-- ── Catálogo ── -->
-    <div class="card mb-3 animate-up" style="animation-delay:.15s">
-      <div class="card-header" style="flex-wrap:wrap;gap:.75rem;">
+    <div class="card mb-3 animate-up">
+      <div class="card-header flex-wrap gap-2">
         <div>
           <p class="eyebrow">Cardápio</p>
-          <h2 style="font-size:1rem;font-weight:700;color:var(--text);">Produtos disponíveis</h2>
+          <h2 class="card-title-medium">Produtos disponíveis</h2>
         </div>
         <div class="filter-bar" id="category-filter">
           <button class="filter-chip active" data-category="Todos" type="button">Todos</button>
@@ -144,11 +144,11 @@
     </div>
 
     <!-- ── Histórico de pedidos ── -->
-    <div class="card animate-up" id="order-history-section" style="animation-delay:.2s">
+    <div class="card animate-up" id="order-history-section">
       <div class="card-header">
         <div>
           <p class="eyebrow">Pedidos</p>
-          <h2 style="font-size:1rem;font-weight:700;color:var(--text);">Histórico de compras</h2>
+          <h2 class="card-title-medium">Histórico de compras</h2>
         </div>
       </div>
       <div class="card-body">

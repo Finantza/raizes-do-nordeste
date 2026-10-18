@@ -8,6 +8,8 @@ import unidadesRouter from "./routes/unidades.js";
 import authRouter from "./routes/auth.js";
 import productsRouter from "./routes/products.js";
 import ordersRouter from "./routes/orders.js";
+import estoqueRouter from "./routes/estoque.js";
+import financeiroRouter from "./routes/financeiro.js";
 
 const app = express();
 const currentDir = path.dirname(fileURLToPath(import.meta.url));
@@ -103,6 +105,8 @@ app.use("/api/auth", authRouter);
 app.use("/api/unidades", unidadesRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/orders", ordersRouter);
+app.use("/api/estoque", estoqueRouter);
+app.use("/api/financeiro", financeiroRouter);
 
 app.use((req, res) => {
   res.status(404).json({ erro: "Recurso não encontrado." });

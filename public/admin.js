@@ -245,9 +245,79 @@ productForm?.addEventListener("submit", async (event) => {
   }
 
   renderAdmin();
+  if (window.carregarModuloProdutos) window.carregarModuloProdutos();
+  if (window.carregarModuloEstoque) window.carregarModuloEstoque();
 });
 
-reloadButton?.addEventListener("click", renderAdmin);
+const tabProductForm = document.querySelector("#admin-product-form-tab");
+const tabProductImageInput = document.querySelector("#admin-tab-product-image");
+const tabProductImagePreview = document.querySelector("#admin-tab-product-image-preview");
+const tabFeedback = document.querySelector("#admin-tab-product-feedback");
+
+tabProductImageInput?.addEventListener("change", async () => {
+  const file = tabProductImageInput.files?.[0];
+  if (!file || !tabProductImagePreview) return;
+  try {
+    tabProductImagePreview.src = await window.prepareRaizesProductImage(file);
+    tabProductImagePreview.hidden = false;
+  } catch (error) {
+    tabProductImageInput.value = "";
+    if (tabFeedback) {
+      tabFeedback.textContent = error.message;
+      tabFeedback.className = "small mt-3 text-danger";
+    }
+  }
+});
+
+tabProductForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const formData = new FormData(tabProductForm);
+  const nome = String(formData.get("nome") || "").trim();
+  const categoria = String(formData.get("categoria") || "").trim();
+  const preco = Number(formData.get("preco"));
+  const estoque = Number(formData.get("estoque"));
+
+  if (!nome || !categoria || !Number.isFinite(preco) || preco < 0 || !Number.isInteger(estoque) || estoque < 0) {
+    if (tabFeedback) {
+      tabFeedback.textContent = "Informe nome, categoria, preço válido e estoque inteiro.";
+      tabFeedback.className = "small text-danger";
+    }
+    return;
+  }
+
+  try {
+    const imagem = await window.prepareRaizesProductImage(tabProductImageInput?.files?.[0]);
+    await window.raizesApiRequest("/products", {
+      method: "POST",
+      body: JSON.stringify({ nome, categoria, preco, estoque, offer: 0, imagem })
+    });
+    await window.reloadRaizesProducts();
+    tabProductForm.reset();
+    if (tabProductImagePreview) {
+      tabProductImagePreview.removeAttribute("src");
+      tabProductImagePreview.hidden = true;
+    }
+    if (tabFeedback) {
+      tabFeedback.textContent = "Produto cadastrado com sucesso no catálogo!";
+      tabFeedback.className = "small text-success";
+    }
+    renderAdmin();
+    if (window.carregarModuloProdutos) window.carregarModuloProdutos();
+    if (window.carregarModuloEstoque) window.carregarModuloEstoque();
+  } catch (error) {
+    if (tabFeedback) {
+      tabFeedback.textContent = error.message || "Não foi possível cadastrar o produto.";
+      tabFeedback.className = "small text-danger";
+    }
+  }
+});
+
+reloadButton?.addEventListener("click", () => {
+  renderAdmin();
+  if (window.carregarModuloProdutos) window.carregarModuloProdutos();
+  if (window.carregarModuloEstoque) window.carregarModuloEstoque();
+  if (window.carregarModuloFinanceiro) window.carregarModuloFinanceiro();
+});
 
 async function migrateLocalProducts() {
   const raw = localStorage.getItem("raizes-storefront-products");

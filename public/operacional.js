@@ -154,6 +154,8 @@ storeProductForm?.addEventListener("submit", async (event) => {
     if (storeProductImagePreview) storeProductImagePreview.hidden = true;
     setProductFeedback("Produto cadastrado com sucesso.", "text-success");
     renderStoreProducts();
+    if (window.carregarModuloProdutos) window.carregarModuloProdutos();
+    if (window.carregarModuloEstoque) window.carregarModuloEstoque();
   } catch (error) {
     setProductFeedback(error.message || "Não foi possível salvar o produto.", "text-danger");
   }
@@ -276,8 +278,9 @@ async function refreshStore() {
 
 refreshButton?.addEventListener("click", refreshStore);
 Promise.all([window.raizesAuthReady, window.raizesProductsReady]).then(async ([user]) => {
-  if (!user || user.role !== "loja") return;
+  if (!user || !["loja", "admin"].includes(user.role)) return;
   renderSessionStatus();
   renderTasks();
   await refreshStore();
+  if (window.carregarModuloProdutos) window.carregarModuloProdutos();
 }).catch((error) => console.error("Não foi possível inicializar a área operacional.", error));

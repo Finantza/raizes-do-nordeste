@@ -36,7 +36,7 @@
         <div class="card-header">
           <div>
             <p class="eyebrow">Login único</p>
-            <h2 style="font-size:1rem;font-weight:700;color:var(--text);">Use seu e-mail e senha</h2>
+            <h2 class="card-title-medium">Use seu e-mail e senha</h2>
           </div>
         </div>
         <div class="card-body">
@@ -49,7 +49,7 @@
               <label class="form-label" for="login-password">Senha</label>
               <input id="login-password" name="password" type="password" class="form-control" autocomplete="current-password" required>
             </div>
-            <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center;">Entrar</button>
+            <button class="btn btn-primary btn-full" type="submit">Entrar</button>
           </form>
           <div id="login-feedback" class="feedback" aria-live="polite"></div>
 
@@ -67,23 +67,37 @@
               <label class="form-label" for="register-password">Senha</label>
               <input id="register-password" name="password" type="password" class="form-control" autocomplete="new-password" minlength="8" maxlength="128" required>
             </div>
-            <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center;">Criar conta</button>
+            <button class="btn btn-primary btn-full" type="submit">Criar conta</button>
           </form>
-          <button id="toggle-register" class="btn btn-ghost mt-1" type="button" style="width:100%;justify-content:center;">Criar conta de cliente</button>
+          <button id="toggle-register" class="btn btn-ghost mt-1 btn-full" type="button">Criar conta de cliente</button>
           <p class="text-muted small mt-2">Novas contas são criadas com o perfil de cliente. A senha deve ter pelo menos 8 caracteres.</p>
         </div>
       </section>
 
       <section class="card">
         <div class="card-body">
-          <p class="eyebrow">Um acesso, sua área</p>
-          <h2 style="font-size:1.25rem;font-weight:700;color:var(--text);">O sistema identifica seu perfil</h2>
-          <p class="text-2 mt-2">Após entrar, você será direcionado automaticamente às funções disponíveis para cliente, administrador ou equipe da loja.</p>
-          <ul class="text-2 mt-2">
-            <li>Cliente: cardápio, carrinho e pedidos</li>
-            <li>Administrador: estoque e gestão da rede</li>
-            <li>Loja: operação, vendas e entregas</li>
+          <p class="eyebrow">Acesso e Perfis</p>
+          <h2 class="card-title-large">O sistema identifica seu perfil</h2>
+          <p class="text-2 mt-2">Após entrar, o sistema direciona automaticamente às áreas autorizadas de acordo com o nível de permissão:</p>
+          <ul class="text-2 mt-2 mb-3">
+            <li><strong>Administrador:</strong> Acesso total a cadastro de produtos, controle de estoque, contas a pagar e receber e visão geral da rede.</li>
+            <li><strong>Loja:</strong> Acesso operacional a cadastro de produtos, controle de estoque, contas a pagar e receber e fila de pedidos.</li>
+            <li><strong>Cliente:</strong> Cardápio, sacola e realização de pedidos (sem acesso aos módulos administrativos/internos).</li>
           </ul>
+
+          <div class="p-3 auth-demo-box">
+            <strong class="d-block mb-2 auth-demo-label">Contas de demonstração para teste:</strong>
+            <div class="d-flex flex-column gap-2">
+              <button type="button" class="btn btn-outline-light btn-sm justify-content-between auth-demo-btn" onclick="document.getElementById('login-email').value='admin@raizes.com';document.getElementById('login-password').value='admin12345678';">
+                <span>🛡️ <strong>Administrador</strong></span>
+                <small class="text-muted">admin@raizes.com</small>
+              </button>
+              <button type="button" class="btn btn-outline-light btn-sm justify-content-between auth-demo-btn" onclick="document.getElementById('login-email').value='loja@raizes.com';document.getElementById('login-password').value='loja12345678';">
+                <span>🏪 <strong>Perfil de Loja</strong></span>
+                <small class="text-muted">loja@raizes.com</small>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
