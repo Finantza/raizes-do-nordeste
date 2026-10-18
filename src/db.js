@@ -198,7 +198,8 @@ async function initializeDatabase() {
   if (process.env.NODE_ENV !== "production") {
     const seeds = [
       ["RAIZES_DEV_ADMIN_EMAIL", "RAIZES_DEV_ADMIN_PASSWORD", "Administrador", "admin", "admin@raizes.com", "admin12345678"],
-      ["RAIZES_DEV_STORE_EMAIL", "RAIZES_DEV_STORE_PASSWORD", "Equipe da loja", "loja", "loja@raizes.com", "loja12345678"]
+      ["RAIZES_DEV_STORE_EMAIL", "RAIZES_DEV_STORE_PASSWORD", "Equipe da loja", "loja", "loja@raizes.com", "loja12345678"],
+      ["RAIZES_DEV_CLIENT_EMAIL", "RAIZES_DEV_CLIENT_PASSWORD", "Cliente Teste", "cliente", "cliente@raizes.com", "cliente12345678"]
     ];
     for (const [emailKey, passwordKey, name, role, defaultEmail, defaultPassword] of seeds) {
       const email = process.env[emailKey]?.trim().toLowerCase() || (process.env.RAIZES_DB_PATH ? null : defaultEmail);

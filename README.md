@@ -9,6 +9,7 @@ Aplicação web didática para uma rede fictícia de lanchonetes. O projeto reú
 - [Requisitos e execução](#requisitos-e-execução)
 - [Identidade visual e página inicial](#identidade-visual-e-página-inicial)
 - [Perfis e funcionalidades](#perfis-e-funcionalidades)
+- [Usuários e credenciais de teste](#usuários-e-credenciais-de-teste)
 - [Configuração e arquitetura](#configuração-e-arquitetura)
 - [Como os dados são armazenados](#como-os-dados-são-armazenados)
 - [API de autenticação, produtos e pedidos](#api-de-autenticação-produtos-e-pedidos)
@@ -33,7 +34,7 @@ Copy-Item .env.example .env
 node -p "require('node:crypto').randomBytes(48).toString('base64url')"
 ```
 
-Copie o resultado aleatório para `RAIZES_SESSION_SECRET` no `.env`. Defina também `RAIZES_DEV_ADMIN_EMAIL`/`RAIZES_DEV_ADMIN_PASSWORD` e `RAIZES_DEV_STORE_EMAIL`/`RAIZES_DEV_STORE_PASSWORD` para criar contas de teste locais. Não reutilize essas senhas em produção.
+Copie o resultado aleatório para `RAIZES_SESSION_SECRET` no `.env`. As contas de teste padrão já vêm pré-configuradas no banco local de desenvolvimento (veja [Usuários e credenciais de teste](#usuários-e-credenciais-de-teste)), ou você pode definir `RAIZES_DEV_ADMIN_*`, `RAIZES_DEV_STORE_*` e `RAIZES_DEV_CLIENT_*` caso queira customizá-las. Não reutilize essas senhas em produção.
 
 ```bash
 npm ci
@@ -70,7 +71,22 @@ O fluxo normal começa na página inicial. A navegação leva ao cardápio, ao a
 - **Sessão e perfis** ([`public/auth.js`](public/auth.js)): consulta `/api/auth/me`; o cookie de sessão é `HttpOnly`, `Secure` e `SameSite=Lax`. As decisões de autorização são repetidas no backend.
 - **Catálogo** ([`public/products.js`](public/products.js)): mantém os 100 produtos iniciais para exibição offline e carrega o catálogo persistido da API quando disponível.
 
-O cadastro público cria somente perfis de cliente. Contas administrativas e de loja são semeadas a partir das variáveis `RAIZES_DEV_ADMIN_*` e `RAIZES_DEV_STORE_*`, somente fora de produção. Nenhuma senha demonstrativa é embutida no frontend ou no repositório.
+O cadastro público cria novos perfis de cliente. Contas de administrador, loja e cliente demonstrativo são gerenciadas via banco de dados ou semeadas em desenvolvimento a partir das credenciais padrão e das variáveis `RAIZES_DEV_*`.
+
+## Usuários e credenciais de teste
+
+Para facilitar a exploração e os testes das três áreas da aplicação em ambiente de desenvolvimento, o sistema conta com os seguintes perfis e credenciais pré-configurados:
+
+| Perfil | E-mail / Usuário | Senha | Área de Acesso | Funcionalidades Principais |
+|---|---|---|---|---|
+| **Administrador** | `admin@raizes.com` | `admin12345678` | [`public/admin.html`](public/admin.html) | Visão executiva completa: métricas de faturamento e ticket médio, catálogo geral, cadastro de novos itens, controle de estoque (entradas/saídas/perdas) e módulo financeiro de contas a pagar e receber |
+| **Loja (Operacional)** | `loja@raizes.com` | `loja12345678` | [`public/operacional.html`](public/operacional.html) | Painel operacional: fila de pedidos em tempo real, atualização de status de pedidos (*Recebido*, *Em preparo*, *Pronto*, *Em rota*, *Entregue*, *Cancelado*), gestão de estoque e finanças |
+| **Cliente** | `cliente@raizes.com` | `cliente12345678` | [`public/cliente.html`](public/cliente.html) | Cardápio visual com filtros, sacola de compras, cálculo automático de pedidos e histórico de pedidos da conta *(também é possível cadastrar novos clientes)* |
+
+> **Preenchimento Rápido no Login:** Na tela [`public/login.html`](public/login.html), você encontra botões de atalho de demonstração para carregar os dados de **Administrador** (`admin@raizes.com`), **Perfil de Loja** (`loja@raizes.com`) e **Cliente** (`cliente@raizes.com`) com apenas um clique.
+>
+> **Personalização das credenciais:** Caso deseje utilizar credenciais personalizadas, configure as variáveis `RAIZES_DEV_ADMIN_EMAIL`/`RAIZES_DEV_ADMIN_PASSWORD`, `RAIZES_DEV_STORE_EMAIL`/`RAIZES_DEV_STORE_PASSWORD` e `RAIZES_DEV_CLIENT_EMAIL`/`RAIZES_DEV_CLIENT_PASSWORD` no arquivo `.env` (as senhas devem conter no mínimo 12 caracteres).
+
 
 ## Configuração e arquitetura
 
@@ -87,6 +103,7 @@ Configuração do processo Node:
 | `RAIZES_API_ADMIN_TOKEN` | Token Bearer legado para cadastro de unidades; pelo menos 32 bytes | Não definido |
 | `RAIZES_DEV_ADMIN_EMAIL` / `RAIZES_DEV_ADMIN_PASSWORD` | Semeia um administrador somente em desenvolvimento; senha de pelo menos 12 caracteres | Não definido |
 | `RAIZES_DEV_STORE_EMAIL` / `RAIZES_DEV_STORE_PASSWORD` | Semeia uma conta de loja somente em desenvolvimento; senha de pelo menos 12 caracteres | Não definido |
+| `RAIZES_DEV_CLIENT_EMAIL` / `RAIZES_DEV_CLIENT_PASSWORD` | Semeia um cliente somente em desenvolvimento; senha de pelo menos 12 caracteres | Não definido |
 | `RAIZES_CORS_ORIGINS` | Origens extras, separadas por vírgula, que podem acessar a API com credenciais | Sem origens extras |
 
 `public/config.js` define a URL-base da API para a origem atual. Para hospedar o frontend separadamente, defina `window.__APP_CONFIG__.apiBaseUrl` antes dele e inclua a origem do frontend em `RAIZES_CORS_ORIGINS`. O GitHub Pages não executa o backend; login, pedidos e gerenciamento requerem uma API Express acessível.
@@ -239,8 +256,8 @@ Os testes usam `node:test` e Supertest para verificar cabeçalhos/CSP, cadastro 
 
 Roteiro manual complementar:
 
-1. Defina credenciais de desenvolvimento em `.env` para `RAIZES_DEV_ADMIN_*` e `RAIZES_DEV_STORE_*` (senhas com no mínimo 12 caracteres); inicie o servidor e abra <http://localhost:3000>.
-2. Registre um cliente, faça login e confira a criação do pedido e o histórico. Teste também as contas de administrador e loja sem compartilhar as senhas.
+1. Inicie o servidor e abra <http://localhost:3000>. Você pode usar as credenciais padrão de teste (`admin@raizes.com`, `loja@raizes.com` ou `cliente@raizes.com`) ou definir credenciais personalizadas em `.env` para `RAIZES_DEV_*` (senhas com no mínimo 12 caracteres).
+2. Faça login com o cliente de teste (`cliente@raizes.com` / `cliente12345678`) ou registre um novo cliente, confira a criação de pedido e o histórico. Teste também a navegação e permissões dos painéis de Administrador e Loja.
 3. Em cada painel, confirme que a sessão aparece e que **Sair** encerra a sessão.
 4. Tente abrir diretamente um painel sem sessão ou com perfil incorreto; o navegador deve redirecionar e a API deve responder `401`/`403`.
 5. Na página inicial, confira a marca, a paleta, o carrossel, controles e imagens; verifique o layout em tela estreita e com preferência por movimento reduzido.
