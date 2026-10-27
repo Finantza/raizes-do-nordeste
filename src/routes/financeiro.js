@@ -13,10 +13,12 @@ function validateLancamento(body) {
   const categoria = typeof body?.categoria === "string" ? body.categoria.trim() : "Geral";
   const valor = Number(body?.valor);
   const dataVencimento = typeof body?.dataVencimento === "string" ? body.dataVencimento.trim() : "";
-  const dataPagamento = typeof body?.dataPagamento === "string" && body.dataPagamento.trim() ? body.dataPagamento.trim() : null;
   const status = typeof body?.status === "string" && ["pendente", "pago"].includes(body.status.trim().toLowerCase())
     ? body.status.trim().toLowerCase()
     : "pendente";
+  const dataPagamento = typeof body?.dataPagamento === "string" && body.dataPagamento.trim()
+    ? body.dataPagamento.trim()
+    : (status === "pago" ? new Date().toISOString().slice(0, 10) : null);
   const formaPagamento = typeof body?.formaPagamento === "string" ? body.formaPagamento.trim() : "Pix";
   const observacoes = typeof body?.observacoes === "string" ? body.observacoes.trim() : "";
   const loja = typeof body?.loja === "string" ? body.loja.trim() : "Loja Geral";

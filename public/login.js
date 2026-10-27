@@ -58,6 +58,15 @@ registerForm.addEventListener("submit", async (event) => {
   }
 });
 
+document.querySelectorAll(".auth-demo-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const emailInput = document.querySelector("#login-email");
+    const passwordInput = document.querySelector("#login-password");
+    if (emailInput && btn.dataset.demoEmail) emailInput.value = btn.dataset.demoEmail;
+    if (passwordInput && btn.dataset.demoPassword) passwordInput.value = btn.dataset.demoPassword;
+  });
+});
+
 window.raizesAuthReady.then((user) => {
   if (user) window.location.replace(getDashboardPath(user.role) || "./cliente.html");
 });

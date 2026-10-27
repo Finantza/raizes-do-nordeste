@@ -355,4 +355,5 @@ Promise.all([window.raizesAuthReady, window.raizesProductsReady]).then(async ([u
     }
   }
   renderAdmin();
+  if (window.carregarModuloProdutos) window.carregarModuloProdutos();
 }).catch((error) => console.error("Não foi possível inicializar o painel administrativo.", error));

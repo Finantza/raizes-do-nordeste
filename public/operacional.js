@@ -269,7 +269,7 @@ async function refreshStore() {
   try {
     orders = await window.raizesApiRequest("/orders");
     await window.reloadRaizesProducts();
-    renderStoreProducts();
+    if (window.carregarModuloProdutos) window.carregarModuloProdutos();
     renderStore();
   } catch (error) {
     setProductFeedback(error.message || "Não foi possível carregar os dados operacionais.", "text-danger");
