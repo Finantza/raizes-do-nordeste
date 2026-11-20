@@ -25,11 +25,19 @@ router.get("/movimentacoes", async (req, res, next) => {
   }
 });
 
+function toStrictNumber(val) {
+  if (typeof val === "number") return val;
+  if (typeof val === "string" && val.trim() !== "") return Number(val);
+  return NaN;
+}
+
 router.post("/movimentacao", async (req, res, next) => {
-  const productId = Number(req.body?.productId);
+  const productId = toStrictNumber(req.body?.productId);
   const tipo = typeof req.body?.tipo === "string" ? req.body.tipo.trim().toLowerCase() : "";
-  const quantidade = Number(req.body?.quantidade);
-  const motivo = typeof req.body?.motivo === "string" ? req.body.motivo.trim() : "Ajuste manual";
+  const quantidade = toStrictNumber(req.body?.quantidade);
+  const motivo = (typeof req.body?.motivo === "string"
+    ? req.body.motivo.replace(/[\u0000-\u001F\u007F]+/g, " ").trim()
+    : "") || "Ajuste manual";
 
   if (!Number.isSafeInteger(productId) || productId < 1) {
     return res.status(400).json({ erro: "Identificador de produto inválido." });
@@ -37,8 +45,9 @@ router.post("/movimentacao", async (req, res, next) => {
   if (!["entrada", "saida", "ajuste"].includes(tipo)) {
     return res.status(400).json({ erro: "Tipo de movimentação deve ser 'entrada', 'saida' ou 'ajuste'." });
   }
-  if (!Number.isInteger(quantidade) || quantidade < 0 || quantidade > 100000) {
-    return res.status(400).json({ erro: "Quantidade deve ser um número inteiro não negativo até 100.000." });
+  const minQty = tipo === "ajuste" ? 0 : 1;
+  if (!Number.isInteger(quantidade) || quantidade < minQty || quantidade > 100000) {
+    return res.status(400).json({ erro: `Quantidade deve ser um número inteiro de ${minQty} até 100.000.` });
   }
   if (motivo.length > 255 || /[<>]/.test(motivo)) {
     return res.status(400).json({ erro: "Motivo com caracteres inválidos ou muito longo." });

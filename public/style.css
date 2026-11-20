@@ -1,9 +1,7 @@
-/* ============================================================
-   RAÍZES DO NORDESTE — Design System v2
-   Paleta: areia, terracota, amarelo-sol e verde-cacto
-   ============================================================ */
+/* Raízes do Nordeste - Estilos da aplicação
+   Paleta: areia, terracota, amarelo-sol e verde-cacto */
 
-/* ── Tokens ─────────────────────────────────────────────────── */
+/* Variáveis de cor e espaçamento */
 :root {
   --bg:           #fff8ec;
   --bg-2:         #f7eddd;
@@ -53,7 +51,7 @@
   --transition-slow: all 0.4s cubic-bezier(0.4,0,0.2,1);
 }
 
-/* ── Reset & Base ────────────────────────────────────────────── */
+/* Reset e base */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
@@ -76,7 +74,7 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--brand); }
 
-/* ── Navbar ──────────────────────────────────────────────────── */
+/* Navegação */
 .navbar {
   position: sticky;
   top: 0;
@@ -135,7 +133,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* ── Botões ──────────────────────────────────────────────────── */
+/* Botões */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -199,7 +197,7 @@ body {
 
 .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
 
-/* ── Cards ───────────────────────────────────────────────────── */
+/* Cartões */
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -220,7 +218,7 @@ body {
   gap: 1rem;
 }
 
-/* ── KPI / Metric cards ───────────────────────────────────────── */
+/* Indicadores */
 .metric-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -266,7 +264,7 @@ body {
   color: var(--text-3);
 }
 
-/* ── Hero ─────────────────────────────────────────────────────── */
+/* Destaque principal */
 .hero {
   position: relative;
   overflow: hidden;
@@ -362,7 +360,7 @@ body {
 }
 .hero-stat-label { font-size: 0.75rem; color: var(--text-3); font-weight: 500; }
 
-/* ── Showcase card (hero right) ───────────────────────────────── */
+/* Cartão de destaque */
 .showcase-card {
   background: rgba(255,253,248,0.84);
   -webkit-backdrop-filter: blur(12px);
@@ -397,7 +395,7 @@ body {
 .price-box strong { font-size: 2rem; font-weight: 900; color: var(--amber); }
 .price-box del { color: var(--text-3); font-size: 0.95rem; }
 
-/* ── Section layout ───────────────────────────────────────────── */
+/* Seções */
 .section { padding: 3.5rem 0; }
 .section-inner { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
 
@@ -417,7 +415,7 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* ── Category cards ────────────────────────────────────────────── */
+/* Categorias */
 .categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
 
 .category-card {
@@ -444,7 +442,7 @@ body {
 .category-name { font-size: 1rem; font-weight: 700; color: var(--text); }
 .category-desc { font-size: 0.8rem; color: var(--text-3); }
 
-/* ── Product cards ─────────────────────────────────────────────── */
+/* Produtos */
 .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; }
 .products-grid-sm { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
 .catalog-category + .catalog-category { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
@@ -582,7 +580,7 @@ body {
 .product-price del { font-size: 0.8rem; color: var(--text-3); }
 .product-meta { font-size: 0.75rem; color: var(--text-3); margin-bottom: 0.75rem; }
 
-/* ── Filter chips ──────────────────────────────────────────────── */
+/* Filtros */
 .filter-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 
 .filter-chip {
@@ -602,7 +600,7 @@ body {
 .filter-chip:hover { background: var(--surface-3); color: var(--text); border-color: var(--brand); }
 .filter-chip.active { background: var(--brand); color: #fff; border-color: var(--brand); }
 
-/* ── Forms ─────────────────────────────────────────────────────── */
+/* Formulários */
 .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
 .form-group:last-child { margin-bottom: 0; }
 
@@ -637,7 +635,7 @@ select.form-control {
   cursor: pointer;
 }
 
-/* ── Table ─────────────────────────────────────────────────────── */
+/* Tabelas */
 .table-wrap { overflow-x: auto; }
 .table-light { background: var(--surface-2); }
 .table-light th { color: var(--text-2); }
@@ -665,7 +663,7 @@ tbody tr:hover { background: var(--surface-2); }
 
 tbody td { padding: 0.85rem 1rem; font-size: 0.875rem; color: var(--text); vertical-align: middle; }
 
-/* ── Status pills ──────────────────────────────────────────────── */
+/* Etiquetas de status */
 .pill {
   display: inline-flex;
   align-items: center;
@@ -684,7 +682,7 @@ tbody td { padding: 0.85rem 1rem; font-size: 0.875rem; color: var(--text); verti
 .pill-info    { background: var(--info-soft);     color: var(--info); }
 .pill-muted   { background: rgba(91,54,36,0.06); color: var(--text-3); }
 
-/* ── Progress bar ──────────────────────────────────────────────── */
+/* Barra de progresso */
 .progress {
   height: 6px;
   background: var(--surface-3);
@@ -702,7 +700,7 @@ tbody td { padding: 0.85rem 1rem; font-size: 0.875rem; color: var(--text); verti
 .progress-bar.amber { background: linear-gradient(90deg, var(--amber-dark), var(--amber)); }
 .progress-bar.danger { background: linear-gradient(90deg, #b03a3a, var(--danger)); }
 
-/* ── Task / Route items ────────────────────────────────────────── */
+/* Tarefas e rotas */
 .task-item {
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -715,7 +713,7 @@ tbody td { padding: 0.85rem 1rem; font-size: 0.875rem; color: var(--text); verti
 .task-title { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
 .task-detail { font-size: 0.8rem; color: var(--text-3); margin-bottom: 0.6rem; }
 
-/* ── Cart ──────────────────────────────────────────────────────── */
+/* Carrinho */
 .cart-item {
   display: flex;
   align-items: center;
@@ -749,7 +747,7 @@ tbody td { padding: 0.85rem 1rem; font-size: 0.875rem; color: var(--text); verti
 .cart-total-label { font-size: 0.85rem; font-weight: 600; color: var(--text-2); }
 .cart-total-value { font-size: 1.3rem; font-weight: 900; color: var(--amber); }
 
-/* ── Order mode chips ──────────────────────────────────────────── */
+/* Modos de atendimento */
 .order-mode-group { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 
 .order-mode-chip {
@@ -787,7 +785,7 @@ tbody td { padding: 0.85rem 1rem; font-size: 0.875rem; color: var(--text); verti
   outline-offset: 2px;
 }
 
-/* ── Region cards ──────────────────────────────────────────────── */
+/* Cartões por região */
 .region-card {
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -801,7 +799,7 @@ tbody td { padding: 0.85rem 1rem; font-size: 0.875rem; color: var(--text); verti
 .region-card p { font-size: 0.8rem; color: var(--text-3); margin-bottom: 0.25rem; }
 .region-card .value { font-size: 1rem; font-weight: 700; color: var(--brand-light); }
 
-/* ── Store info card ───────────────────────────────────────────── */
+/* Dados da loja */
 .store-info-card {
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -813,7 +811,7 @@ tbody td { padding: 0.85rem 1rem; font-size: 0.875rem; color: var(--text); verti
 .store-info-card li { font-size: 0.8rem; color: var(--text-3); display: flex; align-items: center; gap: 0.5rem; }
 .store-info-card li::before { content: '›'; color: var(--brand-light); }
 
-/* ── Session box ───────────────────────────────────────────────── */
+/* Sessão */
 .session-box {
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -824,7 +822,7 @@ tbody td { padding: 0.85rem 1rem; font-size: 0.875rem; color: var(--text); verti
 .session-user-name { font-weight: 700; color: var(--text); display: block; }
 .session-user-email { color: var(--text-3); font-size: 0.78rem; }
 
-/* ── Feedback / alert ──────────────────────────────────────────── */
+/* Mensagens e alertas */
 .feedback { min-height: 20px; font-size: 0.82rem; font-weight: 500; margin-top: 0.5rem; }
 .feedback.success { color: var(--success); }
 .feedback.danger  { color: var(--danger);  }
@@ -840,14 +838,14 @@ tbody td { padding: 0.85rem 1rem; font-size: 0.875rem; color: var(--text); verti
   color: var(--text-2);
 }
 
-/* ── Page shell ─────────────────────────────────────────────────── */
+/* Estrutura da página */
 .page-shell {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
 }
 
-/* ── Top card (page header) ────────────────────────────────────── */
+/* Cabeçalho das páginas internas */
 .page-header {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -877,7 +875,7 @@ tbody td { padding: 0.85rem 1rem; font-size: 0.875rem; color: var(--text); verti
   letter-spacing: -0.01em;
 }
 
-/* ── Grid utilities ─────────────────────────────────────────────── */
+/* Utilitários de grid */
 .grid { display: grid; gap: 1.25rem; }
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
@@ -888,20 +886,20 @@ tbody td { padding: 0.85rem 1rem; font-size: 0.875rem; color: var(--text); verti
 @media (max-width: 900px)  { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px)  { .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr; } }
 
-/* ── Flex utilities ─────────────────────────────────────────────── */
+/* Utilitários flex */
 .flex { display: flex; }
 .flex-center { display: flex; align-items: center; }
 .flex-between { display: flex; justify-content: space-between; align-items: center; }
 .gap-1 { gap: 0.5rem; } .gap-2 { gap: 1rem; } .gap-3 { gap: 1.5rem; }
 .flex-wrap { flex-wrap: wrap; }
 
-/* ── Spacing ─────────────────────────────────────────────────────── */
+/* Espaçamento */
 .mb-1 { margin-bottom: 0.5rem; }  .mb-2 { margin-bottom: 1rem; }
 .mb-3 { margin-bottom: 1.5rem; } .mb-4 { margin-bottom: 2rem; }
 .mt-1 { margin-top: 0.5rem; }    .mt-2 { margin-top: 1rem; }
 .mt-3 { margin-top: 1.5rem; }    .mt-4 { margin-top: 2rem; }
 
-/* ── Text ─────────────────────────────────────────────────────────── */
+/* Tipografia */
 .text-muted  { color: var(--text-3); }
 .text-2      { color: var(--text-2); }
 .text-brand  { color: var(--brand-light); }
@@ -914,7 +912,7 @@ tbody td { padding: 0.85rem 1rem; font-size: 0.875rem; color: var(--text); verti
 .fw-700      { font-weight: 700; }
 .fw-800      { font-weight: 800; }
 
-/* ── Footer ──────────────────────────────────────────────────────── */
+/* Rodapé */
 footer {
   background: var(--surface);
   border-top: 1px solid var(--border);
@@ -934,7 +932,7 @@ footer {
   color: var(--text-3);
 }
 
-/* ── Animations ──────────────────────────────────────────────────── */
+/* Animações */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -959,7 +957,7 @@ footer {
 .animate-up:nth-child(4) { animation-delay: 0.20s; }
 .animate-up:nth-child(5) { animation-delay: 0.25s; }
 
-/* ── Demo hint box ───────────────────────────────────────────────── */
+/* Caixa de aviso */
 .demo-hint {
   background: var(--amber-soft);
   border: 1px solid rgba(201,130,23,0.24);
@@ -970,13 +968,13 @@ footer {
   margin-top: 0.75rem;
 }
 
-/* ── Loading state ───────────────────────────────────────────────── */
+/* Estado de carregamento */
 .loading { animation: pulse 1.4s ease infinite; }
 
-/* ── Divider ─────────────────────────────────────────────────────── */
+/* Divisor */
 .divider { height: 1px; background: var(--border); margin: 1.25rem 0; }
 
-/* ── Checkout summary ─────────────────────────────────────────────── */
+/* Resumo de pedido */
 .checkout-row {
   display: flex;
   justify-content: space-between;
@@ -986,7 +984,7 @@ footer {
 }
 .checkout-row strong { color: var(--text); }
 
-/* ── Responsive layouts ───────────────────────────────────────── */
+/* Ajustes responsivos */
 .navbar .container {
   display: flex;
   align-items: center;
@@ -1487,7 +1485,7 @@ footer {
   .featured-section .products-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
-/* ── Gestão Interna (Produtos, Estoque e Financeiro) ───────────── */
+/* Gestão interna (produtos, estoque e financeiro) */
 .module-nav-container {
   display: flex;
   gap: 0.5rem;

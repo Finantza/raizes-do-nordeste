@@ -7,11 +7,23 @@ const router = Router();
 // Acesso restrito apenas aos perfis administrativo (admin) e loja
 router.use(requireAuth, requireRole("admin", "loja"));
 
+function toStrictNumber(val) {
+  if (typeof val === "number") return val;
+  if (typeof val === "string" && val.trim() !== "") return Number(val);
+  return NaN;
+}
+
+function isValidIsoDate(str) {
+  if (typeof str !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(str)) return false;
+  const date = new Date(`${str}T00:00:00.000Z`);
+  return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === str;
+}
+
 function validateLancamento(body) {
   const tipo = typeof body?.tipo === "string" ? body.tipo.trim().toLowerCase() : "";
-  const titulo = typeof body?.titulo === "string" ? body.titulo.trim() : "";
-  const categoria = typeof body?.categoria === "string" ? body.categoria.trim() : "Geral";
-  const valor = Number(body?.valor);
+  const titulo = typeof body?.titulo === "string" ? body.titulo.replace(/[\u0000-\u001F\u007F]+/g, " ").trim() : "";
+  const categoria = (typeof body?.categoria === "string" ? body.categoria.replace(/[\u0000-\u001F\u007F]+/g, " ").trim() : "") || "Geral";
+  const valor = toStrictNumber(body?.valor);
   const dataVencimento = typeof body?.dataVencimento === "string" ? body.dataVencimento.trim() : "";
   const status = typeof body?.status === "string" && ["pendente", "pago"].includes(body.status.trim().toLowerCase())
     ? body.status.trim().toLowerCase()
@@ -19,16 +31,17 @@ function validateLancamento(body) {
   const dataPagamento = typeof body?.dataPagamento === "string" && body.dataPagamento.trim()
     ? body.dataPagamento.trim()
     : (status === "pago" ? new Date().toISOString().slice(0, 10) : null);
-  const formaPagamento = typeof body?.formaPagamento === "string" ? body.formaPagamento.trim() : "Pix";
-  const observacoes = typeof body?.observacoes === "string" ? body.observacoes.trim() : "";
-  const loja = typeof body?.loja === "string" ? body.loja.trim() : "Loja Geral";
+  const formaPagamento = (typeof body?.formaPagamento === "string" ? body.formaPagamento.replace(/[\u0000-\u001F\u007F]+/g, " ").trim() : "") || "Pix";
+  const observacoes = typeof body?.observacoes === "string" ? body.observacoes.replace(/[\u0000-\u001F\u007F]+/g, " ").trim() : "";
+  const loja = (typeof body?.loja === "string" ? body.loja.replace(/[\u0000-\u001F\u007F]+/g, " ").trim() : "") || "Loja Geral";
 
   if (!["pagar", "receber"].includes(tipo)) return null;
   if (!titulo || titulo.length > 150 || /[<>]/.test(titulo)) return null;
   if (categoria.length > 80 || /[<>]/.test(categoria)) return null;
   if (!Number.isFinite(valor) || valor <= 0 || valor > 10000000) return null;
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(dataVencimento)) return null;
-  if (dataPagamento && !/^\d{4}-\d{2}-\d{2}$/.test(dataPagamento)) return null;
+  if (!isValidIsoDate(dataVencimento)) return null;
+  if (dataPagamento && !isValidIsoDate(dataPagamento)) return null;
+  if (formaPagamento.length > 60 || /[<>]/.test(formaPagamento)) return null;
   if (observacoes.length > 500 || /[<>]/.test(observacoes)) return null;
   if (loja.length > 100 || /[<>]/.test(loja)) return null;
 
@@ -82,9 +95,7 @@ router.post("/", async (req, res, next) => {
 router.patch("/:id/status", async (req, res, next) => {
   const id = Number(req.params.id);
   const status = typeof req.body?.status === "string" ? req.body.status.trim().toLowerCase() : "";
-  const dataPagamento = typeof req.body?.dataPagamento === "string" && /^\d{4}-\d{2}-\d{2}$/.test(req.body.dataPagamento)
-    ? req.body.dataPagamento
-    : null;
+  const rawDataPagamento = typeof req.body?.dataPagamento === "string" ? req.body.dataPagamento.trim() : "";
 
   if (!Number.isSafeInteger(id) || id < 1) {
     return res.status(400).json({ erro: "Identificador inválido." });
@@ -92,6 +103,10 @@ router.patch("/:id/status", async (req, res, next) => {
   if (!["pendente", "pago"].includes(status)) {
     return res.status(400).json({ erro: "Status deve ser 'pendente' ou 'pago'." });
   }
+  if (rawDataPagamento && !isValidIsoDate(rawDataPagamento)) {
+    return res.status(400).json({ erro: "Data de pagamento inválida." });
+  }
+  const dataPagamento = rawDataPagamento || null;
 
   try {
     const updated = await db.updateFinanceiroStatus(id, status, dataPagamento);

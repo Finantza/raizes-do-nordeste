@@ -37,11 +37,12 @@ app.use(helmet({
 }));
 
 app.use((req, _res, next) => {
-  const cookies = {};
+  const cookies = Object.create(null);
   for (const part of (req.headers.cookie || "").split(";")) {
     const separator = part.indexOf("=");
     if (separator < 0) continue;
     const name = part.slice(0, separator).trim();
+    if (!name || name === "__proto__" || name === "constructor" || name === "prototype") continue;
     try {
       cookies[name] = decodeURIComponent(part.slice(separator + 1).trim());
     } catch {
@@ -113,6 +114,9 @@ app.use((req, res) => {
 });
 
 app.use((error, _req, res, _next) => {
+  if (error?.type === "entity.too.large" || error?.status === 413) {
+    return res.status(413).json({ erro: "O corpo da requisição excede o limite permitido." });
+  }
   if (error instanceof SyntaxError && "body" in error) {
     return res.status(400).json({ erro: "JSON inválido." });
   }

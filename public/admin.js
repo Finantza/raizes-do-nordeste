@@ -1,4 +1,4 @@
-// admin.js — Painel administrativo: inventário, métricas e gestão de produtos.
+// Painel administrativo: inventário, métricas e gestão de produtos.
 const adminSessionBox = document.querySelector("#admin-session-box");
 const inventoryBody = document.querySelector("#admin-inventory-body");
 const totalProdutos = document.querySelector("#admin-total-produtos");
@@ -312,12 +312,23 @@ tabProductForm?.addEventListener("submit", async (event) => {
   }
 });
 
-reloadButton?.addEventListener("click", () => {
+reloadButton?.addEventListener("click", async () => {
+  try {
+    const [, freshOrders] = await Promise.all([
+      window.reloadRaizesProducts(),
+      window.raizesApiRequest("/orders")
+    ]);
+    orders = freshOrders;
+  } catch (error) {
+    console.error("Erro ao recarregar dados administrativos:", error);
+  }
   renderAdmin();
   if (window.carregarModuloProdutos) window.carregarModuloProdutos();
   if (window.carregarModuloEstoque) window.carregarModuloEstoque();
   if (window.carregarModuloFinanceiro) window.carregarModuloFinanceiro();
 });
+
+window.renderAdmin = renderAdmin;
 
 async function migrateLocalProducts() {
   const raw = localStorage.getItem("raizes-storefront-products");

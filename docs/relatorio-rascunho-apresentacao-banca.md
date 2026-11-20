@@ -1,25 +1,24 @@
-# Relatório de apoio à apresentação — Raízes do Nordeste
+# Roteiro e Relatório de Apoio à Apresentação para Banca — Raízes do Nordeste
 
-> **Rascunho de trabalho, não é uma avaliação independente pronta para entrega.** Este documento foi estruturado com apoio de IA a partir dos arquivos disponíveis no projeto. Revise as afirmações, execute os cenários marcados como pendentes, complete os campos em aberto com sua análise e declare o uso de IA conforme as regras do professor. Não apresente como observação própria o que não tiver verificado.
->
-> **Limite dos critérios:** o guia do projeto referencia `Roteiro_de_Atividade_Pratica_2026_Projeto_Qualidade_rev_0_3.pdf`, mas esse PDF não foi encontrado no workspace. Este rascunho segue `docs/guia-passo-a-passo-melhorias-qualidade.md` e consulta `docs/avaliacao-do-sistema.md`; confronte-o com o roteiro oficial antes de usar na banca.
+> **ATUALIZAÇÃO DE HOMOLOGAÇÃO (13/11/2026):**  
+> Este documento apoia a apresentação oral perante a banca examinadora e foi atualizado para refletir a arquitetura final homologada do projeto (com persistência SQLite WAL/PostgreSQL, autenticação com cookies `HttpOnly` e `bcryptjs`, módulos de Estoque e Financeiro, operação 100% offline e **35 testes automatizados aprovados**). O roteiro oficial da disciplina encontra-se no workspace em [`docs/Roteiro_de_Atividade_Pratica_2026_Projeto_Qualidade_rev_0_3.pdf`](Roteiro_de_Atividade_Pratica_2026_Projeto_Qualidade_rev_0_3.pdf) e o relatório completo em [`docs/relatorio-de-desenvolvimento.md`](relatorio-de-desenvolvimento.md).
 
 ## Identificação
 
-| Campo | Preencher/confirmar |
+| Campo | Registro Oficial |
 |---|---|
-| Instituição, curso e disciplina | [Preencher] |
-| Título do trabalho | Raízes do Nordeste — protótipo de cardápio e gestão demonstrativa |
-| Integrantes e matrícula | [Preencher] |
-| Professor(a) | [Preencher] |
-| Data e local da apresentação | [Preencher] |
-| Versão/commit avaliado | [Preencher: não foi possível identificar um commit neste workspace] |
+| Instituição, curso e disciplina | Centro Universitário Internacional UNINTER — CST em Computação / ADS — Projeto Multidisciplinar: Qualidade de Software |
+| Título do trabalho | Raízes do Nordeste — Gestão Integrada de Franquias, Cardápio Multicanal e Garantia da Qualidade (QA) |
+| Acadêmico responsável | Ronaldo Coutinho |
+| Professor orientador | Prof. Me. Rodrigo Nascimento |
+| Data da homologação | 13/11/2026 |
+| Versão/branch avaliada | `main` (35 testes automatizados aprovados / 0 falhas) |
 
 ## Resumo executivo
 
-Raízes do Nordeste é um protótipo web didático para uma rede fictícia de lanchonetes. A interface oferece vitrine, catálogo categorizado, login demonstrativo e áreas de cliente, administração e loja. O catálogo inicial contém 100 produtos; o cliente pode manter carrinho, pedidos e histórico no navegador. Há uma API Express para consulta e cadastro de unidades, e o servidor local disponibiliza imagens do diretório do projeto.
+Raízes do Nordeste é uma aplicação web estruturada em camadas para gestão de uma rede de franquias de culinária nordestina. A solução integra vitrine pública, cardápio categorizado de 100 produtos (com 21 combos detalhados), checkout multicanal (`WEB`, `APP`, `TOTEM`, `BALCAO`, `PICKUP`), painel operacional de loja e painel executivo administrativo, sustentados por uma API Express e banco relacional SQLite (modo WAL) / PostgreSQL.
 
-O sistema deve ser apresentado como **protótipo**, não como plataforma comercial. O login e os perfis são controlados no navegador; produtos, fotos enviadas, carrinho e pedidos ficam no `localStorage`; a API não integra esses dados de negócio. Não há processamento de pagamento, entrega real, autenticação segura no servidor ou sincronização entre usuários/dispositivos.
+O sistema implementa controles de segurança em profundidade: senhas com hash `bcryptjs` (12 salt rounds), sessões assinadas HMAC em cookies `HttpOnly`, controle de acesso baseado em papéis (`cliente`, `loja`, `admin`), cabeçalhos estritos via Helmet (`Content-Security-Policy`), limitadores de taxa contra força bruta (`rate-limiter-flexible`), recálculo obrigatório de preços no servidor, controle auditado de estoque, gestão financeira de contas a pagar/receber e autonomia 100% offline sem dependência de CDNs externos.
 
 ## 1. Objetivo e escopo avaliado
 

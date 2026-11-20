@@ -67,10 +67,16 @@
               <label class="form-label" for="register-password">Senha</label>
               <input id="register-password" name="password" type="password" class="form-control" autocomplete="new-password" minlength="8" maxlength="128" required>
             </div>
+            <div class="form-group">
+              <label class="d-flex align-items-start gap-2 small text-2" for="register-lgpd-consent">
+                <input id="register-lgpd-consent" name="lgpdConsent" type="checkbox" required checked>
+                <span>Concordo com o tratamento dos meus dados (nome e e-mail) exclusivamente para autenticação, emissão e entrega de pedidos, conforme a <strong>LGPD (Lei nº 13.709/2018)</strong>.</span>
+              </label>
+            </div>
             <button class="btn btn-primary btn-full" type="submit">Criar conta</button>
           </form>
           <button id="toggle-register" class="btn btn-ghost mt-1 btn-full" type="button">Criar conta de cliente</button>
-          <p class="text-muted small mt-2">Novas contas são criadas com o perfil de cliente. A senha deve ter pelo menos 8 caracteres.</p>
+          <p class="text-muted small mt-2">Novas contas são criadas com o perfil de cliente. A senha deve ter pelo menos 8 caracteres. Seus dados são protegidos com criptografia e minimização (LGPD).</p>
         </div>
       </section>
 
@@ -107,6 +113,7 @@
     </div>
   </main>
 
+  <script src="./config.js"></script>
   <script src="./auth.js"></script>
   <script src="./login.js" defer></script>
 </body>

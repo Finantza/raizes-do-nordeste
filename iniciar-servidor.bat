@@ -3,18 +3,31 @@ setlocal
 
 cd /d "%~dp0"
 
+set "NODE_CMD=node"
 where node >nul 2>nul
 if errorlevel 1 (
-  echo Node.js nao encontrado. Instale o Node.js 20 ou superior e tente novamente.
-  pause
-  exit /b 1
-)
-
-where npm >nul 2>nul
-if errorlevel 1 (
-  echo npm nao encontrado. Reinstale o Node.js com npm incluido e tente novamente.
-  pause
-  exit /b 1
+  if exist "%ProgramFiles%\nodejs\node.exe" (
+    set "PATH=%ProgramFiles%\nodejs;%PATH%"
+  ) else (
+    for /d %%D in ("%LOCALAPPDATA%\Programs\*") do (
+      if exist "%%~fD\resources\app" (
+        for %%E in ("%%~fD\*.exe") do (
+          if /i not "%%~nxE"=="unins000.exe" (
+            set "ELECTRON_RUN_AS_NODE=1"
+            set "NODE_CMD=""%%~fE"""
+          )
+        )
+      )
+    )
+  )
+  if "%NODE_CMD%"=="node" (
+    where node >nul 2>nul
+    if errorlevel 1 (
+      echo Node.js nao encontrado. Instale o Node.js 20 ou superior e tente novamente.
+      pause
+      exit /b 1
+    )
+  )
 )
 
 if not exist "node_modules" (
@@ -28,7 +41,7 @@ if not exist "node_modules" (
 )
 
 echo Iniciando o servidor Raizes do Nordeste...
-start "Raizes do Nordeste - servidor" cmd /k "cd /d ""%~dp0"" && npm start"
+start "Raizes do Nordeste - servidor" cmd /k "cd /d ""%~dp0"" && set ELECTRON_RUN_AS_NODE=%ELECTRON_RUN_AS_NODE% && %NODE_CMD% src/server.js"
 
 echo Aguardando o servidor em http://localhost:3000 ...
 powershell -NoProfile -ExecutionPolicy Bypass -Command "$limite = (Get-Date).AddSeconds(30); do { try { $resposta = Invoke-WebRequest -Uri 'http://localhost:3000/api/health' -UseBasicParsing -TimeoutSec 2; if ($resposta.StatusCode -eq 200) { exit 0 } } catch { Start-Sleep -Milliseconds 500 } } while ((Get-Date) -lt $limite); exit 1"

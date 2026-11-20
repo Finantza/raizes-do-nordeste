@@ -1,19 +1,18 @@
-// gestao.js — Módulos de Controle de Estoque, Contas a Pagar e Receber, e Cadastro de Produtos.
-// Disponível exclusivamente para perfis autenticados de Loja e Administração.
+// Módulos de estoque, financeiro e catálogo de produtos (perfis loja e admin).
 
 (function () {
   const formatMoney = (val) =>
     new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(Number(val || 0));
 
   const formatDate = (isoStr) => {
-    if (!isoStr) return "—";
+    if (!isoStr) return "-";
     const parts = isoStr.split("T")[0].split("-");
     if (parts.length === 3) return `${parts[2]}/${parts[1]}/${parts[0]}`;
     return isoStr;
   };
 
   const formatDateTime = (isoStr) => {
-    if (!isoStr) return "—";
+    if (!isoStr) return "-";
     const d = new Date(isoStr);
     return isNaN(d) ? isoStr : d.toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
   };
@@ -27,9 +26,7 @@
       .replace(/'/g, "&#39;");
   };
 
-  // ─────────────────────────────────────────────────────────────
-  // SISTEMA DE ABAS (TABS)
-  // ─────────────────────────────────────────────────────────────
+  // Navegação por abas
   function setupTabs() {
     const tabButtons = document.querySelectorAll(".module-nav-btn[data-target-tab]");
     const tabSections = document.querySelectorAll(".management-section");
@@ -46,7 +43,6 @@
         const targetSec = document.getElementById(targetId);
         if (targetSec) targetSec.classList.add("is-active");
 
-        // Dispara recarregamento do módulo correspondente
         if (targetId === "tab-estoque") window.carregarModuloEstoque?.();
         if (targetId === "tab-financeiro") window.carregarModuloFinanceiro?.();
         if (targetId === "tab-produtos") window.carregarModuloProdutos?.();
@@ -54,9 +50,7 @@
     });
   }
 
-  // ─────────────────────────────────────────────────────────────
-  // MÓDULO 1: CONTROLE DE ESTOQUE
-  // ─────────────────────────────────────────────────────────────
+  // Controle de estoque
   let stockData = null;
   let stockMovements = [];
   let stockFilter = "todos";
@@ -208,7 +202,7 @@
                 </div>
                 <div class="col-md-6">
                   <label class="form-label" for="stock-input-quantidade">Quantidade</label>
-                  <input type="number" class="form-control" name="quantidade" id="stock-input-quantidade" min="1" step="1" required placeholder="Ex: 10" title="Quantidade">
+                  <input type="number" class="form-control" name="quantidade" id="stock-input-quantidade" min="0" step="1" required placeholder="Ex: 10" title="Quantidade">
                 </div>
                 <div class="col-12">
                   <label class="form-label" for="stock-input-motivo">Motivo / Justificativa</label>
@@ -327,7 +321,8 @@
         motivo: String(formData.get("motivo") || "").trim()
       };
 
-      if (!payload.productId || !payload.tipo || !payload.quantidade || payload.quantidade <= 0) {
+      const minQty = payload.tipo === "ajuste" ? 0 : 1;
+      if (!payload.productId || !payload.tipo || !Number.isInteger(payload.quantidade) || payload.quantidade < minQty) {
         if (feedback) {
           feedback.textContent = "Preencha todos os campos com valores válidos.";
           feedback.className = "small mt-2 text-danger";
@@ -342,6 +337,7 @@
           body: JSON.stringify(payload)
         });
         if (window.reloadRaizesProducts) await window.reloadRaizesProducts();
+        if (window.renderAdmin) window.renderAdmin();
         if (feedback) {
           feedback.textContent = "Movimentação registrada com sucesso!";
           feedback.className = "small mt-2 text-success";
@@ -357,9 +353,7 @@
     });
   }
 
-  // ─────────────────────────────────────────────────────────────
-  // MÓDULO 2: CONTAS A PAGAR E RECEBER (FINANCEIRO)
-  // ─────────────────────────────────────────────────────────────
+  // Contas a pagar e receber (financeiro)
   let financeiroResumo = null;
   let financeiroLancamentos = [];
   let finFilterTipo = "todos"; // todos, pagar, receber
@@ -696,9 +690,7 @@
     });
   }
 
-  // ─────────────────────────────────────────────────────────────
-  // MÓDULO 3: CADASTRO E GERENCIAMENTO DE PRODUTOS
-  // ─────────────────────────────────────────────────────────────
+  // Cadastro e gerenciamento de produtos
   let productCatalogSearch = "";
   let productCatalogCategory = "todas";
 
@@ -757,6 +749,7 @@
         try {
           await window.raizesApiRequest(`/products/${id}`, { method: "DELETE" });
           if (window.reloadRaizesProducts) await window.reloadRaizesProducts();
+          if (window.renderAdmin) window.renderAdmin();
           renderProdutosCatalogUI();
           if (window.carregarModuloEstoque) await window.carregarModuloEstoque();
         } catch (error) {

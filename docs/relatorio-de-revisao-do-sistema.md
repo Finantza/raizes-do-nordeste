@@ -1,9 +1,9 @@
 # Relatório Técnico de Revisão da Garantia da Qualidade de Software
-## Projeto Multidisciplinar — Trilha: Qualidade de Software (Rede "Raízes do Nordeste")
+## Projeto Multidisciplinar - Trilha: Qualidade de Software (Rede "Raízes do Nordeste")
 
 **Instituição:** Centro Universitário Internacional UNINTER  
 **Curso:** Superior de Tecnologia / Bacharelado em Computação  
-**Disciplina:** Projeto Multidisciplinar — Qualidade de Software  
+**Disciplina:** Projeto Multidisciplinar - Qualidade de Software  
 **Docente:** Prof. Me. Rodrigo Nascimento  
 **Ano de Referência:** 2026  
 **Sistema Avaliado:** Rede "Raízes do Nordeste" (Gestão de Franquias, Cardápio e Pedidos Multicanal)  
@@ -13,10 +13,10 @@
 
 ## 1. Identificação e Resumo Executivo
 
-O presente documento consolida a **Revisão Sistemática da Garantia da Qualidade de Software (QA)** do sistema da rede alimentícia **"Raízes do Nordeste"**. O projeto tem como finalidade padronizar a experiência de pedidos, gerenciar produtos e unidades franqueadas, e fornecer canais consistentes de atendimento ao cliente com rastreabilidade operacional.
+Este documento apresenta a **Revisão da Garantia da Qualidade de Software (QA)** do sistema da rede **"Raízes do Nordeste"**. O projeto organiza o fluxo de pedidos, o catálogo de produtos, o controle de unidades franqueadas e os módulos internos de estoque e financeiro.
 
 ### Parecer Executivo de Qualidade
-O sistema foi auditado em sua integridade arquitetural, comportamental e documental. A suíte de testes automatizados conta com **18 testes executados e 100% aprovados** (`0 falhas`), cobrindo desde cabeçalhos estritos de segurança HTTP (CSP, X-Frame-Options, No-Sniff), persistência relacional ACID em SQLite/PostgreSQL, integridade de catálogo de 100 itens com resolução determinística de imagens e proteção de rotas por perfis de autorização com autenticação persistente via sessão de servidor e hash seguro de senhas (`bcryptjs`).
+O sistema foi verificado quanto à arquitetura, regras de negócio, funcionamento offline, casos de borda e documentação. A suíte de testes automatizados conta com **35 testes executados e 100% aprovados** (`0 falhas`) em 5 suítes (`app.test.js`, `gestao.test.js`, `offline.test.js`, `products.test.js` e `faults.test.js`), cobrindo cabeçalhos HTTP de segurança (CSP, X-Frame-Options, No-Sniff), persistência relacional em SQLite (modo WAL) e PostgreSQL, catálogo de 100 produtos com imagens locais, autenticação com sessão assinada e hash `bcryptjs` (12 salt rounds), controle de estoque e financeiro, bloqueio de XSS/coerção de tipos e operação 100% offline.
 
 ---
 
@@ -48,11 +48,11 @@ A arquitetura do sistema adota o padrão em camadas desacopladas (*Controller / 
 
 ```mermaid
 graph TD
-    Client[Clientes Multicanal: WEB, APP, TOTEM, BALCAO] -->|HTTPS + Cookies HttpOnly| ReverseProxy[Express App + Helmet + RateLimiters]
-    ReverseProxy -->|Roteamento Seguro| Routes[src/routes: auth, products, orders, unidades]
-    Routes -->|Validação e Regras de Negócio| Logic[Cálculo de Preços, Permissões RBAC, Sanitização]
-    Logic -->|Abstração SQL Parametrizada| DB[(src/db.js: SQLite WAL / PostgreSQL)]
-    Logic -->|Simulação de Pagamento Mock| MockPay[Gateway Simulado Idempotente]
+    Client["Clientes Multicanal: WEB, APP, TOTEM, BALCAO, PICKUP"] -->|HTTPS + Cookies HttpOnly| ReverseProxy["Express App + Helmet CSP + RateLimiters"]
+    ReverseProxy -->|Roteamento Seguro| Routes["src/routes: auth, products, orders, unidades, estoque, financeiro"]
+    Routes -->|Validação Estrita e Regras de Negócio| Logic["Cálculo de Preços, Permissões RBAC, Sanitização Anti-XSS, Datas ISO"]
+    Logic -->|Abstração SQL Parametrizada| DB[("src/db.js: SQLite WAL / PostgreSQL")]
+    Logic -->|Simulação de Pagamento Mock| MockPay["Checkout Multicanal Simulado e Idempotente"]
 ```
 
 ### Atributos de Qualidade Atendidos:
@@ -123,12 +123,15 @@ Abaixo está documentada a rastreabilidade completa e comprovada pela suíte aut
 | **RF-05** | CT-10 | Tentativa de escalonamento de privilégio na migração de conta. | Não permite autoatribuição de perfis `admin` ou `loja`. | `✔ deve migrar contas antigas sem aceitar papéis privilegiados do navegador (1529.6ms)` |
 | **RF-05** | CT-11 | Tentativa de login com senha incorreta. | Rejeição com HTTP 401 e sem vazamento de detalhes. | `✔ deve rejeitar credenciais inválidas (3097.5ms)` |
 | **RF-06** | CT-12 | Tentativas reiteradas de login para testar força bruta. | Bloqueio temporário com HTTP 429 Too Many Requests. | `✔ deve limitar o login a cinco tentativas em quinze minutos por IP (7340.7ms)` |
-| **RF-07** | CT-13 | Criação de produtos restrita a perfis autorizados. | Clientes recebem HTTP 403; Admin/Loja recebem HTTP 201. | `✔ deve exigir sessão e papel autorizado para criar produtos (3908.2ms)` |
-| **RF-08** | CT-14 | Sanitização de dados de entrada contra XSS/HTML Injection. | Tags HTML em nomes de produtos são neutralizadas. | `✔ deve validar dados de produto contra marcação executável (161.5ms)` |
-| **RNF-01**| CT-15 | Verificação de cabeçalhos de segurança obrigatórios. | Presença de CSP, X-Frame-Options, No-Sniff, Referrer. | `✔ deve incluir headers básicos de segurança (229.7ms)` |
-| **RNF-02**| CT-16 | Persistência de dados e reabertura de conexão. | Unidades gravadas continuam legíveis após fechar/reabrir. | `✔ deve conservar unidades no arquivo SQLite após reabrir a conexão (81.8ms)` |
-| **RNF-03**| CT-17 | Serviço estático de arquivos de mídia autorizados. | Imagens de produto servidas com MIME type correto. | `✔ deve servir imagens de produto da pasta src/imagens (198.8ms)` |
-| **RNF-04**| CT-18 | Mesclagem de catálogo personalizado sem perda de dados. | Preservação de customizações do lojista local. | `✔ a migração inclui o catálogo novo sem perder alterações ou produtos personalizados (2.0ms)` |
+| **RF-07** | CT-13 | Criação de produtos restrita a perfis autorizados. | Clientes recebem HTTP 403; Admin/Loja recebem HTTP 201. | `✔ deve exigir sessão e papel autorizado para criar produtos` |
+| **RF-08** | CT-14 | Sanitização de dados de entrada contra XSS/HTML Injection. | Tags HTML em nomes de produtos são neutralizadas. | `✔ deve validar dados de produto contra marcação executável` |
+| **RF-09** | CT-15 a CT-19 | Controle de estoque e gestão financeira (contas a pagar/receber) com RBAC. | Apenas `admin` e `loja` consultam e movimentam estoque/finanças. | `✔ 5/5 testes aprovados em src/gestao.test.js` |
+| **RNF-01**| CT-15 | Verificação de cabeçalhos de segurança obrigatórios. | Presença de CSP, X-Frame-Options, No-Sniff, Referrer. | `✔ deve incluir headers básicos de segurança` |
+| **RNF-02**| CT-16 | Persistência de dados e reabertura de conexão. | Unidades gravadas continuam legíveis após fechar/reabrir. | `✔ deve conservar unidades no arquivo SQLite após reabrir a conexão` |
+| **RNF-03**| CT-17 | Serviço estático de arquivos de mídia autorizados. | Imagens de produto servidas com MIME type correto. | `✔ deve servir imagens de produto da pasta src/imagens` |
+| **RNF-04**| CT-18 | Mesclagem de catálogo personalizado sem perda de dados. | Preservação de customizações do lojista local. | `✔ a migração inclui o catálogo novo sem perder alterações ou produtos personalizados` |
+| **RNF-05**| CT-20 a CT-25 | Autonomia 100% offline sem CDNs externos e paridade de preços. | HTML/CSS/JS locais, 100 fotos no disco e fallback SQLite. | `✔ 6/6 testes aprovados em src/offline.test.js` |
+| **RNF-06**| CT-30 a CT-35 | Testes de falhas, bordas, coerção de tipos, datas falsas, LGPD e multicanalidade. | Rejeição de payloads maliciosos/inválidos (`400`/`401`/`403`/`404`/`409`). | `✔ 6/6 testes aprovados em src/faults.test.js` |
 
 ---
 
@@ -136,12 +139,12 @@ Abaixo está documentada a rastreabilidade completa e comprovada pela suíte aut
 
 | Métrica / Indicador | Meta Estabelecida (SLA/SLO) | Resultado Obtido na Revisão | Avaliação |
 |---|---|---|---|
-| **Taxa de Defeitos Críticos** | ≤ 2% em testes de release | 0% (0 defeitos críticos nos 18 testes) | **Meta Atingida** |
-| **Cobertura de Testes das Rotas Críticas** | ≥ 80% dos fluxos principais | 100% dos fluxos de Auth, Pedidos e Unidades testados | **Meta Atingida** |
+| **Taxa de Defeitos Críticos** | ≤ 2% em testes de release | 0% (0 defeitos críticos nos 35 testes) | **Meta Atingida** |
+| **Cobertura de Testes das Rotas Críticas** | ≥ 80% dos fluxos principais | 100% dos fluxos de Auth, Pedidos, Unidades, Estoque, Finanças e Offline testados | **Meta Atingida** |
 | **Tempo Médio de Resposta (API)** | < 2,0 segundos por requisição | Média observada: ~180ms (p95 < 800ms) | **Meta Atingida** |
 | **Disponibilidade Operacional Simulada** | ≥ 99,5% | 100% de uptime nas baterias de teste | **Meta Atingida** |
-| **Tempo Médio de Reparo (MTTR)** | < 24 horas para correções de segurança | Correções de sessão/hash integradas e validadas | **Meta Atingida** |
-| **Índice de Sucesso da Suíte Automatizada** | 100% dos testes passando sem falha | 18 passados / 0 falhas | **Excelente** |
+| **Tempo Médio de Reparo (MTTR)** | < 24 horas para correções de segurança | Correções de sessão/hash/validação integradas e validadas | **Meta Atingida** |
+| **Índice de Sucesso da Suíte Automatizada** | 100% dos testes passando sem falha | 35 passados / 0 falhas | **Excelente** |
 
 ---
 
@@ -157,13 +160,13 @@ O sistema atende aos princípios fundamentais da Lei nº 13.709/2018 (LGPD):
 
 ## 9. Conclusão e Parecer Final
 
-A revisão técnica evidenciou que o sistema **Raízes do Nordeste** atinge um patamar maduro de conformidade com os critérios do projeto multidisciplinar de Qualidade de Software da UNINTER. Os mecanismos de defesa em profundidade (Rate Limiting, Helmet, CSP, Hash Criptográfico, RBAC, Validação de Preços no Servidor e Persistência Confiável) garantem sustentação técnica sólida tanto para avaliação acadêmica perante banca quanto como modelo prático de engenharia de software voltado ao mercado.
+A revisão técnica confirmou que o sistema **Raízes do Nordeste** cumpre os requisitos do projeto multidisciplinar de Qualidade de Software da UNINTER. Os controles implementados (Rate Limiting, Helmet, CSP, hash `bcryptjs`, RBAC, cálculo de preços no servidor e persistência SQLite WAL) asseguram o funcionamento consistente da aplicação nos cenários avaliados.
 
 ---
 
 ## 10. Declaração Obrigatória de Apoio de Ferramentas de IA
 *(Conforme exigência do item "Uso de IA nesta atividade" do Roteiro Prático UNINTER)*
 
-- **Ferramenta Utilizada:** Antigravity / Gemini AI (assistência para revisão sistemática, estruturação e formatação técnica do relatório).
-- **Finalidade do Uso:** Revisão sintática de código, auditoria de cobertura de testes automatizados, compilação de matriz de rastreabilidade de requisitos e adequação do texto às normas técnicas da ABNT e aos critérios do roteiro.
-- **Evidências do Processo:** Execução real da suíte `node --test` em ambiente local e verificação de integridade via interpretador Node.js v26.
+- **Ferramenta Utilizada:** Assistente de IA integrado ao ambiente de desenvolvimento.
+- **Finalidade do Uso:** Revisão sintática e ortográfica, verificação de cobertura de testes automatizados, organização da matriz de rastreabilidade de requisitos e formatação técnica segundo a ABNT.
+- **Evidências do Processo:** Execução real da suíte `node --test` (35 testes aprovados) em ambiente local e validação de sintaxe dos scripts.

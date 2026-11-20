@@ -16,7 +16,7 @@ echo ========================================
 echo.
 
 echo Executando suite completa de testes automatizados...
-node --test
+%NODE_BIN% --test src/app.test.js src/gestao.test.js src/offline.test.js src/products.test.js src/faults.test.js
 if not "%ERRORLEVEL%"=="0" (
   echo.
   echo [ERRO] Falha nos testes automatizados.
@@ -32,7 +32,7 @@ set FRONTEND_FILES=public\config.js public\products.js public\auth.js public\app
 
 for %%F in (%FRONTEND_FILES%) do (
   if exist "%%F" (
-    node --check "%%F"
+    %NODE_BIN% --check "%%F"
     if not "!ERRORLEVEL!"=="0" (
       echo.
       echo [ERRO] Falha na sintaxe do arquivo: %%F
@@ -80,8 +80,27 @@ exit /b 0
 :check_node
 where node >nul 2>nul
 if "%ERRORLEVEL%"=="0" (
+  set "NODE_BIN=node"
   echo Node.js encontrado no sistema.
   exit /b 0
+)
+if exist "%ProgramFiles%\nodejs\node.exe" (
+  set "PATH=%ProgramFiles%\nodejs;%PATH%"
+  set "NODE_BIN=node"
+  echo Node.js encontrado em %ProgramFiles%\nodejs.
+  exit /b 0
+)
+for /d %%D in ("%LOCALAPPDATA%\Programs\*") do (
+  if exist "%%~fD\resources\app" (
+    for %%E in ("%%~fD\*.exe") do (
+      if /i not "%%~nxE"=="unins000.exe" (
+        set "ELECTRON_RUN_AS_NODE=1"
+        set "NODE_BIN="%%~fE""
+        echo Runtime Node.js local encontrado.
+        exit /b 0
+      )
+    )
+  )
 )
 
 echo [ERRO] Node.js nao encontrado no PATH.

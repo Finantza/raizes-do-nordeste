@@ -43,11 +43,18 @@ registerForm.addEventListener("submit", async (event) => {
   const name = String(formData.get("name") || "").trim();
   const email = String(formData.get("email") || "").trim();
   const password = String(formData.get("password") || "");
+  const lgpdCheckbox = document.querySelector("#register-lgpd-consent");
+  const lgpdConsent = lgpdCheckbox ? lgpdCheckbox.checked : true;
+
+  if (!lgpdConsent) {
+    showFeedback("É necessário aceitar o termo de consentimento LGPD para criar a conta.", "text-warning");
+    return;
+  }
 
   try {
     await window.raizesApiRequest("/auth/register", {
       method: "POST",
-      body: JSON.stringify({ name, email, password })
+      body: JSON.stringify({ name, email, password, lgpdConsent })
     });
     registerForm.reset();
     registerForm.hidden = true;

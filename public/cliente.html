@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <!-- ── Navbar ── -->
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-inner">
       <a class="nav-brand" href="./index.html">
@@ -30,10 +30,10 @@
     </div>
   </nav>
 
-  <!-- ── Page shell ── -->
+  <!-- Conteúdo principal -->
   <div class="page-shell">
 
-    <!-- ── Header ── -->
+    <!-- Cabeçalho -->
     <div class="page-header animate-up">
       <div>
         <div class="page-header-sub">Cardápio online</div>
@@ -42,7 +42,7 @@
       <span class="pill pill-success">Atendimento online</span>
     </div>
 
-    <!-- ── Carrinho ── -->
+    <!-- Carrinho -->
     <div class="grid mb-3" id="top-row">
       <div class="card animate-up">
         <div class="card-header">
@@ -93,15 +93,19 @@
           <div class="order-mode-group mb-2 order-mode-group-spacing">
             <label class="order-mode-chip">
               <input type="radio" name="order-mode" value="Delivery" checked>
-             Delivery
+              Delivery
             </label>
             <label class="order-mode-chip">
               <input type="radio" name="order-mode" value="Retirada">
-              Retirada
+              Retirada (Pickup)
             </label>
             <label class="order-mode-chip">
               <input type="radio" name="order-mode" value="Balcão">
-               Balcão
+              Balcão
+            </label>
+            <label class="order-mode-chip">
+              <input type="radio" name="order-mode" value="Totem">
+              Totem Autoatendimento
             </label>
           </div>
 
@@ -113,7 +117,10 @@
             <span class="cart-total-value" id="cart-total">R$ 0,00</span>
           </div>
           <button id="checkout-order" class="btn btn-amber mt-2 btn-full">Finalizar pedido →</button>
-          <p id="checkout-login-notice" class="text-muted text-sm mt-2 mb-0" hidden>
+          <p class="text-muted text-sm mt-2 mb-0">
+            🔒 <strong>Privacidade (LGPD):</strong> Seus dados e endereço são usados exclusivamente para processar e entregar este pedido. Pagamento simulado para validação de fluxo.
+          </p>
+          <p id="checkout-login-notice" class="text-muted text-sm mt-1 mb-0" hidden>
             Você pode explorar o cardápio sem entrar. <a href="./login.html">Entre ou crie uma conta</a> para concluir a compra.
           </p>
           <div id="customer-feedback" class="feedback" aria-live="polite"></div>
@@ -121,7 +128,7 @@
       </div>
     </div>
 
-    <!-- ── Catálogo ── -->
+    <!-- Catálogo -->
     <div class="card mb-3 animate-up">
       <div class="card-header flex-wrap gap-2">
         <div>
@@ -143,7 +150,7 @@
       </div>
     </div>
 
-    <!-- ── Histórico de pedidos ── -->
+    <!-- Histórico de pedidos -->
     <div class="card animate-up" id="order-history-section">
       <div class="card-header">
         <div>

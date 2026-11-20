@@ -228,7 +228,7 @@ const comboContents = {
   100: ["Mungunzá Doce", "Café com Leite e Rapadura"]
 };
 
-const aiProductImages = {
+const catalogProductImages = {
   1: "Combo Nordestino de Baiao e Umbu.png",
   2: "Buchada de Feira com Acompanhamentos Rústicos.png",
   3: "Pastel de camarão crocante com limão.png",
@@ -382,7 +382,7 @@ window.getRaizesProductImage = (product) => {
     return `.${product.imagem}`;
   }
 
-  const fileName = aiProductImages[product.id] || `${String(product.nome || "")
+  const fileName = catalogProductImages[product.id] || `${String(product.nome || "")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()

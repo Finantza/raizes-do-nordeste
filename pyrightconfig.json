@@ -1,0 +1,12 @@
+{
+  "venvPath": ".",
+  "venv": ".venv",
+  "extraPaths": [
+    ".venv/Lib/site-packages",
+    "C:/Users/ronal/AppData/Roaming/Python/Python315/site-packages",
+    "C:/Users/ronal/AppData/Roaming/Python/Python315t/site-packages"
+  ],
+  "typeCheckingMode": "basic",
+  "reportMissingImports": "warning",
+  "reportMissingModuleSource": "none"
+}

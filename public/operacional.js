@@ -260,7 +260,7 @@ function renderStore() {
   if (atencaoHoje) atencaoHoje.textContent = String(attentionCount);
   if (lojaDelivery) lojaDelivery.textContent = String(deliveries);
   if (lojaRetirada) lojaRetirada.textContent = String(pickup);
-  if (lojaRegiao) lojaRegiao.textContent = Object.keys(regionCounts)[0] || "—";
+  if (lojaRegiao) lojaRegiao.textContent = Object.keys(regionCounts)[0] || "-";
   if (lojasAtivas) lojasAtivas.textContent = String(new Set(orders.map((order) => order.store)).size);
   renderOrderList();
 }

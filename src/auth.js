@@ -16,7 +16,7 @@ function signSessionId(sessionId) {
 }
 
 function parseSignedSession(value) {
-  if (!value) return null;
+  if (!value || typeof value !== "string") return null;
   const [sessionId, signature, extra] = value.split(".");
   if (!sessionId || !signature || extra) return null;
   const expected = Buffer.from(signSessionId(sessionId));

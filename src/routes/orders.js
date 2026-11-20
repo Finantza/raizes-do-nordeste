@@ -4,6 +4,14 @@ import { requireAuth, requireRole } from "../auth.js";
 
 const router = Router();
 const orderStatuses = new Set(["Em preparo", "Em rota", "Concluído", "Cancelado"]);
+const allowedMethods = new Set(["Delivery", "Retirada", "Balcão", "Totem", "Pickup", "App", "Web"]);
+const allowedChannels = new Set(["WEB", "APP", "TOTEM", "BALCAO", "PICKUP"]);
+
+function toStrictNumber(val) {
+  if (typeof val === "number") return val;
+  if (typeof val === "string" && val.trim() !== "") return Number(val);
+  return NaN;
+}
 
 router.get("/", requireAuth, async (req, res, next) => {
   try {
@@ -24,8 +32,8 @@ router.post("/", requireAuth, requireRole("cliente"), async (req, res, next) => 
     const products = await db.listProducts();
     const orderItems = [];
     for (const item of items) {
-      const id = Number(item?.id);
-      const quantity = Number(item?.quantity);
+      const id = toStrictNumber(item?.id);
+      const quantity = toStrictNumber(item?.quantity);
       const product = products.find((candidate) => Number(candidate.id) === id);
       if (!product || !Number.isInteger(quantity) || quantity < 1 || quantity > 100) {
         return res.status(400).json({ erro: "Um ou mais itens do pedido são inválidos." });
@@ -38,17 +46,26 @@ router.post("/", requireAuth, requireRole("cliente"), async (req, res, next) => 
       });
     }
 
-    const store = typeof req.body.store === "string" ? req.body.store.trim() : "";
-    const region = typeof req.body.region === "string" ? req.body.region.trim() : "";
+    const store = typeof req.body.store === "string" ? req.body.store.replace(/[\u0000-\u001F\u007F]+/g, " ").trim() : "";
+    const region = typeof req.body.region === "string" ? req.body.region.replace(/[\u0000-\u001F\u007F]+/g, " ").trim() : "";
     const method = typeof req.body.method === "string" ? req.body.method.trim() : "";
-    if (!store || store.length > 120 || !region || region.length > 80 || !["Delivery", "Retirada", "Balcão"].includes(method)) {
+    if (!store || store.length > 120 || /[<>]/.test(store) ||
+        !region || region.length > 80 || /[<>]/.test(region) ||
+        !allowedMethods.has(method)) {
       return res.status(400).json({ erro: "Informe loja, região e modo de atendimento válidos." });
     }
+    const address = typeof req.body.address === "string" ? req.body.address.replace(/[\u0000-\u001F\u007F]+/g, " ").trim().slice(0, 200) : "";
+    const neighborhood = typeof req.body.neighborhood === "string" ? req.body.neighborhood.replace(/[\u0000-\u001F\u007F]+/g, " ").trim().slice(0, 100) : "";
+    if (/[<>]/.test(address) || /[<>]/.test(neighborhood)) {
+      return res.status(400).json({ erro: "Endereço ou bairro contém caracteres inválidos." });
+    }
+    const rawChannel = typeof req.body.channel === "string" ? req.body.channel.trim().toUpperCase() : "WEB";
     const details = {
-      address: typeof req.body.address === "string" ? req.body.address.trim().slice(0, 200) : "",
-      neighborhood: typeof req.body.neighborhood === "string" ? req.body.neighborhood.trim().slice(0, 100) : "",
+      address,
+      neighborhood,
       paymentMethod: typeof req.body.paymentMethod === "string" && ["Pix", "Cartão", "Dinheiro"].includes(req.body.paymentMethod)
-        ? req.body.paymentMethod : "Pix"
+        ? req.body.paymentMethod : "Pix",
+      channel: allowedChannels.has(rawChannel) ? rawChannel : "WEB"
     };
     const total = Math.round(orderItems.reduce((sum, item) => sum + item.preco * item.quantity, 0) * 100) / 100;
     const order = await db.createOrder({
@@ -68,14 +85,16 @@ router.post("/migrate-local", requireAuth, requireRole("cliente"), async (req, r
     const products = await db.listProducts();
     let migrated = 0;
     for (const legacyOrder of legacyOrders) {
-      if (typeof legacyOrder?.legacyId !== "string" || legacyOrder.legacyId.length > 160 ||
+      if (typeof legacyOrder?.legacyId !== "string" || !legacyOrder.legacyId.trim() ||
+          legacyOrder.legacyId.length > 160 || /[<>]/.test(legacyOrder.legacyId) ||
           !Array.isArray(legacyOrder.items) || legacyOrder.items.length < 1 || legacyOrder.items.length > 50) {
         return res.status(400).json({ erro: "Um pedido local possui dados inválidos." });
       }
       const items = [];
       for (const item of legacyOrder.items) {
-        const product = products.find((candidate) => Number(candidate.id) === Number(item?.id));
-        const quantity = Number(item?.quantity);
+        const itemId = toStrictNumber(item?.id);
+        const product = products.find((candidate) => Number(candidate.id) === itemId);
+        const quantity = toStrictNumber(item?.quantity);
         if (!product || !Number.isInteger(quantity) || quantity < 1 || quantity > 100) {
           return res.status(400).json({ erro: "Um pedido local contém itens inválidos." });
         }
@@ -86,14 +105,16 @@ router.post("/migrate-local", requireAuth, requireRole("cliente"), async (req, r
           preco: Math.round(Number(product.preco) * (1 - Number(product.offer) / 100) * 100) / 100
         });
       }
-      const store = typeof legacyOrder.store === "string" ? legacyOrder.store.trim().slice(0, 120) : "";
-      const region = typeof legacyOrder.region === "string" ? legacyOrder.region.trim().slice(0, 80) : "";
-      const method = ["Delivery", "Retirada", "Balcão"].includes(legacyOrder.method) ? legacyOrder.method : "Delivery";
-      if (!store || !region) return res.status(400).json({ erro: "Um pedido local não informa loja ou região." });
+      const store = typeof legacyOrder.store === "string" ? legacyOrder.store.replace(/[\u0000-\u001F\u007F]+/g, " ").trim().slice(0, 120) : "";
+      const region = typeof legacyOrder.region === "string" ? legacyOrder.region.replace(/[\u0000-\u001F\u007F]+/g, " ").trim().slice(0, 80) : "";
+      const method = allowedMethods.has(legacyOrder.method) ? legacyOrder.method : "Delivery";
+      if (!store || !region || /[<>]/.test(store) || /[<>]/.test(region)) {
+        return res.status(400).json({ erro: "Um pedido local não informa loja ou região válida." });
+      }
       const total = Math.round(items.reduce((sum, item) => sum + item.preco * item.quantity, 0) * 100) / 100;
       await db.createOrder({
         userId: req.user.id,
-        legacyId: legacyOrder.legacyId,
+        legacyId: legacyOrder.legacyId.trim(),
         store,
         region,
         method,

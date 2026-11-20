@@ -14,10 +14,13 @@ function publicUser(user) {
 }
 
 function validateRegistration(body) {
-  const name = typeof body?.name === "string" ? body.name.trim() : "";
+  const name = typeof body?.name === "string"
+    ? body.name.replace(/[\u0000-\u001F\u007F]+/g, " ").trim()
+    : "";
   const email = typeof body?.email === "string" ? body.email.trim().toLowerCase() : "";
   const password = typeof body?.password === "string" ? body.password : "";
-  if (!name || name.length > 120 || !validEmail.test(email) || email.length > 254 || password.length < 8 || password.length > 128) {
+  if (body?.lgpdConsent === false) return null;
+  if (!name || name.length > 120 || /[<>]/.test(name) || !validEmail.test(email) || email.length > 254 || password.length < 8 || password.length > 128) {
     return null;
   }
   return { name, email, password };
@@ -92,13 +95,18 @@ router.post("/migrate-local-users", async (req, res, next) => {
     for (const legacyUser of input) {
       const validated = validateRegistration(legacyUser);
       if (!validated || demonstrationEmails.has(validated.email) || await db.findUserByEmail(validated.email)) continue;
-      await db.createUser({
-        name: validated.name,
-        email: validated.email,
-        passwordHash: await bcrypt.hash(validated.password, 12),
-        role: "cliente"
-      });
-      imported += 1;
+      try {
+        await db.createUser({
+          name: validated.name,
+          email: validated.email,
+          passwordHash: await bcrypt.hash(validated.password, 12),
+          role: "cliente"
+        });
+        imported += 1;
+      } catch (innerError) {
+        if (innerError.code === "SQLITE_CONSTRAINT_UNIQUE" || innerError.code === "23505") continue;
+        throw innerError;
+      }
     }
     return res.json({ imported });
   } catch (error) {

@@ -5,13 +5,19 @@ import { requireAuth, requireRole } from "../auth.js";
 const router = Router();
 const categories = new Set(["Lanches", "Pratos", "Bebidas", "Sobremesas", "Ofertas"]);
 
+function toStrictNumber(val) {
+  if (typeof val === "number") return val;
+  if (typeof val === "string" && val.trim() !== "") return Number(val);
+  return NaN;
+}
+
 function validateProduct(body) {
-  const nome = typeof body?.nome === "string" ? body.nome.trim() : "";
+  const nome = typeof body?.nome === "string" ? body.nome.replace(/[\u0000-\u001F\u007F]+/g, " ").trim() : "";
   const categoria = typeof body?.categoria === "string" ? body.categoria.trim() : "";
-  const descricao = typeof body?.descricao === "string" ? body.descricao.trim() : "";
-  const preco = Number(body?.preco);
-  const estoque = Number(body?.estoque);
-  const offer = body?.offer === undefined ? 0 : Number(body.offer);
+  const descricao = typeof body?.descricao === "string" ? body.descricao.replace(/[\u0000-\u001F\u007F]+/g, " ").trim() : "";
+  const preco = toStrictNumber(body?.preco);
+  const estoque = toStrictNumber(body?.estoque);
+  const offer = body?.offer === undefined ? 0 : toStrictNumber(body.offer);
   if (!nome || nome.length > 120 || /[<>]/.test(nome) ||
       !categories.has(categoria) || descricao.length > 1000 || /[<>]/.test(descricao) ||
       !Number.isFinite(preco) || preco < 0 || preco > 100000 ||
@@ -23,10 +29,16 @@ function validateProduct(body) {
     /^\/images\/products\/[a-z0-9-]+\.jpg$/.test(imagem) ||
     (imagem.length <= 900000 && /^data:image\/jpeg;base64,[A-Za-z0-9+/]+={0,2}$/.test(imagem));
   if (!allowedImage) return null;
-  const itensInclusos = Array.isArray(body.itensInclusos) &&
-    body.itensInclusos.length <= 20 &&
-    body.itensInclusos.every((item) => typeof item === "string" && item.length <= 100 && !/[<>]/.test(item))
-    ? body.itensInclusos : [];
+  if (body.itensInclusos !== undefined && body.itensInclusos !== null) {
+    if (!Array.isArray(body.itensInclusos) ||
+        body.itensInclusos.length > 20 ||
+        !body.itensInclusos.every((item) => typeof item === "string" && item.trim().length > 0 && item.length <= 100 && !/[<>]/.test(item))) {
+      return null;
+    }
+  }
+  const itensInclusos = Array.isArray(body.itensInclusos)
+    ? body.itensInclusos.map((item) => item.trim())
+    : [];
   return { nome, categoria, descricao, preco, estoque, offer, imagem, itensInclusos };
 }
 

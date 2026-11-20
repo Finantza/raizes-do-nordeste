@@ -1,7 +1,16 @@
-# Avaliação acadêmica do sistema
+# Avaliação acadêmica do sistema (Registro Histórico e Evolução)
 
-**Data da avaliação:** 16/10/2026  
-**Escopo:** aplicação publicada localmente pelo Express, interface no navegador, perfis demonstrativos, carrinho/pedidos locais e API de unidades.  
+> **ATUALIZAÇÃO DE HOMOLOGAÇÃO — 13/11/2026 (Versão Final):**  
+> Este documento preserva o **diagnóstico inicial de auditoria (16/10/2026)** que guiou a refatoração completa do projeto. **Todos os bloqueadores P0, inconsistências P1 e melhorias P2 apontados neste parecer inicial foram integralmente resolvidos e homologados na arquitetura atual:**
+> - **Autenticação e Autorização no Servidor (P0.1 Resolvido):** Contas, senhas com hash `bcryptjs` (custo 12) e sessões assinadas via cookies `HttpOnly`, `Secure` e `SameSite=Lax` estão persistidas em banco relacional (`src/auth.js`, `src/routes/auth.js`).
+> - **Persistência Relacional Integrada (P0.2 Resolvido):** Unidades, usuários, sessões, catálogo de 100 produtos, pedidos multicanal, movimentações de estoque (`estoque_movimentacoes`) e lançamentos financeiros (`financeiro_lancamentos`) operam sobre SQLite3 (modo WAL) e PostgreSQL (`src/db.js`).
+> - **Cálculo de Preços Promocionais e Anti-Fraude (P1.3 Resolvido):** O carrinho exibe o preço com desconto e o backend recalcula obrigatoriamente todos os preços e descontos no servidor (`src/routes/orders.js`).
+> - **Validação Estrita de Campos, Datas e Zero (P1.6 Resolvido):** Todos os endpoints validam tipos numéricos estritos (bloqueando coerção de `null`, `""` e `boolean`), permitem ajuste de estoque para `0` e validam datas reais no calendário ISO (`src/routes/products.js`, `estoque.js`, `financeiro.js`).
+> - **Suíte Automatizada Expandida (P2.15 Resolvido):** A suíte evoluiu de 10 para **35 testes automatizados (100% aprovados)** distribuídos em 5 suítes (`app.test.js`, `gestao.test.js`, `offline.test.js`, `products.test.js` e `faults.test.js`).
+> - Para o relatório consolidado da versão final homologada, consulte [`docs/relatorio-de-desenvolvimento.md`](relatorio-de-desenvolvimento.md) e [`docs/relatorio-de-revisao-do-sistema.md`](relatorio-de-revisao-do-sistema.md).
+
+**Data da avaliação inicial:** 16/10/2026  
+**Escopo inicial avaliado:** aplicação publicada localmente pelo Express, interface no navegador, perfis demonstrativos, carrinho/pedidos locais e API de unidades.  
 **Objetivo:** avaliar o protótipo como uma banca acadêmica, registrar evidências observadas e propor melhorias priorizadas. Esta avaliação não certifica o sistema para uso comercial ou produção.
 
 > **Atualização de segurança — 16/10/2026:** o cadastro `POST /api/unidades` agora exige o segredo compartilhado `RAIZES_API_ADMIN_TOKEN`, com no mínimo 32 bytes; sem configuração suficiente o endpoint falha fechado. Os testes automatizados cobrem token válido, ausente, inválido e configuração ausente/fraca. Isso protege somente a criação de unidades e não transforma os perfis demonstrativos em autenticação/autorização individual de servidor. A avaliação abaixo foi atualizada nesses pontos; outros achados históricos ainda precisam ser revalidados contra o sistema atual.

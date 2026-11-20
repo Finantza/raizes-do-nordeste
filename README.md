@@ -79,9 +79,9 @@ Para facilitar a exploração e os testes das três áreas da aplicação em amb
 
 | Perfil | E-mail / Usuário | Senha | Área de Acesso | Funcionalidades Principais |
 |---|---|---|---|---|
-| **Administrador** | `admin@raizes.com` | `admin12345678` | [`public/admin.html`](public/admin.html) | Visão executiva completa: métricas de faturamento e ticket médio, catálogo geral, cadastro de novos itens, controle de estoque (entradas/saídas/perdas) e módulo financeiro de contas a pagar e receber |
-| **Loja (Operacional)** | `loja@raizes.com` | `loja12345678` | [`public/operacional.html`](public/operacional.html) | Painel operacional: fila de pedidos em tempo real, atualização de status de pedidos (*Recebido*, *Em preparo*, *Pronto*, *Em rota*, *Entregue*, *Cancelado*), gestão de estoque e finanças |
-| **Cliente** | `cliente@raizes.com` | `cliente12345678` | [`public/cliente.html`](public/cliente.html) | Cardápio visual com filtros, sacola de compras, cálculo automático de pedidos e histórico de pedidos da conta *(também é possível cadastrar novos clientes)* |
+| **Administrador** | `admin@raizes.com` | `admin12345678` | [`public/admin.html`](public/admin.html) | Visão executiva completa: métricas de faturamento e ticket médio, catálogo geral, cadastro/exclusão de itens, controle de estoque (entradas, saídas e ajustes de balanço) e módulo financeiro de contas a pagar e receber |
+| **Loja (Operacional)** | `loja@raizes.com` | `loja12345678` | [`public/operacional.html`](public/operacional.html) | Painel operacional: fila de pedidos em tempo real, atualização de status de pedidos (*Em preparo*, *Em rota*, *Concluído*, *Cancelado*), gestão de catálogo, controle de estoque e finanças |
+| **Cliente** | `cliente@raizes.com` | `cliente12345678` | [`public/cliente.html`](public/cliente.html) | Cardápio visual com filtros, sacola de compras multicanal (*Delivery*, *Retirada*, *Balcão*, *Totem*), cálculo automático de pedidos e histórico de pedidos da conta *(também é possível cadastrar novos clientes com consentimento LGPD)* |
 
 > **Preenchimento Rápido no Login:** Na tela [`public/login.html`](public/login.html), você encontra botões de atalho de demonstração para carregar os dados de **Administrador** (`admin@raizes.com`), **Perfil de Loja** (`loja@raizes.com`) e **Cliente** (`cliente@raizes.com`) com apenas um clique.
 >
@@ -120,31 +120,45 @@ O banco armazena os dados do sistema; o navegador conserva somente o carrinho e 
 
 | Dados | Local | Persistência |
 |---|---|---|
-| Unidades | SQLite ou PostgreSQL | Banco persistente |
-| Usuários (hash bcrypt) e sessões | SQLite ou PostgreSQL | Banco persistente |
-| Produtos e inventário | SQLite ou PostgreSQL | Banco persistente |
-| Pedidos e estado operacional | SQLite ou PostgreSQL | Banco persistente |
+| Unidades (`unidades`) | SQLite ou PostgreSQL | Banco persistente |
+| Usuários (`users`, hash bcrypt) e sessões (`sessions`) | SQLite ou PostgreSQL | Banco persistente |
+| Produtos e inventário (`products`) | SQLite ou PostgreSQL | Banco persistente |
+| Pedidos e estado operacional (`orders`) | SQLite ou PostgreSQL | Banco persistente |
+| Movimentações de estoque (`estoque_movimentacoes`) | SQLite ou PostgreSQL | Banco persistente |
+| Lançamentos financeiros (`financeiro_lancamentos`) | SQLite ou PostgreSQL | Banco persistente |
 | Carrinho | `localStorage` do navegador | Por navegador e origem |
 
 Chaves antigas do navegador são usadas somente para migração de contas, produtos e pedidos quando os usuários autenticados acessam as telas. A migração mantém os dados locais se falhar. O carrinho continua disponível em `raizes-storefront-cart`.
 
 O catálogo inicial fica em `public/products.js`; os 100 produtos são importados para o banco na primeira inicialização. O servidor recalcula os valores dos pedidos usando o catálogo persistido e associa cada pedido à conta autenticada.
 
-## API de autenticação, produtos e pedidos
+## API de autenticação, produtos, pedidos, estoque e financeiro
 
-Base: `http://localhost:3000/api`. As rotas abaixo usam cookies de sessão assinados e mantidos no banco. O cadastro cria sempre `cliente`; o cliente não pode enviar um papel privilegiado. Senhas têm hash bcrypt e nunca são devolvidas pela API.
+Base: `http://localhost:3000/api`. As rotas abaixo usam cookies de sessão assinados (`HttpOnly`, `Secure`, `SameSite=Lax`) e mantidos no banco. O cadastro público cria sempre `cliente` com validação de consentimento LGPD; o cliente não pode enviar um papel privilegiado. Senhas têm hash `bcryptjs` (12 salt rounds) e nunca são devolvidas pela API.
 
 | Método | Rota | Acesso | Uso |
 |---|---|---|---|
-| POST | `/auth/register` | Público | Registrar cliente |
-| POST | `/auth/login` | Público, limitado a 5 tentativas por IP/15 min | Autenticar e emitir cookie |
-| POST | `/auth/logout` | Público | Revogar sessão atual |
-| GET | `/auth/me` | Sessão válida | Consultar perfil do servidor |
-| GET | `/products` | Público | Listar catálogo |
-| POST, PUT, DELETE | `/products` | `admin` ou `loja` | Criar, atualizar e remover produto |
+| POST | `/auth/register` | Público (limite: 10 req/15 min) | Registrar cliente com consentimento LGPD |
+| POST | `/auth/login` | Público (limite: 5 req/15 min por IP) | Autenticar e emitir cookie de sessão assinado |
+| POST | `/auth/logout` | Público | Revogar sessão atual e limpar cookie |
+| GET | `/auth/me` | Sessão válida | Consultar perfil autenticado no servidor |
+| POST | `/auth/migrate-local-users` | Público (limite: 3 req/15 min) | Migrar contas legadas para o perfil `cliente` |
+| GET | `/products` | Público | Listar catálogo de produtos |
+| POST | `/products` | `admin` ou `loja` | Criar novo produto no catálogo |
+| POST | `/products/migrate-local` | `admin` | Migrar/atualizar produto legado no banco |
+| PUT, DELETE | `/products/:id` | `admin` ou `loja` | Atualizar ou remover produto existente |
 | GET | `/orders` | Sessão válida | Cliente consulta seus pedidos; `admin` e `loja` consultam todos |
-| POST | `/orders` | `cliente` | Criar pedido; preços e identidade são definidos pelo servidor |
-| PATCH | `/orders/:id/status` | `admin` ou `loja` | Atualizar estado operacional |
+| POST | `/orders` | `cliente` | Criar pedido multicanal; preços e totais recalculados pelo servidor |
+| POST | `/orders/migrate-local` | `cliente` | Migrar pedidos locais com idempotência por `legacyId` |
+| PATCH | `/orders/:id/status` | `admin` ou `loja` | Atualizar estado operacional (`Em preparo`, `Em rota`, `Concluído`, `Cancelado`) |
+| GET | `/estoque/resumo` | `admin` ou `loja` | Consultar indicadores consolidados e níveis de estoque |
+| GET | `/estoque/movimentacoes` | `admin` ou `loja` | Listar histórico auditado de movimentações de estoque |
+| POST | `/estoque/movimentacao` | `admin` ou `loja` | Registrar `entrada`, `saida` ou `ajuste` de estoque |
+| GET | `/financeiro` | `admin` ou `loja` | Listar lançamentos de contas a pagar e a receber (com filtros) |
+| GET | `/financeiro/resumo` | `admin` ou `loja` | Consultar saldos realizado/projetado e títulos vencidos |
+| POST | `/financeiro` | `admin` ou `loja` | Criar lançamento financeiro (`pagar` ou `receber`) |
+| PATCH | `/financeiro/:id/status` | `admin` ou `loja` | Dar baixa (`pago`) ou reabrir (`pendente`) lançamento |
+| DELETE | `/financeiro/:id` | `admin` ou `loja` | Excluir lançamento financeiro |
 
 Unidades continuam listáveis publicamente. Para criar uma unidade, pode-se usar o token administrativo legado ou uma sessão autenticada com perfil `admin`. A API aplica um limite geral persistente de 300 requisições por IP a cada 15 minutos, além do limite específico de login.
 
@@ -252,7 +266,7 @@ Execute a suíte automatizada:
 npm test
 ```
 
-Os testes usam `node:test` e Supertest para verificar cabeçalhos/CSP, cadastro e login com hash, sessão/cookie/logout, credenciais erradas, autorização de rotas, rejeição de produto com marcação, API de unidades, integridade do catálogo e persistência SQLite após reabrir a conexão. A suíte usa um banco temporário isolado, sem alterar os dados locais.
+Os testes usam `node:test` e Supertest (totalizando **35 testes automatizados** distribuídos em 5 suítes: `app.test.js`, `gestao.test.js`, `offline.test.js`, `products.test.js` e `faults.test.js`) para verificar cabeçalhos/CSP, cadastro com LGPD e login com hash, sessão/cookie/logout, bloqueio de força bruta (HTTP 429), autorização RBAC de rotas, rejeição de payloads malformados/XSS/coerção de tipos, validação de estoque e financeiro, operação multicanal, funcionamento 100% offline e persistência SQLite após reabrir a conexão. A suíte usa bancos temporários isolados, sem alterar os dados locais.
 
 Roteiro manual complementar:
 
@@ -278,42 +292,60 @@ Um roteiro de estudo com etapas e campos para registrar sua própria análise e 
 raizes-do-nordeste/
 ├── data/
 │   ├── raizes.json             # Fonte legada somente para migração inicial
-│   └── raizes.sqlite           # Banco local de desenvolvimento (não versionado)
-├── public/                     # Arquivos servidos pelo Express
+│   └── raizes.sqlite           # Banco local de desenvolvimento (modo WAL)
+├── docs/                       # Documentação acadêmica, planos de QA e relatórios
+│   ├── PLANO_TESTES.md         # Plano de testes, cenários e matriz de rastreabilidade
+│   ├── REQUISITOS.md           # Mapeamento de requisitos funcionais e não funcionais
+│   ├── USO_DE_IA.md            # Registro de transparência sobre uso de IA
+│   ├── avaliacao-do-sistema.md # Diagnóstico inicial e registro histórico de evolução
+│   ├── guia-passo-a-passo-melhorias-qualidade.md
+│   ├── relatorio-de-desenvolvimento.md   # Relatório técnico completo de desenvolvimento e QA
+│   ├── relatorio-de-desenvolvimento.docx # Versão ABNT em Word (.docx / .doc)
+│   └── relatorio-de-revisao-do-sistema.md
+├── public/                     # Arquivos servidos localmente pelo Express (zero CDNs)
 │   ├── index.html              # Página inicial
-│   ├── login.html              # Login compartilhado
-│   ├── login.js                # Login e cadastro de cliente
-│   ├── auth.js                 # Sessão, perfis e redirecionamento
-│   ├── cliente.html
-│   ├── cliente.js              # Cardápio, carrinho e pedidos
-│   ├── products.js             # Catálogo inicial compartilhado de 100 produtos
-│   ├── admin.html
-│   ├── admin.js                # Painel e inventário do servidor
-│   ├── operacional.html
-│   ├── operacional.js          # Painel operacional da loja
-│   ├── app.js                  # Carrossel e destaques da página inicial
+│   ├── login.html              # Login compartilhado e cadastro com termo LGPD
+│   ├── login.js                # Lógica de login, cadastro e atalhos de demonstração
+│   ├── auth.js                 # Sessão, controle de perfis e redirecionamento
+│   ├── cliente.html            # Interface de cardápio e checkout multicanal
+│   ├── cliente.js              # Cardápio, carrinho local e pedidos
+│   ├── products.js             # Catálogo inicial compartilhado de 100 produtos + fallback offline
+│   ├── admin.html              # Painel executivo e abas de gestão da rede
+│   ├── admin.js                # Métricas administrativas e inventário rápido
+│   ├── operacional.html        # Painel operacional da franquia/loja
+│   ├── operacional.js          # Fila de pedidos, rotina e checklists da loja
+│   ├── gestao.js               # Módulos compartilhados: Estoque, Financeiro e Catálogo
+│   ├── app.js                  # Carrossel acessível e destaques da página inicial
 │   ├── config.js               # Configuração de endereço da API
 │   ├── images/
-│   │   ├── raizes-logo.svg      # Logomarca vetorial e favicon
-│   │   └── products/            # Fotos de fallback e fontes/licenças
-│   └── style.css               # Paleta e componentes compartilhados
+│   │   ├── raizes-logo.svg     # Logomarca vetorial e favicon
+│   │   └── products/           # Fotos locais de fallback por categoria e licenças
+│   └── style.css               # Design system e componentes responsivos
+├── scripts/
+│   └── build_full_report.py    # Gerador automatizado dos relatórios .docx/.doc/.md
 ├── src/
-│   ├── imagens/                # Imagens de produtos geradas por IA, servidas em /imagens/
+│   ├── imagens/                # 100 imagens de produtos regionais servidas em /imagens/
 │   ├── routes/
-│   │   ├── auth.js             # Registro, login e sessão
-│   │   ├── orders.js           # Pedidos e ações operacionais
-│   │   ├── products.js         # Catálogo e validação de produtos
-│   │   └── unidades.js         # Rotas e validações de unidades
-│   ├── app.js                  # Middleware, arquivos estáticos e rotas Express
-│   ├── auth.js                 # Sessões assinadas e middleware de papéis
-│   ├── db.js                   # Adaptadores SQLite e PostgreSQL
-│   ├── app.test.js             # Testes automatizados da API com banco temporário
-│   ├── products.test.js        # Verificações de integridade do cardápio
+│   │   ├── auth.js             # Registro (LGPD), login, sessão e migração de contas
+│   │   ├── estoque.js          # Resumo, histórico e movimentações de estoque
+│   │   ├── financeiro.js       # Contas a pagar/receber, resumo, baixa e exclusão
+│   │   ├── orders.js           # Pedidos multicanal, cálculo no servidor e status
+│   │   ├── products.js         # Catálogo CRUD e validação estrita de produtos
+│   │   └── unidades.js         # Rotas e validações de unidades franqueadas
+│   ├── app.js                  # Middleware Helmet/CSP, CORS, Rate Limiters e rotas Express
+│   ├── auth.js                 # Cookies HMAC assinados e middlewares requireAuth/requireRole
+│   ├── db.js                   # Camada de persistência híbrida (SQLite WAL e PostgreSQL)
+│   ├── app.test.js             # Testes de integração da API, autenticação e segurança (14 testes)
+│   ├── gestao.test.js          # Testes de controle de estoque, financeiro e RBAC (5 testes)
+│   ├── offline.test.js         # Testes de autonomia 100% offline e assets locais (6 testes)
+│   ├── products.test.js        # Testes unitários de integridade do catálogo e combos (4 testes)
+│   ├── faults.test.js          # Testes negativos, casos de borda, falhas e coerção (6 testes)
 │   └── server.js               # Inicialização HTTP
 ├── package.json
 ├── render.yaml                 # Serviço web e PostgreSQL no Render
 ├── .env.example                # Modelo local de configuração (sem segredos)
-├── test-offline.bat            # Testes e inicialização local
+├── iniciar-servidor.bat        # Inicializador rápido do servidor para Windows
+├── test-offline.bat            # Verificador completo de testes e integridade offline
 └── .github/workflows/pages.yml # Publicação da interface no GitHub Pages
 ```
 
