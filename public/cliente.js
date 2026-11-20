@@ -59,7 +59,10 @@ function getSelectedOrderMode() {
 
 function createProductCard(product) {
   const card = createElement("article", "product-card product-card-small");
-  card.append(createElement("div", "product-label", `-${Number(product.offer || 0)}%`));
+  const offer = Number(product.offer || 0);
+  if (offer > 0) {
+    card.append(createElement("div", "product-label", `-${offer}%`));
+  }
   const imageBox = createElement("div", "product-image");
   const image = document.createElement("img");
   image.src = window.getRaizesProductImage(product);
@@ -82,11 +85,15 @@ function createProductCard(product) {
   }
   const prices = createElement("div", "product-price");
   prices.append(createElement("strong", "", money(getProductPrice(product))));
-  prices.append(createElement("small", "", money(product.preco)));
+  if (offer > 0) {
+    prices.append(createElement("small", "", money(product.preco)));
+  }
+  const estoque = Number(product.estoque || 0);
   const meta = createElement("div", "product-meta");
-  meta.append(createElement("span", "", `Estoque: ${product.estoque}`));
-  const addButton = createElement("button", "btn btn-success w-100 mt-3 add-to-cart", "Adicionar");
+  meta.append(createElement("span", estoque === 0 ? "text-danger fw-semibold" : "", estoque === 0 ? "Esgotado" : `Estoque: ${estoque}`));
+  const addButton = createElement("button", "btn btn-success w-100 mt-3 add-to-cart", estoque === 0 ? "Indisponível" : "Adicionar");
   addButton.type = "button";
+  addButton.disabled = estoque === 0;
   addButton.dataset.id = String(product.id);
   addButton.addEventListener("click", () => addToCart(Number(product.id)));
   info.append(prices, meta, addButton);
@@ -130,10 +137,24 @@ function renderCatalog() {
 function addToCart(productId) {
   const cart = readCart();
   const product = readProducts().find((item) => Number(item.id) === productId);
-  if (!product) return;
+  if (!product || Number(product.estoque || 0) <= 0) return;
+  const maxStock = Math.min(100, Number(product.estoque || 100));
   const existing = cart.find((item) => Number(item.id) === productId);
-  if (existing) existing.quantity = Math.min(100, Number(existing.quantity || 0) + 1);
+  if (existing) existing.quantity = Math.min(maxStock, Number(existing.quantity || 0) + 1);
   else cart.push({ id: product.id, quantity: 1 });
+  writeCart(cart);
+  renderCart();
+}
+
+function updateCartQuantity(productId, delta) {
+  const cart = readCart();
+  const index = cart.findIndex((item) => Number(item.id) === productId);
+  if (index < 0) return;
+  const product = readProducts().find((item) => Number(item.id) === productId);
+  const maxStock = Math.min(100, Number(product?.estoque || 100));
+  const nextQty = Number(cart[index].quantity || 1) + delta;
+  if (nextQty <= 0) cart.splice(index, 1);
+  else cart[index].quantity = Math.min(maxStock, nextQty);
   writeCart(cart);
   renderCart();
 }
@@ -154,10 +175,20 @@ function renderCart() {
     const price = product ? getProductPrice(product) : Number(item.preco || 0);
     total += price * quantity;
     const row = createElement("div", "cart-item");
+    const controls = createElement("div", "d-inline-flex align-items-center gap-1");
+    const minusBtn = createElement("button", "table-action-btn", "-");
+    minusBtn.type = "button";
+    minusBtn.setAttribute("aria-label", `Diminuir quantidade de ${product?.nome || "item"}`);
+    minusBtn.addEventListener("click", () => updateCartQuantity(Number(item.id), -1));
+    const plusBtn = createElement("button", "table-action-btn", "+");
+    plusBtn.type = "button";
+    plusBtn.setAttribute("aria-label", `Aumentar quantidade de ${product?.nome || "item"}`);
+    plusBtn.addEventListener("click", () => updateCartQuantity(Number(item.id), 1));
+    controls.append(minusBtn, createElement("span", "cart-item-qty px-1", `x${quantity}`), plusBtn);
     row.append(
       createElement("span", "cart-item-icon", "🍽️"),
       createElement("span", "cart-item-name", product?.nome || "Produto indisponível"),
-      createElement("span", "cart-item-qty", `x${quantity}`),
+      controls,
       createElement("span", "cart-item-price", money(price * quantity))
     );
     return row;

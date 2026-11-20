@@ -111,6 +111,7 @@ storeProductsBody?.addEventListener("change", async (event) => {
     await window.reloadRaizesProducts();
     setProductFeedback("Foto do produto atualizada.", "text-success");
     renderStoreProducts();
+    if (window.carregarModuloProdutos) window.carregarModuloProdutos();
   } catch (error) {
     setProductFeedback(error.message || "Não foi possível atualizar a foto.", "text-danger");
   }
@@ -272,18 +273,23 @@ async function refreshStore() {
   try {
     orders = await window.raizesApiRequest("/orders");
     await window.reloadRaizesProducts();
+    renderStoreProducts();
     if (window.carregarModuloProdutos) window.carregarModuloProdutos();
+    if (window.carregarModuloEstoque) window.carregarModuloEstoque();
+    if (window.carregarModuloFinanceiro) window.carregarModuloFinanceiro();
     renderStore();
   } catch (error) {
     setProductFeedback(error.message || "Não foi possível carregar os dados operacionais.", "text-danger");
   }
 }
 
+window.renderStoreProducts = renderStoreProducts;
+
 refreshButton?.addEventListener("click", refreshStore);
 Promise.all([window.raizesAuthReady, window.raizesProductsReady]).then(async ([user]) => {
   if (!user || !["loja", "admin"].includes(user.role)) return;
   renderSessionStatus();
   renderTasks();
+  renderStoreProducts();
   await refreshStore();
-  if (window.carregarModuloProdutos) window.carregarModuloProdutos();
 }).catch((error) => console.error("Não foi possível inicializar a área operacional.", error));

@@ -1,5 +1,3 @@
-// gestao.js — Módulos de Controle de Estoque, Contas a Pagar e Receber, e Cadastro de Produtos.
-// Disponível exclusivamente para perfis autenticados de Loja e Administração.
 // Módulos de estoque, financeiro e catálogo de produtos (perfis loja e admin).
 
 (function () {
@@ -7,7 +5,6 @@
     new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(Number(val || 0));
 
   const formatDate = (isoStr) => {
-    if (!isoStr) return "—";
     if (!isoStr) return "-";
     const parts = isoStr.split("T")[0].split("-");
     if (parts.length === 3) return `${parts[2]}/${parts[1]}/${parts[0]}`;
@@ -15,7 +12,6 @@
   };
 
   const formatDateTime = (isoStr) => {
-    if (!isoStr) return "—";
     if (!isoStr) return "-";
     const d = new Date(isoStr);
     return isNaN(d) ? isoStr : d.toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
@@ -30,9 +26,6 @@
       .replace(/'/g, "&#39;");
   };
 
-  // ─────────────────────────────────────────────────────────────
-  // SISTEMA DE ABAS (TABS)
-  // ─────────────────────────────────────────────────────────────
   // Navegação por abas
   function setupTabs() {
     const tabButtons = document.querySelectorAll(".module-nav-btn[data-target-tab]");
@@ -50,7 +43,6 @@
         const targetSec = document.getElementById(targetId);
         if (targetSec) targetSec.classList.add("is-active");
 
-        // Dispara recarregamento do módulo correspondente
         if (targetId === "tab-estoque") window.carregarModuloEstoque?.();
         if (targetId === "tab-financeiro") window.carregarModuloFinanceiro?.();
         if (targetId === "tab-produtos") window.carregarModuloProdutos?.();
@@ -58,9 +50,6 @@
     });
   }
 
-  // ─────────────────────────────────────────────────────────────
-  // MÓDULO 1: CONTROLE DE ESTOQUE
-  // ─────────────────────────────────────────────────────────────
   // Controle de estoque
   let stockData = null;
   let stockMovements = [];
@@ -365,9 +354,6 @@
     });
   }
 
-  // ─────────────────────────────────────────────────────────────
-  // MÓDULO 2: CONTAS A PAGAR E RECEBER (FINANCEIRO)
-  // ─────────────────────────────────────────────────────────────
   // Contas a pagar e receber (financeiro)
   let financeiroResumo = null;
   let financeiroLancamentos = [];
@@ -706,9 +692,6 @@
     });
   }
 
-  // ─────────────────────────────────────────────────────────────
-  // MÓDULO 3: CADASTRO E GERENCIAMENTO DE PRODUTOS
-  // ─────────────────────────────────────────────────────────────
   // Cadastro e gerenciamento de produtos
   let productCatalogSearch = "";
   let productCatalogCategory = "todas";
@@ -769,6 +752,7 @@
           await window.raizesApiRequest(`/products/${id}`, { method: "DELETE" });
           if (window.reloadRaizesProducts) await window.reloadRaizesProducts();
           if (window.renderAdmin) window.renderAdmin();
+          if (window.renderStoreProducts) window.renderStoreProducts();
           renderProdutosCatalogUI();
           if (window.carregarModuloEstoque) await window.carregarModuloEstoque();
         } catch (error) {
@@ -794,6 +778,8 @@
             body: JSON.stringify({ ...prod, imagem })
           });
           if (window.reloadRaizesProducts) await window.reloadRaizesProducts();
+          if (window.renderAdmin) window.renderAdmin();
+          if (window.renderStoreProducts) window.renderStoreProducts();
           renderProdutosCatalogUI();
         } catch (error) {
           alert(error.message || "Não foi possível atualizar a foto.");

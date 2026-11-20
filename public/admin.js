@@ -1,4 +1,3 @@
-// admin.js — Painel administrativo: inventário, métricas e gestão de produtos.
 // Painel administrativo: inventário, métricas e gestão de produtos.
 const adminSessionBox = document.querySelector("#admin-session-box");
 const inventoryBody = document.querySelector("#admin-inventory-body");
@@ -172,6 +171,7 @@ inventoryBody?.addEventListener("change", async (event) => {
       feedback.className = "small mt-3 text-success";
     }
     renderAdmin();
+    if (window.carregarModuloProdutos) window.carregarModuloProdutos();
   } catch (error) {
     if (feedback) {
       feedback.textContent = error instanceof DOMException && error.name === "QuotaExceededError"
@@ -215,12 +215,12 @@ productForm?.addEventListener("submit", async (event) => {
     await window.raizesApiRequest("/products", {
       method: "POST",
       body: JSON.stringify({
-      nome,
-      categoria,
-      preco,
-      estoque,
-      offer: 0,
-      imagem
+        nome,
+        categoria,
+        preco,
+        estoque,
+        offer: 0,
+        imagem
       })
     });
     await window.reloadRaizesProducts();
@@ -370,4 +370,6 @@ Promise.all([window.raizesAuthReady, window.raizesProductsReady]).then(async ([u
   }
   renderAdmin();
   if (window.carregarModuloProdutos) window.carregarModuloProdutos();
+  if (window.carregarModuloEstoque) window.carregarModuloEstoque();
+  if (window.carregarModuloFinanceiro) window.carregarModuloFinanceiro();
 }).catch((error) => console.error("Não foi possível inicializar o painel administrativo.", error));
