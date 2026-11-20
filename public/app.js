@@ -16,7 +16,7 @@ function formatMoney(value) {
 }
 
 function getDiscountedPrice(product) {
-  return Number(product.preco || 0) * (1 - Number(product.offer || 0) / 100);
+  return Math.round(Number(product.preco || 0) * (1 - Number(product.offer || 0) / 100) * 100) / 100;
 }
 
 function createProductImage(product, loading = "lazy") {

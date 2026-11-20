@@ -6,7 +6,7 @@ import os from "node:os";
 import path from "node:path";
 
 const testDataDir = fs.mkdtempSync(path.join(os.tmpdir(), "raizes-api-tests-"));
-process.env.RAIZES_DB_PATH = path.join(testDataDir, "raizes.json");
+process.env.RAIZES_DB_PATH = path.join(testDataDir, "raizes-api.sqlite");
 const previousAdminToken = process.env.RAIZES_API_ADMIN_TOKEN;
 const testAdminToken = "test-only-admin-token-with-at-least-32-bytes";
 process.env.RAIZES_API_ADMIN_TOKEN = testAdminToken;

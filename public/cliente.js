@@ -248,6 +248,14 @@ checkoutButton?.addEventListener("click", async () => {
     return;
   }
 
+  const mode = getSelectedOrderMode();
+  const channelMap = {
+    Delivery: "WEB",
+    Retirada: "PICKUP",
+    "Balcão": "BALCAO",
+    Totem: "TOTEM"
+  };
+
   checkoutButton.disabled = true;
   try {
     const response = await window.raizesApiRequest("/orders", {
@@ -256,7 +264,8 @@ checkoutButton?.addEventListener("click", async () => {
         items: cart.map(({ id, quantity }) => ({ id, quantity })),
         region: customerRegion?.value || "Sudeste",
         store: customerStore?.value || "Loja Centro",
-        method: getSelectedOrderMode(),
+        method: mode,
+        channel: channelMap[mode] || "WEB",
         address: document.querySelector("#delivery-address")?.value?.trim() || "",
         paymentMethod: document.querySelector("#payment-method")?.value || "Pix"
       })

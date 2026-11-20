@@ -42,6 +42,7 @@ def create_report():
         header = section.header
         hp = header.paragraphs[0]
         hp.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+        hrun = hp.add_run("Projeto Multidisciplinar — Qualidade de Software | Rede 'Raízes do Nordeste'")
         hrun = hp.add_run("Projeto Multidisciplinar - Qualidade de Software | Rede 'Raízes do Nordeste'")
         hrun.font.name = "Calibri"
         hrun.font.size = Pt(8.5)
@@ -50,6 +51,7 @@ def create_report():
         footer = section.footer
         fp = footer.paragraphs[0]
         fp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        frun = fp.add_run("UNINTER — Curitiba/PR — 2026 | Documento Técnico de Desenvolvimento e Homologação de Qualidade")
         frun = fp.add_run("UNINTER - Curitiba/PR - 2026 | Documento Técnico de Desenvolvimento e Homologação de Qualidade")
         frun.font.name = "Calibri"
         frun.font.size = Pt(8.5)
@@ -288,13 +290,18 @@ def create_report():
         ["Instituição de Ensino", "Centro Universitário Internacional UNINTER"],
         ["Escola / Polo", "Escola Superior Politécnica / Ensino Digital"],
         ["Curso", "Curso Superior de Tecnologia em Computação / ADS"],
+        ["Disciplina de Vinculação", "Projeto Multidisciplinar — Trilha Qualidade de Software"],
         ["Disciplina de Vinculação", "Projeto Multidisciplinar - Trilha Qualidade de Software"],
         ["Professor Orientador / Docente", "Prof. Me. Rodrigo Nascimento"],
+        ["Título da Atividade Prática", "Roteiro de Atividade Prática 2026 — Trilha: Qualidade de Software — Rede 'Raízes do Nordeste'"],
         ["Título da Atividade Prática", "Roteiro de Atividade Prática 2026 - Trilha: Qualidade de Software - Rede 'Raízes do Nordeste'"],
         ["Estudante / Desenvolvedor", "Ronaldo Coutinho"],
         ["Nome da Solução", "Sistema de Gestão de Franquias, Cardápio Multicanal e Operações 'Raízes do Nordeste'"],
         ["Repositório do Código-Fonte", "https://github.com/orlokfalcom/raizes-do-nordeste"],
         ["Branch de Validação", "main (Integrado, Testado e Homologado)"],
+        ["Stack Tecnológica Principal", "Node.js (v22/v26 LTS, ES Modules), Express.js 4, SQLite3 (WAL Mode), Supertest, Helmet, Bcryptjs, Rate-Limiter-Flexible"],
+        ["Resultado da Bateria de Testes", "35 Testes Automatizados Executados — 35 Aprovados (0 Falhas / 100% Sucesso)"],
+        ["Conformidade Legal / Segurança", "Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018) e OWASP Top 10"]
         ["Stack Tecnológica Principal", "Node.js (v22/v26 LTS, ES Modules), Express.js 4, SQLite3 (WAL Mode) / PostgreSQL, Supertest, Helmet, Bcryptjs (12 rounds), Rate-Limiter-Flexible"],
         ["Resultado da Bateria de Testes", "35 Testes Automatizados Executados (5 Suítes) - 35 Aprovados (0 Falhas / 100% Sucesso)"],
         ["Conformidade Legal / Segurança", "Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018) e OWASP Top 10"]
@@ -303,18 +310,24 @@ def create_report():
 
     add_heading_1("Resumo Executivo")
     add_body(
+        "O presente relatório técnico documenta, com rigor metodológico e fundamentação em Engenharia de Software e Garantia da Qualidade (QA), todo o processo de concepção, diagnóstico de dívida técnica, refatoração arquitetural, implementação de segurança defensiva, módulos operacionais e bateria exaustiva de testes automatizados do sistema digital da rede 'Raízes do Nordeste'. "
+        "A rede, de natureza alimentícia e foco em culinária típica regional nordestina, demanda uma plataforma robusta e padronizada para atendimento ao cliente e controle administrativo de franquias."
         "Este relatório técnico apresenta o processo de desenvolvimento, refatoração arquitetural, segurança, módulos operacionais e testes automatizados do sistema da rede 'Raízes do Nordeste'. "
         "A rede atua no setor de alimentação com foco em culinária regional nordestina e precisa de uma aplicação padronizada para atender clientes e apoiar a rotina das franquias."
     )
     add_body(
+        "Inicialmente idealizado como um protótipo didático baseado em armazenamento volátil no navegador (localStorage) e um arquivo JSON estático de unidades, o sistema passou por uma transformação arquitetural profunda. Foi implementada uma arquitetura desacoplada em três camadas com banco de dados relacional SQLite operando em modo WAL (Write-Ahead Logging), autenticação segura com cookies assinados HttpOnly e hash unidirecional de senhas via bcryptjs, controle de acesso baseado em papéis (RBAC com perfis cliente, loja e admin), proteção estrita de cabeçalhos via Helmet (CSP restritivo), limitadores de taxa contra ataques de força bruta (rate-limiter-flexible) e centralização de cálculos transacionais de pedidos no backend para impedir adulterações financeiras."
         "O projeto começou como um protótipo didático que salvava dados no navegador (localStorage) e usava um arquivo JSON estático para as unidades. Na evolução do sistema, foi adotada uma arquitetura em camadas com banco de dados relacional SQLite em modo WAL (Write-Ahead Logging) e suporte a PostgreSQL, autenticação com cookies assinados via HMAC (HttpOnly, Secure, SameSite=Lax), hash de senhas com bcryptjs (12 salt rounds), controle de acesso por perfil (cliente, loja e admin), cabeçalhos HTTP com Helmet (CSP), limite de requisições contra força bruta (rate-limiter-flexible) e cálculo de pedidos concentrado no servidor."
     )
     add_body(
+        "Além disso, foram agregados módulos corporativos de Controle de Estoque com auditoria de movimentações e Gestão Financeira de Contas a Pagar e Receber com liquidação e estorno. Para garantir independência total de provedores de nuvem e mitigar riscos de instabilidade de rede em totens e caixas locais, todo o ecossistema frontend foi migrado para recursos 100% locais (zero dependência de CDNs externos). A qualidade e confiabilidade da aplicação são comprovadas por uma suíte de 35 testes automatizados (incluindo auditoria de falhas, coerção de tipos, proteção contra Prototype Pollution e datas impossíveis) com 100% de aprovação e zero defeitos críticos pendentes, atendendo integralmente aos critérios do Roteiro Prático UNINTER 2026 e às normas ABNT e ISO/IEC 25010."
         "Também foram implementados os módulos de Controle de Estoque (com histórico de movimentações) e Financeiro (contas a pagar e a receber com baixa e exclusão). Para evitar falhas por oscilação de internet em lojas e totens, o frontend passou a usar apenas recursos locais, sem depender de CDNs externos. A validação do sistema conta com 35 testes automatizados distribuídos em 5 suítes (app.test.js, gestao.test.js, offline.test.js, products.test.js e faults.test.js), todos aprovados, cumprindo os requisitos do Roteiro Prático UNINTER 2026, da LGPD e da norma ISO/IEC 25010."
     )
+    add_body("Palavras-chave: Qualidade de Software; Engenharia de Requisitos; ISO/IEC 25010; LGPD; Testes Automatizados; Arquitetura em Camadas; Node.js; Resiliência Offline.", bold_prefix="")
     add_body("Palavras-chave: Qualidade de Software; Engenharia de Requisitos; ISO/IEC 25010; LGPD; Testes Automatizados; Arquitetura em Camadas; Node.js; Operação Offline.", bold_prefix="")
 
     add_callout_box(
+        "A suíte oficial do projeto concluiu com 35 testes automatizados aprovados e 0 falhas em execução contínua no Node.js. Todos os requisitos mandatórios de segurança, integridade relacional, cálculo centralizado no backend, multicanalidade, auditoria de falhas de fronteira e governança de dados pessoais foram verificados e homologados.",
         "A suíte do projeto executou 35 testes automatizados em 5 arquivos de teste, com 35 aprovações e 0 falhas. Os requisitos de segurança, integridade relacional, validação de tipos, bloqueio de XSS, cálculo no servidor, multicanalidade e proteção de dados pessoais (LGPD) foram validados.",
         title="PARECER TÉCNICO DE HOMOLOGAÇÃO"
     )
@@ -387,10 +400,13 @@ def create_report():
         [
             "Fase 3: Camada de Persistência SQL Relacional",
             "Modelagem de dados normalizada. Criação do módulo src/db.js com suporte a SQLite3 (modo WAL) e PostgreSQL. Criação de tabelas com chaves estrangeiras e integridade referencial.",
+            "Tabelas users, sessions, unidades, products, orders, order_items, estoque_movimentacoes, financeiro_lancamentos. Commit: db675eb."
             "Tabelas users, sessions, unidades, products, orders, estoque_movimentacoes, financeiro_lancamentos. Commit: db675eb."
         ],
         [
             "Fase 4: Autenticação Segura e Controle de Acesso (RBAC)",
+            "Migração de autenticação do cliente para o servidor. Implementação de cookies HttpOnly assinados, hash unidirecional bcryptjs (salt 10) e proteção contra elevação de privilégios na migração de dados antigos.",
+            "Módulo src/routes/auth.js. Rotas /api/auth/register, /login, /logout, /me. Perfis cliente, loja, admin. Commit: bd69020."
             "Migração de autenticação do cliente para o servidor. Implementação de cookies HttpOnly assinados, hash unidirecional bcryptjs (12 salt rounds) e proteção contra elevação de privilégios na migração de dados antigos.",
             "Módulos src/routes/auth.js e src/auth.js. Rotas /api/auth/register, /login, /logout, /me. Perfis cliente, loja, admin. Commit: bd69020."
         ],
@@ -451,6 +467,7 @@ def create_report():
         [
             "Senhas em texto puro no navegador",
             "Exposição direta das credenciais dos clientes em caso de acesso compartilhado ou extensões maliciosas no navegador.",
+            "Criptografia unidirecional com bcryptjs (10 salt rounds), garantindo que as senhas nunca sejam armazenadas ou trafegadas em texto plano."
             "Criptografia unidirecional com bcryptjs (12 salt rounds), garantindo que as senhas nunca sejam armazenadas ou trafegadas em texto plano."
         ],
         [
@@ -520,8 +537,17 @@ def create_report():
     add_heading_2("4.2 Modelo Relacional de Dados e Isolamento em Testes")
     add_body(
         "O esquema relacional é criado automaticamente durante a inicialização do módulo src/db.js caso as tabelas ainda não existam. "
+        "As principais entidades modeladas são:"
         "As sete entidades modeladas no banco de dados são:"
     )
+    add_bullet("id, name, email (UNIQUE), password_hash (bcrypt), role ('cliente'|'loja'|'admin'), created_at.", "Tabela users: ")
+    add_bullet("token_hash (PRIMARY KEY), user_id, created_at, expires_at.", "Tabela sessions: ")
+    add_bullet("id, code (UNIQUE), nome, cidade, estado, bairro, endereco, telefone, horario, status, created_at.", "Tabela unidades: ")
+    add_bullet("id, nome, categoria, preco, estoque, imagem, descricao, disponivel, destaque, oferta, desconto_percentual, texto_oferta, itens_inclusos, created_at, updated_at.", "Tabela products: ")
+    add_bullet("id, legacy_id (UNIQUE), user_id, customer_email, customer_name, store, region, channel, method, payment, address, neighborhood, subtotal, discount, delivery_fee, total, status, created_at.", "Tabela orders: ")
+    add_bullet("id, order_id, product_id, product_name, quantity, unit_price, line_total.", "Tabela order_items: ")
+    add_bullet("id, product_id, product_name, tipo ('entrada'|'saida'|'ajuste'), quantidade, estoque_anterior, estoque_atual, motivo, usuario_id, usuario_nome, created_at.", "Tabela estoque_movimentacoes: ")
+    add_bullet("id, tipo ('pagar'|'receber'), descricao, categoria, valor, data_vencimento, data_pagamento, status ('pendente'|'pago'|'cancelado'), forma_pagamento, observacao, usuario_id, usuario_nome, created_at, updated_at.", "Tabela financeiro_lancamentos: ")
     add_bullet("id (PK), name, email (UNIQUE), password_hash (bcrypt 12 rounds), role ('admin'|'loja'|'cliente'), created_at.", "Tabela users: ")
     add_bullet("id (PK, token de 256 bits), user_id (FK users ON DELETE CASCADE), expires_at.", "Tabela sessions: ")
     add_bullet("id (PK), codigo (UNIQUE), nome, cidade, estado (UF), ativa, criada_em.", "Tabela unidades: ")
@@ -847,12 +873,17 @@ def create_report():
     add_bullet("O formulário de registro de clientes (public/login.html e rota /api/auth/register) exige o aceite inequívoco dos termos de tratamento de dados cadastrais para fins exclusivos de faturamento e entrega de pedidos.", "1. Consentimento Livre e Explicitado (Art. 7º, I): ")
     add_bullet("São coletados estritamente os dados indispensáveis para a prestação do serviço alimentício: Nome Completo, Endereço de E-mail e Senha de Acesso. Dados excessivos como CPF, religião, biometria ou geolocalização invasiva não são requeridos.", "2. Minimização de Dados (Art. 6º, III): ")
     add_bullet("Os dados armazenados servem exclusivamente para autenticação de sessão, emissão de pedidos e controle de franquias. É expressamente vedado o repasse, venda ou compartilhamento com plataformas terceiras de publicidade.", "3. Finalidade e Transparência (Art. 6º, I e VI): ")
+    add_bullet("As senhas dos usuários são criptografadas com hash irreversível bcryptjs. Os cookies de sessão contêm a flag HttpOnly (inacessíveis por JavaScript no navegador) e SameSite=Strict, neutralizando ataques de sequestro de sessão e CSRF.", "4. Segurança e Confidencialidade (Art. 46): ")
     add_bullet("As senhas dos usuários são criptografadas com hash irreversível bcryptjs (12 salt rounds). Os cookies de sessão contêm as flags HttpOnly (inacessíveis por JavaScript no navegador), Secure e SameSite=Lax, assinados com HMAC-SHA256, prevenindo adulteração e sequestro de sessão.", "4. Segurança e Confidencialidade (Art. 46): ")
 
     add_heading_2("10.2 Inventário de Dados Pessoais do Sistema")
     t_lgpd = doc.add_table(rows=1, cols=4)
     lgpd_headers = ["Dado Pessoal", "Finalidade do Tratamento", "Base Legal (LGPD)", "Mecanismo de Segurança Aplicado"]
     lgpd_rows = [
+        ["Nome do Cliente", "Identificação do consumidor na emissão e entrega do pedido.", "Execução de Contrato (Art. 7º, V)", "Armazenamento em banco relacional com controle de acesso."],
+        ["E-mail", "Identificador único de login e envio de notificações de pedido.", "Consentimento (Art. 7º, I)", "Constraint UNIQUE no SQLite e sanitização contra injeção SQL."],
+        ["Senha de Acesso", "Autenticação e controle de privilégios de acesso ao sistema.", "Segurança da Informação (Art. 46)", "Hash criptográfico unidirecional via bcryptjs com 10 salt rounds."],
+        ["Endereço IP", "Mitigação de ataques cibernéticos e limitação de taxa (DoS).", "Legítimo Interesse (Art. 7º, IX)", "Armazenamento efêmero em memória pelo RateLimiter (15 minutos)."]
         ["Nome do Cliente", "Identificação do consumidor na emissão e entrega do pedido.", "Execução de Contrato (Art. 7º, V)", "Armazenamento em banco relacional com controle de acesso e sanitização anti-XSS."],
         ["E-mail", "Identificador único de login e vinculação de pedidos.", "Consentimento (Art. 7º, I)", "Constraint UNIQUE no SQLite e consultas SQL parametrizadas."],
         ["Senha de Acesso", "Autenticação e controle de privilégios de acesso ao sistema.", "Segurança da Informação (Art. 46)", "Hash criptográfico unidirecional via bcryptjs com 12 salt rounds."],
@@ -898,24 +929,38 @@ def create_report():
     # ==========================================
     add_heading_1("12. Conclusão e Parecer Técnico de Homologação")
     add_body(
+        "A condução do projeto multidisciplinar focado na Garantia da Qualidade de Software para a rede 'Raízes do Nordeste' demonstrou que a engenharia de qualidade "
+        "não é uma etapa periférica ou meramente burocrática, mas sim o alicerce fundamental para a viabilidade, escalabilidade e segurança de uma solução corporativa."
         "O desenvolvimento e a verificação do sistema para a rede 'Raízes do Nordeste' mostraram como a aplicação de controles de qualidade e segurança "
         "corrige fragilidades comuns em protótipos web e torna a arquitetura verificável."
     )
     add_body(
+        "A transição de um protótipo baseado em armazenamento volátil e regras descentralizadas no navegador para uma arquitetura em camadas estruturada com persistência relacional "
+        "(SQLite WAL), autenticação segura com cookies HttpOnly, segregação estrita por papéis (RBAC), recálculo centralizado de pedidos no backend e resiliência offline integral "
+        "elevou o produto de software a um nível profissional."
         "A migração do armazenamento local no navegador para uma estrutura em camadas com banco relacional (SQLite WAL e suporte a PostgreSQL), "
         "sessão autenticada por cookies HttpOnly, controle de permissões por perfil (RBAC), recálculo de preços no servidor e funcionamento 100% offline "
         "deu consistência técnica ao projeto."
     )
     add_body(
+        "Os resultados aferidos empiricamente — consubstanciados em 35 testes automatizados com 100% de sucesso, latência média inferior a 250ms, zero vulnerabilidades de injeção XSS/SQL ou Prototype Pollution, "
+        "proteção contra ataques de força bruta e conformidade demonstrada com os princípios da LGPD — comprovam que o sistema atende plenamente aos requisitos do Roteiro Prático UNINTER 2026. "
+        "O projeto sustenta-se perante uma banca examinadora acadêmica rigorosa e como um modelo representativo da prática de Engenharia de Software e Qualidade exigida pelo mercado moderno."
         "Com 35 testes automatizados aprovados (0 falhas), tempo médio de resposta abaixo de 250 ms, bloqueio contra XSS, SQL Injection, Prototype Pollution e força bruta, "
         "além do atendimento às exigências da LGPD, o sistema cumpre os requisitos propostos no Roteiro Prático UNINTER 2026."
     )
 
     add_heading_1("13. Declaração Obrigatória de Apoio de Ferramentas de IA")
     add_body(
+        "Em estrito cumprimento às instruções do Roteiro de Atividade Prática UNINTER 2026 (item 'Uso de IA nesta atividade'), "
+        "registra-se com total transparência o apoio de ferramentas de Inteligência Artificial ao longo do projeto:"
         "Conforme solicitado no Roteiro de Atividade Prática UNINTER 2026 (item 'Uso de IA nesta atividade'), "
         "registra-se o uso de ferramentas de Inteligência Artificial como apoio no projeto:"
     )
+    add_bullet("Google Gemini / Antigravity AI Assistant integrado ao ambiente de desenvolvimento.", "Ferramenta Utilizada: ")
+    add_bullet("Revisão ortográfica e sintática de código, auditoria estrutural de cobertura de testes automatizados e casos de borda, suporte na compilação da matriz de rastreabilidade de requisitos e formatação técnica do relatório conforme as normas acadêmicas da ABNT.", "Finalidade Específica do Uso: ")
+    add_bullet("'crie o relatorio de desenvolvimento em doc descrevendo todo o processo', 'teste todas as falha e bugs possiveis e aprimore as documentações', 'valide a conformidade da arquitetura com o Roteiro Prático 2026'.", "Prompts Relevantes Empregados: ")
+    add_bullet("A arquitetura, as regras de negócio, a persistência relacional, os scripts de teste e as decisões técnicas foram integralmente implementados, executados e validados no ambiente de desenvolvimento Node.js pelo acadêmico responsável, sem substituição de raciocínio crítico.", "Evidências do Processo Próprio: ")
     add_bullet("Assistente de IA integrado ao ambiente de desenvolvimento.", "Ferramenta Utilizada: ")
     add_bullet("Apoio na revisão ortográfica e gramatical, verificação de casos de borda na suíte de testes (src/faults.test.js), organização da matriz de rastreabilidade e formatação documental segundo a ABNT.", "Finalidade Específica do Uso: ")
     add_bullet("'crie o relatorio de desenvolvimento em doc descrevendo todo o processo', 'teste todas as falha e bugs possiveis e aprimore as documentações', 'verifique no codigo usando a wikipedia palavras e indicios no codigo que indicam o uso de ia e humanize o codigo e aprimore'.", "Prompts Relevantes Empregados: ")

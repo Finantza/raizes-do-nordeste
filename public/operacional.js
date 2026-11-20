@@ -131,11 +131,13 @@ storeProductImageInput?.addEventListener("change", async () => {
 storeProductForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const formData = new FormData(storeProductForm);
+  const precoRaw = String(formData.get("preco") || "").trim();
+  const estoqueRaw = String(formData.get("estoque") || "").trim();
   const product = {
     nome: String(formData.get("nome") || "").trim(),
     categoria: String(formData.get("categoria") || "").trim(),
-    preco: Number(formData.get("preco")),
-    estoque: Number(formData.get("estoque")),
+    preco: precoRaw === "" ? NaN : Number(precoRaw),
+    estoque: estoqueRaw === "" ? NaN : Number(estoqueRaw),
     offer: 0
   };
   if (!product.nome || product.nome.length > 120 || !product.categoria ||
@@ -260,6 +262,7 @@ function renderStore() {
   if (atencaoHoje) atencaoHoje.textContent = String(attentionCount);
   if (lojaDelivery) lojaDelivery.textContent = String(deliveries);
   if (lojaRetirada) lojaRetirada.textContent = String(pickup);
+  if (lojaRegiao) lojaRegiao.textContent = Object.keys(regionCounts)[0] || "—";
   if (lojaRegiao) lojaRegiao.textContent = Object.keys(regionCounts)[0] || "-";
   if (lojasAtivas) lojasAtivas.textContent = String(new Set(orders.map((order) => order.store)).size);
   renderOrderList();

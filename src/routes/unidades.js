@@ -5,6 +5,8 @@ import { requireAuth, requireRole } from "../auth.js";
 
 const router = Router();
 
+// Função para limpar textos de entrada. Ela remove caracteres estranhos e espaços extras,
+// deixando os dados mais seguros e consistentes.
 const normalizeText = (valor) => {
   if (typeof valor !== "string") {
     return "";
@@ -44,6 +46,7 @@ const requireAdmin = (req, res, next) => {
   });
 };
 
+// Lista todas as unidades cadastradas.
 router.get("/", async (_req, res, next) => {
   try {
     return res.json(await db.listUnidades());
@@ -52,6 +55,8 @@ router.get("/", async (_req, res, next) => {
   }
 });
 
+// Cria uma nova unidade. A validação aqui é importante porque bloqueia dados vazios,
+// inválidos ou suspeitos antes de salvar qualquer coisa no sistema.
 router.post("/", requireAdmin, async (req, res, next) => {
   if (!req.body || typeof req.body !== "object" || Array.isArray(req.body)) {
     return res.status(400).json({ erro: "O corpo da requisição deve ser um objeto JSON." });

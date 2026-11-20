@@ -1,3 +1,4 @@
+// admin.js — Painel administrativo: inventário, métricas e gestão de produtos.
 // Painel administrativo: inventário, métricas e gestão de produtos.
 const adminSessionBox = document.querySelector("#admin-session-box");
 const inventoryBody = document.querySelector("#admin-inventory-body");
@@ -274,8 +275,10 @@ tabProductForm?.addEventListener("submit", async (event) => {
   const formData = new FormData(tabProductForm);
   const nome = String(formData.get("nome") || "").trim();
   const categoria = String(formData.get("categoria") || "").trim();
-  const preco = Number(formData.get("preco"));
-  const estoque = Number(formData.get("estoque"));
+  const precoRaw = String(formData.get("preco") || "").trim();
+  const estoqueRaw = String(formData.get("estoque") || "").trim();
+  const preco = precoRaw === "" ? NaN : Number(precoRaw);
+  const estoque = estoqueRaw === "" ? NaN : Number(estoqueRaw);
 
   if (!nome || !categoria || !Number.isFinite(preco) || preco < 0 || !Number.isInteger(estoque) || estoque < 0) {
     if (tabFeedback) {
