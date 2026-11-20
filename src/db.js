@@ -439,7 +439,56 @@ async function listStockMovements(limit = 100) {
   );
 }
 
+let registerSqliteStockMovement = null;
+if (!usePostgres && sqlite) {
+  registerSqliteStockMovement = sqlite.transaction(({ productId, tipo, quantidade, motivo, usuarioNome }) => {
+    const product = sqlite.prepare("SELECT * FROM products WHERE id = ?").get(productId);
+    if (!product) {
+      const error = new Error("Produto não encontrado.");
+      error.status = 404;
+      throw error;
+    }
+    const estoqueAnterior = Number(product.estoque || 0);
+    const qtd = Math.max(0, parseInt(quantidade, 10));
+
+    let estoqueNovo = estoqueAnterior;
+    if (tipo === "entrada") {
+      estoqueNovo = estoqueAnterior + qtd;
+    } else if (tipo === "saida") {
+      estoqueNovo = Math.max(0, estoqueAnterior - qtd);
+    } else if (tipo === "ajuste") {
+      estoqueNovo = qtd;
+    } else {
+      const error = new Error("Tipo de movimentação inválido. Use 'entrada', 'saida' ou 'ajuste'.");
+      error.status = 400;
+      throw error;
+    }
+
+    sqlite.prepare("UPDATE products SET estoque = ? WHERE id = ?").run(estoqueNovo, productId);
+    const createdAt = new Date().toISOString();
+    const insertResult = sqlite.prepare(
+      `INSERT INTO estoque_movimentacoes (product_id, tipo, quantidade, estoque_anterior, estoque_novo, motivo, usuario_nome, criado_em)
+       VALUES (?,?,?,?,?,?,?,?)`
+    ).run(productId, tipo, qtd, estoqueAnterior, estoqueNovo, motivo || "Ajuste manual", usuarioNome || "Operador", createdAt);
+
+    const movement = sqlite.prepare(
+      `SELECT m.*, p.nome AS produto_nome, p.categoria AS produto_categoria
+       FROM estoque_movimentacoes m
+       JOIN products p ON p.id = m.product_id
+       WHERE m.id = ?`
+    ).get(insertResult.lastInsertRowid);
+
+    return {
+      product: mapProduct({ ...product, estoque: estoqueNovo }),
+      movement
+    };
+  });
+}
+
 async function registerStockMovement({ productId, tipo, quantidade, motivo, usuarioNome }) {
+  if (registerSqliteStockMovement) {
+    return registerSqliteStockMovement({ productId, tipo, quantidade, motivo, usuarioNome });
+  }
   const productRows = await rows("SELECT * FROM products WHERE id = ?", [productId]);
   if (!productRows.length) {
     const error = new Error("Produto não encontrado.");

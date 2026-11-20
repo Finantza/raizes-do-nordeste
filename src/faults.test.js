@@ -456,3 +456,131 @@ test("Falhas de Estoque e Financeiro: estoque nunca fica negativo, ajuste para z
   assert.equal(delMissingFin.status, 404);
 });
 
+test("Segurança Avançada, Estabilidade sob Carga Concorrente e Persistência ACID (SQLite Integrity & Foreign Keys)", async () => {
+  const adminCookie = await createAuthCookie("Admin Sec", "admin.sec.audit@test.com", "admin");
+  const clienteCookie = await createAuthCookie("Cliente Sec", "cli.sec.audit@test.com", "cliente");
+
+  // 1. SEGURANÇA: SQL Injection em login e em filtros de busca parametrizada
+  const sqliLogin = await request(app)
+    .post("/api/auth/login")
+    .set("X-Forwarded-For", nextIp())
+    .send({ email: "admin@raizes.com' OR '1'='1", password: "' OR '1'='1" });
+  assert.equal(sqliLogin.status, 401);
+
+  const sqliSearch = await request(app)
+    .get("/api/financeiro")
+    .query({ search: "%' UNION SELECT 1,2,3,4,5,6,7,8,9,10,11,12 --" })
+    .set("X-Forwarded-For", nextIp())
+    .set("Cookie", adminCookie);
+  assert.equal(sqliSearch.status, 200);
+  assert.equal(sqliSearch.body.length, 0);
+
+  // 2. SEGURANÇA: Path Traversal em rota estática de imagens (/imagens/)
+  const traversal = await request(app)
+    .get("/imagens/..%2Fsrc%2Fdb.js")
+    .set("X-Forwarded-For", nextIp());
+  assert.notEqual(traversal.status, 200);
+
+  // 3. SEGURANÇA & ESTABILIDADE: Proteção contra DoS por Payload gigante (> 1 MB -> HTTP 413)
+  const bigString = "A".repeat(1100 * 1024);
+  const payloadTooLarge = await request(app)
+    .post("/api/products")
+    .set("X-Forwarded-For", nextIp())
+    .set("Cookie", adminCookie)
+    .send({ nome: bigString, categoria: "Lanches", preco: 10, estoque: 5 });
+  assert.equal(payloadTooLarge.status, 413);
+
+  // 4. ESTABILIDADE: Rajada de 40 requisições concorrentes em rotas de leitura e saúde sem erro
+  const burstResults = await Promise.all(
+    Array.from({ length: 40 }, (_, idx) =>
+      request(app)
+        .get(idx % 2 === 0 ? "/api/products" : "/api/health")
+        .set("X-Forwarded-For", nextIp())
+    )
+  );
+  assert.ok(burstResults.every((r) => r.status === 200));
+
+  // 5. ESTABILIDADE & TRANSAÇÕES: 10 movimentações concorrentes de estoque processadas atomicamente
+  const beforeProducts = await database.listProducts();
+  const targetProduct = beforeProducts.find((p) => p.id === 2);
+  const initialStock = Number(targetProduct.estoque);
+
+  const concurrentMoves = await Promise.all(
+    Array.from({ length: 10 }, () =>
+      request(app)
+        .post("/api/estoque/movimentacao")
+        .set("X-Forwarded-For", nextIp())
+        .set("Cookie", adminCookie)
+        .send({ productId: 2, tipo: "entrada", quantidade: 3, motivo: "Carga concorrente" })
+    )
+  );
+  assert.ok(concurrentMoves.every((r) => r.status === 201));
+
+  const afterProducts = await database.listProducts();
+  const updatedProduct = afterProducts.find((p) => p.id === 2);
+  assert.equal(Number(updatedProduct.estoque), initialStock + 30);
+
+  // 6. PERSISTÊNCIA & INTEGRIDADE REFERENCIAL: Gravação multi-tabela, PRAGMA integrity_check, foreign_key_check e CASCADE
+  const createdOrder = await request(app)
+    .post("/api/orders")
+    .set("X-Forwarded-For", nextIp())
+    .set("Cookie", clienteCookie)
+    .send({
+      items: [{ id: 2, quantity: 2 }],
+      store: "Loja Centro",
+      region: "Nordeste",
+      method: "Delivery",
+      channel: "WEB",
+      paymentMethod: "Pix"
+    });
+  assert.equal(createdOrder.status, 201);
+
+  const tempProduct = await request(app)
+    .post("/api/products")
+    .set("X-Forwarded-For", nextIp())
+    .set("Cookie", adminCookie)
+    .send({ nome: "Produto Transacional Cascade", categoria: "Lanches", preco: 19.9, estoque: 10 });
+  assert.equal(tempProduct.status, 201);
+
+  const tempMove = await request(app)
+    .post("/api/estoque/movimentacao")
+    .set("X-Forwarded-For", nextIp())
+    .set("Cookie", adminCookie)
+    .send({ productId: tempProduct.body.id, tipo: "entrada", quantidade: 5, motivo: "Teste FK Cascade" });
+  assert.equal(tempMove.status, 201);
+
+  // Excluir o produto deve remover em cascata suas movimentações de estoque sem violar FK
+  const delProd = await request(app)
+    .delete(`/api/products/${tempProduct.body.id}`)
+    .set("X-Forwarded-For", nextIp())
+    .set("Cookie", adminCookie);
+  assert.equal(delProd.status, 204);
+
+  // Inspeciona o arquivo SQLite diretamente no disco com uma segunda conexão independente
+  const Database = (await import("better-sqlite3")).default;
+  const diskInspection = new Database(process.env.RAIZES_DB_PATH, { readonly: true });
+  try {
+    const integrity = diskInspection.pragma("integrity_check");
+    assert.equal(integrity[0].integrity_check, "ok");
+
+    const fkViolations = diskInspection.pragma("foreign_key_check");
+    assert.equal(fkViolations.length, 0);
+
+    const journalMode = diskInspection.pragma("journal_mode");
+    assert.equal(String(journalMode[0].journal_mode).toLowerCase(), "wal");
+
+    const orphanMovements = diskInspection
+      .prepare("SELECT COUNT(*) AS count FROM estoque_movimentacoes WHERE product_id = ?")
+      .get(tempProduct.body.id);
+    assert.equal(Number(orphanMovements.count), 0);
+
+    const persistedOrder = diskInspection
+      .prepare("SELECT id, total, status FROM orders WHERE id = ?")
+      .get(createdOrder.body.id);
+    assert.ok(persistedOrder);
+    assert.equal(persistedOrder.status, "Em preparo");
+  } finally {
+    diskInspection.close();
+  }
+});
+
