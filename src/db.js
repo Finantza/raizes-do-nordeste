@@ -487,7 +487,7 @@ async function registerStockMovement({ productId, tipo, quantidade, motivo, usua
 async function getStockSummary() {
   const products = (await rows("SELECT * FROM products ORDER BY nome ASC")).map(mapProduct);
   const totalItens = products.reduce((acc, p) => acc + Number(p.estoque || 0), 0);
-  const valorTotal = products.reduce((acc, p) => acc + (Number(p.preco || 0) * Number(p.estoque || 0)), 0);
+  const valorTotal = Math.round(products.reduce((acc, p) => acc + (Number(p.preco || 0) * Number(p.estoque || 0)), 0) * 100) / 100;
   const criticos = products.filter((p) => Number(p.estoque || 0) <= 5);
   const atencao = products.filter((p) => Number(p.estoque || 0) > 5 && Number(p.estoque || 0) <= 10);
   const normais = products.filter((p) => Number(p.estoque || 0) > 10);
@@ -560,13 +560,15 @@ async function getFinanceiroSummary() {
     }
   }
 
+  const roundMoney = (num) => Math.round(num * 100) / 100;
+
   return {
-    totalPagarPendente,
-    totalPagarPago,
-    totalReceberPendente,
-    totalReceberPago,
-    saldoRealizado: totalReceberPago - totalPagarPago,
-    saldoProjetado: (totalReceberPago + totalReceberPendente) - (totalPagarPago + totalPagarPendente),
+    totalPagarPendente: roundMoney(totalPagarPendente),
+    totalPagarPago: roundMoney(totalPagarPago),
+    totalReceberPendente: roundMoney(totalReceberPendente),
+    totalReceberPago: roundMoney(totalReceberPago),
+    saldoRealizado: roundMoney(totalReceberPago - totalPagarPago),
+    saldoProjetado: roundMoney((totalReceberPago + totalReceberPendente) - (totalPagarPago + totalPagarPendente)),
     vencidosCount,
     totalLancamentos: entries.length
   };
