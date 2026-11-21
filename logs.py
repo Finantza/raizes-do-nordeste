@@ -80,8 +80,8 @@ class GestorLogs:
         """Registra uma alteração individual no histórico JSON persistente."""
         registro = {
             "timestamp": datetime.now().isoformat(timespec="seconds"),
-            "documento_origem": str(documento_origem),
-            "documento_destino": str(documento_destino),
+            "documento_origem": documento_origem,
+            "documento_destino": documento_destino,
             "id_inconsistencia": id_inconsistencia,
             "tipo_acao": tipo_acao,
             "valor_anterior": valor_anterior,

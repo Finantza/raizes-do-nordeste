@@ -127,7 +127,7 @@ class LeitorDocumentos:
                 texto = par.text.strip()
                 if not texto:
                     continue
-                estilo = par.style.name if par.style else "Normal"
+                estilo = (par.style.name or "Normal") if par.style else "Normal"
                 doc_info.paragrafos.append({
                     "indice": idx,
                     "texto": texto,
