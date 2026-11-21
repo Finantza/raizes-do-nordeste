@@ -1,0 +1,88 @@
+2026-11-21 10:48:27 | INFO     | logs | Iniciando Auditoria Técnica Automatizada | Documentos: E:\documentos\GitHub\GitHub\raizes do nordeste\docs | Saída: E:\documentos\GitHub\GitHub\raizes do nordeste\auditoria_output
+2026-11-21 10:48:27 | INFO     | logs | Arquivo lido: avaliacao-do-sistema.md (MD) - 29 títulos, 127 parágrafos, 2 tabelas.
+2026-11-21 10:48:27 | INFO     | logs | Arquivo lido: guia-passo-a-passo-melhorias-qualidade.md (MD) - 14 títulos, 129 parágrafos, 4 tabelas.
+2026-11-21 10:48:27 | INFO     | logs | Arquivo lido: PLANO_TESTES.md (MD) - 5 títulos, 21 parágrafos, 2 tabelas.
+2026-11-21 10:48:28 | INFO     | logs | Arquivo lido: relatorio-de-desenvolvimento.doc (DOC) - 35 títulos, 140 parágrafos, 12 tabelas.
+2026-11-21 10:48:29 | INFO     | logs | Arquivo lido: relatorio-de-desenvolvimento.docx (DOCX) - 35 títulos, 140 parágrafos, 12 tabelas.
+2026-11-21 10:48:29 | INFO     | logs | Arquivo lido: relatorio-de-desenvolvimento.md (MD) - 35 títulos, 164 parágrafos, 9 tabelas.
+2026-11-21 10:48:29 | INFO     | logs | Arquivo lido: relatorio-de-revisao-do-sistema.md (MD) - 18 títulos, 93 parágrafos, 3 tabelas.
+2026-11-21 10:48:29 | INFO     | logs | Arquivo lido: relatorio-rascunho-apresentacao-banca.doc (DOC) - 0 títulos, 202 parágrafos, 0 tabelas.
+2026-11-21 10:48:29 | INFO     | logs | Arquivo lido: relatorio-rascunho-apresentacao-banca.md (MD) - 17 títulos, 75 parágrafos, 9 tabelas.
+2026-11-21 10:48:30 | INFO     | logs | Arquivo lido: relatorio-testes-backend.doc (DOC) - 6 títulos, 13 parágrafos, 3 tabelas.
+2026-11-21 10:48:30 | INFO     | logs | Arquivo lido: relatorio-testes-backend.docx (DOCX) - 6 títulos, 13 parágrafos, 3 tabelas.
+2026-11-21 10:48:30 | INFO     | logs | Arquivo lido: relatorio-testes-backend.md (MD) - 5 títulos, 17 parágrafos, 3 tabelas.
+2026-11-21 10:48:30 | INFO     | logs | Arquivo lido: relatorio-testes-frontend.doc (DOC) - 6 títulos, 16 parágrafos, 3 tabelas.
+2026-11-21 10:48:30 | INFO     | logs | Arquivo lido: relatorio-testes-frontend.docx (DOCX) - 6 títulos, 16 parágrafos, 3 tabelas.
+2026-11-21 10:48:30 | INFO     | logs | Arquivo lido: relatorio-testes-frontend.md (MD) - 5 títulos, 18 parágrafos, 3 tabelas.
+2026-11-21 10:48:30 | INFO     | logs | Arquivo lido: relatorio-testes-qualidade-software.doc (DOC) - 6 títulos, 10 parágrafos, 4 tabelas.
+2026-11-21 10:48:31 | INFO     | logs | Arquivo lido: relatorio-testes-qualidade-software.docx (DOCX) - 6 títulos, 10 parágrafos, 4 tabelas.
+2026-11-21 10:48:31 | INFO     | logs | Arquivo lido: relatorio-testes-qualidade-software.md (MD) - 5 títulos, 13 parágrafos, 4 tabelas.
+2026-11-21 10:48:31 | INFO     | logs | Arquivo lido: REQUISITOS.md (MD) - 7 títulos, 71 parágrafos, 2 tabelas.
+2026-11-21 10:48:31 | INFO     | logs | Arquivo lido: USO_DE_IA.md (MD) - 1 títulos, 13 parágrafos, 0 tabelas.
+2026-11-21 10:48:31 | INFO     | logs | Arquivo lido: README.md (MD) - 25 títulos, 251 parágrafos, 6 tabelas.
+2026-11-21 10:48:31 | INFO     | logs | Auditoria de consistência concluída: 45 inconsistência(s) encontrada(s).
+2026-11-21 10:48:31 | INFO     | logs | Verificação do roteiro concluída: 10 atendidos, 2 parciais, 0 não atendidos.
+2026-11-21 10:48:31 | INFO     | logs | Backup criado em 'E:\documentos\GitHub\GitHub\raizes do nordeste\auditoria_output\backups\20261121_104831_341387_auditoria_documental' com 21 arquivo(s) verificados por SHA-256.
+2026-11-21 10:48:32 | INFO     | logs | Alteração registrada [REL-DET-02] em 'PLANO_TESTES.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:32 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:32 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-de-desenvolvimento.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:32 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:32 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:32 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:32 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-de-desenvolvimento.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:32 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:32 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-de-desenvolvimento.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:32 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:32 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:32 | INFO     | logs | Alteração registrada [REL-INT-01] em 'relatorio-de-desenvolvimento.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:32 | INFO     | logs | Alteração registrada [REL-INT-03] em 'relatorio-de-desenvolvimento.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:32 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:32 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-de-desenvolvimento.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-de-desenvolvimento.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-de-desenvolvimento.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-INT-01] em 'relatorio-de-desenvolvimento.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-INT-03] em 'relatorio-de-desenvolvimento.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:33 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-desenvolvimento.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-de-desenvolvimento.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-de-desenvolvimento.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-de-desenvolvimento.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-de-desenvolvimento.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-INT-01] em 'relatorio-de-desenvolvimento.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-INT-03] em 'relatorio-de-desenvolvimento.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-revisao-do-sistema.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-de-revisao-do-sistema.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-de-revisao-do-sistema.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-INT-02] em 'relatorio-de-revisao-do-sistema.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-INT-04] em 'relatorio-de-revisao-do-sistema.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-testes-backend.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-testes-backend.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-testes-backend.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-testes-backend.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:34 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-testes-backend.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:35 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-testes-backend.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:35 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-testes-backend.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:35 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-testes-backend.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:35 | INFO     | logs | Alteração registrada [REL-DET-03] em 'relatorio-testes-backend.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:35 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-testes-frontend.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:35 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-testes-frontend.doc': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:36 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-testes-frontend.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:36 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-testes-frontend.docx': SUBSTITUICAO_DOCX_EVIDENCIADA
+2026-11-21 10:48:36 | INFO     | logs | Alteração registrada [REL-DET-02] em 'relatorio-testes-frontend.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:37 | INFO     | logs | Alteração registrada [REL-DET-02] em 'REQUISITOS.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:37 | INFO     | logs | Alteração registrada [REL-DET-03] em 'REQUISITOS.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:37 | INFO     | logs | Alteração registrada [REL-DET-03] em 'USO_DE_IA.md': SUBSTITUICAO_EVIDENCIADA
+2026-11-21 10:48:42 | INFO     | logs | Relatório consolidado DOCX gerado em: E:\documentos\GitHub\GitHub\raizes do nordeste\auditoria_output\relatorios\relatorio-consolidado-auditoria.docx
+2026-11-21 10:48:44 | INFO     | logs | Exportação concluída: Consolidado DOCX/PDF, Planilha XLSX, CSV e 16 PDFs individuais.
+2026-11-21 10:48:44 | INFO     | logs | Pipeline de auditoria e correção concluído com sucesso.

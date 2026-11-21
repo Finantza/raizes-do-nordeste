@@ -1,0 +1,693 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R] /Count 10 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 4012 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(DOCUMENTO: relatorio-consolidado-auditoria.docx) Tj T*
+(==========================================================================================) Tj T*
+() Tj T*
+(RELATÓRIO CONSOLIDADO DE AUDITORIA TÉCNICA E DOCUMENTAL
+PROJETO REDE 'RAÍZES DO NORDESTE') Tj T*
+(UNINTER - Projeto Multidisciplinar: Qualidade de Software \(2026\) | Gerado em: 21/11/2026) Tj T*
+(10:48:38) Tj T*
+(1. Identificação do Projeto) Tj T*
+(2. Objetivo da Auditoria) Tj T*
+(Verificar de forma automatizada, rigorosa e rastreável a consistência técnica e documental) Tj T*
+(entre os relatórios de desenvolvimento, relatórios de testes de backend, frontend e QA, planos) Tj T*
+(de teste, engenharia de requisitos e o código-fonte real do projeto 'Raízes do Nordeste',) Tj T*
+(aplicando as 10 Regras de Integridade e gerando versões revisadas sem inventar métricas,) Tj T*
+(coberturas ou homologações sem lastro factual.) Tj T*
+(3. Documentos Analisados) Tj T*
+(4. Metodologia Utilizada) Tj T*
+(A auditoria executa um pipeline de 6 estágios: \(1\) Extração estrutural multi-formato \(DOCX,) Tj T*
+(DOC, PDF, MD, TXT, CSV, XLSX\) e inspeção estática das suítes reais em src/*.test.js e) Tj T*
+(src/db.js; \(2\) Cruzamento interdocumental de métricas, contagens de testes, algoritmos de) Tj T*
+(segurança e Regras de Integridade; \(3\) Avaliação de conformidade com os 12 requisitos do) Tj T*
+(Roteiro Prático UNINTER 2026; \(4\) Backup prévio com manifesto SHA-256 e aplicação de correções) Tj T*
+(evidenciadas separadas de pendências para revisão humana; \(5\) Compilação deste relatório) Tj T*
+(consolidado; e \(6\) Exportação multi-formato \(DOCX, PDF, XLSX, CSV e JSON\).) Tj T*
+(5. Diagnóstico Geral) Tj T*
+(Foram analisados 21 documentos técnicos confrontados contra 8 suítes de testes reais \(57) Tj T*
+(testes automatizados no código\). A auditoria identificou 45 inconsistência\(s\), sendo 33) Tj T*
+(elegíveis para correção automática com evidência direta no código e 12 classificadas para) Tj T*
+(qualificação/revisão humana. Na avaliação do roteiro acadêmico UNINTER, dos 12 itens) Tj T*
+(obrigatórios, 10 estão integralmente atendidos e 2 parcialmente atendidos \(exigindo apenas) Tj T*
+(qualificação textual de métricas\).) Tj T*
+(6. Matriz de Conformidade com o Roteiro Acadêmico UNINTER) Tj T*
+(7. Inconsistências Encontradas) Tj T*
+(8. Correções Realizadas nos Documentos Revisados) Tj T*
+(9. Pendências que Exigem Validação Humana) Tj T*
+(10. Avaliação da Qualidade da Documentação) Tj T*
+(A documentação técnica do projeto 'Raízes do Nordeste' apresenta alta rastreabilidade com a) Tj T*
+(implementação real \(cobrindo arquitetura Express/SQLite WAL, 100 produtos, 21 combos, RBAC,) Tj T*
+(LGPD e 8 requisitos ISO/IEC 25010\). As divergências encontradas decorreram da evolução) Tj T*
+(incremental da suíte de testes \(que cresceu de 10 para 35, 36, 44, 50 e finalmente 57 testes) Tj T*
+(automatizados ao longo das entregas\), gerando defasagens numéricas nos documentos anteriores) Tj T*
+(que foram integralmente saneadas nas versões revisadas geradas por esta ferramenta.) Tj T*
+(11. Conclusão Técnica) Tj T*
+(Após a auditoria cruzada e geração dos documentos revisados com backup SHA-256 preservado,) Tj T*
+(todos os relatórios principais refletem com exatidão a verdade empírica do repositório: 57) Tj T*
+(testes automatizados em 8 suítes \(100% aprovados\), 7 tabelas relacionais em SQLite3 \(modo) Tj T*
+(WAL\), senhas com hash bcryptjs \(12 salt rounds\), cookies HttpOnly com SameSite=Lax e distinção) Tj T*
+(transparente entre cobertura funcional de rotas e cobertura de código e entre sondagens) Tj T*
+(pontuais e disponibilidade mensal.) Tj T*
+(12. Recomendações) Tj T*
+(Recomendação 1: 1. Utilizar os arquivos da pasta 'auditoria_output/revisados/' para a) Tj T*
+(submissão acadêmica final.) Tj T*
+(Recomendação 2: 2. Caso deseje declarar percentual de cobertura de linhas de código \(c8\),) Tj T*
+(executar 'npx c8 node --test' e anexar o sumário ao relatório.) Tj T*
+(1/10) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3748 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(Recomendação 3: 3. Manter o arquivo PDF oficial do roteiro da disciplina na pasta docs/ caso) Tj T*
+(os links relativos locais sejam exigidos na entrega.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Campo | Especificação Verificada) Tj T*
+(Instituição | Centro Universitário Internacional UNINTER - Escola Superior Politécnica) Tj T*
+(Disciplina | Projeto Multidisciplinar - Trilha: Qualidade de Software \(2026\)) Tj T*
+(Docente Orientador | Prof. Me. Rodrigo Nascimento) Tj T*
+(Acadêmico Responsável | Ronaldo Coutinho) Tj T*
+(Sistema Auditado | Rede 'Raízes do Nordeste' \(Vitrine, Cardápio Multicanal, API Express e) Tj T*
+(Gestão SQLite WAL\)) Tj T*
+(Verdade Factual no Código \(src/\) | 57 testes automatizados em 8 suítes | 7 tabelas SQL |) Tj T*
+(bcrypt 12 rounds | SameSite=Lax) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Documento | Formato | Tamanho | SHA-256 \(Prefixo\) | Estrutura Extraída) Tj T*
+(avaliacao-do-sistema.md | MD | 22,519 B | 08039cb38f0ed0ac... | 29 tít. / 127 par. / 2 tab.) Tj T*
+(guia-passo-a-passo-melhorias-qualidade.md | MD | 11,927 B | 18cda822dea7ef70... | 14 tít. /) Tj T*
+(129 par. / 4 tab.) Tj T*
+(PLANO_TESTES.md | MD | 12,384 B | c3c38441dc092b61... | 5 tít. / 21 par. / 2 tab.) Tj T*
+(relatorio-de-desenvolvimento.doc | DOC | 61,093 B | 002564282073e4e9... | 35 tít. / 140 par. /) Tj T*
+(12 tab.) Tj T*
+(relatorio-de-desenvolvimento.docx | DOCX | 61,093 B | 002564282073e4e9... | 35 tít. / 140 par.) Tj T*
+(/ 12 tab.) Tj T*
+(relatorio-de-desenvolvimento.md | MD | 40,970 B | 38c7fe8cb31c111b... | 35 tít. / 164 par. / 9) Tj T*
+(tab.) Tj T*
+(relatorio-de-revisao-do-sistema.md | MD | 17,052 B | 033f9ce1444ec62f... | 18 tít. / 93 par. /) Tj T*
+(3 tab.) Tj T*
+(relatorio-rascunho-apresentacao-banca.doc | DOC | 47,104 B | d1b7b5a34801c26b... | 0 tít. /) Tj T*
+(202 par. / 0 tab.) Tj T*
+(relatorio-rascunho-apresentacao-banca.md | MD | 18,899 B | 13f3b7aff92105cd... | 17 tít. / 75) Tj T*
+(par. / 9 tab.) Tj T*
+(relatorio-testes-backend.doc | DOC | 42,762 B | 1bf5f68753a2150b... | 6 tít. / 13 par. / 3 tab.) Tj T*
+(relatorio-testes-backend.docx | DOCX | 42,762 B | 1bf5f68753a2150b... | 6 tít. / 13 par. / 3) Tj T*
+(tab.) Tj T*
+(relatorio-testes-backend.md | MD | 10,758 B | f03444bd279a1129... | 5 tít. / 17 par. / 3 tab.) Tj T*
+(relatorio-testes-frontend.doc | DOC | 41,943 B | e8d85874605c2cea... | 6 tít. / 16 par. / 3) Tj T*
+(tab.) Tj T*
+(relatorio-testes-frontend.docx | DOCX | 41,943 B | e8d85874605c2cea... | 6 tít. / 16 par. / 3) Tj T*
+(tab.) Tj T*
+(relatorio-testes-frontend.md | MD | 8,882 B | af42ac0590e3fe09... | 5 tít. / 18 par. / 3 tab.) Tj T*
+(relatorio-testes-qualidade-software.doc | DOC | 41,687 B | 7969e61e63a44ae6... | 6 tít. / 10) Tj T*
+(par. / 4 tab.) Tj T*
+(relatorio-testes-qualidade-software.docx | DOCX | 41,687 B | 7969e61e63a44ae6... | 6 tít. / 10) Tj T*
+(par. / 4 tab.) Tj T*
+(relatorio-testes-qualidade-software.md | MD | 7,823 B | d1c65a7f61fe0869... | 5 tít. / 13 par.) Tj T*
+(/ 4 tab.) Tj T*
+(REQUISITOS.md | MD | 10,684 B | 39a4441349af2a0e... | 7 tít. / 71 par. / 2 tab.) Tj T*
+(USO_DE_IA.md | MD | 1,499 B | 850f45054078efbd... | 1 tít. / 13 par. / 0 tab.) Tj T*
+(README.md | MD | 32,000 B | 8de1dca630dc9a4c... | 25 tít. / 251 par. / 6 tab.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Código | Item do Roteiro | Status | Evidência Verificada | Complemento) Tj T*
+(2/10) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 4517 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(ROT-01 | 1. Contexto, Escopo \(In-Scope / Out-of-Scope\) e Multicanalidade | ATENDIDO | Seções) Tj T*
+(explícitas de In-Scope/Out-of-Scope e validação dos 5 canais em src/routes/orders.js e) Tj T*
+(src/faults.test.js. | Nenhum complemento estrutural necessário.) Tj T*
+(ROT-02 | 2. Arquitetura da Solução e Persistência Relacional | ATENDIDO | 7 tabelas reais em) Tj T*
+(src/db.js \(users, sessions, products, orders, unidades, estoque_movimentacoes,) Tj T*
+(financeiro_lancamentos\) com modo WAL e foreign_keys=ON. | Sincronizar documentos que ainda) Tj T*
+(citavam a tabela antiga 'order_items'.) Tj T*
+(ROT-03 | 3. Levantamento de Requisitos Funcionais e Casos de Uso \(UML\) | ATENDIDO | 8) Tj T*
+(Requisitos Funcionais \(RF-01 a RF-08\) e 9 Casos de Uso \(UC01 a UC09\) documentados com) Tj T*
+(critérios objetivos. | Nenhum.) Tj T*
+(ROT-04 | 4. Oito Requisitos de Qualidade Mensuráveis \(ISO/IEC 25010\) | ATENDIDO | 8 requisitos) Tj T*
+(mensuráveis \(RQ-01 a RQ-08 / RNF-01 a RNF-08\) especificados e testados em) Tj T*
+(src/qualidade.test.js. | Nenhum.) Tj T*
+(ROT-05 | 5. Planejamento da Qualidade \(QA Plan\) e Responsabilidades | ATENDIDO | Estratégia em) Tj T*
+(6 níveis, matriz RACI e Quality Gates documentados. | Nenhum.) Tj T*
+(ROT-06 | 6. Mínimo de 10 Cenários de Teste de Sistema \(Positivos e Negativos\) | ATENDIDO | 57) Tj T*
+(casos de teste automatizados reais implementados em 8 suítes no diretório src/ \(superando o) Tj T*
+(mínimo de 10\). | Unificar a contagem final de 57 testes em todos os relatórios anteriores que) Tj T*
+(citavam 35, 36, 44 ou 50.) Tj T*
+(ROT-07 | 7. Matriz de Rastreabilidade Bidirecional \(Requisito <-> Teste <-> Evidência\) | ATENDIDO) Tj T*
+(| Matrizes presentes vinculando RF-01..RF-08 e RQ-01..RQ-08 às suítes automatizadas. |) Tj T*
+(Padronizar os códigos CT-01..CT-18 em relatorio-de-revisao-do-sistema.md com o catálogo de) Tj T*
+(PLANO_TESTES.md.) Tj T*
+(ROT-08 | 8. Segurança da Aplicação \(Autenticação, RBAC, Anti-Fraude, Rate Limit, XSS/CSP\) |) Tj T*
+(ATENDIDO | Validado por src/app.test.js, src/faults.test.js e src/backend.test.js \(bcryptjs) Tj T*
+(custo 12, HMAC, Helmet CSP, RateLimiter 429\). | Corrigir menções residuais a '10 salt rounds') Tj T*
+(e 'SameSite=Strict' para '12 salt rounds' e 'SameSite=Lax'.) Tj T*
+(ROT-09 | 9. Privacidade e Conformidade com a LGPD \(Lei nº 13.709/2018\) | ATENDIDO | Checkbox) Tj T*
+(#register-lgpd-consent no frontend, validação lgpdConsent no backend \(HTTP 400 se recusado\) e) Tj T*
+(tabela de inventário LGPD. | Nenhum.) Tj T*
+(ROT-10 | 10. Planilha de Métricas e Indicadores de Qualidade \(SLA / SLO / KPIs\) | PARCIALMENTE) Tj T*
+(ATENDIDO | Tabelas de indicadores presentes com metas e resultados da suíte. | Explicitar nas) Tj T*
+(tabelas que '100% de cobertura' refere-se à cobertura funcional de rotas/requisitos \(e não) Tj T*
+(cobertura de código c8\) e que '100% de disponibilidade' refere-se à bateria pontual de testes) Tj T*
+(\(Regras 3, 4 e 5\).) Tj T*
+(ROT-11 | 11. Registro Obrigatório de Transparência no Uso de IA | ATENDIDO | Declaração) Tj T*
+(estruturada presente em docs/USO_DE_IA.md e na Seção 13 do relatório principal. | Nenhum.) Tj T*
+(ROT-12 | 12. Rascunho de Apresentação para Banca vs. Relatório Final | PARCIALMENTE ATENDIDO |) Tj T*
+(O cabeçalho de relatorio-rascunho-apresentacao-banca.md foi atualizado, mas as seções 2 a 10) Tj T*
+(ainda contêm campos '[Definir]' / '[Preencher]' do template inicial. | Revisão humana) Tj T*
+(recomendada caso o rascunho de banca seja entregue junto ao relatório principal.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(ID | Sev. | Documento | Local | Categoria | Encontrado | Valor Factual | Tipo) Tj T*
+(INC-001 | ALTA | PLANO_TESTES.md | PLANO_TESTES.md:L18 | Quantidade Total de Testes | 35 Casos) Tj T*
+(de Teste Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-002 | ALTA | relatorio-de-desenvolvimento.doc | relatorio-de-desenvolvimento.doc:Parágrafo) Tj T*
+(13 | Quantidade Total de Testes | 35 testes automatizados | 57 testes automatizados \(8 suítes\)) Tj T*
+(| Automática) Tj T*
+(INC-003 | ALTA | relatorio-de-desenvolvimento.doc | relatorio-de-desenvolvimento.doc:Parágrafo) Tj T*
+(106 | Quantidade Total de Testes | 35 testes executados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(3/10) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 4371 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(INC-004 | ALTA | relatorio-de-desenvolvimento.doc | relatorio-de-desenvolvimento.doc:Parágrafo) Tj T*
+(134 | Quantidade Total de Testes | 35 testes automatizados | 57 testes automatizados \(8) Tj T*
+(suítes\) | Automática) Tj T*
+(INC-005 | ALTA | relatorio-de-desenvolvimento.doc | relatorio-de-desenvolvimento.doc:Parágrafo) Tj T*
+(150 | Quantidade Total de Testes | 35 testes automatizados | 57 testes automatizados \(8) Tj T*
+(suítes\) | Automática) Tj T*
+(INC-006 | ALTA | relatorio-de-desenvolvimento.doc | relatorio-de-desenvolvimento.doc:Tabela 1) Tj T*
+(\(Linha 13\) | Quantidade Total de Testes | 35 Testes Automatizados | 57 testes automatizados \(8) Tj T*
+(suítes\) | Automática) Tj T*
+(INC-007 | ALTA | relatorio-de-desenvolvimento.doc | relatorio-de-desenvolvimento.doc:Tabela 2) Tj T*
+(\(Linha 1\) | Quantidade Total de Testes | 35 testes automatizados | 57 testes automatizados \(8) Tj T*
+(suítes\) | Automática) Tj T*
+(INC-008 | ALTA | relatorio-de-desenvolvimento.doc | relatorio-de-desenvolvimento.doc:Tabela 3) Tj T*
+(\(Linha 10\) | Quantidade Total de Testes | 35 testes aprovados | 57 testes automatizados \(8) Tj T*
+(suítes\) | Automática) Tj T*
+(INC-009 | MEDIA | relatorio-de-desenvolvimento.doc | relatorio-de-desenvolvimento.doc:Tabela) Tj T*
+(11 \(Linha 3\) | Regras 3 e 4 - Cobertura de Testes vs. Cobertura de Código | Cobertura de) Tj T*
+(Fluxos Críticos | >= 80% das rotas de negócio | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(Mapeamento de rotas e testes de integr | 100% das rotas funcionais avaliadas \(cobertura de) Tj T*
+(linhas via c8 não aferida no relatório\) | Revisão Humana) Tj T*
+(INC-010 | MEDIA | relatorio-de-desenvolvimento.doc | relatorio-de-desenvolvimento.doc:Tabela) Tj T*
+(11 \(Linha 5\) | Regra 5 - Disponibilidade Mensal vs. Sondagem Pontual | Disponibilidade) Tj T*
+(Operacional Simulada | >= 99,5% mensal | 100% nas baterias de homologação | Sondagens na rota) Tj T*
+(/api/health durante testes de e | 100% de respostas HTTP 200 na bateria pontual) Tj T*
+(\(disponibilidade mensal contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-011 | MEDIA | relatorio-de-desenvolvimento.doc | relatorio-de-desenvolvimento.doc:Tabela) Tj T*
+(11 \(Linha 5\) | Regra 5 - Disponibilidade Mensal vs. Sondagem Pontual | Disponibilidade) Tj T*
+(Operacional Simulada | >= 99,5% mensal | 100% nas baterias de homologação | Sondagens na rota) Tj T*
+(/api/health durante testes de e | 100% de respostas HTTP 200 na bateria pontual) Tj T*
+(\(disponibilidade mensal contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-012 | ALTA | relatorio-de-desenvolvimento.docx |) Tj T*
+(relatorio-de-desenvolvimento.docx:Parágrafo 13 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-013 | ALTA | relatorio-de-desenvolvimento.docx |) Tj T*
+(relatorio-de-desenvolvimento.docx:Parágrafo 106 | Quantidade Total de Testes | 35 testes) Tj T*
+(executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-014 | ALTA | relatorio-de-desenvolvimento.docx |) Tj T*
+(relatorio-de-desenvolvimento.docx:Parágrafo 134 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-015 | ALTA | relatorio-de-desenvolvimento.docx |) Tj T*
+(relatorio-de-desenvolvimento.docx:Parágrafo 150 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-016 | ALTA | relatorio-de-desenvolvimento.docx | relatorio-de-desenvolvimento.docx:Tabela) Tj T*
+(1 \(Linha 13\) | Quantidade Total de Testes | 35 Testes Automatizados | 57 testes automatizados) Tj T*
+(\(8 suítes\) | Automática) Tj T*
+(INC-017 | ALTA | relatorio-de-desenvolvimento.docx | relatorio-de-desenvolvimento.docx:Tabela) Tj T*
+(2 \(Linha 1\) | Quantidade Total de Testes | 35 testes automatizados | 57 testes automatizados) Tj T*
+(\(8 suítes\) | Automática) Tj T*
+(INC-018 | ALTA | relatorio-de-desenvolvimento.docx | relatorio-de-desenvolvimento.docx:Tabela) Tj T*
+(3 \(Linha 10\) | Quantidade Total de Testes | 35 testes aprovados | 57 testes automatizados \(8) Tj T*
+(suítes\) | Automática) Tj T*
+(INC-019 | MEDIA | relatorio-de-desenvolvimento.docx | relatorio-de-desenvolvimento.docx:Tabela) Tj T*
+(4/10) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 4559 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(11 \(Linha 3\) | Regras 3 e 4 - Cobertura de Testes vs. Cobertura de Código | Cobertura de) Tj T*
+(Fluxos Críticos | >= 80% das rotas de negócio | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(Mapeamento de rotas e testes de integr | 100% das rotas funcionais avaliadas \(cobertura de) Tj T*
+(linhas via c8 não aferida no relatório\) | Revisão Humana) Tj T*
+(INC-020 | MEDIA | relatorio-de-desenvolvimento.docx | relatorio-de-desenvolvimento.docx:Tabela) Tj T*
+(11 \(Linha 5\) | Regra 5 - Disponibilidade Mensal vs. Sondagem Pontual | Disponibilidade) Tj T*
+(Operacional Simulada | >= 99,5% mensal | 100% nas baterias de homologação | Sondagens na rota) Tj T*
+(/api/health durante testes de e | 100% de respostas HTTP 200 na bateria pontual) Tj T*
+(\(disponibilidade mensal contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-021 | MEDIA | relatorio-de-desenvolvimento.docx | relatorio-de-desenvolvimento.docx:Tabela) Tj T*
+(11 \(Linha 5\) | Regra 5 - Disponibilidade Mensal vs. Sondagem Pontual | Disponibilidade) Tj T*
+(Operacional Simulada | >= 99,5% mensal | 100% nas baterias de homologação | Sondagens na rota) Tj T*
+(/api/health durante testes de e | 100% de respostas HTTP 200 na bateria pontual) Tj T*
+(\(disponibilidade mensal contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-022 | ALTA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:L40 |) Tj T*
+(Quantidade Total de Testes | 35 testes automatizados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-023 | ALTA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:L42 |) Tj T*
+(Quantidade Total de Testes | 35 testes automatizados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-024 | ALTA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:L203 |) Tj T*
+(Quantidade Total de Testes | 35 Testes Automatizados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-025 | ALTA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:L205 |) Tj T*
+(Quantidade Total de Testes | 35 testes automatizados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-026 | ALTA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:L334 |) Tj T*
+(Quantidade Total de Testes | 35 testes automatizados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-027 | ALTA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas) Tj T*
+(16-30 \(Linha 13\) | Quantidade Total de Testes | 35 Testes Automatizados | 57 testes) Tj T*
+(automatizados \(8 suítes\) | Automática) Tj T*
+(INC-028 | ALTA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas) Tj T*
+(83-94 \(Linha 10\) | Quantidade Total de Testes | 35 testes aprovados | 57 testes automatizados) Tj T*
+(\(8 suítes\) | Automática) Tj T*
+(INC-029 | MEDIA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas) Tj T*
+(270-278 \(Linha 3\) | Regras 3 e 4 - Cobertura de Testes vs. Cobertura de Código | **Cobertura) Tj T*
+(de Fluxos Críticos** | >= 80% das rotas de negócio | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(Mapeamento de rotas e testes de in | 100% das rotas funcionais avaliadas \(cobertura de linhas) Tj T*
+(via c8 não aferida no relatório\) | Revisão Humana) Tj T*
+(INC-030 | MEDIA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas) Tj T*
+(270-278 \(Linha 5\) | Regra 5 - Disponibilidade Mensal vs. Sondagem Pontual | **Disponibilidade) Tj T*
+(Operacional Simulada** | >= 99,5% mensal | 100% nas baterias de homologação | Sondagens na rota) Tj T*
+(/api/health durante testes | 100% de respostas HTTP 200 na bateria pontual \(disponibilidade) Tj T*
+(mensal contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-031 | MEDIA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas) Tj T*
+(270-278 \(Linha 5\) | Regra 5 - Disponibilidade Mensal vs. Sondagem Pontual | **Disponibilidade) Tj T*
+(Operacional Simulada** | >= 99,5% mensal | 100% nas baterias de homologação | Sondagens na rota) Tj T*
+(/api/health durante testes | 100% de respostas HTTP 200 na bateria pontual \(disponibilidade) Tj T*
+(mensal contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-032 | ALTA | relatorio-de-revisao-do-sistema.md | relatorio-de-revisao-do-sistema.md:L19 |) Tj T*
+(Quantidade Total de Testes | 35 testes executados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(5/10) Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 15 0 R >>
+endobj
+15 0 obj
+<< /Length 4155 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(Automática) Tj T*
+(INC-033 | ALTA | relatorio-de-revisao-do-sistema.md | relatorio-de-revisao-do-sistema.md:L172) Tj T*
+(| Quantidade Total de Testes | 35 testes aprovados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-034 | MEDIA | relatorio-de-revisao-do-sistema.md |) Tj T*
+(relatorio-de-revisao-do-sistema.md:Linhas 140-147 \(Linha 3\) | Regras 3 e 4 - Cobertura de) Tj T*
+(Testes vs. Cobertura de Código | **Cobertura de Testes das Rotas Críticas** | >= 80% dos fluxos) Tj T*
+(principais | 100% dos fluxos de Auth, Pedidos, Unidades, Estoque, Finanças e O | 100% das) Tj T*
+(rotas funcionais avaliadas \(cobertura de linhas via c8 não aferida no relatório\) | Revisão) Tj T*
+(Humana) Tj T*
+(INC-035 | MEDIA | relatorio-de-revisao-do-sistema.md |) Tj T*
+(relatorio-de-revisao-do-sistema.md:Linhas 112-134 | Identificação e Numeração de Casos de) Tj T*
+(Teste | **RF-01** | CT-01 | Listar e validar catálogo completo de 100 produtos. | 100 itens) Tj T*
+(com nomes únicos e atributos consistentes. | Padronizar conforme catálogo mestre) Tj T*
+(PLANO_TESTES.md \(CT-01 = Headers Helmet; CT-26/PR-01 = Catálogo 100 produtos\) | Revisão Humana) Tj T*
+(INC-036 | ALTA | relatorio-testes-backend.doc | relatorio-testes-backend.doc:Tabela 1 \(Linha) Tj T*
+(8\) | Quantidade Total de Testes | 50 testes automatizados | 57 testes automatizados \(8 suítes\)) Tj T*
+(| Automática) Tj T*
+(INC-037 | ALTA | relatorio-testes-backend.docx | relatorio-testes-backend.docx:Tabela 1 \(Linha) Tj T*
+(8\) | Quantidade Total de Testes | 50 testes automatizados | 57 testes automatizados \(8 suítes\)) Tj T*
+(| Automática) Tj T*
+(INC-038 | ALTA | relatorio-testes-backend.md | relatorio-testes-backend.md:Linhas 13-22 \(Linha) Tj T*
+(8\) | Quantidade Total de Testes | 50 testes automatizados | 57 testes automatizados \(8 suítes\)) Tj T*
+(| Automática) Tj T*
+(INC-039 | ALTA | relatorio-testes-frontend.doc | relatorio-testes-frontend.doc:Parágrafo 19 |) Tj T*
+(Quantidade Total de Testes | 44 testes automatizados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-040 | ALTA | relatorio-testes-frontend.doc | relatorio-testes-frontend.doc:Tabela 1 \(Linha) Tj T*
+(7\) | Quantidade Total de Testes | 44 testes automatizados | 57 testes automatizados \(8 suítes\)) Tj T*
+(| Automática) Tj T*
+(INC-041 | ALTA | relatorio-testes-frontend.docx | relatorio-testes-frontend.docx:Parágrafo 19) Tj T*
+(| Quantidade Total de Testes | 44 testes automatizados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-042 | ALTA | relatorio-testes-frontend.docx | relatorio-testes-frontend.docx:Tabela 1) Tj T*
+(\(Linha 7\) | Quantidade Total de Testes | 44 testes automatizados | 57 testes automatizados \(8) Tj T*
+(suítes\) | Automática) Tj T*
+(INC-043 | ALTA | relatorio-testes-frontend.md | relatorio-testes-frontend.md:Linhas 13-21) Tj T*
+(\(Linha 7\) | Quantidade Total de Testes | 44 testes automatizados | 57 testes automatizados \(8) Tj T*
+(suítes\) | Automática) Tj T*
+(INC-044 | ALTA | REQUISITOS.md | REQUISITOS.md:Linhas 27-36 \(Linha 9\) | Quantidade Total de) Tj T*
+(Testes | 35 testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-045 | BAIXA | docs/ \(Diretório Geral\) | Referências a) Tj T*
+(Roteiro_de_Atividade_Pratica_2026_Projeto_Qualidade_rev_0_3.pdf | Rastreabilidade de) Tj T*
+(Referências \(Roteiro Oficial\) | Link quebrado para) Tj T*
+(Roteiro_de_Atividade_Pratica_2026_Projeto_Qualidade_rev_0_3.pdf | Arquivo ausente em docs/ |) Tj T*
+(Revisão Humana) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Regra/ID | Documento Revisado | Valor Anterior | Valor Corrigido | Justificativa Factual) Tj T*
+(REL-DET-02 | PLANO_TESTES.md | 35 Casos de Teste Automatizados | 57 Casos de Teste) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.doc | 35 testes automatizados | 57 testes) Tj T*
+(6/10) Tj
+ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 17 0 R >>
+endobj
+17 0 obj
+<< /Length 4704 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-de-desenvolvimento.doc | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.doc | 35 testes executados | 57 testes executados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.doc | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.doc | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-de-desenvolvimento.doc | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.doc | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-de-desenvolvimento.doc | 5 Suítes | 8 Suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.doc | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.doc | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-INT-01 | relatorio-de-desenvolvimento.doc | 100% \(Auth, Pedidos, Estoque, Finanças\) | 100%) Tj T*
+(das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-03 | relatorio-de-desenvolvimento.doc | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-de-desenvolvimento.docx | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.docx | 35 testes executados | 57 testes executados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-de-desenvolvimento.docx | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.docx | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-de-desenvolvimento.docx | 5 Suítes | 8 Suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.docx | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-INT-01 | relatorio-de-desenvolvimento.docx | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(100% das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-03 | relatorio-de-desenvolvimento.docx | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(7/10) Tj
+ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 19 0 R >>
+endobj
+19 0 obj
+<< /Length 4506 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.md | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.md | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.md | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-de-desenvolvimento.md | 5 Suítes | 8 Suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-de-desenvolvimento.md | 5 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-de-desenvolvimento.md | 5 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-de-desenvolvimento.md | 5 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-INT-01 | relatorio-de-desenvolvimento.md | 100% \(Auth, Pedidos, Estoque, Finanças\) | 100%) Tj T*
+(das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-03 | relatorio-de-desenvolvimento.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-DET-02 | relatorio-de-revisao-do-sistema.md | 35 testes executados | 57 testes executados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-revisao-do-sistema.md | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-de-revisao-do-sistema.md | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-INT-02 | relatorio-de-revisao-do-sistema.md | 100% dos fluxos de Auth, Pedidos, Unidades,) Tj T*
+(Estoque, Finanças e Offline testados | 100% dos fluxos funcionais avaliados \(cobertura de) Tj T*
+(linhas de código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3) Tj T*
+(e 4.) Tj T*
+(REL-INT-04 | relatorio-de-revisao-do-sistema.md | 100% de uptime nas baterias de teste | 100%) Tj T*
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5.) Tj T*
+(REL-DET-03 | relatorio-testes-backend.doc | 7 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-testes-backend.doc | 6 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-testes-backend.doc | 50 testes automatizados | 57 testes automatizados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-testes-backend.docx | 7 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-testes-backend.docx | 6 suítes | 8 suítes | Sincronização do total de) Tj T*
+(8/10) Tj
+ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 21 0 R >>
+endobj
+21 0 obj
+<< /Length 4577 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-testes-backend.docx | 50 testes automatizados | 57 testes automatizados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-testes-backend.md | 50 testes automatizados | 57 testes automatizados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-testes-backend.md | 7 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-testes-backend.md | 6 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-testes-frontend.doc | 44 testes automatizados | 57 testes automatizados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-testes-frontend.doc | 44 testes automatizados | 57 testes automatizados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-testes-frontend.docx | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-testes-frontend.docx | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-testes-frontend.md | 44 testes automatizados | 57 testes automatizados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | REQUISITOS.md | 35 testes aprovados | 57 testes aprovados | Sincronização da) Tj T*
+(contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | REQUISITOS.md | 5 suítes | 8 suítes | Sincronização do total de suítes) Tj T*
+(automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | USO_DE_IA.md | 5 suítes | 8 suítes | Sincronização do total de suítes) Tj T*
+(automatizadas para 8 suítes.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(ID | Documento | Localização | Descrição da Pendência | Ação Recomendada) Tj T*
+(INC-009 | relatorio-de-desenvolvimento.doc | relatorio-de-desenvolvimento.doc:Tabela 11 \(Linha) Tj T*
+(3\) | O relatório declara '100%' em indicador de cobertura de rotas/fluxos. Pelas Regras de) Tj T*
+(Integridade 3 e 4, é obrigatório explicitar que se trata de cobertura funcional de) Tj T*
+(rotas/requisitos avaliados, e não cobertura de linhas/branches de código medida por c8. |) Tj T*
+(Adicionar nota de qualificação diferenciando cobertura funcional de rotas e cobertura de) Tj T*
+(código.) Tj T*
+(INC-010 | relatorio-de-desenvolvimento.doc | relatorio-de-desenvolvimento.doc:Tabela 11 \(Linha) Tj T*
+(5\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado '100%) Tj T*
+(nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova apenas 100%) Tj T*
+(de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal contínua. |) Tj T*
+(Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-011 | relatorio-de-desenvolvimento.doc | relatorio-de-desenvolvimento.doc:Tabela 11 \(Linha) Tj T*
+(5\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado '100%) Tj T*
+(nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova apenas 100%) Tj T*
+(de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal contínua. |) Tj T*
+(Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-019 | relatorio-de-desenvolvimento.docx | relatorio-de-desenvolvimento.docx:Tabela 11) Tj T*
+(\(Linha 3\) | O relatório declara '100%' em indicador de cobertura de rotas/fluxos. Pelas Regras) Tj T*
+(de Integridade 3 e 4, é obrigatório explicitar que se trata de cobertura funcional de) Tj T*
+(rotas/requisitos avaliados, e não cobertura de linhas/branches de código medida por c8. |) Tj T*
+(Adicionar nota de qualificação diferenciando cobertura funcional de rotas e cobertura de) Tj T*
+(código.) Tj T*
+(INC-020 | relatorio-de-desenvolvimento.docx | relatorio-de-desenvolvimento.docx:Tabela 11) Tj T*
+(\(Linha 5\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado) Tj T*
+(9/10) Tj
+ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 23 0 R >>
+endobj
+23 0 obj
+<< /Length 3938 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+('100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova) Tj T*
+(apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal) Tj T*
+(contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-021 | relatorio-de-desenvolvimento.docx | relatorio-de-desenvolvimento.docx:Tabela 11) Tj T*
+(\(Linha 5\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado) Tj T*
+('100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova) Tj T*
+(apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal) Tj T*
+(contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-029 | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas 270-278) Tj T*
+(\(Linha 3\) | O relatório declara '100%' em indicador de cobertura de rotas/fluxos. Pelas Regras) Tj T*
+(de Integridade 3 e 4, é obrigatório explicitar que se trata de cobertura funcional de) Tj T*
+(rotas/requisitos avaliados, e não cobertura de linhas/branches de código medida por c8. |) Tj T*
+(Adicionar nota de qualificação diferenciando cobertura funcional de rotas e cobertura de) Tj T*
+(código.) Tj T*
+(INC-030 | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas 270-278) Tj T*
+(\(Linha 5\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado) Tj T*
+('100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova) Tj T*
+(apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal) Tj T*
+(contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-031 | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas 270-278) Tj T*
+(\(Linha 5\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado) Tj T*
+('100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova) Tj T*
+(apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal) Tj T*
+(contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-034 | relatorio-de-revisao-do-sistema.md | relatorio-de-revisao-do-sistema.md:Linhas) Tj T*
+(140-147 \(Linha 3\) | O relatório declara '100%' em indicador de cobertura de rotas/fluxos.) Tj T*
+(Pelas Regras de Integridade 3 e 4, é obrigatório explicitar que se trata de cobertura) Tj T*
+(funcional de rotas/requisitos avaliados, e não cobertura de linhas/branches de código medida) Tj T*
+(por c8. | Adicionar nota de qualificação diferenciando cobertura funcional de rotas e) Tj T*
+(cobertura de código.) Tj T*
+(INC-035 | relatorio-de-revisao-do-sistema.md | relatorio-de-revisao-do-sistema.md:Linhas) Tj T*
+(112-134 | Divergência de identificação de casos de teste: em) Tj T*
+(relatorio-de-revisao-do-sistema.md, 'CT-01' refere-se ao catálogo de 100 produtos, enquanto em) Tj T*
+(PLANO_TESTES.md e relatorio-de-desenvolvimento.md 'CT-01' refere-se aos headers de segurança) Tj T*
+(HTTP \(Helmet\) e o catálogo é 'CT-26' / 'PR-01'. | Revisar e alinhar a numeração da tabela de) Tj T*
+(rastreabilidade com PLANO_TESTES.md.) Tj T*
+(INC-045 | docs/ \(Diretório Geral\) | Referências a) Tj T*
+(Roteiro_de_Atividade_Pratica_2026_Projeto_Qualidade_rev_0_3.pdf | Os documentos referenciam o) Tj T*
+(arquivo 'docs/Roteiro_de_Atividade_Pratica_2026_Projeto_Qualidade_rev_0_3.pdf', porém esse) Tj T*
+(arquivo PDF não está presente no diretório docs/ do repositório. | Anexar o PDF oficial do) Tj T*
+(roteiro na pasta docs/ ou indicar que o roteiro pertence ao AVA UNINTER.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(10/10) Tj
+ET
+endstream
+endobj
+xref
+0 24
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000183 00000 n 
+0000000280 00000 n 
+0000000406 00000 n 
+0000004470 00000 n 
+0000004596 00000 n 
+0000008396 00000 n 
+0000008522 00000 n 
+0000013091 00000 n 
+0000013219 00000 n 
+0000017643 00000 n 
+0000017771 00000 n 
+0000022383 00000 n 
+0000022511 00000 n 
+0000026719 00000 n 
+0000026847 00000 n 
+0000031604 00000 n 
+0000031732 00000 n 
+0000036291 00000 n 
+0000036419 00000 n 
+0000041049 00000 n 
+0000041177 00000 n 
+trailer
+<< /Size 24 /Root 1 0 R >>
+startxref
+45168
+%%EOF

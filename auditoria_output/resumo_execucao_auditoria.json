@@ -1,0 +1,33 @@
+{
+  "total_documentos_lidos": 21,
+  "total_testes_codigo_real": 57,
+  "suites_teste_codigo": {
+    "src/app.test.js": 14,
+    "src/backend.test.js": 6,
+    "src/faults.test.js": 7,
+    "src/frontend.test.js": 8,
+    "src/gestao.test.js": 5,
+    "src/offline.test.js": 6,
+    "src/products.test.js": 4,
+    "src/qualidade.test.js": 7
+  },
+  "total_inconsistencias": 45,
+  "inconsistencias_automaticas": 33,
+  "inconsistencias_revisao_humana": 12,
+  "conformidade_roteiro_uninter_pct": 91.7,
+  "atendidos": 10,
+  "parcialmente_atendidos": 2,
+  "nao_atendidos": 0,
+  "total_correcoes_aplicadas": 60,
+  "total_pendencias_humanas": 1,
+  "pasta_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261121_104831_341387_auditoria_documental",
+  "arquivos_exportados": {
+    "relatorio_consolidado_docx": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\relatorios\\relatorio-consolidado-auditoria.docx",
+    "relatorio_consolidado_pdf": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\relatorios\\relatorio-consolidado-auditoria.pdf",
+    "planilha_auditoria_xlsx": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\relatorios\\planilha_auditoria_qa.xlsx",
+    "inconsistencias_csv": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\relatorios\\inconsistencias_identificadas.csv",
+    "registro_alteracoes_json": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\relatorios\\registro_alteracoes_realizadas.json",
+    "total_pdfs_individuais": "16",
+    "relatorio_consolidado_md": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\relatorios\\relatorio-consolidado-auditoria.md"
+  }
+}

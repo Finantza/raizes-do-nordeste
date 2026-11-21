@@ -16,6 +16,7 @@ Aplicação web didática para uma rede fictícia de lanchonetes. O projeto reú
 - [API de unidades](#api-de-unidades)
 - [Publicação](#publicação)
 - [Testes](#testes)
+- [Ferramenta de Auditoria e Correção Documental (Python)](#ferramenta-de-auditoria-e-correção-documental-python)
 - [Avaliação acadêmica](#avaliação-acadêmica)
 - [Estrutura do projeto](#estrutura-do-projeto)
 - [Segurança e limitações](#segurança-e-limitações)
@@ -266,7 +267,7 @@ Execute a suíte automatizada:
 npm test
 ```
 
-Os testes usam `node:test` e Supertest (totalizando **35 testes automatizados** distribuídos em 5 suítes: `app.test.js`, `gestao.test.js`, `offline.test.js`, `products.test.js` e `faults.test.js`) para verificar cabeçalhos/CSP, cadastro com LGPD e login com hash, sessão/cookie/logout, bloqueio de força bruta (HTTP 429), autorização RBAC de rotas, rejeição de payloads malformados/XSS/coerção de tipos, validação de estoque e financeiro, operação multicanal, funcionamento 100% offline e persistência SQLite após reabrir a conexão. A suíte usa bancos temporários isolados, sem alterar os dados locais.
+Os testes usam `node:test` e Supertest (totalizando **57 testes automatizados** distribuídos em 8 suítes: `app.test.js` [14], `faults.test.js` [7], `gestao.test.js` [5], `offline.test.js` [6], `products.test.js` [4], `frontend.test.js` [8], `backend.test.js` [6] e `qualidade.test.js` [7]) para verificar cabeçalhos/CSP, cadastro com LGPD e login com hash, sessão/cookie/logout, bloqueio de força bruta (HTTP 429), autorização RBAC de rotas, rejeição de payloads malformados/XSS/coerção de tipos, validação de estoque e financeiro, operação multicanal, funcionamento 100% offline, qualidade de software (ISO/IEC 25010) e persistência SQLite após reabrir a conexão. A suíte usa bancos temporários isolados, sem alterar os dados locais.
 
 Roteiro manual complementar:
 
@@ -279,6 +280,54 @@ Roteiro manual complementar:
 7. Nos perfis de administrador e loja, cadastre um produto com e sem foto e confirme que aparece no inventário e no cardápio; tente enviar marcação HTML no nome e confirme a rejeição.
 8. No perfil de loja, altere o estado de um pedido; confirme que o cliente vê a atualização e não consegue atualizar o estado.
 9. Com uma unidade de teste, consulte `/api/unidades`; depois tente cadastrá-la novamente e confirme o HTTP `409`.
+
+## Ferramenta de Auditoria e Correção Documental (Python)
+
+O repositório inclui uma aplicação modular em Python (3.10+) para analisar, auditar, verificar a conformidade com o Roteiro Acadêmico da UNINTER (Qualidade de Software — 2026), identificar inconsistências entre relatórios e produzir versões revisadas rastreáveis sem inventar métricas ou resultados.
+
+### Arquitetura e Módulos (`raiz do projeto`)
+
+- [`main.py`](main.py) — Orquestrador CLI e pipeline completo dos 6 módulos.
+- [`interface.py`](interface.py) — Interface gráfica em Português Brasileiro compatível com **Streamlit** (`streamlit run interface.py`) e com **Painel Web HTTP Local** integrado (`python interface.py` na porta `8501`).
+- [`leitor_documentos.py`](leitor_documentos.py) — **Módulo 1:** Leitura e extração de arquivos `DOCX`, `DOC`, `PDF`, `TXT`, `MD`, `CSV` e `XLSX`, além de inspeção direta da verdade física do código-fonte (`src/*.test.js`, `src/db.js`, `src/auth.js`).
+- [`consistencia.py`](consistencia.py) — **Módulo 2:** Auditoria de consistência interdocumental e aplicação rigorosa das 10 Regras de Integridade.
+- [`auditoria.py`](auditoria.py) — **Módulo 3:** Matriz de conformidade com o roteiro acadêmico oficial da UNINTER (`ROT-01` a `ROT-12`).
+- [`correcao.py`](correcao.py) — **Módulo 4:** Correção documental não destrutiva após criação de backup SHA-256, separando correções automáticas comprovadas de pendências para revisão humana.
+- [`gerador_relatorios.py`](gerador_relatorios.py) — **Módulo 5:** Geração do Relatório Consolidado de Auditoria com as 12 seções obrigatórias.
+- [`exportacao.py`](exportacao.py) — **Módulo 6:** Exportação automática de relatórios revisados em `DOCX` e `PDF`, relatório consolidado em `DOCX` e `PDF`, planilha de auditoria em `XLSX` (4 abas), registro de alterações em `JSON` e inconsistências em `CSV`.
+- [`backup.py`](backup.py) — Gestão de backups imutáveis com manifesto `SHA-256` antes de qualquer alteração.
+- [`logs.py`](logs.py) — Logs estruturados e trilha de auditoria persistente.
+- [`test_auditoria.py`](test_auditoria.py) — Suíte de testes automatizados (`unittest`) da própria ferramenta de auditoria.
+
+### Instalação e Execução da Ferramenta de Auditoria
+
+1. Instale as dependências no ambiente virtual Python (`.venv`):
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+2. Execute a auditoria completa via linha de comando:
+
+```powershell
+.\.venv\Scripts\python.exe main.py --dir docs --output auditoria_output
+```
+
+3. Execute a interface gráfica (Streamlit ou Painel Web HTTP Local na porta 8501):
+
+```powershell
+# Via Streamlit (se instalado no ambiente):
+.\.venv\Scripts\streamlit.exe run interface.py
+
+# Ou diretamente via Python (inicia o Painel Web Local caso Streamlit não esteja instalado):
+.\.venv\Scripts\python.exe interface.py
+```
+
+4. Execute os testes automatizados da ferramenta de auditoria:
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest test_auditoria.py -v
+```
 
 ## Avaliação acadêmica
 
