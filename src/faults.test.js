@@ -279,12 +279,13 @@ test("Falhas em Pedidos Multicanal: carrinho vazio, produto inexistente, quantid
     .send({ items: [], store: "Loja Centro", region: "Nordeste", method: "Delivery" });
   assert.equal(emptyOrder.status, 400);
 
-  // 2. Pedido com produto inexistente ou quantidade inválida (0, negativa, >100, boolean) -> 400
+  // 2. Pedido com produto inexistente ou quantidade inválida (0, negativa, >100, boolean) ou acima do estoque -> 400
   for (const badItem of [
     { id: 999999, quantity: 1 },
     { id: 1, quantity: 0 },
     { id: 1, quantity: -2 },
     { id: 1, quantity: 101 },
+    { id: 1, quantity: 95 },
     { id: 1, quantity: true },
     { id: 1, quantity: null }
   ]) {

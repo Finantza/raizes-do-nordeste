@@ -25,11 +25,13 @@ function parseSignedSession(value) {
   return sessionId;
 }
 
+const isSecureCookie = process.env.NODE_ENV !== "development";
+
 function setSessionCookie(res, sessionId) {
   const value = `${sessionId}.${signSessionId(sessionId)}`;
   res.cookie(SESSION_COOKIE, value, {
     httpOnly: true,
-    secure: true,
+    secure: isSecureCookie,
     sameSite: "lax",
     path: "/",
     maxAge: SESSION_TTL_MS
@@ -39,7 +41,7 @@ function setSessionCookie(res, sessionId) {
 function clearSessionCookie(res) {
   res.clearCookie(SESSION_COOKIE, {
     httpOnly: true,
-    secure: true,
+    secure: isSecureCookie,
     sameSite: "lax",
     path: "/"
   });

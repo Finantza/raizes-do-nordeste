@@ -363,14 +363,59 @@ async function deleteProduct(id) {
   return execute("DELETE FROM products WHERE id=?", [id]);
 }
 
+let createSqliteOrder = null;
+if (!usePostgres && sqlite) {
+  createSqliteOrder = sqlite.transaction((order, id, createdAt) => {
+    const insertResult = sqlite.prepare(
+      `INSERT INTO orders (id,user_id,legacy_id,store,region,method,total,items_json,details_json,created_at)
+       VALUES (?,?,?,?,?,?,?,?,?,?) ON CONFLICT (user_id,legacy_id) DO NOTHING`
+    ).run(id, order.userId, order.legacyId || null, order.store, order.region, order.method, order.total, JSON.stringify(order.items), JSON.stringify(order.details || {}), createdAt);
+
+    if (insertResult.changes > 0 && !order.legacyId) {
+      for (const item of order.items || []) {
+        const prod = sqlite.prepare("SELECT id, nome, estoque FROM products WHERE id = ?").get(item.id);
+        if (prod) {
+          const prevStock = Number(prod.estoque || 0);
+          const qty = Math.max(0, Number(item.quantity || 0));
+          const nextStock = Math.max(0, prevStock - qty);
+          sqlite.prepare("UPDATE products SET estoque = ? WHERE id = ?").run(nextStock, prod.id);
+          sqlite.prepare(
+            `INSERT INTO estoque_movimentacoes (product_id, tipo, quantidade, estoque_anterior, estoque_novo, motivo, usuario_nome, criado_em)
+             VALUES (?,?,?,?,?,?,?,?)`
+          ).run(prod.id, "saida", qty, prevStock, nextStock, `Venda de pedido (${order.store})`, "Sistema (Pedido)", createdAt);
+        }
+      }
+    }
+
+    const found = order.legacyId
+      ? sqlite.prepare("SELECT id,created_at FROM orders WHERE user_id=? AND legacy_id=?").get(order.userId, order.legacyId)
+      : sqlite.prepare("SELECT id,created_at FROM orders WHERE id=?").get(id);
+    return { id: found.id, ...order, createdAt: found.created_at };
+  });
+}
+
 async function createOrder(order) {
   const id = globalThis.crypto.randomUUID();
   const createdAt = new Date().toISOString();
+  if (createSqliteOrder) {
+    return createSqliteOrder(order, id, createdAt);
+  }
   await execute(
     `INSERT INTO orders (id,user_id,legacy_id,store,region,method,total,items_json,details_json,created_at)
      VALUES (?,?,?,?,?,?,?,?,?,?) ON CONFLICT (user_id,legacy_id) DO NOTHING`,
     [id, order.userId, order.legacyId || null, order.store, order.region, order.method, order.total, JSON.stringify(order.items), JSON.stringify(order.details || {}), createdAt]
   );
+  if (!order.legacyId) {
+    for (const item of order.items || []) {
+      await registerStockMovement({
+        productId: item.id,
+        tipo: "saida",
+        quantidade: item.quantity,
+        motivo: `Venda de pedido (${order.store})`,
+        usuarioNome: "Sistema (Pedido)"
+      });
+    }
+  }
   const found = await rows(
     order.legacyId
       ? "SELECT id,created_at FROM orders WHERE user_id=? AND legacy_id=?"

@@ -30,7 +30,7 @@ router.post("/", requireAuth, requireRole("cliente"), async (req, res, next) => 
 
   try {
     const products = await db.listProducts();
-    const orderItems = [];
+    const aggregatedQuantities = new Map();
     for (const item of items) {
       const id = toStrictNumber(item?.id);
       const quantity = toStrictNumber(item?.quantity);
@@ -38,6 +38,19 @@ router.post("/", requireAuth, requireRole("cliente"), async (req, res, next) => 
       if (!product || !Number.isInteger(quantity) || quantity < 1 || quantity > 100) {
         return res.status(400).json({ erro: "Um ou mais itens do pedido são inválidos." });
       }
+      const nextQty = (aggregatedQuantities.get(id) || 0) + quantity;
+      if (nextQty > 100) {
+        return res.status(400).json({ erro: "A quantidade por item não pode ultrapassar 100 unidades." });
+      }
+      if (Number(product.estoque || 0) < nextQty) {
+        return res.status(400).json({ erro: `Estoque insuficiente para o produto "${product.nome}".` });
+      }
+      aggregatedQuantities.set(id, nextQty);
+    }
+
+    const orderItems = [];
+    for (const [id, quantity] of aggregatedQuantities.entries()) {
+      const product = products.find((candidate) => Number(candidate.id) === id);
       orderItems.push({
         id: product.id,
         nome: product.nome,

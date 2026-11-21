@@ -16,7 +16,7 @@ echo ========================================
 echo.
 
 echo Executando suite completa de testes automatizados...
-%NODE_BIN% --test src/app.test.js src/gestao.test.js src/offline.test.js src/products.test.js src/faults.test.js
+%NODE_BIN% --test src/app.test.js src/gestao.test.js src/offline.test.js src/products.test.js src/faults.test.js src/frontend.test.js src/backend.test.js src/qualidade.test.js src/backend.test.js
 if not "%ERRORLEVEL%"=="0" (
   echo.
   echo [ERRO] Falha nos testes automatizados.

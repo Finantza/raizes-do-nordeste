@@ -302,6 +302,8 @@ checkoutButton?.addEventListener("click", async () => {
       })
     });
     localStorage.removeItem(CART_KEY);
+    if (window.reloadRaizesProducts) await window.reloadRaizesProducts();
+    renderCatalog();
     renderCart();
     await renderOrderHistory();
     setFeedback(`Pedido finalizado com sucesso em ${response.store} (${response.method} / ${response.region}).`, "text-success");
