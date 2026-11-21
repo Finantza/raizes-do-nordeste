@@ -15,8 +15,11 @@ Valida:
 import csv
 import json
 import tempfile
+import threading
 import unittest
+import urllib.request
 import zipfile
+from http.server import HTTPServer
 from pathlib import Path
 
 from auditoria import VerificadorRoteiroAcademico
@@ -25,6 +28,7 @@ from consistencia import AnalisadorConsistencia
 from correcao import CorretorDocumental
 from exportacao import ExportadorAuditoria
 from gerador_relatorios import GeradorRelatorios
+from interface import _PainelWebLocalHandler, executar_pipeline_interface
 from leitor_documentos import LeitorDocumentos
 from logs import GestorLogs
 from main import executar_auditoria_completa
@@ -182,6 +186,55 @@ class TestFerramentaAuditoria(unittest.TestCase):
         with open(exp["inconsistencias_csv"], "r", encoding="utf-8-sig") as f:
             reader = list(csv.reader(f, delimiter=";"))
             self.assertGreater(len(reader), 2)
+
+    def test_05_interface_frontend_web_e_download(self) -> None:
+        """Valida o frontend Web (interface.py): renderização HTML, cards, tabelas e download de artefatos."""
+        pasta_docs = self.base_path / "docs_ui"
+        pasta_docs.mkdir(parents=True, exist_ok=True)
+        (pasta_docs / "relatorio_ui.md").write_text(
+            "# Relatório UI\nForam executados 35 testes automatizados com bcrypt 10 salt rounds e SameSite=Strict.\n",
+            encoding="utf-8",
+        )
+        pasta_saida = self.base_path / "saida_ui"
+
+        _PainelWebLocalHandler.resultado_cache = {}
+        _PainelWebLocalHandler.pasta_docs = str(pasta_docs)
+        _PainelWebLocalHandler.pasta_saida = str(pasta_saida)
+
+        servidor = HTTPServer(("127.0.0.1", 0), _PainelWebLocalHandler)
+        porta = servidor.server_port
+        thread_srv = threading.Thread(target=servidor.serve_forever, daemon=True)
+        thread_srv.start()
+
+        try:
+            url_base = f"http://127.0.0.1:{porta}"
+            with urllib.request.urlopen(url_base, timeout=15) as resp:
+                self.assertEqual(resp.status, 200)
+                ctype = resp.headers.get("Content-Type", "")
+                self.assertIn("text/html", ctype)
+                html = resp.read().decode("utf-8")
+
+            self.assertIn("Sistema de Auditoria e Correção Documental", html)
+            self.assertIn("Inconsistências Identificadas", html)
+            self.assertIn("Matriz do Roteiro Acadêmico UNINTER", html)
+            self.assertIn("INC-001", html)
+            self.assertIn("ROT-01", html)
+
+            # Testa endpoint de download (/download?file=...) para arquivo dentro da raiz do projeto
+            raiz_projeto = Path(__file__).resolve().parent
+            arq_teste_dl = raiz_projeto / "auditoria_output" / "relatorios" / "inconsistencias_identificadas.csv"
+            if arq_teste_dl.exists():
+                from urllib.parse import quote
+                url_dl = f"{url_base}/download?file={quote(str(arq_teste_dl))}"
+                with urllib.request.urlopen(url_dl, timeout=10) as resp_dl:
+                    self.assertEqual(resp_dl.status, 200)
+                    disp = resp_dl.headers.get("Content-Disposition", "")
+                    self.assertIn("attachment", disp)
+                    conteudo_dl = resp_dl.read()
+                    self.assertGreater(len(conteudo_dl), 50)
+        finally:
+            servidor.shutdown()
+            servidor.server_close()
 
 
 if __name__ == "__main__":
