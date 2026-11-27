@@ -62,7 +62,7 @@ function renderRegionSummary() {
       groups[region] = { pedidos: 0, total: 0, lojas: new Set() };
     }
     groups[region].pedidos += 1;
-    groups[region].total += Number(order.total || 0);
+    groups[region].total = Math.round((groups[region].total + Number(order.total || 0)) * 100) / 100;
     if (order.store) groups[region].lojas.add(order.store);
   });
 
@@ -86,8 +86,8 @@ function renderAdmin() {
   const total = products.length;
   const estoqueTotal = products.reduce((sum, p) => sum + Number(p.estoque || 0), 0);
   const lowStock = products.filter((p) => Number(p.estoque || 0) <= 5).length;
-  const totalSales = orders.reduce((sum, o) => sum + Number(o.total || 0), 0);
-  const distinctRegions = new Set(orders.map((o) => o.region)).size;
+  const totalSales = Math.round(orders.reduce((sum, o) => sum + Number(o.total || 0), 0) * 100) / 100;
+  const distinctRegions = new Set(orders.map((o) => o.region).filter(Boolean)).size;
 
   if (totalProdutos) totalProdutos.textContent = total;
   if (totalEstoque) totalEstoque.textContent = estoqueTotal;

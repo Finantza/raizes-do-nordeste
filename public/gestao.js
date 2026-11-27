@@ -277,7 +277,17 @@
 
     document.getElementById("input-search-stock")?.addEventListener("input", (e) => {
       stockSearch = e.target.value;
+      const pos = e.target.selectionStart ?? stockSearch.length;
       renderEstoqueUI();
+      const restored = document.getElementById("input-search-stock");
+      if (restored) {
+        restored.focus();
+        try {
+          restored.setSelectionRange(pos, pos);
+        } catch (_err) {
+          // Ignora caso o ambiente DOM simulado não suporte setSelectionRange
+        }
+      }
     });
 
     document.querySelectorAll("[data-filter-stock]").forEach((btn) => {
@@ -589,7 +599,17 @@
 
     document.getElementById("input-search-fin")?.addEventListener("input", (e) => {
       finSearch = e.target.value;
+      const pos = e.target.selectionStart ?? finSearch.length;
       renderFinanceiroUI();
+      const restored = document.getElementById("input-search-fin");
+      if (restored) {
+        restored.focus();
+        try {
+          restored.setSelectionRange(pos, pos);
+        } catch (_err) {
+          // Ignora caso o ambiente DOM simulado não suporte setSelectionRange
+        }
+      }
     });
 
     document.querySelectorAll("[data-filter-tipo]").forEach((btn) => {

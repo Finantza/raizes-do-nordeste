@@ -22,7 +22,7 @@ import webbrowser
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
-from urllib.parse import parse_qs, urlparse
+from urllib.parse import parse_qs, quote, urlparse
 
 from auditoria import VerificadorRoteiroAcademico
 from backup import GestorBackup
@@ -338,7 +338,7 @@ class _PainelWebLocalHandler(BaseHTTPRequestHandler):
         ]:
             c = exp.get(chave)
             if c and Path(c).exists():
-                links_dl.append(f'<li><a href="/download?file={c}">{Path(c).name}</a></li>')
+                links_dl.append(f'<li><a href="/download?file={quote(str(c))}">{Path(c).name}</a></li>')
 
         html = f"""<!DOCTYPE html>
 <html lang="pt-BR">
