@@ -1,0 +1,550 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R] /Count 8 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 3909 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(DOCUMENTO: Documento Revisado: avaliacao-do-sistema.md) Tj T*
+(==========================================================================================) Tj T*
+() Tj T*
+(# Avaliação acadêmica do sistema \(Registro Histórico e Evolução\)) Tj T*
+() Tj T*
+(> **ATUALIZAÇÃO DE HOMOLOGAÇÃO - 13/11/2026 \(Versão Final\):**) Tj T*
+(> Este documento preserva o **diagnóstico inicial de auditoria \(16/10/2026\)** que guiou a) Tj T*
+(refatoração completa do projeto. **Todos os bloqueadores P0, inconsistências P1 e melhorias P2) Tj T*
+(apontados neste parecer inicial foram integralmente resolvidos e homologados na arquitetura) Tj T*
+(atual:**) Tj T*
+(> - **Autenticação e Autorização no Servidor \(P0.1 Resolvido\):** Contas, senhas com hash) Tj T*
+(`bcryptjs` \(custo 12\) e sessões assinadas via cookies `HttpOnly`, `Secure` e `SameSite=Lax`) Tj T*
+(estão persistidas em banco relacional \(`src/auth.js`, `src/routes/auth.js`\).) Tj T*
+(> - **Persistência Relacional Integrada \(P0.2 Resolvido\):** Unidades, usuários, sessões,) Tj T*
+(catálogo de 100 produtos, pedidos multicanal, movimentações de estoque) Tj T*
+(\(`estoque_movimentacoes`\) e lançamentos financeiros \(`financeiro_lancamentos`\) operam sobre) Tj T*
+(SQLite3 \(modo WAL\) e PostgreSQL \(`src/db.js`\).) Tj T*
+(> - **Cálculo de Preços Promocionais e Anti-Fraude \(P1.3 Resolvido\):** O carrinho exibe o) Tj T*
+(preço com desconto e o backend recalcula obrigatoriamente todos os preços e descontos no) Tj T*
+(servidor \(`src/routes/orders.js`\).) Tj T*
+(> - **Validação Estrita de Campos, Datas e Zero \(P1.6 Resolvido\):** Todos os endpoints validam) Tj T*
+(tipos numéricos estritos \(bloqueando coerção de `null`, `""` e `boolean`\), permitem ajuste de) Tj T*
+(estoque para `0` e validam datas reais no calendário ISO \(`src/routes/products.js`,) Tj T*
+(`estoque.js`, `financeiro.js`\).) Tj T*
+(> - **Suíte Automatizada Expandida \(P2.15 Resolvido\):** A suíte evoluiu de 10 para **35 testes) Tj T*
+(automatizados \(100% aprovados\)** distribuídos em 5 suítes \(`app.test.js`, `gestao.test.js`,) Tj T*
+(`offline.test.js`, `products.test.js` e `faults.test.js`\).) Tj T*
+(> - Para o relatório consolidado da versão final homologada, consulte) Tj T*
+([`docs/relatorio-de-desenvolvimento.md`]\(relatorio-de-desenvolvimento.md\) e) Tj T*
+([`docs/relatorio-de-revisao-do-sistema.md`]\(relatorio-de-revisao-do-sistema.md\).) Tj T*
+() Tj T*
+(**Data da avaliação inicial:** 16/10/2026) Tj T*
+(**Escopo inicial avaliado:** aplicação publicada localmente pelo Express, interface no) Tj T*
+(navegador, perfis demonstrativos, carrinho/pedidos locais e API de unidades.) Tj T*
+(**Objetivo:** avaliar o protótipo como uma banca acadêmica, registrar evidências observadas e) Tj T*
+(propor melhorias priorizadas. Esta avaliação não certifica o sistema para uso comercial ou) Tj T*
+(produção.) Tj T*
+() Tj T*
+(> **Atualização de segurança - 16/10/2026:** o cadastro `POST /api/unidades` agora exige o) Tj T*
+(segredo compartilhado `RAIZES_API_ADMIN_TOKEN`, com no mínimo 32 bytes; sem configuração) Tj T*
+(suficiente o endpoint falha fechado. Os testes automatizados cobrem token válido, ausente,) Tj T*
+(inválido e configuração ausente/fraca. Isso protege somente a criação de unidades e não) Tj T*
+(transforma os perfis demonstrativos em autenticação/autorização individual de servidor. A) Tj T*
+(avaliação abaixo foi atualizada nesses pontos; outros achados históricos ainda precisam ser) Tj T*
+(revalidados contra o sistema atual.) Tj T*
+() Tj T*
+(## Parecer executivo) Tj T*
+() Tj T*
+(O projeto é um **protótipo navegável**, com identidade visual definida, três áreas por perfil,) Tj T*
+(login demonstrativo, operações locais de catálogo/carrinho e uma API funcional para unidades.) Tj T*
+(Os fluxos principais de demonstração foram percorridos no navegador e os testes existentes da) Tj T*
+(API passaram.) Tj T*
+(1/8) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3376 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+() Tj T*
+(O resultado **não deve ser apresentado como uma plataforma de vendas integrada nem como) Tj T*
+(sistema pronto para uso real**. Autenticação e dados de negócio residem no navegador; pedidos,) Tj T*
+(produtos e unidades pertencem a armazenamentos diferentes; parte dos indicadores é fictícia;) Tj T*
+(há inconsistências no preço final e problemas de apresentação em celular.) Tj T*
+() Tj T*
+(### Síntese por critério) Tj T*
+() Tj T*
+(| Critério | Resultado | Observação |) Tj T*
+(|---|---|---|) Tj T*
+(| Inicialização e navegação | Atende parcialmente | O Express serve as telas; áreas de perfil) Tj T*
+(encaminham visitantes sem sessão ao login. |) Tj T*
+(| Login e perfis demonstrativos | Atende no protótipo | Login comum, cadastro de cliente,) Tj T*
+(redirecionamento por perfil e saída foram exercitados. Não é autenticação segura de servidor. |) Tj T*
+(| Funções do cliente | Atende parcialmente | Catálogo, filtros, carrinho, pedido e histórico) Tj T*
+(funcionam localmente, mas o carrinho não aplica o preço promocional exibido. |) Tj T*
+(| Funções administrativas | Atende parcialmente | Inventário e inclusão de produto funcionam) Tj T*
+(para valores positivos; o formulário contradiz sua própria aceitação de zero. |) Tj T*
+(| Funções da loja | Atende como demonstração | Checklist e indicadores aparecem; não são uma) Tj T*
+(operação real nem todos os dados são provenientes de pedidos. |) Tj T*
+(| API de unidades | Atende ao escopo implementado | Listagem, cadastro, validações,) Tj T*
+(duplicidade e limite foram exercitados com os status esperados. |) Tj T*
+(| Responsividade e acessibilidade | Atende parcialmente | Responsividade e estilos locais) Tj T*
+(foram validados em larguras móveis e desktop; ainda há campos em alguns formulários sem) Tj T*
+(associação explícita entre rótulo e controle. |) Tj T*
+(| Segurança e produção | Não atende para uso real | Perfis e sessão continuam controlados pelo) Tj T*
+(cliente; o POST da API exige um segredo administrativo compartilhado, mas não há identidade) Tj T*
+(individual nem autorização por perfil. |) Tj T*
+(| Qualidade automatizada | Parcial | A suíte possui 10 testes automatizados \(API e catálogo\);) Tj T*
+(os fluxos de interface ainda dependem de teste manual. |) Tj T*
+() Tj T*
+(## Testes executados) Tj T*
+() Tj T*
+(### Suíte automatizada) Tj T*
+() Tj T*
+(Na execução de 16/10/2026, `npm test` concluiu com **10 testes aprovados, 0 falhas**:) Tj T*
+() Tj T*
+(1. Cabeçalhos HTTP básicos de segurança e serviço de imagem.) Tj T*
+(2. Cadastro/listagem de unidades usando o segredo administrativo de teste.) Tj T*
+(3. Rejeição de unidade duplicada.) Tj T*
+(4. Rejeição de cadastro sem token ou com token inválido.) Tj T*
+(5. Desativação segura do cadastro sem token configurado ou com segredo menor que 32 bytes.) Tj T*
+(6. Integridade do catálogo, descrições e itens incluídos nos combos.) Tj T*
+(7. Preservação de produtos personalizados e resolução das imagens/fallbacks.) Tj T*
+() Tj T*
+(Antes da execução, o conteúdo de `data/raizes.json` foi guardado e restaurado depois, pois a) Tj T*
+(suíte chama `resetDatabase\(\)` e altera esse arquivo.) Tj T*
+() Tj T*
+(Também foi verificada a sintaxe JavaScript de `auth.js`, `login.js`, `cliente.js`, `admin.js`) Tj T*
+(e `operacional.js`; todos passaram em `node --check`.) Tj T*
+() Tj T*
+(### API) Tj T*
+(2/8) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 3340 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+() Tj T*
+(Testes isolados da aplicação Express confirmaram:) Tj T*
+() Tj T*
+(| Cenário | Resultado |) Tj T*
+(|---|---:|) Tj T*
+(| `GET /api/health` | `200` |) Tj T*
+(| `GET /api/unidades` | `200` |) Tj T*
+(| Cadastro válido e normalização de UF para maiúsculas | `201` |) Tj T*
+(| Cadastro duplicado | `409` |) Tj T*
+(| Cadastro sem segredo ou com segredo incorreto | `401` |) Tj T*
+(| Segredo de servidor ausente ou curto | `503` |) Tj T*
+(| UF inválida | `400` |) Tj T*
+(| Sexta chamada na mesma janela de limite | `429` |) Tj T*
+() Tj T*
+(Os dados e o segredo de teste são isolados pela suíte; os registros de unidade são apagados no) Tj T*
+(início dos testes. O segredo de teste não deve ser reutilizado fora deles.) Tj T*
+() Tj T*
+(### Interface e fluxos de perfil) Tj T*
+() Tj T*
+(Foram percorridos pelo navegador:) Tj T*
+() Tj T*
+(- A página inicial carrega os produtos em destaque, mas os três indicadores de) Tj T*
+(unidades/estados permanecem como `-`.) Tj T*
+(- Acesso sem sessão a um painel encaminha ao login comum.) Tj T*
+(- Credenciais inválidas apresentam mensagem de erro.) Tj T*
+(- Login de cliente, administrador e loja direciona cada conta à área correspondente.) Tj T*
+(- Cadastro de cliente funciona; a tentativa de cadastrar novamente o mesmo e-mail é recusada.) Tj T*
+(- O botão **Sair** remove a sessão e retorna ao login.) Tj T*
+(- O cliente consegue filtrar o catálogo, adicionar produto, ver o carrinho, finalizar um) Tj T*
+(pedido e encontrar o pedido no histórico.) Tj T*
+(- O administrador consegue adicionar um produto com preço e estoque positivos e vê-lo no) Tj T*
+(inventário.) Tj T*
+(- A loja abre o painel operacional e reflete a quantidade do pedido local recém-criado.) Tj T*
+(- Foi testado o formulário administrativo com preço e estoque iguais a zero; o sistema) Tj T*
+(rejeitou os valores embora os campos HTML declarem `min="0"`.) Tj T*
+(- Na tela de login, com viewport configurada para `390 px`, o documento apresentou `584 px` de) Tj T*
+(largura rolável \(`384 px` de largura útil\), causando rolagem horizontal.) Tj T*
+(- **Correção posterior:** o layout de autenticação foi empilhado em telas menores e os) Tj T*
+(utilitários responsivos de navegação, grids dos painéis e cartões de indicadores foram) Tj T*
+(adicionados. Após a correção, login, cliente, administração e operação foram verificados em) Tj T*
+(larguras móveis/tablet sem rolagem horizontal do documento.) Tj T*
+(- A página de login não contém elementos `<img>`; também não foram encontrados arquivos de) Tj T*
+(imagem do catálogo em `public/`.) Tj T*
+(- **Correção posterior de CSS/CSP em 16/10/2026:** foram removidas referências a fontes e) Tj T*
+(Bootstrap externos que a CSP bloqueava; os painéis passaram a usar os estilos locais. Também) Tj T*
+(foram corrigidos o breakpoint de `.grid-3`, a seta nativa dos seletores e o foco por teclado) Tj T*
+(dos modos de pedido. Validação posterior: sem overflow entre 320 e 1280 px nas páginas) Tj T*
+(verificadas, sem recursos de estilo/script externos nos painéis e sem erros reportados pelo) Tj T*
+(verificador de arquivos.) Tj T*
+() Tj T*
+(**Limites da avaliação:** não foram testados pagamentos reais, integração com serviço de) Tj T*
+(entrega, concorrência entre usuários, implantação em Render, persistência entre dispositivos) Tj T*
+(3/8) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 3048 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(nem uma autenticação individual de usuários. A proteção por segredo compartilhado no POST foi) Tj T*
+(testada pela suíte local; a configuração e operação do segredo em implantação pública não) Tj T*
+(foram verificadas.) Tj T*
+() Tj T*
+(## Observações e melhorias priorizadas) Tj T*
+() Tj T*
+(As prioridades refletem o impacto para uma demonstração avaliada e, separadamente, o risco de) Tj T*
+(uso real.) Tj T*
+() Tj T*
+(### P0 - Bloqueadores para qualquer uso real) Tj T*
+() Tj T*
+(#### 1. Autenticação individual dos perfis existe apenas no navegador) Tj T*
+() Tj T*
+(**Evidência:** as contas padrão e senhas estão no código de [auth.js]\(../public/auth.js\);) Tj T*
+(usuários e sessão são mantidos no `localStorage`; a exigência de perfil é aplicada em) Tj T*
+(JavaScript. Como correção parcial, `POST /api/unidades` agora valida um segredo compartilhado) Tj T*
+(configurado no servidor; `GET /api/unidades` continua público, e o segredo não representa) Tj T*
+(identidade individual nem perfil.) Tj T*
+() Tj T*
+(**Risco/impacto:** as credenciais demonstrativas podem ser lidas por qualquer visitante e os) Tj T*
+(dados locais podem ser alterados; um segredo compartilhado também não identifica qual operador) Tj T*
+(realizou o cadastro e pode ser repassado. Os controles visuais de perfil não são autorização) Tj T*
+(de servidor.) Tj T*
+() Tj T*
+(**Melhoria restante:** implementar autenticação individual no servidor, hash de senhas,) Tj T*
+(sessões/tokens seguros e autorização por perfil em cada rota; proteger o segredo) Tj T*
+(administrativo em variável de ambiente, com política de rotação. Remover as senhas padrão de) Tj T*
+(qualquer implantação pública.) Tj T*
+() Tj T*
+(#### 2. Dados de pedidos e produtos não constituem uma operação integrada) Tj T*
+() Tj T*
+(**Evidência:** catálogo, inventário, carrinho e pedidos são salvos no `localStorage`; a API) Tj T*
+(persistente implementada só trata unidades em `data/raizes.json`.) Tj T*
+() Tj T*
+(**Risco/impacto:** outro dispositivo ou usuário não vê as alterações; a loja não recebe) Tj T*
+(pedidos de forma confiável; os painéis não são fonte operacional única.) Tj T*
+() Tj T*
+(**Melhoria:** definir API e armazenamento persistente para produtos, estoque e pedidos;) Tj T*
+(validar preço, disponibilidade, identidade do cliente e transições do pedido no servidor.) Tj T*
+() Tj T*
+(### P1 - Corrigir antes de considerar o protótipo funcionalmente coerente) Tj T*
+() Tj T*
+(#### 3. O carrinho cobra preço diferente do preço promocional anunciado) Tj T*
+() Tj T*
+(**Evidência:** o cartão de produto calcula e exibe o valor com desconto em) Tj T*
+([cliente.js]\(../public/cliente.js\), mas `addToCart\(\)` guarda `product.preco` sem descontar a) Tj T*
+(promoção. Para o Combo Nordeste, o catálogo mostra aproximadamente **R$ 58,44**, enquanto o) Tj T*
+(carrinho e o pedido usam **R$ 89,90**.) Tj T*
+() Tj T*
+(**Impacto:** divergência visível entre oferta e total final; o usuário não recebe no carrinho) Tj T*
+(o preço anunciado.) Tj T*
+() Tj T*
+(4/8) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 3359 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(**Melhoria:** calcular o preço promocional uma vez em uma função comum, exibir esse preço no) Tj T*
+(carrinho e validar o total novamente na API ao finalizar.) Tj T*
+() Tj T*
+(#### 4. Login não era responsivo em celular - corrigido) Tj T*
+() Tj T*
+(**Evidência original:** [login.html]\(../public/login.html\) fixava duas colunas mínimas de `280) Tj T*
+(px` e `260 px` em uma tela de `390 px`; a medição no navegador encontrou conteúdo com `584 px`) Tj T*
+(de largura rolável.) Tj T*
+() Tj T*
+(**Impacto original:** parte do conteúdo ficava fora da tela e exigia rolagem horizontal em um) Tj T*
+(fluxo essencial.) Tj T*
+() Tj T*
+(**Correção e verificação:** cartões de autenticação agora empilham em telas menores; início,) Tj T*
+(login e painéis foram verificados em larguras de 320, 390, 768, 991, 1024 e 1280 px sem) Tj T*
+(overflow horizontal.) Tj T*
+() Tj T*
+(#### 5. Política CSP bloqueava estilos externos declarados pelas páginas - corrigido) Tj T*
+() Tj T*
+(**Evidência original:** a política definida em [src/app.js]\(../src/app.js\) autoriza estilos) Tj T*
+(somente de `'self'` e `'unsafe-inline'`; o console confirmou bloqueio da fonte do Google Fonts) Tj T*
+(e do Bootstrap via CDN. As classes de componentes como `.top-card`, `.store-card` e) Tj T*
+(`.status-pill` também não tinham estilos locais.) Tj T*
+() Tj T*
+(**Impacto original:** a fonte externa era substituída pelo fallback, os painéis ficavam sem) Tj T*
+(regras visuais para componentes próprios e a navegação registrava violações da CSP.) Tj T*
+() Tj T*
+(**Correção e verificação:** removidas as importações externas de fontes e Bootstrap;) Tj T*
+(adicionados estilos locais necessários aos painéis e removido o JavaScript externo não) Tj T*
+(utilizado. A pilha de fontes agora utiliza o fallback local do sistema. As páginas de) Tj T*
+(administração e operação foram verificadas em tamanhos móveis e desktop, sem overflow e sem) Tj T*
+(dependências externas de estilo/script. Também foi corrigida a ordem dos breakpoints de) Tj T*
+(`.grid-3`, que fazia duas colunas prevalecerem indevidamente abaixo de 768 px. A navegação por) Tj T*
+(teclado nos modos de pedido e os seletores nativos também foram corrigidos. O achado está) Tj T*
+(corrigido para a interface atual; a política CSP do servidor não foi ampliada.) Tj T*
+() Tj T*
+(#### 6. Formulário de produto declara aceitar zero e o JavaScript rejeita) Tj T*
+() Tj T*
+(**Evidência:** os campos preço e estoque em [admin.html]\(../public/admin.html\) têm `min="0"`,) Tj T*
+(mas a validação de [admin.js]\(../public/admin.js\) usa `!preco || !estoque`, tratando zero como) Tj T*
+(campo ausente. O cenário foi reproduzido no navegador.) Tj T*
+() Tj T*
+(**Impacto:** não é possível cadastrar produtos gratuitos ou itens sem estoque, apesar do) Tj T*
+(contrato HTML indicar que esses valores são válidos.) Tj T*
+() Tj T*
+(**Melhoria:** validar campos vazios separadamente de números e verificar que preço/estoque) Tj T*
+(sejam números finitos e não negativos.) Tj T*
+() Tj T*
+(#### 7. Indicadores da página inicial não são preenchidos) Tj T*
+() Tj T*
+(**Evidência:** os campos de unidades, lojas ativas e estados aparecem como `-` em) Tj T*
+([index.html]\(../public/index.html\). [app.js]\(../public/app.js\) apenas renderiza produtos em) Tj T*
+(destaque e não consulta `/api/unidades`.) Tj T*
+(5/8) Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 15 0 R >>
+endobj
+15 0 obj
+<< /Length 2956 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+() Tj T*
+(**Impacto:** a página apresenta métricas sem valor e dá impressão de funcionalidade inacabada.) Tj T*
+() Tj T*
+(**Melhoria:** integrar esses indicadores à API, exibir estado de carregamento/erro e) Tj T*
+(documentar a origem e a regra de cálculo de cada total.) Tj T*
+() Tj T*
+(### P2 - Melhorias importantes de UX, qualidade e conteúdo) Tj T*
+() Tj T*
+(#### 8. Números operacionais são simulados e podem contradizer os pedidos) Tj T*
+() Tj T*
+(**Evidência:** [operacional.js]\(../public/operacional.js\) injeta três pedidos fictícios quando) Tj T*
+(não há pedidos e usa valores de fallback para vendas, delivery e retirada. O painel) Tj T*
+(administrativo também apresenta números de demonstração quando não existem pedidos em) Tj T*
+([admin.js]\(../public/admin.js\).) Tj T*
+() Tj T*
+(**Impacto:** os números podem ser interpretados como resultados reais, inclusive em uma) Tj T*
+(avaliação do funcionamento da aplicação.) Tj T*
+() Tj T*
+(**Melhoria:** marcar claramente os dados como demonstração ou apresentar zero/estado vazio) Tj T*
+(quando não houver dados reais; separar amostras da informação operacional.) Tj T*
+() Tj T*
+(#### 9. Preços, estoque e pagamento não têm validação transacional) Tj T*
+() Tj T*
+(**Evidência:** no perfil do cliente, a quantidade cresce sem limite, não há verificação de) Tj T*
+(estoque no `addToCart\(\)` e os dados do pedido são persistidos localmente. O meio de pagamento) Tj T*
+(é registrado como texto, sem integração com provedor.) Tj T*
+() Tj T*
+(**Impacto:** estoque pode ficar negativo ou ser vendido acima do disponível; a confirmação) Tj T*
+(local não significa que houve pagamento ou aceitação da loja.) Tj T*
+() Tj T*
+(**Melhoria:** verificar estoque no servidor no momento da finalização, evitar dupla venda,) Tj T*
+(validar endereço conforme o modo escolhido e distinguir pedido criado de pagamento confirmado.) Tj T*
+() Tj T*
+(#### 10. Links de navegação mostram painéis de outros perfis) Tj T*
+() Tj T*
+(**Evidência:** cada painel inclui links para as outras áreas, mas [auth.js]\(../public/auth.js\)) Tj T*
+(redireciona de volta ao painel da sessão quando o perfil não corresponde.) Tj T*
+() Tj T*
+(**Impacto:** o link parece navegável, mas retorna o usuário ao mesmo lugar, confundindo a) Tj T*
+(navegação.) Tj T*
+() Tj T*
+(**Melhoria:** mostrar links comuns \(início, perfil atual, sair\) e ocultar áreas exclusivas de) Tj T*
+(outros perfis; caso exista uma troca legítima de conta, oferecer saída/login de forma) Tj T*
+(explícita.) Tj T*
+() Tj T*
+(#### 11. Imagens de produtos e alternativas textuais estão ausentes) Tj T*
+() Tj T*
+(**Evidência:** não há arquivos de imagem do catálogo em `public/`; os cartões usam a inicial) Tj T*
+(da categoria como ilustração e não há elementos `<img>` no login.) Tj T*
+() Tj T*
+(**Impacto:** o catálogo não oferece apoio visual dos produtos, reduzindo a qualidade de uma) Tj T*
+(vitrine de alimentação.) Tj T*
+(6/8) Tj
+ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 17 0 R >>
+endobj
+17 0 obj
+<< /Length 3028 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+() Tj T*
+(**Melhoria:** incluir imagens locais otimizadas, dimensões reservadas para evitar deslocamento) Tj T*
+(da página e texto alternativo descritivo; atualizar `img-src` da CSP somente se houver) Tj T*
+(necessidade justificada de outra origem.) Tj T*
+() Tj T*
+(#### 12. Acessibilidade de formulários e feedback pode melhorar) Tj T*
+() Tj T*
+(**Evidência:** campos administrativos e operacionais têm rótulos sem `for`/`id` explícitos;) Tj T*
+(mensagens de vários formulários não compartilham um padrão de anúncio para leitor de tela. O) Tj T*
+(login comum tem associações melhores.) Tj T*
+() Tj T*
+(**Impacto:** associação de rótulo, navegação assistiva e compreensão de erro podem variar) Tj T*
+(conforme navegador e tecnologia assistiva.) Tj T*
+() Tj T*
+(**Melhoria:** associar todos os rótulos aos campos por `for`/`id`, indicar obrigatoriedade e) Tj T*
+(erro programaticamente, manter foco no primeiro campo inválido e testar com teclado e leitor) Tj T*
+(de tela.) Tj T*
+() Tj T*
+(#### 13. Conteúdo dinâmico é inserido com `innerHTML`) Tj T*
+() Tj T*
+(**Evidência:** nomes/categorias de produto e dados de sessão/pedido, alguns editáveis ou) Tj T*
+(persistidos no navegador, são interpolados em HTML em [admin.js]\(../public/admin.js\),) Tj T*
+([cliente.js]\(../public/cliente.js\) e [operacional.js]\(../public/operacional.js\).) Tj T*
+() Tj T*
+(**Impacto:** dados não confiáveis podem ser interpretados como marcação HTML; a implementação) Tj T*
+(dificulta garantir exibição segura após futura integração ou importação de dados.) Tj T*
+() Tj T*
+(**Melhoria:** construir nós de texto com `textContent` para valores e sanitizar somente quando) Tj T*
+(HTML for realmente necessário. Repetir as validações no servidor.) Tj T*
+() Tj T*
+(#### 14. CORS e URL de API ainda são de demonstração) Tj T*
+() Tj T*
+(**Evidência:** [config.js]\(../public/config.js\) contém `SEU-APP-RENDER.onrender.com`; a API) Tj T*
+(aceita apenas origens locais conhecidas. O frontend atual não sincroniza pedidos/produtos com) Tj T*
+(essa API.) Tj T*
+() Tj T*
+(**Impacto:** uma implantação com frontend em outra origem não consegue usar a API sem) Tj T*
+(configuração; a configuração de exemplo não representa integração pronta.) Tj T*
+() Tj T*
+(**Melhoria:** parametrizar a URL por ambiente, listar origens autorizadas reais e verificar) Tj T*
+(uma implantação de ponta a ponta antes de publicar.) Tj T*
+() Tj T*
+(#### 15. Cobertura automatizada concentra-se na API) Tj T*
+() Tj T*
+(**Evidência:** [src/app.test.js]\(../src/app.test.js\) possui três testes de API; login,) Tj T*
+(permissões visuais, cadastro, carrinho, preços, responsividade e painéis não têm cobertura) Tj T*
+(automatizada.) Tj T*
+() Tj T*
+(**Impacto:** regressões nos fluxos que mais afetam a demonstração podem passar despercebidas.) Tj T*
+() Tj T*
+(**Melhoria:** criar testes de interface para os três logins, erros, redirecionamento e logout;) Tj T*
+(incluir cenários de desconto/total, estoque zero, pedido e layout móvel.) Tj T*
+(7/8) Tj
+ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 19 0 R >>
+endobj
+19 0 obj
+<< /Length 2357 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+() Tj T*
+(#### 16. Limite da API pode interferir em uso compartilhado de avaliação) Tj T*
+() Tj T*
+(**Evidência:** [src/app.js]\(../src/app.js\) permite cinco requisições por IP a cada 15 minutos;) Tj T*
+(o teste confirmou HTTP `429` na sexta chamada, mesmo sendo uma chamada de saúde.) Tj T*
+() Tj T*
+(**Impacto:** pessoas em um mesmo IP podem esgotar o limite durante uma demonstração, aula ou) Tj T*
+(laboratório.) Tj T*
+() Tj T*
+(**Melhoria:** aplicar limites por rota e ambiente, definir configuração adequada ao uso) Tj T*
+(didático e, em implantação com múltiplas instâncias, usar armazenamento compartilhado para o) Tj T*
+(contador.) Tj T*
+() Tj T*
+(## Plano de melhoria recomendado) Tj T*
+() Tj T*
+(1. **Antes de qualquer uso público:** substituir a autenticação local por autenticação e) Tj T*
+(autorização individual no servidor; manter o segredo administrativo fora do cliente,) Tj T*
+(configurar sua rotação e remover credenciais padrão públicas.) Tj T*
+(2. **Consertar a experiência demonstrativa:** corrigir preço promocional, validação de zero,) Tj T*
+(layout móvel e carregamento local/permitido dos estilos externos.) Tj T*
+(3. **Eliminar sinais de dado real quando houver mocks:** preencher as métricas da página) Tj T*
+(inicial e rotular claramente números operacionais demonstrativos.) Tj T*
+(4. **Integrar o fluxo de negócio:** persistir produtos, estoque e pedidos no servidor; validar) Tj T*
+(preços, estoque, entrega e estado do pagamento de forma transacional.) Tj T*
+(5. **Elevar a qualidade de entrega:** melhorar rótulos/foco/feedback acessível, imagens do) Tj T*
+(catálogo, navegação por perfil e testes automatizados de interface.) Tj T*
+(6. **Validar implantação:** configurar domínio da API, CORS, CSP e persistência real; executar) Tj T*
+(roteiro de ponta a ponta no ambiente publicado.) Tj T*
+() Tj T*
+(## Conclusão da banca) Tj T*
+() Tj T*
+(**Recomendação:** adequado como exercício didático de interface e API inicial, desde que) Tj T*
+(apresentado explicitamente como protótipo com dados simulados. Para alegar que os perfis) Tj T*
+(representam permissões reais, que pedidos são processados, que as vendas são confiáveis ou que) Tj T*
+(a aplicação pode operar comercialmente, os bloqueadores P0 e as inconsistências P1 acima) Tj T*
+(precisam ser resolvidos e retestados.) Tj T*
+(8/8) Tj
+ET
+endstream
+endobj
+xref
+0 20
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000168 00000 n 
+0000000265 00000 n 
+0000000391 00000 n 
+0000004352 00000 n 
+0000004478 00000 n 
+0000007906 00000 n 
+0000008032 00000 n 
+0000011424 00000 n 
+0000011552 00000 n 
+0000014653 00000 n 
+0000014781 00000 n 
+0000018193 00000 n 
+0000018321 00000 n 
+0000021330 00000 n 
+0000021458 00000 n 
+0000024539 00000 n 
+0000024667 00000 n 
+trailer
+<< /Size 20 /Root 1 0 R >>
+startxref
+27077
+%%EOF

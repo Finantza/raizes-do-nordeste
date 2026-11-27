@@ -1,0 +1,270 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 3757 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(DOCUMENTO: Documento Revisado: PLANO_TESTES.md) Tj T*
+(==========================================================================================) Tj T*
+() Tj T*
+(# Plano de Testes e Matriz de Rastreabilidade - Rede "Raízes do Nordeste") Tj T*
+() Tj T*
+(**Projeto Multidisciplinar - Trilha: Qualidade de Software \(UNINTER 2026\)**) Tj T*
+(**Docente:** Prof. Me. Rodrigo Nascimento | **Responsável:** Ronaldo Coutinho) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 1. Estratégia e Tipos de Testes Implementados) Tj T*
+() Tj T*
+(1. **Testes Unitários \(`src/products.test.js`\):** Verificação isolada do catálogo de 100) Tj T*
+(produtos, unicidade de IDs e nomes, estrutura dos 21 combos promocionais, cálculo matemático) Tj T*
+(de descontos, mesclagem de catálogo e função de escape HTML \(`escapeRaizesHtml`\).) Tj T*
+(2. **Testes de Integração de API e Segurança \(`src/app.test.js`\):** Validação da integração) Tj T*
+(Express + SQLite \(modo WAL\), cabeçalhos Helmet/CSP, autenticação por sessão assinada, hashing) Tj T*
+(`bcryptjs`, controle de acesso por perfil \(RBAC\), rate limiting contra força bruta \(`HTTP) Tj T*
+(429`\) e persistência em disco após reabertura da conexão.) Tj T*
+(3. **Testes dos Módulos de Gestão Operacional e Financeira \(`src/gestao.test.js`\):**) Tj T*
+(Verificação de autorização e regras de negócio para Controle de Estoque \(`/api/estoque/*`\),) Tj T*
+(Contas a Pagar e Receber \(`/api/financeiro/*`\) e gerenciamento de produtos por `admin` e) Tj T*
+(`loja`.) Tj T*
+(4. **Testes de Resiliência e Autonomia Offline \(`src/offline.test.js`\):** Comprovação de que) Tj T*
+(100% das páginas HTML, folhas de estilo, scripts JS, banco SQLite e 100 imagens de produtos \(e) Tj T*
+(seus fallbacks\) funcionam localmente sem dependência de CDNs ou conexão externa.) Tj T*
+(5. **Testes de Falhas, Casos de Borda e Abuso \(`src/faults.test.js`\):** Testes negativos) Tj T*
+(exaustivos cobrindo JSON malformado \(`HTTP 400`\), rotas inexistentes \(`HTTP 404`\), bloqueio) Tj T*
+(CORS \(`HTTP 403`\), cookies corrompidos/Prototype Pollution, sessões expiradas ou adulteradas,) Tj T*
+(recusa LGPD, coerção de tipos \(`null`, `boolean`, `""`\), datas inválidas no calendário) Tj T*
+(\(`2026-02-31`\), proteção contra estoque negativo, multicanalidade \(`WEB`, `APP`, `TOTEM`,) Tj T*
+(`BALCAO`, `PICKUP`\) e idempotência na migração de pedidos.) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 2. Catálogo Completo dos 57 Casos de Teste Automatizados \(`npm test`\)) Tj T*
+() Tj T*
+(| ID | Suíte | Caso de Teste Automatizado | Tipo | Resultado Esperado | Status Real |) Tj T*
+(|---|---|---|---|---|---|) Tj T*
+(| **CT-01** | `src/app.test.js` | `deve incluir headers básicos de segurança` | Segurança |) Tj T*
+(`HTTP 200` com `CSP`, `X-Frame-Options: SAMEORIGIN` e `nosniff` | **Aprovado** |) Tj T*
+(| **CT-02** | `src/app.test.js` | `deve servir imagens de produto da pasta src/imagens` |) Tj T*
+(Integração | `HTTP 200` e `Content-Type: image/png` | **Aprovado** |) Tj T*
+(| **CT-03** | `src/app.test.js` | `deve cadastrar e listar unidades com token administrativo`) Tj T*
+(| Funcional | `HTTP 201` no cadastro e `HTTP 200` na listagem | **Aprovado** |) Tj T*
+(| **CT-04** | `src/app.test.js` | `deve impedir cadastro duplicado` | Negativo | `HTTP 409) Tj T*
+(Conflict` para código de unidade repetido | **Aprovado** |) Tj T*
+(| **CT-05** | `src/app.test.js` | `deve recusar cadastro sem token ou com token inválido` |) Tj T*
+(Segurança | `HTTP 401 Unauthorized` | **Aprovado** |) Tj T*
+(| **CT-06** | `src/app.test.js` | `deve desabilitar o cadastro se o token administrativo não) Tj T*
+(estiver configurado` | Segurança | Fail-closed com `HTTP 503 Service Unavailable` |) Tj T*
+(**Aprovado** |) Tj T*
+(1/4) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 4294 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(| **CT-07** | `src/app.test.js` | `deve registrar cliente com hash, autenticar, consultar) Tj T*
+(sessão e sair` | Sistema | `HTTP 201`, hash `$2b$`, cookie `HttpOnly/Secure/SameSite=Lax` e) Tj T*
+(logout `204` | **Aprovado** |) Tj T*
+(| **CT-08** | `src/app.test.js` | `deve migrar contas antigas sem aceitar papéis privilegiados) Tj T*
+(do navegador` | Segurança | Contas migradas recebem obrigatoriamente papel `cliente` |) Tj T*
+(**Aprovado** |) Tj T*
+(| **CT-09** | `src/app.test.js` | `deve rejeitar credenciais inválidas` | Negativo | `HTTP) Tj T*
+(401` ao informar senha incorreta | **Aprovado** |) Tj T*
+(| **CT-10** | `src/app.test.js` | `deve limitar o login a cinco tentativas em quinze minutos) Tj T*
+(por IP` | Segurança | 6ª tentativa bloqueada com `HTTP 429` e header `Retry-After` |) Tj T*
+(**Aprovado** |) Tj T*
+(| **CT-11** | `src/app.test.js` | `deve exigir sessão e papel autorizado para criar produtos`) Tj T*
+(| Segurança | Visitante recebe `401`; Cliente recebe `403` | **Aprovado** |) Tj T*
+(| **CT-12** | `src/app.test.js` | `deve validar dados de produto contra marcação executável` |) Tj T*
+(Segurança | Rejeita `<script>` com `HTTP 400` e aceita produto válido com `201` | **Aprovado**) Tj T*
+(|) Tj T*
+(| **CT-13** | `src/app.test.js` | `deve salvar pedidos calculando preço no servidor e) Tj T*
+(autorizar a operação por papel` | Sistema | Ignora `total: 0` do cliente, recalcula `R$) Tj T*
+(116,88` e valida RBAC no status | **Aprovado** |) Tj T*
+(| **CT-14** | `src/app.test.js` | `deve conservar unidades no arquivo SQLite após reabrir a) Tj T*
+(conexão` | Confiabilidade | Registro permanece gravado no SQLite após `closeDatabase\(\)` |) Tj T*
+(**Aprovado** |) Tj T*
+(| **CT-15** | `src/gestao.test.js` | `Controle de Estoque: deve bloquear acesso não) Tj T*
+(autenticado e perfil cliente` | Segurança | Visitante recebe `401`; Cliente recebe `403` em) Tj T*
+(`/api/estoque/*` | **Aprovado** |) Tj T*
+(| **CT-16** | `src/gestao.test.js` | `Controle de Estoque: permite acesso a loja e admin para) Tj T*
+(consultar e registrar movimentações` | Funcional | Entrada \(`+15`\) e saída \(`-5`\) atualizam) Tj T*
+(saldo e histórico auditado | **Aprovado** |) Tj T*
+(| **CT-17** | `src/gestao.test.js` | `Contas a Pagar e Receber: deve bloquear acesso não) Tj T*
+(autenticado e perfil cliente` | Segurança | Visitante recebe `401`; Cliente recebe `403` em) Tj T*
+(`/api/financeiro/*` | **Aprovado** |) Tj T*
+(| **CT-18** | `src/gestao.test.js` | `Contas a Pagar e Receber: permite que admin e loja) Tj T*
+(cadastrem, consultem, dêem baixa e excluam lançamentos` | Sistema | Cria títulos a) Tj T*
+(pagar/receber, valida saldo projetado, dá baixa e exclui \(`204`\) | **Aprovado** |) Tj T*
+(| **CT-19** | `src/gestao.test.js` | `Cadastro de Produtos: restrito a admin e loja` |) Tj T*
+(Segurança | Cliente bloqueado \(`403`\); Loja autorizada \(`201`\) | **Aprovado** |) Tj T*
+(| **CT-20** | `src/offline.test.js` | `o catálogo em public/products.js recupera dados padrão) Tj T*
+(offline caso a API falhe` | Resiliência | Fallback mantém os 100 produtos disponíveis sem rede) Tj T*
+(| **Aprovado** |) Tj T*
+(| **CT-21** | `src/offline.test.js` | `todas as páginas HTML e scripts do frontend são 100%) Tj T*
+(locais sem CDNs externos` | Resiliência | 0 tags `<script>`/`<link>`/`@import` apontando para) Tj T*
+(`http://` ou `https://` | **Aprovado** |) Tj T*
+(| **CT-22** | `src/offline.test.js` | `todos os recursos estáticos essenciais existem no disco) Tj T*
+(e são servidos offline pelo Express` | Integração | Todas as 12 rotas estáticas retornam `HTTP) Tj T*
+(200` e MIME correto | **Aprovado** |) Tj T*
+(| **CT-23** | `src/offline.test.js` | `o banco de dados local SQLite funciona isolado sem) Tj T*
+(conexão com a internet` | Confiabilidade | Consultas locais de catálogo, unidades, estoque e) Tj T*
+(finanças operam offline | **Aprovado** |) Tj T*
+(| **CT-24** | `src/offline.test.js` | `todas as 100 imagens de catálogo e fallbacks por) Tj T*
+(categoria existem localmente no sistema de arquivos` | Integridade | 100% das imagens em) Tj T*
+(`src/imagens/` e `public/images/products/` existem | **Aprovado** |) Tj T*
+(| **CT-25** | `src/offline.test.js` | `o cálculo de preços com ofertas funciona offline e é) Tj T*
+(2/4) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 4096 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(idêntico à regra do backend` | Unitário | Paridade matemática exata entre frontend offline e) Tj T*
+(backend | **Aprovado** |) Tj T*
+(| **CT-26** | `src/products.test.js` | `o cardápio contém 100 produtos válidos e sem nomes) Tj T*
+(repetidos` | Unitário | 100 produtos com IDs e nomes únicos e preços/estoques íntegros |) Tj T*
+(**Aprovado** |) Tj T*
+(| **CT-27** | `src/products.test.js` | `todos os combos informam seus itens inclusos` |) Tj T*
+(Unitário | 21 combos possuem array não vazio `itensInclusos` | **Aprovado** |) Tj T*
+(| **CT-28** | `src/products.test.js` | `a migração inclui o catálogo novo sem perder) Tj T*
+(alterações ou produtos personalizados` | Unitário | `mergeRaizesProducts` preserva edições e) Tj T*
+(itens customizados | **Aprovado** |) Tj T*
+(| **CT-29** | `src/products.test.js` | `cada produto resolve para uma imagem gerada ou foto) Tj T*
+(local de fallback` | Unitário | Resolução determinística de fotos e teste de) Tj T*
+(`escapeRaizesHtml` | **Aprovado** |) Tj T*
+(| **CT-30** | `src/faults.test.js` | `Falhas de Protocolo e Segurança HTTP: JSON malformado) Tj T*
+(\(400\), Rota inexistente \(404\), Origem CORS inválida \(403\) e Cookie corrompido` | Negativo /) Tj T*
+(Segurança | Rejeita JSON truncado \(`400`\), rota inexistente \(`404`\), CORS externo \(`403`\) e) Tj T*
+(`__proto__` em cookie | **Aprovado** |) Tj T*
+(| **CT-31** | `src/faults.test.js` | `Falhas de Sessão e Autenticação: assinatura adulterada,) Tj T*
+(sessão expirada, recusa LGPD e XSS no cadastro` | Negativo / LGPD | Rejeita `lgpdConsent:) Tj T*
+(false` \(`400`\), XSS no nome \(`400`\), e-mail duplicado \(`409`\), cookie forjado \(`401`\) e sessão) Tj T*
+(expirada | **Aprovado** |) Tj T*
+(| **CT-32** | `src/faults.test.js` | `Falhas de Validação em Unidades: tipos inválidos,) Tj T*
+(códigos fora do padrão, UF inválida e XSS` | Negativo | Rejeita body em array, campos vazios,) Tj T*
+(`< >`, código de 1 caractere e UF de 3 letras \(`HTTP 400`\) | **Aprovado** |) Tj T*
+(| **CT-33** | `src/faults.test.js` | `Falhas de Coerção de Tipos e Limites em Produtos: null,) Tj T*
+(boolean, strings vazias, imagens maliciosas e itensInclusos XSS` | Negativo / Borda | Bloqueia) Tj T*
+(`preco: null`, `estoque: ""`, `boolean`, imagem externa, XSS em `itensInclusos` \(`400`\) e ID) Tj T*
+(inexistente \(`404`\) | **Aprovado** |) Tj T*
+(| **CT-34** | `src/faults.test.js` | `Falhas em Pedidos Multicanal: carrinho vazio, produto) Tj T*
+(inexistente, quantidade inválida, XSS em endereço e idempotência de migração` | Sistema /) Tj T*
+(Multicanal | Valida canais `WEB`, `APP`, `TOTEM`, `BALCAO`, `PICKUP`, idempotência de) Tj T*
+(`legacyId` e rejeita itens/status inválidos | **Aprovado** |) Tj T*
+(| **CT-35** | `src/faults.test.js` | `Falhas de Estoque e Financeiro: estoque nunca fica) Tj T*
+(negativo, ajuste para zero, datas inválidas \(2026-02-31\) e limites` | Negativo / Borda | Trava) Tj T*
+(saída excessiva em `0`, permite ajuste `0`, bloqueia entrada `0`/`null`, rejeita `2026-02-31`) Tj T*
+(\(`400`\) e IDs ausentes \(`404`\) | **Aprovado** |) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 3. Matriz de Rastreabilidade \(Requisito <-> Casos de Teste <-> Evidência\)) Tj T*
+() Tj T*
+(| Requisito | Casos de Teste Associados | Onde e Como Foi Validado \(Evidência\) | Status |) Tj T*
+(|---|---|---|---|) Tj T*
+(| **RF-01** \(Unidades\) | CT-03, CT-04, CT-05, CT-06, CT-32 | `src/app.test.js` e) Tj T*
+(`src/faults.test.js` via requisições Supertest contra `/api/unidades` | **100% Aprovado** |) Tj T*
+(| **RF-02** \(Catálogo e Combos\) | CT-02, CT-11, CT-12, CT-19, CT-24, CT-26, CT-27, CT-28,) Tj T*
+(CT-29, CT-33 | `src/products.test.js`, `src/app.test.js`, `src/gestao.test.js` e) Tj T*
+(`src/faults.test.js` | **100% Aprovado** |) Tj T*
+(| **RF-03** \(Cadastro e LGPD\) | CT-07, CT-31 | `src/app.test.js` e `src/faults.test.js`) Tj T*
+(validando hash bcrypt, bloqueio de `lgpdConsent: false` e duplicidade `409` | **100%) Tj T*
+(Aprovado** |) Tj T*
+(| **RF-04** \(Sessão e RBAC\) | CT-07, CT-08, CT-09, CT-11, CT-15, CT-17, CT-31 |) Tj T*
+(3/4) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 1933 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(`src/app.test.js`, `src/gestao.test.js` e `src/faults.test.js` testando assinatura HMAC,) Tj T*
+(expiração e perfis | **100% Aprovado** |) Tj T*
+(| **RF-05** \(Pedidos Multicanal\) | CT-13, CT-25, CT-34 | `src/app.test.js`,) Tj T*
+(`src/offline.test.js` e `src/faults.test.js` validando recálculo no servidor e 5 canais |) Tj T*
+(**100% Aprovado** |) Tj T*
+(| **RF-06** \(Status Operacional\) | CT-13, CT-34 | `src/app.test.js` e `src/faults.test.js`) Tj T*
+(validando transição de status por `loja`/`admin` e bloqueio de `cliente` | **100% Aprovado** |) Tj T*
+(| **RF-07** \(Controle de Estoque\) | CT-15, CT-16, CT-35 | `src/gestao.test.js` e) Tj T*
+(`src/faults.test.js` validando entradas, saídas, ajuste zero e proteção contra saldo negativo) Tj T*
+(| **100% Aprovado** |) Tj T*
+(| **RF-08** \(Financeiro\) | CT-17, CT-18, CT-35 | `src/gestao.test.js` e `src/faults.test.js`) Tj T*
+(validando criação, baixa, exclusão e bloqueio de datas falsas \(`2026-02-31`\) | **100%) Tj T*
+(Aprovado** |) Tj T*
+(| **RNF-01 a RNF-08** \(Qualidade ISO 25010\) | CT-01 a CT-35 | Execução integral de `npm test`) Tj T*
+(e `test-offline.bat --no-server` | **100% Aprovado** |) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 4. Registro Consolidado de Execução) Tj T*
+(- **Data da Última Execução:** 13/11/2026) Tj T*
+(- **Ambiente:** Windows / Node.js Test Runner \(`node --test`\) / SQLite3 \(WAL Mode\) / Express 4) Tj T*
+(/ Supertest) Tj T*
+(- **Total de Suítes:** 5 \(`app.test.js`, `gestao.test.js`, `offline.test.js`,) Tj T*
+(`products.test.js`, `faults.test.js`\)) Tj T*
+(- **Total de Casos de Teste Executados:** 35 executados / **35 aprovados \(100%\)** / 0 falhas) Tj T*
+(- **Verificação Sintática de Frontend \(`node --check`\):** 9/9 arquivos aprovados \(`config.js`,) Tj T*
+(`products.js`, `auth.js`, `app.js`, `gestao.js`, `admin.js`, `operacional.js`, `cliente.js`,) Tj T*
+(`login.js`\).) Tj T*
+(4/4) Tj
+ET
+endstream
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000140 00000 n 
+0000000237 00000 n 
+0000000363 00000 n 
+0000004172 00000 n 
+0000004298 00000 n 
+0000008644 00000 n 
+0000008770 00000 n 
+0000012918 00000 n 
+0000013046 00000 n 
+trailer
+<< /Size 12 /Root 1 0 R >>
+startxref
+15032
+%%EOF

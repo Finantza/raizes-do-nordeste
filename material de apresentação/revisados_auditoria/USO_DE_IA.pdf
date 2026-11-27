@@ -1,0 +1,64 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 1847 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(DOCUMENTO: Documento Revisado: USO_DE_IA.md) Tj T*
+(==========================================================================================) Tj T*
+() Tj T*
+(# Registro de Transparência no Uso de Ferramentas de IA) Tj T*
+() Tj T*
+(*\(Em conformidade com o item "Uso de IA nesta atividade" do Roteiro de Atividade Prática) Tj T*
+(UNINTER 2026\)*) Tj T*
+() Tj T*
+(- **Ferramenta Utilizada:** Assistente de IA integrado ao ambiente de desenvolvimento.) Tj T*
+(- **Finalidade do Uso:**) Tj T*
+(1. Revisão ortográfica, gramatical e adequação do estilo textual \(remoção de vícios de) Tj T*
+(linguagem automatizados, excesso de travessões e clichês com base no guia *Wikipedia:Signs of) Tj T*
+(AI writing* / *Wikipédia:Sinais de texto gerado por inteligência artificial*\).) Tj T*
+(2. Apoio na verificação de casos de borda, coerção de tipos, validação de datas ISO e testes) Tj T*
+(negativos automatizados \(`src/faults.test.js`\).) Tj T*
+(3. Compilação e sincronização da matriz de rastreabilidade \(Requisito <-> Caso de Teste <->) Tj T*
+(Evidência\) a partir dos resultados reais da suíte `node --test`.) Tj T*
+(- **Prompts Relevantes Empregados:**) Tj T*
+(- *"crie o relatorio de desenvolvimento em doc descrevendo todo o processo"*) Tj T*
+(- *"teste todas as falha e bugs possiveis e aprimore as documentações"*) Tj T*
+(- *"verifique no codigo usando a wikipedia palavras e indicios no codigo que indicam o uso de) Tj T*
+(ia e humanize o codigo e aprimore"*) Tj T*
+(- **Evidências do Processo e Validação Própria:**) Tj T*
+(- Todas as regras de negócio, arquitetura em camadas, persistência relacional SQLite \(modo) Tj T*
+(WAL\), controles RBAC, consentimento LGPD e as 8 suítes de testes automatizados \(`35 testes`) Tj T*
+(com `0 falhas`\) foram executados e verificados no repositório local.) Tj T*
+(1/1) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000218 00000 n 
+0000000344 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2243
+%%EOF

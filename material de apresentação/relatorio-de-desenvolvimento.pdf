@@ -1,0 +1,963 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R 24 0 R 26 0 R 28 0 R 30 0 R] /Count 14 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 4348 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(DOCUMENTO: relatorio-de-desenvolvimento.docx) Tj T*
+(==========================================================================================) Tj T*
+() Tj T*
+(CENTRO UNIVERSITÁRIO INTERNACIONAL UNINTER
+ESCOLA SUPERIOR POLITÉCNICA
+CURSO SUPERIOR DE) Tj T*
+(TECNOLOGIA EM COMPUTAÇÃO) Tj T*
+(RONALDO COUTINHO) Tj T*
+(DOCUMENTAÇÃO TÉCNICA COMPLETA E RELATÓRIO DE GARANTIA DA QUALIDADE:
+SISTEMA DE GESTÃO) Tj T*
+(INTEGRADA E CARDÁPIO MULTICANAL
+REDE 'RAÍZES DO NORDESTE') Tj T*
+(Arquitetura Full-Stack \(Node.js/Express/SQLite WAL\), Frontend Multicanal 100% Offline,) Tj T*
+(Segurança Defensiva \(OWASP/LGPD\), Homologação Automatizada \(57 Testes em 8 Suítes\) e) Tj T*
+(Ferramenta de Auditoria Documental em Python) Tj T*
+(CURITIBA - PR
+2026) Tj T*
+(RONALDO COUTINHO) Tj T*
+(DOCUMENTAÇÃO TÉCNICA COMPLETA E RELATÓRIO DE GARANTIA DA QUALIDADE:
+SISTEMA DE GESTÃO) Tj T*
+(INTEGRADA E CARDÁPIO MULTICANAL REDE 'RAÍZES DO NORDESTE') Tj T*
+(Relatório Técnico e Documentação de Sistema apresentados à disciplina de Projeto) Tj T*
+(Multidisciplinar - Trilha: Qualidade de Software, da Escola Superior Politécnica do Centro) Tj T*
+(Universitário Internacional UNINTER, como requisito parcial para avaliação e homologação) Tj T*
+(acadêmica.
+
+Orientador: Prof. Me. Rodrigo Nascimento.) Tj T*
+(CURITIBA - PR
+2026) Tj T*
+(RESUMO) Tj T*
+(Este documento apresenta a documentação técnica completa, nos padrões da Associação Brasileira) Tj T*
+(de Normas Técnicas \(ABNT NBR 14724, NBR 6023, NBR 6024 e NBR ISO/IEC 25010\), do sistema de) Tj T*
+(software desenvolvido para a rede fictícia de culinária regional 'Raízes do Nordeste'. O) Tj T*
+(projeto abrange uma plataforma web full-stack multicanal \(WEB, APP, TOTEM, BALCÃO e PICKUP\),) Tj T*
+(estruturada sobre o servidor Node.js e Express 4 com camada de persistência híbrida em SQLite3) Tj T*
+(\(modo Write-Ahead Logging - WAL\) e PostgreSQL. O sistema contempla cinco interfaces de usuário) Tj T*
+(100% locais e autônomas \(sem dependências de CDNs externos\), um catálogo de 100 produtos) Tj T*
+(regionais \(incluindo 21 combos com itens inclusos detalhados e 100 imagens locais\),) Tj T*
+(autenticação com sessão no servidor via cookies assinados por HMAC-SHA256 \(HttpOnly, Secure,) Tj T*
+(SameSite=Lax\), criptografia de senhas com bcryptjs \(12 salt rounds\), controle de acesso) Tj T*
+(baseado em papéis \(RBAC para cliente, loja e admin\), recálculo obrigatório de preços e baixa) Tj T*
+(atômica de estoque no servidor, além de módulos gerenciais de Controle de Estoque e Contas a) Tj T*
+(Pagar e Receber. A qualidade da aplicação é verificada por 57 testes automatizados) Tj T*
+(distribuídos em 8 suítes Node.js \(100% aprovados\) e por uma Ferramenta de Auditoria e Correção) Tj T*
+(Documental desenvolvida em Python 3 \(composta por 11 módulos e 5 testes automatizados) Tj T*
+(próprios\), garantindo rastreabilidade integral, conformidade com a Lei Geral de Proteção de) Tj T*
+(Dados \(LGPD - Lei nº 13.709/2018\) e mitigação de riscos OWASP Top 10.) Tj T*
+(Palavras-chave: Qualidade de Software. Engenharia de Requisitos. ISO/IEC 25010. LGPD. Node.js.) Tj T*
+(SQLite WAL. Testes Automatizados. Auditoria Documental em Python.) Tj T*
+(ABSTRACT) Tj T*
+(This document provides the complete technical documentation, formatted according to ABNT) Tj T*
+(standards \(NBR 14724, NBR 6023, and ISO/IEC 25010\), for the software system built for the) Tj T*
+(regional food franchise network 'Raízes do Nordeste'. The solution encompasses a multi-channel) Tj T*
+(full-stack web platform \(WEB, APP, TOTEM, COUNTER, and PICKUP\) powered by Node.js and Express) Tj T*
+(4 with a hybrid persistence layer supporting SQLite3 \(Write-Ahead Logging - WAL mode\) and) Tj T*
+(PostgreSQL. It includes five 100% offline-capable user interfaces, a catalog of 100 regional) Tj T*
+(products \(with 21 structured combos and 100 local images\), server-side session authentication) Tj T*
+(via HMAC-SHA256 signed cookies \(HttpOnly, Secure, SameSite=Lax\), bcryptjs password hashing \(12) Tj T*
+(salt rounds\), Role-Based Access Control \(RBAC for customer, store, and admin\), mandatory) Tj T*
+(server-side price recalculation with atomic stock deduction, and management modules for) Tj T*
+(Inventory Control and Accounts Payable/Receivable. Software quality is validated by 57) Tj T*
+(1/14) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 4167 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(automated Node.js tests across 8 test suites \(100% passing\) and a modular Python 3 Technical) Tj T*
+(Documentation Audit & Correction Tool \(11 modules and 5 automated tests\), ensuring end-to-end) Tj T*
+(traceability, LGPD compliance, and OWASP Top 10 risk mitigation.) Tj T*
+(Keywords: Software Quality. Requirements Engineering. ISO/IEC 25010. LGPD. Node.js. SQLite) Tj T*
+(WAL. Automated Testing. Python Documentation Auditing.) Tj T*
+(SUMÁRIO EXECUTIVO DAS SEÇÕES) Tj T*
+(Tabela 1 - Estrutura Organizacional da Documentação Técnica do Sistema) Tj T*
+(Fonte: Elaborado pelo autor \(2026\).) Tj T*
+(Tabela 2 - Ficha Técnica e Identificação Geral do Projeto) Tj T*
+(Fonte: Elaborado pelo autor \(2026\).) Tj T*
+(1. INTRODUÇÃO, CONTEXTO DO NEGÓCIO E MULTICANALIDADE) Tj T*
+(1.1 Contexto Operacional da Rede 'Raízes do Nordeste') Tj T*
+(A 'Raízes do Nordeste' é uma rede de lanchonetes e restaurantes de culinária regional) Tj T*
+(nordestina em processo de expansão nacional por meio de unidades próprias e franqueadas. O) Tj T*
+(cardápio oficial é composto por 100 produtos padronizados divididos em cinco categorias:) Tj T*
+(Lanches, Pratos, Bebidas, Sobremesas e Ofertas \(incluindo 21 combos promocionais com) Tj T*
+(composição explícita de itens inclusos\).) Tj T*
+(Para sustentar o crescimento da operação sem perda de controle financeiro, ruptura de estoque) Tj T*
+(ou vulnerabilidades cibernéticas, o sistema evoluiu de um protótipo estático baseado em) Tj T*
+(armazenamento local no navegador \(localStorage\) para uma plataforma corporativa em camadas,) Tj T*
+(dotada de banco de dados relacional transacional, autenticação centralizada, controle de) Tj T*
+(acesso por papéis \(RBAC\) e operação 100% resiliente offline.) Tj T*
+(1.2 Arquitetura Multicanal \(5 Canais Integrados\)) Tj T*
+(O sistema atende simultaneamente cinco canais operacionais de venda e atendimento, registrados) Tj T*
+(e validados na camada de pedidos \(src/routes/orders.js e public/cliente.js\):) Tj T*
+(1. WEB \(Portal Web / Delivery\): Acesso via navegadores desktop e notebooks para pedidos de) Tj T*
+(Delivery em domicílio e administração corporativa.) Tj T*
+(2. APP \(Mobile Web\): Experiência responsiva otimizada para smartphones \(360px a 414px\) com) Tj T*
+(fluxo de compra em até 3 passos.) Tj T*
+(3. TOTEM \(Autoatendimento em Loja\): Interface de autoatendimento para totens touch-screen) Tj T*
+(instalados no salão das lojas físicas, operando em rede local mesmo sem conexão externa com a) Tj T*
+(internet.) Tj T*
+(4. BALCÃO \(PDV Presencial\): Atendimento presencial registrado no ponto de venda \(PDV\) para) Tj T*
+(consumo imediato no salão.) Tj T*
+(5. PICKUP \(Retirada Programada\): Compra antecipada com seleção da franquia e região para) Tj T*
+(retirada rápida no balcão sem fila.) Tj T*
+(2. ARQUITETURA GERAL DO SISTEMA E ESTRUTURA DE DIRETÓRIOS) Tj T*
+(O sistema é organizado em dois subsistemas integrados no mesmo repositório: \(A\) a Aplicação) Tj T*
+(Web Full-Stack da Rede 'Raízes do Nordeste' \(em Node.js/Express e Vanilla JS\) e \(B\) a) Tj T*
+(Ferramenta de Auditoria e Correção Automatizada de Relatórios Técnicos \(em Python 3\). A Tabela) Tj T*
+(3 documenta todos os diretórios e arquivos que compõem a arquitetura.) Tj T*
+(Tabela 3 - Mapeamento Completo de Arquivos e Módulos do Sistema) Tj T*
+(Fonte: Inspeção direta do repositório \(2026\).) Tj T*
+(3. ESPECIFICAÇÃO COMPLETA DO BACKEND \(SERVIDOR, MIDDLEWARES E SEGURANÇA\)) Tj T*
+(3.1 Pipeline de Middlewares e Defesa em Profundidade \(src/app.js\)) Tj T*
+(O núcleo HTTP em src/app.js implementa uma cadeia sequencial de defesa em profundidade para) Tj T*
+(proteger todas as rotas da aplicação:) Tj T*
+(1. Helmet Security Headers: Oculta o cabeçalho X-Powered-By e aplica Content-Security-Policy) Tj T*
+(\(CSP\) restritiva \(default-src 'self'; script-src 'self'; object-src 'none'; frame-ancestors) Tj T*
+('self'\) e Referrer-Policy: no-referrer.) Tj T*
+(2. Parser de Cookies Anti-Prototype Pollution: Constrói o dicionário req.cookies usando) Tj T*
+(Object.create\(null\) e bloqueia explicitamente chaves __proto__, constructor e prototype,) Tj T*
+(2/14) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 4425 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(eliminando vetores de poluição de protótipo.) Tj T*
+(3. Controle Estrito de CORS: Permite requisições sem cabeçalho Origin \(testes e chamadas) Tj T*
+(locais\), origens localhost/127.0.0.1 e domínios declarados em RAIZES_CORS_ORIGINS, rejeitando) Tj T*
+(origens externas não autorizadas com HTTP 403.) Tj T*
+(4. Rate Limiting Multicamada: Quatro instâncias persistidas no banco de dados \(tabela) Tj T*
+(rate_limiter_flexible\): limite global de 300 req/15 min em /api; 5 tentativas/15 min em) Tj T*
+(/api/auth/login; 10 cadastros/15 min em /api/auth/register; e 3 chamadas/15 min em) Tj T*
+(/api/auth/migrate-local-users, respondendo HTTP 429 com cabeçalho Retry-After.) Tj T*
+(5. Prevenção de Cache de Dados Sensíveis: Todas as respostas sob /api recebem Cache-Control:) Tj T*
+(no-store para impedir armazenamento em cache de dados financeiros ou pessoais em computadores) Tj T*
+(compartilhados.) Tj T*
+(3.2 Criptografia de Sessão e Autorização RBAC \(src/auth.js\)) Tj T*
+(O módulo src/auth.js gerencia sessões stateful persistidas no banco de dados combinadas com) Tj T*
+(cookies assinados criptograficamente:) Tj T*
+(Geração de Token de Sessão: Gera identificadores de sessão aleatórios de 256 bits) Tj T*
+(\(randomBytes\(32\).toString\('base64url'\)\) com validade de 7 dias \(SESSION_TTL_MS\).) Tj T*
+(Assinatura HMAC-SHA256 e Comparação em Tempo Constante: O cookie raizes_session armazena o par) Tj T*
+(<sessionId>.<assinaturaHMAC_SHA256>. Na leitura, parseSignedSession valida o formato e compara) Tj T*
+(a assinatura usando crypto.timingSafeEqual, neutralizando ataques de canal lateral \(timing) Tj T*
+(attacks\).) Tj T*
+(Fail-Closed em Produção: Em ambiente de produção \(NODE_ENV=production\), o servidor recusa a) Tj T*
+(inicialização caso a variável RAIZES_SESSION_SECRET não esteja definida ou possua menos de 32) Tj T*
+(bytes de entropia.) Tj T*
+(4. MODELAGEM DO BANCO DE DADOS RELACIONAL \(SQLITE WAL E POSTGRESQL\)) Tj T*
+(A camada de persistência em src/db.js opera de forma híbrida: por padrão utiliza SQLite3 via) Tj T*
+(better-sqlite3 com pragmas journal_mode = WAL e foreign_keys = ON, podendo alternar) Tj T*
+(automaticamente para PostgreSQL \(pg.Pool\) quando a variável DATABASE_URL é fornecida. O) Tj T*
+(esquema relacional é composto exatamente por 7 tabelas de domínio \(além da tabela auxiliar do) Tj T*
+(rate limiter\), detalhadas na Tabela 4.) Tj T*
+(Tabela 4 - Esquema Relacional das 7 Tabelas do Banco de Dados \(src/db.js\)) Tj T*
+(Fonte: Código-fonte src/db.js \(2026\).) Tj T*
+(5. DOCUMENTAÇÃO COMPLETA DA API REST \(21 ENDPOINTS E REGRAS DE VALIDAÇÃO\)) Tj T*
+(A API RESTful responde sob o prefixo /api e utiliza validação rigorosa de tipos \(função) Tj T*
+(toStrictNumber que rejeita booleanos, null e strings vazias, evitando coerções silenciosas do) Tj T*
+(JavaScript\). A Tabela 5 documenta todos os 21 endpoints implementados.) Tj T*
+(Tabela 5 - Catálogo Completo dos 21 Endpoints da API REST) Tj T*
+(Fonte: Módulos src/app.js e src/routes/*.js \(2026\).) Tj T*
+(6. ESPECIFICAÇÃO COMPLETA DO FRONTEND \(5 PÁGINAS HTML, 9 MÓDULOS JS E DESIGN SYSTEM\)) Tj T*
+(O frontend foi construído em HTML5 semântico, CSS3 customizado \(public/style.css\) e JavaScript) Tj T*
+(puro \(Vanilla ES2022\), sem qualquer dependência de CDNs externos, garantindo funcionamento) Tj T*
+(100% offline em lojas e totens:) Tj T*
+(1. Vitrine Institucional \(public/index.html e public/app.js\): Apresenta a identidade visual) Tj T*
+(regional \(logomarca vetorial raizes-logo.svg\), carrossel dinâmico com até 5 produtos em oferta) Tj T*
+(\(com pausa automática ao passar o mouse, receber foco de teclado ou quando o sistema) Tj T*
+(operacional solicita prefers-reduced-motion: reduce\) e vitrine de destaques.) Tj T*
+(2. Portal de Login e Cadastro LGPD \(public/login.html e public/login.js\): Reúne autenticação,) Tj T*
+(botões de preenchimento rápido com 1 clique para avaliação das três contas demonstrativas) Tj T*
+(\(Admin, Loja e Cliente\) e formulário de cadastro com checkbox obrigatório de consentimento) Tj T*
+(LGPD \(#register-lgpd-consent\).) Tj T*
+(3. Cardápio e Checkout Multicanal do Cliente \(public/cliente.html e public/cliente.js\): Exibe) Tj T*
+(os 100 itens por categoria com chips de filtro, selos de desconto, composição dos combos) Tj T*
+(\('Inclui: ...'\), bloqueio visual e funcional de produtos esgotados \(estoque === 0 -> botão) Tj T*
+(3/14) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 4584 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+('Indisponível' desabilitado\), sacola persistente com controles [+] e [-] limitados ao saldo em) Tj T*
+(estoque e seletor de modo de atendimento \(Delivery, Retirada, Balcão, Totem\) mapeado) Tj T*
+(automaticamente para o canal correspondente.) Tj T*
+(4. Painel Executivo do Administrador \(public/admin.html e public/admin.js\): Protegido por) Tj T*
+(data-required-role='admin'. Exibe 8 indicadores executivos \(total de produtos, unidades em) Tj T*
+(estoque, itens em baixo estoque, faturamento consolidado, franquias ativas, total de pedidos,) Tj T*
+(regiões atendidas e ticket médio\), resumo financeiro por região e abas integradas de Catálogo,) Tj T*
+(Estoque e Financeiro.) Tj T*
+(5. Painel Operacional da Franquia \(public/operacional.html e public/operacional.js\): Protegido) Tj T*
+(por data-required-role='loja,admin'. Apresenta indicadores diários da operação \(vendas do dia,) Tj T*
+(pedidos hoje, pedidos em atenção, entregas Delivery, retiradas, região líder ordenada por) Tj T*
+(volume e lojas ativas\), barras de progresso de tarefas da loja, status de rotas e fila de) Tj T*
+(pedidos com atualização instantânea de status.) Tj T*
+(6. Módulos Compartilhados de Gestão \(public/gestao.js\): Renderiza as abas de Controle de) Tj T*
+(Estoque \(cards de resumo, filtros Todos/Críticos/Atenção/Normais, busca textual com) Tj T*
+(preservação automática de foco e cursor, botões rápidos '+ Entrada' e '- Saída' e histórico) Tj T*
+(auditado\) e Financeiro \(cards de Contas a Pagar, Contas a Receber, Saldo Projetado/Realizado,) Tj T*
+(Títulos Vencidos, filtros combinados, baixa/estorno e exclusão\).) Tj T*
+(7. CATÁLOGO CORPORATIVO DE 100 PRODUTOS, 21 COMBOS E RESOLUÇÃO OFFLINE DE IMAGENS) Tj T*
+(O arquivo public/products.js define o catálogo oficial de 100 itens regionais nordestinos \(IDs) Tj T*
+(1 a 100\), semeados automaticamente no banco SQLite/PostgreSQL na primeira inicialização de) Tj T*
+(src/db.js:) Tj T*
+(Distribuição do Catálogo: Lanches \(20 itens\), Pratos \(20 itens\), Bebidas \(20 itens\),) Tj T*
+(Sobremesas \(20 itens\) e Ofertas/Combos \(20 itens + combos especiais, totalizando 21 combos com) Tj T*
+(o array itensInclusos preenchido\).) Tj T*
+(Resolução Determinística de Imagens e Fallback: Cada produto possui uma imagem dedicada em) Tj T*
+(src/imagens/produto-001.jpg a produto-100.jpg \(servidas na rota estática /imagens/\) e uma) Tj T*
+(imagem de fallback por categoria em public/images/products/ \(lanches.jpg, pratos.jpg,) Tj T*
+(bebidas.jpg, sobremesas.jpg, ofertas.jpg\). Caso uma imagem falhe no carregamento, o listener) Tj T*
+(bindRaizesProductImageFallbacks aciona automaticamente a foto de fallback local.) Tj T*
+(Processamento de Upload de Fotos no Navegador: A função prepareRaizesProductImage valida o) Tj T*
+(tipo MIME \(JPEG, PNG ou WebP\), rejeita arquivos acima de 8 MB, redimensiona a imagem em Canvas) Tj T*
+(HTML5 para no máximo 640x480 pixels e exporta em data:image/jpeg;base64 com qualidade 0.82,) Tj T*
+(respeitando o limite de 900 KB do backend.) Tj T*
+(8. ENGENHARIA DE REQUISITOS \(RF-01 A RF-08\) E CASOS DE USO \(UC01 A UC09\)) Tj T*
+(Os requisitos funcionais e casos de uso foram especificados com critérios objetivos de) Tj T*
+(aceitação e vinculados diretamente aos módulos de código e testes automatizados, conforme) Tj T*
+(Tabela 6.) Tj T*
+(Tabela 6 - Especificação dos Requisitos Funcionais \(RF-01 a RF-08\) e Casos de Uso \(UC01 a UC09\)) Tj T*
+(Fonte: Documento docs/REQUISITOS.md e código-fonte \(2026\).) Tj T*
+(9. ESPECIFICAÇÃO DE QUALIDADE ISO/IEC 25010 \(8 REQUISITOS MENSURÁVEIS RQ-01 A RQ-08\)) Tj T*
+(Em cumprimento ao Roteiro Prático UNINTER 2026, a Tabela 7 apresenta os 8 requisitos não) Tj T*
+(funcionais mensuráveis baseados na norma ABNT NBR ISO/IEC 25010, todos verificados) Tj T*
+(empiricamente pela suíte automatizada src/qualidade.test.js.) Tj T*
+(Tabela 7 - Requisitos de Qualidade Mensuráveis \(ISO/IEC 25010\) e Resultados Aferidos) Tj T*
+(Fonte: Suíte automatizada src/qualidade.test.js \(2026\).) Tj T*
+(10. ESTRATÉGIA DE GARANTIA DA QUALIDADE E SUÍTE COMPLETA DE 57 TESTES AUTOMATIZADOS) Tj T*
+(A aplicação web conta com 57 casos de teste automatizados distribuídos em 8 suítes) Tj T*
+(independentes no diretório src/, executadas pelo Node.js Test Runner \(node --test\) com bancos) Tj T*
+(SQLite temporários isolados \(fs.mkdtempSync\). A Tabela 8 consolida as 8 suítes e a Tabela 9) Tj T*
+(lista todos os 57 casos de teste homologados.) Tj T*
+(Tabela 8 - Consolidação das 8 Suítes de Testes Automatizados do Sistema \(Node.js\)) Tj T*
+(4/14) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 4358 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(Fonte: Execução real via test-offline.bat --no-server \(2026\).) Tj T*
+(Tabela 9 - Catálogo Detalhado dos 57 Casos de Teste Automatizados Executados) Tj T*
+(Fonte: Logs de execução do Node.js Test Runner \(2026\).) Tj T*
+(11. MATRIZ DE RASTREABILIDADE BIDIRECIONAL E PLANILHA DE INDICADORES \(SLA / SLO\)) Tj T*
+(Seguindo rigorosamente as Regras de Integridade de Auditoria Técnica \(distinguindo metas) Tj T*
+(planejadas de resultados medidos, cobertura funcional de rotas de cobertura de código via c8,) Tj T*
+(e disponibilidade mensal de aferição pontual em bateria de testes\), a Tabela 10 consolida os) Tj T*
+(indicadores de qualidade do projeto.) Tj T*
+(Tabela 10 - Planilha de Métricas e Indicadores de Qualidade \(Metas vs. Resultados Medidos\)) Tj T*
+(Fonte: Medição empírica nas suítes automatizadas \(2026\).) Tj T*
+(12. SEGURANÇA DEFENSIVA \(OWASP TOP 10\) E PRIVACIDADE DE DADOS \(LGPD\)) Tj T*
+(A aplicação implementa controles técnicos alinhados ao OWASP Top 10 e à Lei Geral de Proteção) Tj T*
+(de Dados Pessoais \(Lei nº 13.709/2018\), sintetizados na Tabela 11.) Tj T*
+(Tabela 11 - Inventário de Dados Pessoais \(LGPD\) e Controles de Segurança Aplicados) Tj T*
+(Fonte: Módulos src/auth.js, src/routes/auth.js e src/db.js \(2026\).) Tj T*
+(13. FERRAMENTA DE AUDITORIA E CORREÇÃO AUTOMATIZADA DE RELATÓRIOS TÉCNICOS \(PYTHON 3\)) Tj T*
+(Para assegurar a consistência absoluta entre todos os documentos técnicos do projeto e a) Tj T*
+(realidade física do código-fonte, foi desenvolvida uma aplicação modular em Python 3 composta) Tj T*
+(por 11 módulos independentes na raiz do repositório. A ferramenta lê arquivos DOCX, DOC, PDF,) Tj T*
+(TXT, MD, CSV e XLSX, cruza todas as métricas com o código em src/, avalia os 12 itens do) Tj T*
+(Roteiro Oficial UNINTER, cria backups imutáveis com manifesto SHA-256 antes de qualquer) Tj T*
+(revisão e exporta os relatórios revisados e consolidados.) Tj T*
+(Tabela 12 - Arquitetura Modular da Ferramenta de Auditoria Documental em Python) Tj T*
+(Fonte: Código-fonte Python na raiz do projeto \(2026\).) Tj T*
+(14. GUIA OPERACIONAL DE INSTALAÇÃO, EXECUÇÃO, CREDENCIAIS E DECLARAÇÃO DE USO DE IA) Tj T*
+(14.1 Comandos de Execução no Windows) Tj T*
+(1. Iniciar a Aplicação Web: Executar .\\iniciar-servidor.bat ou npm start para iniciar o) Tj T*
+(servidor Express em http://localhost:3000.) Tj T*
+(2. Executar a Bateria Completa de Testes \(57 Testes Node.js\): Executar .\\test-offline.bat) Tj T*
+(--no-server ou npm test para rodar os 57 testes automatizados das 8 suítes Node.js e validar a) Tj T*
+(sintaxe de todos os scripts do frontend.) Tj T*
+(3. Executar a Ferramenta de Auditoria Documental \(Python\): Executar .\\.venv\\Scripts\\python.exe) Tj T*
+(main.py para rodar a auditoria documental completa e gerar os artefatos em auditoria_output/.) Tj T*
+(4. Abrir a Interface Gráfica de Auditoria: Executar .\\.venv\\Scripts\\streamlit.exe run) Tj T*
+(interface.py \(via Streamlit\) ou .\\.venv\\Scripts\\python.exe interface.py \(Painel Web HTTP Local) Tj T*
+(em http://127.0.0.1:8501\).) Tj T*
+(14.2 Credenciais Demonstrativas Pré-Configuradas) Tj T*
+(Perfil Administrador \(admin\): admin@raizes.com / Senha: admin12345678 -> Painel Executivo) Tj T*
+(\(public/admin.html\).) Tj T*
+(Perfil Loja / Franquia \(loja\): loja@raizes.com / Senha: loja12345678 -> Painel Operacional da) Tj T*
+(Franquia \(public/operacional.html\).) Tj T*
+(Perfil Cliente \(cliente\): cliente@raizes.com / Senha: cliente12345678 -> Cardápio e Checkout) Tj T*
+(Multicanal \(public/cliente.html\).) Tj T*
+(14.3 Declaração Obrigatória de Transparência no Uso de IA) Tj T*
+(Em conformidade com a diretriz institucional do Roteiro de Atividade Prática UNINTER 2026) Tj T*
+(\('Uso de IA nesta atividade'\), declara-se que o assistente de IA integrado ao ambiente de) Tj T*
+(desenvolvimento foi utilizado como ferramenta de apoio para revisão gramatical e padronização) Tj T*
+(ABNT, criação de casos de teste de borda \(src/faults.test.js, src/frontend.test.js,) Tj T*
+(src/backend.test.js e src/qualidade.test.js\) e estruturação da ferramenta de auditoria) Tj T*
+(documental em Python. Toda a arquitetura, regras de negócio, modelo relacional SQLite WAL e) Tj T*
+(execução real das suítes de teste foram validados localmente no repositório pelo acadêmico) Tj T*
+(responsável.) Tj T*
+(5/14) Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 15 0 R >>
+endobj
+15 0 obj
+<< /Length 4415 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(15. CONCLUSÃO TÉCNICA E REFERÊNCIAS BIBLIOGRÁFICAS \(ABNT NBR 6023\)) Tj T*
+(15.1 Conclusão Técnica) Tj T*
+(A documentação e a verificação empírica do sistema 'Raízes do Nordeste' demonstram o) Tj T*
+(atendimento integral aos requisitos funcionais, não funcionais e acadêmicos do Projeto) Tj T*
+(Multidisciplinar UNINTER 2026. A arquitetura combina segurança defensiva \(bcryptjs custo 12,) Tj T*
+(cookies HttpOnly assinados via HMAC-SHA256 com SameSite=Lax, Helmet CSP, Rate Limiting e) Tj T*
+(recálculo transacional no servidor\), resiliência 100% offline, gestão operacional de estoque e) Tj T*
+(finanças, 57 testes automatizados Node.js \(100% aprovados\) e uma ferramenta completa de) Tj T*
+(auditoria e correção documental em Python 3 validada por 5 testes automatizados.) Tj T*
+(15.2 Referências Bibliográficas \(Padrão ABNT NBR 6023\)) Tj T*
+(ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. ABNT NBR 6023: Informação e documentação -) Tj T*
+(Referências - Elaboração. 2. ed. Rio de Janeiro: ABNT, 2018.) Tj T*
+(ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. ABNT NBR 14724: Informação e documentação -) Tj T*
+(Trabalhos acadêmicos - Apresentação. 3. ed. Rio de Janeiro: ABNT, 2011.) Tj T*
+(ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. ABNT NBR ISO/IEC 25010: Engenharia de sistemas e) Tj T*
+(software - Requisitos e avaliação da qualidade de produto de software \(SQuaRE\) - Modelos de) Tj T*
+(qualidade de produto de software e dados. Rio de Janeiro: ABNT, 2011.) Tj T*
+(BRASIL. Lei nº 13.709, de 14 de agosto de 2018. Lei Geral de Proteção de Dados Pessoais) Tj T*
+(\(LGPD\). Diário Oficial da União: seção 1, Brasília, DF, 15 ago. 2018.) Tj T*
+(MARTIN, Robert C. Arquitetura Limpa: O guia do artesão para estrutura e design de software.) Tj T*
+(Rio de Janeiro: Alta Books, 2019.) Tj T*
+(MYERS, Glenford J.; SANDLER, Corey; BADGETT, Tom. The Art of Software Testing. 3. ed. Hoboken:) Tj T*
+(John Wiley & Sons, 2011.) Tj T*
+(OWASP FOUNDATION. OWASP Top 10: The Ten Most Critical Web Application Security Risks. 2021.) Tj T*
+(Disponível em: https://owasp.org/www-project-top-ten/. Acesso em: 27 nov. 2026.) Tj T*
+(PRESSMAN, Roger S.; MAXIM, Bruce R. Engenharia de Software: Uma Abordagem Profissional. 9. ed.) Tj T*
+(Porto Alegre: AMGH, 2021.) Tj T*
+(SOMMERVILLE, Ian. Engenharia de Software. 10. ed. São Paulo: Pearson Education do Brasil, 2019.) Tj T*
+(UNINTER. Roteiro de Atividade Prática 2026 - Trilha: Qualidade de Software - Rede 'Raízes do) Tj T*
+(Nordeste'. Curitiba: Centro Universitário Internacional UNINTER, 2026.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Seção | Título da Seção Documental) Tj T*
+(1 | Introdução, Contexto do Negócio e Multicanalidade) Tj T*
+(2 | Arquitetura Geral do Sistema e Estrutura de Diretórios) Tj T*
+(3 | Especificação Completa do Backend \(Servidor, Middlewares e Segurança\)) Tj T*
+(4 | Modelagem do Banco de Dados Relacional \(SQLite WAL e PostgreSQL\)) Tj T*
+(5 | Documentação Completa da API REST \(21 Endpoints e Regras de Validação\)) Tj T*
+(6 | Especificação Completa do Frontend \(5 Páginas HTML, 9 Módulos JS e Design System\)) Tj T*
+(7 | Catálogo Corporativo de 100 Produtos, 21 Combos e Resolução Offline de Imagens) Tj T*
+(8 | Engenharia de Requisitos \(RF-01 a RF-08\) e Casos de Uso \(UC01 a UC09\)) Tj T*
+(9 | Especificação de Qualidade ISO/IEC 25010 \(8 Requisitos Mensuráveis RQ-01 a RQ-08\)) Tj T*
+(10 | Estratégia de Garantia da Qualidade e Suíte Completa de 57 Testes Automatizados \(8 Suítes\)) Tj T*
+(11 | Matriz de Rastreabilidade Bidirecional e Planilha de Indicadores \(SLA / SLO / KPIs\)) Tj T*
+(12 | Segurança Defensiva \(OWASP Top 10\) e Privacidade de Dados \(LGPD - Lei nº 13.709/2018\)) Tj T*
+(13 | Ferramenta de Auditoria e Correção Automatizada de Relatórios Técnicos \(Python 3\)) Tj T*
+(14 | Guia Operacional de Instalação, Execução, Credenciais e Declaração de Uso de IA) Tj T*
+(15 | Conclusão Técnica e Referências Bibliográficas \(ABNT NBR 6023\)) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Parâmetro Institucional / Técnico | Especificação Verificada no Repositório) Tj T*
+(Instituição de Ensino | Centro Universitário Internacional UNINTER - Escola Superior) Tj T*
+(Politécnica) Tj T*
+(6/14) Tj
+ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 17 0 R >>
+endobj
+17 0 obj
+<< /Length 4458 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(Disciplina | Projeto Multidisciplinar - Trilha: Qualidade de Software \(2026\)) Tj T*
+(Docente Orientador | Prof. Me. Rodrigo Nascimento) Tj T*
+(Acadêmico / Autor | Ronaldo Coutinho) Tj T*
+(Sistema Documentado | Rede 'Raízes do Nordeste' - Vitrine, Cardápio Multicanal, Gestão e) Tj T*
+(Auditoria QA) Tj T*
+(Stack Backend & Persistência | Node.js \(ES Modules\), Express 4.21, SQLite3 \(better-sqlite3 em) Tj T*
+(modo WAL\) / PostgreSQL \(pg\)) Tj T*
+(Stack de Segurança | Helmet 8.3 \(CSP estrito\), Bcryptjs 3.0 \(12 salt rounds\), Cookies) Tj T*
+(HMAC-SHA256, Rate-Limiter-Flexible) Tj T*
+(Stack Frontend | HTML5 Semântico, CSS3 Responsivo \(Design Tokens\), Vanilla JavaScript ES2022) Tj T*
+(\(100% Local / Zero CDNs\)) Tj T*
+(Stack de Auditoria Documental | Python 3.10+, python-docx, Streamlit / Painel HTTP Local,) Tj T*
+(Geradores Nativos PDF 1.4 e OpenXML XLSX) Tj T*
+(Suíte de Testes da Aplicação Web | 57 Testes Automatizados em 8 Suítes \(node:test + Supertest\)) Tj T*
+(- 57 Aprovados \(0 Falhas\)) Tj T*
+(Suíte de Testes da Auditoria Python | 5 Testes Automatizados em test_auditoria.py \(unittest\) -) Tj T*
+(5 Aprovados \(0 Falhas\)) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Caminho do Arquivo | Camada / Tipo | Responsabilidade Técnica no Sistema) Tj T*
+(src/server.js | Backend \(Entry\) | Inicializa o servidor HTTP Express na porta configurada) Tj T*
+(\(PORT ou 3000\).) Tj T*
+(src/app.js | Backend \(Core\) | Configura Helmet \(CSP\), parser de cookies anti-Prototype) Tj T*
+(Pollution, CORS, 4 Rate Limiters, rotas estáticas e tratamento global de erros) Tj T*
+(\(400/403/404/413/429/500\).) Tj T*
+(src/auth.js | Backend \(Auth\) | Gerencia assinatura HMAC-SHA256 de cookies \(raizes_session\),) Tj T*
+(comparação timingSafeEqual e middlewares requireAuth e requireRole.) Tj T*
+(src/db.js | Backend \(Dados\) | Camada híbrida SQLite3 \(modo WAL + foreign_keys=ON\) e) Tj T*
+(PostgreSQL. Gerencia as 7 tabelas relacionais, seed inicial e transações atômicas.) Tj T*
+(src/routes/auth.js | Backend \(Rota\) | Endpoints de cadastro com consentimento LGPD, login com) Tj T*
+(bcryptjs \(12 rounds\), logout, consulta de sessão \(/me\) e migração segura de usuários.) Tj T*
+(src/routes/products.js | Backend \(Rota\) | CRUD completo do catálogo de produtos, validação) Tj T*
+(estrita de tipos/limites/XSS, imagens Base64 e migração administrativa.) Tj T*
+(src/routes/orders.js | Backend \(Rota\) | Criação de pedidos multicanal com consolidação de) Tj T*
+(itens repetidos, verificação de saldo, recálculo de preços no servidor e atualização de status.) Tj T*
+(src/routes/unidades.js | Backend \(Rota\) | Listagem pública e cadastro autenticado \(sessão) Tj T*
+(admin ou Bearer token >= 32 bytes\) de unidades franqueadas com validação de UF e código.) Tj T*
+(src/routes/estoque.js | Backend \(Rota\) | Resumo de inventário, histórico auditado e registro) Tj T*
+(transacional de entradas, saídas e ajustes de balanço \(restrito a admin e loja\).) Tj T*
+(src/routes/financeiro.js | Backend \(Rota\) | Gestão de contas a pagar e a receber, cálculo de) Tj T*
+(saldos realizado/projetado, títulos vencidos, baixa, estorno e exclusão \(admin e loja\).) Tj T*
+(public/index.html + app.js | Frontend \(Vitrine\) | Landing page institucional com carrossel) Tj T*
+(acessível de ofertas, destaques do cardápio e navegação respeitando prefers-reduced-motion.) Tj T*
+(public/login.html + login.js | Frontend \(Acesso\) | Tela unificada de login, atalhos de) Tj T*
+(demonstração \(Admin, Loja, Cliente\) e formulário de cadastro com termo obrigatório da LGPD.) Tj T*
+(public/cliente.html + cliente.js | Frontend \(PDV\) | Cardápio interativo com filtro por) Tj T*
+(categoria, bloqueio de esgotados, sacola local com botões [+] e [-] e checkout multicanal.) Tj T*
+(public/admin.html + admin.js | Frontend \(Gestão\) | Painel executivo da franqueadora: KPIs de) Tj T*
+(faturamento, ticket médio, resumo regional, inventário rápido e abas de gestão.) Tj T*
+(public/operacional.html + operacional.js | Frontend \(Loja\) | Painel operacional da unidade:) Tj T*
+(fila de pedidos do dia, alteração de status em tempo real, checklists operacionais e rotas.) Tj T*
+(public/gestao.js | Frontend \(Módulos\) | Módulo compartilhado entre Admin e Loja para Controle) Tj T*
+(7/14) Tj
+ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 19 0 R >>
+endobj
+19 0 obj
+<< /Length 4550 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(de Estoque, Contas a Pagar/Receber e Catálogo com busca sem perda de foco.) Tj T*
+(public/auth.js + config.js | Frontend \(Sessão\) | Cliente HTTP \(raizesApiRequest\), proteção de) Tj T*
+(rotas por atributo data-required-role e visibilidade RBAC \(data-*-only\).) Tj T*
+(public/products.js | Frontend \(Dados\) | Catálogo base de 100 produtos e 21 combos para) Tj T*
+(fallback offline, resolução de imagens locais e redimensionamento JPEG via Canvas.) Tj T*
+(public/style.css | Frontend \(UI\) | Design system responsivo com tokens de cores nordestinas,) Tj T*
+(suporte a totens/mobile e componentes acessíveis.) Tj T*
+(main.py + interface.py | Auditoria Python | Orquestrador CLI e Interface Gráfica \(Streamlit +) Tj T*
+(Painel Web HTTP Local\) da ferramenta de auditoria e correção documental.) Tj T*
+(leitor_documentos.py + consistencia.py | Auditoria Python | Módulos 1 e 2: Leitura de) Tj T*
+(DOCX/DOC/PDF/MD/TXT/CSV/XLSX, inspeção do código-fonte e verificação das 10 Regras de) Tj T*
+(Integridade.) Tj T*
+(auditoria.py + correcao.py + backup.py | Auditoria Python | Módulos 3 e 4: Matriz do Roteiro) Tj T*
+(UNINTER \(ROT-01 a ROT-12\), backup imutável SHA-256 e correção documental rastreável.) Tj T*
+(gerador_relatorios.py + exportacao.py + logs.py | Auditoria Python | Módulos 5 e 6: Relatório) Tj T*
+(Consolidado de 12 seções e exportação nativa em DOCX, PDF 1.4, XLSX \(4 abas\), CSV e JSON.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Tabela SQL | Colunas e Tipos Principais | Restrições de Integridade e Uso) Tj T*
+(users | id \(PK\), name, email, password_hash, role, created_at | UNIQUE\(email\); role restrito a) Tj T*
+('admin', 'loja' ou 'cliente'; hash bcryptjs \(12 rounds\).) Tj T*
+(sessions | id \(PK TEXT\), user_id \(FK\), expires_at | FOREIGN KEY\(user_id\) REFERENCES users\(id\)) Tj T*
+(ON DELETE CASCADE; expiração verificada a cada requisição.) Tj T*
+(unidades | id \(PK\), codigo, nome, cidade, estado, ativa, criada_em | UNIQUE\(codigo\); código) Tj T*
+(normalizado em maiúsculas \(2 a 20 caracteres\) e UF de 2 letras.) Tj T*
+(products | id \(PK\), nome, categoria, descricao, preco, estoque, offer, imagem, itens_inclusos) Tj T*
+(| Armazena os 100 produtos e 21 combos; itens_inclusos serializado em JSON.) Tj T*
+(orders | id \(UUID PK\), user_id \(FK\), legacy_id, store, region, method, total, items_json,) Tj T*
+(details_json, created_at, status | UNIQUE\(user_id, legacy_id\) para idempotência de migração;) Tj T*
+(transação atômica com baixa automática de estoque.) Tj T*
+(estoque_movimentacoes | id \(PK\), product_id \(FK\), tipo, quantidade, estoque_anterior,) Tj T*
+(estoque_novo, motivo, usuario_nome, criado_em | FOREIGN KEY\(product_id\) REFERENCES) Tj T*
+(products\(id\) ON DELETE CASCADE; trilha de auditoria de entradas, saídas e ajustes.) Tj T*
+(financeiro_lancamentos | id \(PK\), tipo, titulo, categoria, valor, data_vencimento,) Tj T*
+(data_pagamento, status, forma_pagamento, observacoes, loja, criado_em | Registra títulos a) Tj T*
+(pagar e a receber, vencimentos ISO 8601 válidos e baixas.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Método | Rota \(/api/...\) | Autorização | Comportamento, Regras de Negócio e Códigos HTTP) Tj T*
+(GET | /api/health | Público | Retorna HTTP 200 com { status: 'ok', aplicacao: 'Rede Raízes do) Tj T*
+(Nordeste' }.) Tj T*
+(POST | /api/auth/register | Público \(Rate 10\) | Cadastra cliente \(role fixo 'cliente'\). Exige) Tj T*
+(lgpdConsent !== false, senha de 8-128 chars e nome sem '<>'. Retorna 201, 400 ou 409.) Tj T*
+(POST | /api/auth/login | Público \(Rate 5\) | Autentica com bcrypt.compare \(usa) Tj T*
+(dummyPasswordHash se e-mail não existir para evitar enumeração por tempo\). Emite cookie) Tj T*
+(HttpOnly. Retorna 200, 401 ou 429.) Tj T*
+(POST | /api/auth/logout | Público | Remove a sessão do banco e limpa o cookie raizes_session.) Tj T*
+(Retorna HTTP 204.) Tj T*
+(GET | /api/auth/me | Sessão ativa | Retorna os dados públicos \({ id, name, email, role }\) da) Tj T*
+(sessão válida ou HTTP 401.) Tj T*
+(POST | /api/auth/migrate-local-users | Público \(Rate 3\) | Importa até 200 contas legadas) Tj T*
+(sempre com perfil 'cliente', protegendo as contas demo \(admin/loja/cliente@raizes.com\).) Tj T*
+(8/14) Tj
+ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 21 0 R >>
+endobj
+21 0 obj
+<< /Length 4124 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(GET | /api/unidades | Público | Lista todas as unidades franqueadas em ordem alfabética de) Tj T*
+(nome \(HTTP 200\).) Tj T*
+(POST | /api/unidades | Admin / Token | Valida código \(2-20 chars\), nome, cidade e UF \(2) Tj T*
+(letras\). Exige sessão admin ou Bearer token >= 32 bytes. Retorna 201, 400, 401, 409 ou 503.) Tj T*
+(GET | /api/products | Público | Lista todos os produtos do catálogo com preços, estoques,) Tj T*
+(ofertas e itens inclusos.) Tj T*
+(POST | /api/products | admin ou loja | Cria produto validando categoria, preço \(0 a 100.000\),) Tj T*
+(estoque inteiro, oferta \(0 a 100%\) e imagem local/Base64 JPEG <= 900 KB.) Tj T*
+(POST | /api/products/migrate-local | admin | Faz upsert de produto legado preservando IDs) Tj T*
+(válidos \(HTTP 200 ou 400\).) Tj T*
+(PUT | /api/products/:id | admin ou loja | Atualiza dados ou foto de um produto existente \(HTTP) Tj T*
+(200, 400 ou 404\).) Tj T*
+(DELETE | /api/products/:id | admin ou loja | Remove produto do catálogo \(HTTP 204 ou 404\).) Tj T*
+(GET | /api/orders | Sessão ativa | Cliente vê apenas seus próprios pedidos; perfis admin e) Tj T*
+(loja visualizam todos os pedidos da rede.) Tj T*
+(POST | /api/orders | cliente | Consolida itens repetidos, valida estoque disponível, recalcula) Tj T*
+(preços com descontos no servidor, deduz estoque em transação atômica e grava o canal) Tj T*
+(\(WEB/APP/TOTEM/BALCAO/PICKUP\).) Tj T*
+(POST | /api/orders/migrate-local | cliente | Migra até 100 pedidos locais com idempotência por) Tj T*
+(\(user_id, legacy_id\) e recálculo no servidor.) Tj T*
+(PATCH | /api/orders/:id/status | admin ou loja | Atualiza status operacional \('Em preparo',) Tj T*
+('Em rota', 'Concluído', 'Cancelado'\). Retorna 200, 400 ou 404.) Tj T*
+(GET | /api/estoque/resumo | admin ou loja | Retorna totalProdutos, totalItens, valorTotal) Tj T*
+(\(arredondado\), totalCriticos \(<=5\), totalAtencao \(6-10\) e totalNormais \(>10\).) Tj T*
+(GET | /api/estoque/movimentacoes | admin ou loja | Lista até 200 movimentações recentes com) Tj T*
+(JOIN em products.) Tj T*
+(POST | /api/estoque/movimentacao | admin ou loja | Executa transação atômica de 'entrada',) Tj T*
+('saida' \(piso zero\) ou 'ajuste' \(>=0\) e grava auditoria com responsável.) Tj T*
+(GET/POST/PATCH/DEL | /api/financeiro/* | admin ou loja | Gerencia contas a pagar/receber) Tj T*
+(\(/resumo, /, /:id/status, /:id\) com validação de datas reais no calendário ISO \(rejeita) Tj T*
+(2026-02-31\).) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Req. | Caso Uso | Descrição Funcional | Implementação e Critério de Aceite) Tj T*
+(RF-01 | UC01 | Gestão de Unidades Franqueadas \(listagem pública e cadastro autenticado\). |) Tj T*
+(src/routes/unidades.js - Valida código único \(2-20 chars\), nome, cidade e UF \(2 letras\);) Tj T*
+(retorna 201 ou 409.) Tj T*
+(RF-02 | UC02 | Catálogo de 100 Produtos Regionais e 21 Combos com itens inclusos. |) Tj T*
+(public/products.js e src/routes/products.js - 100 itens únicos com preços, descontos e) Tj T*
+(composição de combos.) Tj T*
+(RF-03 | UC03 / UC04 | Cadastro de Cliente com Consentimento LGPD, Login e Sessão Segura. |) Tj T*
+(src/routes/auth.js e src/auth.js - Hash bcryptjs \(12 rounds\), cookie HttpOnly HMAC e bloqueio) Tj T*
+(se recusar LGPD.) Tj T*
+(RF-04 | UC05 | Checkout Multicanal com Recálculo Centralizado e Baixa Atômica de Estoque. |) Tj T*
+(src/routes/orders.js e src/db.js - Ignora preço enviado pelo cliente, valida estoque, deduz) Tj T*
+(saldo e grava pedido.) Tj T*
+(RF-05 | UC07 | Controle de Estoque e Auditoria de Movimentações \(Entrada, Saída e Ajuste\). |) Tj T*
+(src/routes/estoque.js e public/gestao.js - Restrito a admin/loja; impede saldo negativo e) Tj T*
+(registra histórico.) Tj T*
+(RF-06 | UC08 | Gestão Financeira de Contas a Pagar e a Receber com Baixa e Estorno. |) Tj T*
+(src/routes/financeiro.js e public/gestao.js - Valida datas ISO reais, calcula vencidos e) Tj T*
+(saldos projetado/realizado.) Tj T*
+(9/14) Tj
+ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 23 0 R >>
+endobj
+23 0 obj
+<< /Length 4401 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(RF-07 | UC06 | Gerenciamento Administrativo do Catálogo \(Criação, Edição, Foto e Exclusão\). |) Tj T*
+(src/routes/products.js, public/admin.js e public/operacional.js - Bloqueia XSS e exige perfil) Tj T*
+(admin ou loja.) Tj T*
+(RF-08 | UC09 | Operação 100% Offline, Migração Idempotente de Dados Legados e Fallback Visual.) Tj T*
+(| public/products.js, src/offline.test.js e test-offline.bat - Zero CDNs externos e 100) Tj T*
+(imagens locais verificadas.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(ID | Característica ISO 25010 | Meta / Critério de Aceite | Teste Automatizado Vinculado |) Tj T*
+(Resultado Empírico Medido) Tj T*
+(RQ-01 | Eficiência de Desempenho | Latência p95 < 1500 ms e média < 250 ms nas rotas críticas.) Tj T*
+(| QA-01 \(src/qualidade.test.js\) | p95 aferido < 180 ms e média < 65 ms \(APROVADO\).) Tj T*
+(RQ-02 | Disponibilidade \(Confiabilidade\) | 100% de respostas HTTP 200 nas sondagens e) Tj T*
+(Cache-Control: no-store. | QA-02 \(src/qualidade.test.js\) | 100% de sucesso nas sondagens) Tj T*
+(contínuas da suíte \(APROVADO\).) Tj T*
+(RQ-03 | Segurança \(Integridade Anti-Fraude\) | 100% dos preços e totais recalculados no) Tj T*
+(servidor; bloqueio de adulteração. | QA-03 \(src/qualidade.test.js\) | Payloads com preco: 0.01) Tj T*
+(ignorados; valor real cobrado \(APROVADO\).) Tj T*
+(RQ-04 | Usabilidade e Acessibilidade | Checkout em <= 3 passos e presença de atributos ARIA /) Tj T*
+(labels. | QA-04 e FE-08 | Fluxo concluído em 3 ações; 100% dos controles rotulados \(APROVADO\).) Tj T*
+(RQ-05 | Confiabilidade e Idempotência ACID | Zero duplicação em migração repetida e rollback) Tj T*
+(total em falha. | QA-05 e BE-06 | Constraint UNIQUE\(user_id, legacy_id\) e transações ACID) Tj T*
+(validadas \(APROVADO\).) Tj T*
+(RQ-06 | Compatibilidade e Responsividade | Suporte a viewports de 360px a 1920px sem overflow) Tj T*
+(horizontal. | QA-04 e FE-08 | Media queries e grids fluidos verificados em public/style.css) Tj T*
+(\(APROVADO\).) Tj T*
+(RQ-07 | Observabilidade e Proteção LGPD | Erros 4xx/5xx padronizados em JSON sem vazar stack) Tj T*
+(trace ou password_hash. | QA-06 \(src/qualidade.test.js\) | Zero vazamento de hashes ou traces) Tj T*
+(em respostas de erro \(APROVADO\).) Tj T*
+(RQ-08 | Manutenibilidade e Governança | Execução completa da suíte em < 60s e rastreabilidade) Tj T*
+(documental 100%. | QA-07 e test_auditoria.py | 57 testes JS executados em ~49s + 5 testes) Tj T*
+(Python aprovados \(APROVADO\).) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Arquivo da Suíte | Foco Principal | Testes | Aprovados | Escopo Validado) Tj T*
+(src/app.test.js | Integração & Segurança | 14 | 14 \(100%\) | Headers Helmet/CSP, imagens,) Tj T*
+(unidades, auth LGPD, rate limit 429, RBAC, XSS, pedidos e persistência SQLite.) Tj T*
+(src/faults.test.js | Testes Negativos & Borda | 7 | 7 \(100%\) | JSON inválido, CORS 403,) Tj T*
+(Prototype Pollution, sessões expiradas, coerção de tipos, datas impossíveis e concorrência) Tj T*
+(ACID.) Tj T*
+(src/gestao.test.js | Estoque & Financeiro | 5 | 5 \(100%\) | Bloqueio RBAC para clientes e) Tj T*
+(operações completas de estoque e contas a pagar/receber para admin e loja.) Tj T*
+(src/offline.test.js | Autonomia 100% Offline | 6 | 6 \(100%\) | Fallback do catálogo, ausência) Tj T*
+(total de CDNs, assets estáticos, SQLite offline, 100 fotos locais e paridade de preços.) Tj T*
+(src/products.test.js | Integridade do Catálogo | 4 | 4 \(100%\) | 100 produtos únicos, 21 combos) Tj T*
+(com itensInclusos, preservação na migração e resolução de imagens.) Tj T*
+(src/frontend.test.js | Frontend & DOM | 8 | 8 \(100%\) | Testes FE-01 a FE-08 cobrindo todos os) Tj T*
+(9 scripts de public/*.js, carrinho [+]/[-], bloqueio de esgotados e acessibilidade.) Tj T*
+(src/backend.test.js | Backend & Persistência | 6 | 6 \(100%\) | Testes BE-01 a BE-06 cobrindo) Tj T*
+(src/db.js, HMAC timingSafeEqual, CRUD catálogo, baixa automática de estoque e filtros) Tj T*
+(financeiros.) Tj T*
+(src/qualidade.test.js | Qualidade ISO/IEC 25010 | 7 | 7 \(100%\) | Testes QA-01 a QA-07) Tj T*
+(10/14) Tj
+ET
+endstream
+endobj
+24 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 25 0 R >>
+endobj
+25 0 obj
+<< /Length 3607 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(verificando latência p95, uptime, anti-fraude, usabilidade, idempotência, LGPD e governança) Tj T*
+(documental.) Tj T*
+(TOTAL CONSOLIDADO | 8 Suítes Automatizadas | 57 | 57 \(100%\) | Zero falhas \(0 fail\), zero) Tj T*
+(testes ignorados, isolamento completo em bancos temporários.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Código | Suíte | Descrição Técnica do Caso de Teste | Status) Tj T*
+(CT-01 | src/app.test.js | Incluir headers básicos de segurança HTTP \(Helmet CSP,) Tj T*
+(X-Content-Type-Options\) | APROVADO) Tj T*
+(CT-02 | src/app.test.js | Servir imagens de produto da pasta src/imagens com MIME correto |) Tj T*
+(APROVADO) Tj T*
+(CT-03 | src/app.test.js | Cadastrar e listar unidades com token administrativo Bearer >= 32) Tj T*
+(bytes | APROVADO) Tj T*
+(CT-04 | src/app.test.js | Impedir cadastro de unidade com código duplicado \(HTTP 409\) |) Tj T*
+(APROVADO) Tj T*
+(CT-05 | src/app.test.js | Recusar cadastro de unidade sem token ou com token inválido \(HTTP) Tj T*
+(401\) | APROVADO) Tj T*
+(CT-06 | src/app.test.js | Desabilitar cadastro de unidade se token não estiver configurado) Tj T*
+(\(HTTP 503 Fail-Closed\) | APROVADO) Tj T*
+(CT-07 | src/app.test.js | Registrar cliente com hash bcryptjs, autenticar, consultar sessão) Tj T*
+(\(/me\) e sair | APROVADO) Tj T*
+(CT-08 | src/app.test.js | Migrar contas antigas sem aceitar papéis privilegiados \(admin/loja\)) Tj T*
+(vindos do navegador | APROVADO) Tj T*
+(CT-09 | src/app.test.js | Rejeitar credenciais inválidas no login com mensagem genérica segura) Tj T*
+(\(HTTP 401\) | APROVADO) Tj T*
+(CT-10 | src/app.test.js | Limitar login a 5 tentativas em 15 minutos por IP \(HTTP 429 +) Tj T*
+(Retry-After\) | APROVADO) Tj T*
+(CT-11 | src/app.test.js | Exigir sessão autenticada e papel autorizado \(admin/loja\) para criar) Tj T*
+(produtos | APROVADO) Tj T*
+(CT-12 | src/app.test.js | Validar dados de produto contra marcação executável HTML/XSS |) Tj T*
+(APROVADO) Tj T*
+(CT-13 | src/app.test.js | Salvar pedidos recalculando preço no servidor e autorizar operação) Tj T*
+(por papel | APROVADO) Tj T*
+(CT-14 | src/app.test.js | Conservar unidades no arquivo SQLite após fechar e reabrir a conexão) Tj T*
+(| APROVADO) Tj T*
+(GE-01 | src/gestao.test.js | Controle de Estoque: bloquear acesso não autenticado \(401\) e) Tj T*
+(perfil cliente \(403\) | APROVADO) Tj T*
+(GE-02 | src/gestao.test.js | Controle de Estoque: permitir a loja e admin consultar e) Tj T*
+(registrar movimentações | APROVADO) Tj T*
+(GE-03 | src/gestao.test.js | Contas a Pagar e Receber: bloquear acesso não autenticado \(401\) e) Tj T*
+(perfil cliente \(403\) | APROVADO) Tj T*
+(GE-04 | src/gestao.test.js | Contas a Pagar e Receber: permitir que admin e loja cadastrem,) Tj T*
+(consultem, baixem e excluam | APROVADO) Tj T*
+(GE-05 | src/gestao.test.js | Cadastro de Produtos via painel gerencial: restrito a admin e) Tj T*
+(loja | APROVADO) Tj T*
+(OF-01 | src/offline.test.js | Catálogo em public/products.js recupera dados padrão offline) Tj T*
+(caso a API falhe | APROVADO) Tj T*
+(OF-02 | src/offline.test.js | Todas as páginas HTML e scripts do frontend são 100% locais sem) Tj T*
+(CDNs externos | APROVADO) Tj T*
+(OF-03 | src/offline.test.js | Todos os recursos estáticos essenciais existem no disco e são) Tj T*
+(servidos offline pelo Express | APROVADO) Tj T*
+(OF-04 | src/offline.test.js | Banco de dados local SQLite funciona isolado sem conexão com a) Tj T*
+(11/14) Tj
+ET
+endstream
+endobj
+26 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 27 0 R >>
+endobj
+27 0 obj
+<< /Length 3888 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(internet | APROVADO) Tj T*
+(OF-05 | src/offline.test.js | Todas as 100 imagens de catálogo e fallbacks por categoria) Tj T*
+(existem localmente no disco | APROVADO) Tj T*
+(OF-06 | src/offline.test.js | Cálculo de preços com ofertas funciona offline e é idêntico à) Tj T*
+(regra do backend | APROVADO) Tj T*
+(PR-01 | src/products.test.js | Cardápio contém 100 produtos válidos e sem nomes repetidos |) Tj T*
+(APROVADO) Tj T*
+(PR-02 | src/products.test.js | Todos os 21 combos informam seus itens inclusos estruturados |) Tj T*
+(APROVADO) Tj T*
+(PR-03 | src/products.test.js | Migração inclui o catálogo novo sem perder alterações ou) Tj T*
+(produtos personalizados | APROVADO) Tj T*
+(PR-04 | src/products.test.js | Cada produto resolve para uma imagem gerada ou foto local de) Tj T*
+(fallback | APROVADO) Tj T*
+(FA-01 | src/faults.test.js | Falhas de Protocolo HTTP: JSON malformado \(400\), Rota 404, CORS) Tj T*
+(inválido \(403\) e Cookie corrompido | APROVADO) Tj T*
+(FA-02 | src/faults.test.js | Falhas de Sessão e Auth: assinatura adulterada, sessão expirada,) Tj T*
+(recusa LGPD e XSS no cadastro | APROVADO) Tj T*
+(FA-03 | src/faults.test.js | Falhas de Validação em Unidades: tipos inválidos, códigos fora do) Tj T*
+(padrão, UF inválida e XSS | APROVADO) Tj T*
+(FA-04 | src/faults.test.js | Falhas de Coerção de Tipos em Produtos: null, boolean, strings) Tj T*
+(vazias, imagens maliciosas e XSS | APROVADO) Tj T*
+(FA-05 | src/faults.test.js | Falhas em Pedidos Multicanal: carrinho vazio, produto) Tj T*
+(inexistente, quantidade inválida e idempotência | APROVADO) Tj T*
+(FA-06 | src/faults.test.js | Falhas de Estoque e Financeiro: estoque nunca fica negativo,) Tj T*
+(ajuste zero e datas inválidas \(2026-02-31\) | APROVADO) Tj T*
+(FA-07 | src/faults.test.js | Segurança Avançada, Estabilidade sob Carga Concorrente e) Tj T*
+(Persistência ACID \(Foreign Keys\) | APROVADO) Tj T*
+(FE-01 | src/frontend.test.js | public/config.js e products.js: configuração de API, catálogo) Tj T*
+(de 100 itens, mesclagem e escape XSS | APROVADO) Tj T*
+(FE-02 | src/frontend.test.js | public/auth.js: sessão compartilhada, visibilidade RBAC) Tj T*
+(data-*-only, redirecionamento e migração | APROVADO) Tj T*
+(FE-03 | src/frontend.test.js | public/app.js: carrossel acessível da vitrine, cálculo de) Tj T*
+(descontos e produtos em destaque | APROVADO) Tj T*
+(FE-04 | src/frontend.test.js | public/login.js: preenchimento rápido demo, validação LGPD no) Tj T*
+(cadastro, login e redirecionamento | APROVADO) Tj T*
+(FE-05 | src/frontend.test.js | public/cliente.js: catálogo, filtros, bloqueio de esgotados,) Tj T*
+(controles [+]/[-] e checkout multicanal | APROVADO) Tj T*
+(FE-06 | src/frontend.test.js | public/admin.js: métricas executivas, resumo por região,) Tj T*
+(inventário e bloqueio de campos vazios | APROVADO) Tj T*
+(FE-07 | src/frontend.test.js | public/operacional.js e gestao.js: rotina da loja, status de) Tj T*
+(pedido, abas de estoque e financeiro | APROVADO) Tj T*
+(FE-08 | src/frontend.test.js | Páginas HTML e CSS: acessibilidade ARIA/labels, responsividade) Tj T*
+(mobile/totem e conformidade LGPD | APROVADO) Tj T*
+(BE-01 | src/backend.test.js | Camada de Persistência \(src/db.js\): operações diretas de) Tj T*
+(usuários, sessões, produtos, estoque e finanças | APROVADO) Tj T*
+(BE-02 | src/backend.test.js | Middleware de Autenticação \(src/auth.js\): assinatura) Tj T*
+(HMAC-SHA256, timingSafeEqual e RBAC | APROVADO) Tj T*
+(BE-03 | src/backend.test.js | Rotas de Catálogo \(src/routes/products.js\): CRUD completo \(GET,) Tj T*
+(POST, PUT, DELETE\) e Base64 | APROVADO) Tj T*
+(BE-04 | src/backend.test.js | Rotas de Pedidos e Estoque: baixa automática na venda,) Tj T*
+(consolidação de repetidos e auditoria | APROVADO) Tj T*
+(BE-05 | src/backend.test.js | Rotas Financeiras: filtros combinados \(tipo, status, search\),) Tj T*
+(12/14) Tj
+ET
+endstream
+endobj
+28 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 29 0 R >>
+endobj
+29 0 obj
+<< /Length 4197 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(títulos vencidos e reversão de baixa | APROVADO) Tj T*
+(BE-06 | src/backend.test.js | Migração de Contas e Pedidos Legados: proteção de contas demo,) Tj T*
+(idempotência e isolamento | APROVADO) Tj T*
+(QA-01 | src/qualidade.test.js | ISO/IEC 25010 Desempenho \(RQ-01\): percentil 95 \(p95\) < 1500 ms) Tj T*
+(e média < 250 ms nas rotas críticas | APROVADO) Tj T*
+(QA-02 | src/qualidade.test.js | ISO/IEC 25010 Disponibilidade \(RQ-02\): 100% de respostas HTTP) Tj T*
+(200 nas sondagens e no-store | APROVADO) Tj T*
+(QA-03 | src/qualidade.test.js | ISO/IEC 25010 Segurança Anti-Fraude \(RQ-03\): recálculo) Tj T*
+(obrigatório no servidor e proteção de preço | APROVADO) Tj T*
+(QA-04 | src/qualidade.test.js | ISO/IEC 25010 Usabilidade e Acessibilidade \(RQ-04/RQ-06\):) Tj T*
+(checkout <= 3 passos e atributos ARIA | APROVADO) Tj T*
+(QA-05 | src/qualidade.test.js | ISO/IEC 25010 Confiabilidade \(RQ-05\): migração idempotente sem) Tj T*
+(duplicação e integridade ACID | APROVADO) Tj T*
+(QA-06 | src/qualidade.test.js | ISO/IEC 25010 Observabilidade e LGPD \(RQ-07\): erros) Tj T*
+(padronizados sem vazar stack trace ou hashes | APROVADO) Tj T*
+(QA-07 | src/qualidade.test.js | ISO/IEC 25010 Manutenibilidade \(RQ-08\): rastreabilidade) Tj T*
+(completa e presença de artefatos de QA | APROVADO) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Indicador de Qualidade \(KPI\) | Meta Planejada \(SLO\) | Resultado Empírico Medido | Fonte /) Tj T*
+(Qualificação Metodológica) Tj T*
+(Taxa de Sucesso da Suíte Node.js | 100% de aprovação | 100% \(57 aprovados / 0 falhas em 8) Tj T*
+(suítes\) | Execução real de node --test \(src/*.test.js\).) Tj T*
+(Taxa de Sucesso da Auditoria Python | 100% de aprovação | 100% \(5 aprovados / 0 falhas\) |) Tj T*
+(Execução real de python -m unittest test_auditoria.py.) Tj T*
+(Cobertura Funcional de Rotas/Requisitos | >= 80% das rotas da API | 100% das 21 rotas da API e) Tj T*
+(8 RFs avaliados | Cobertura funcional de rotas/requisitos \(cobertura de linhas via c8 não) Tj T*
+(aferida neste relatório\).) Tj T*
+(Latência da API \(Desempenho p95\) | p95 < 1.500 ms | Média < 250 ms | p95 < 180 ms | Média ~42) Tj T*
+(ms em localhost | Aferido pelo teste QA-01 em src/qualidade.test.js.) Tj T*
+(Taxa de Resposta HTTP 200 \(Sondagem\) | >= 99,5% de sucesso | 100% nas sondagens pontuais da) Tj T*
+(suíte | Aferição pontual durante a bateria QA-02 \(disponibilidade mensal contínua em produção) Tj T*
+(não monitorada\).) Tj T*
+(Densidade de Defeitos Críticos Abertos | 0 defeitos críticos na entrega | 0% \(todos os bugs) Tj T*
+(identificados foram corrigidos\) | Verificação regressiva completa pós-correção.) Tj T*
+(Autonomia Offline \(Zero CDNs\) | 100% dos assets locais | 100% \(5 páginas HTML, 9 scripts JS e) Tj T*
+(100 fotos locais\) | Validado por src/offline.test.js e test-offline.bat.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Dado Pessoal | Finalidade Específica | Base Legal \(LGPD\) | Controle Criptográfico /) Tj T*
+(Arquitetural) Tj T*
+(Nome do Cliente | Identificação no pedido e no painel operacional da franquia. | Execução de) Tj T*
+(Contrato \(Art. 7º, V\) | Higienização de caracteres de controle, bloqueio anti-XSS \(/[<>]/\) e) Tj T*
+(escape no DOM.) Tj T*
+(E-mail | Credencial única de login e associação do histórico de compras. | Consentimento) Tj T*
+(Explícito \(Art. 7º, I\) | Restrição UNIQUE no banco, normalização lowercase e queries SQL) Tj T*
+(parametrizadas.) Tj T*
+(Senha de Acesso | Autenticação individual do titular da conta. | Segurança do Tratamento \(Art.) Tj T*
+(46\) | Hash irreversível bcryptjs com 12 salt rounds; jamais retornada pela API.) Tj T*
+(Cookie de Sessão | Manutenção do estado autenticado entre requisições HTTP. | Execução de) Tj T*
+(Contrato \(Art. 7º, V\) | Cookie raizes_session com flags HttpOnly, Secure, SameSite=Lax e) Tj T*
+(assinatura HMAC-SHA256.) Tj T*
+(13/14) Tj
+ET
+endstream
+endobj
+30 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 31 0 R >>
+endobj
+31 0 obj
+<< /Length 2733 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(Endereço IP | Prevenção de força bruta e abuso de endpoints públicos. | Legítimo Interesse /) Tj T*
+(Segurança \(Art. 7º, IX\) | Controle temporário em janela de 15 minutos pelo RateLimiter) Tj T*
+(\(SQLite/PostgreSQL\).) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Módulo Python | Requisito / Etapa | Função Técnica e Garantias de Integridade) Tj T*
+(leitor_documentos.py | Módulo 1 - Leitura | Extrai títulos, parágrafos, tabelas, métricas e) Tj T*
+(referências de DOCX, DOC, PDF, TXT, MD, CSV e XLSX e inspeciona src/*.test.js, src/db.js e) Tj T*
+(src/auth.js.) Tj T*
+(consistencia.py | Módulo 2 - Consistência | Detecta divergências de contagem de testes, custo) Tj T*
+(bcrypt, flag SameSite, tabelas SQL e aplica as 10 Regras de Integridade.) Tj T*
+(auditoria.py | Módulo 3 - Roteiro UNINTER | Verifica os 12 itens obrigatórios do roteiro) Tj T*
+(acadêmico \(ROT-01 a ROT-12\), classificando-os em Atendido, Parcialmente Atendido ou Não) Tj T*
+(Atendido.) Tj T*
+(correcao.py | Módulo 4 - Correção | Gera versões revisadas em auditoria_output/revisados/) Tj T*
+(preservando os originais e separando correções automáticas comprovadas de pendências humanas.) Tj T*
+(gerador_relatorios.py | Módulo 5 - Consolidado | Compila o Relatório Consolidado de Auditoria) Tj T*
+(com as 12 seções obrigatórias em DOCX \(padrão ABNT\) e Markdown.) Tj T*
+(exportacao.py | Módulo 6 - Exportação | Exporta DOCX revisados, PDFs individuais e consolidado) Tj T*
+(\(escritor PDF 1.4 nativo\), planilha XLSX de 4 abas \(OpenXML nativo\), CSV e JSON.) Tj T*
+(backup.py | Regra 8 e 9 - Backup | Cria cópias carimbadas por timestamp em) Tj T*
+(auditoria_output/backups/ com verificação criptográfica SHA-256 \(manifesto_backup.json\).) Tj T*
+(logs.py | Rastreabilidade | Registra logs detalhados em auditoria.log e histórico estruturado) Tj T*
+(de alterações em historico_alteracoes.json.) Tj T*
+(interface.py | Interface Gráfica \(UI\) | Interface completa em Português Brasileiro para) Tj T*
+(Streamlit \(streamlit run interface.py\) com fallback automático para Painel Web HTTP Local na) Tj T*
+(porta 8501.) Tj T*
+(main.py | Orquestrador CLI | Integra os 6 módulos via linha de comando \(python main.py --dir) Tj T*
+(docs --output auditoria_output\).) Tj T*
+(test_auditoria.py | Testes da Ferramenta | Suíte unittest com 5 testes automatizados validando) Tj T*
+(backup SHA-256, leitura multi-formato, regras de integridade, pipeline real e interface web.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(14/14) Tj
+ET
+endstream
+endobj
+xref
+0 32
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000211 00000 n 
+0000000308 00000 n 
+0000000434 00000 n 
+0000004834 00000 n 
+0000004960 00000 n 
+0000009179 00000 n 
+0000009305 00000 n 
+0000013782 00000 n 
+0000013910 00000 n 
+0000018547 00000 n 
+0000018675 00000 n 
+0000023086 00000 n 
+0000023214 00000 n 
+0000027682 00000 n 
+0000027810 00000 n 
+0000032321 00000 n 
+0000032449 00000 n 
+0000037052 00000 n 
+0000037180 00000 n 
+0000041357 00000 n 
+0000041485 00000 n 
+0000045939 00000 n 
+0000046067 00000 n 
+0000049727 00000 n 
+0000049855 00000 n 
+0000053796 00000 n 
+0000053924 00000 n 
+0000058174 00000 n 
+0000058302 00000 n 
+trailer
+<< /Size 32 /Root 1 0 R >>
+startxref
+61088
+%%EOF

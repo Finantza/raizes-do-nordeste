@@ -1,0 +1,2370 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R 24 0 R 26 0 R 28 0 R 30 0 R 32 0 R 34 0 R 36 0 R 38 0 R 40 0 R 42 0 R 44 0 R 46 0 R 48 0 R 50 0 R 52 0 R 54 0 R 56 0 R 58 0 R 60 0 R 62 0 R 64 0 R 66 0 R 68 0 R 70 0 R 72 0 R] /Count 35 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 4014 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(DOCUMENTO: relatorio-consolidado-auditoria.docx) Tj T*
+(==========================================================================================) Tj T*
+() Tj T*
+(RELATÓRIO CONSOLIDADO DE AUDITORIA TÉCNICA E DOCUMENTAL
+PROJETO REDE 'RAÍZES DO NORDESTE') Tj T*
+(UNINTER - Projeto Multidisciplinar: Qualidade de Software \(2026\) | Gerado em: 27/11/2026) Tj T*
+(10:27:55) Tj T*
+(1. Identificação do Projeto) Tj T*
+(2. Objetivo da Auditoria) Tj T*
+(Verificar de forma automatizada, rigorosa e rastreável a consistência técnica e documental) Tj T*
+(entre os relatórios de desenvolvimento, relatórios de testes de backend, frontend e QA, planos) Tj T*
+(de teste, engenharia de requisitos e o código-fonte real do projeto 'Raízes do Nordeste',) Tj T*
+(aplicando as 10 Regras de Integridade e gerando versões revisadas sem inventar métricas,) Tj T*
+(coberturas ou homologações sem lastro factual.) Tj T*
+(3. Documentos Analisados) Tj T*
+(4. Metodologia Utilizada) Tj T*
+(A auditoria executa um pipeline de 6 estágios: \(1\) Extração estrutural multi-formato \(DOCX,) Tj T*
+(DOC, PDF, MD, TXT, CSV, XLSX\) e inspeção estática das suítes reais em src/*.test.js e) Tj T*
+(src/db.js; \(2\) Cruzamento interdocumental de métricas, contagens de testes, algoritmos de) Tj T*
+(segurança e Regras de Integridade; \(3\) Avaliação de conformidade com os 12 requisitos do) Tj T*
+(Roteiro Prático UNINTER 2026; \(4\) Backup prévio com manifesto SHA-256 e aplicação de correções) Tj T*
+(evidenciadas separadas de pendências para revisão humana; \(5\) Compilação deste relatório) Tj T*
+(consolidado; e \(6\) Exportação multi-formato \(DOCX, PDF, XLSX, CSV e JSON\).) Tj T*
+(5. Diagnóstico Geral) Tj T*
+(Foram analisados 27 documentos técnicos confrontados contra 8 suítes de testes reais \(57) Tj T*
+(testes automatizados no código\). A auditoria identificou 254 inconsistência\(s\), sendo 221) Tj T*
+(elegíveis para correção automática com evidência direta no código e 33 classificadas para) Tj T*
+(qualificação/revisão humana. Na avaliação do roteiro acadêmico UNINTER, dos 12 itens) Tj T*
+(obrigatórios, 10 estão integralmente atendidos e 2 parcialmente atendidos \(exigindo apenas) Tj T*
+(qualificação textual de métricas\).) Tj T*
+(6. Matriz de Conformidade com o Roteiro Acadêmico UNINTER) Tj T*
+(7. Inconsistências Encontradas) Tj T*
+(8. Correções Realizadas nos Documentos Revisados) Tj T*
+(9. Pendências que Exigem Validação Humana) Tj T*
+(10. Avaliação da Qualidade da Documentação) Tj T*
+(A documentação técnica do projeto 'Raízes do Nordeste' apresenta alta rastreabilidade com a) Tj T*
+(implementação real \(cobrindo arquitetura Express/SQLite WAL, 100 produtos, 21 combos, RBAC,) Tj T*
+(LGPD e 8 requisitos ISO/IEC 25010\). As divergências encontradas decorreram da evolução) Tj T*
+(incremental da suíte de testes \(que cresceu de 10 para 35, 36, 44, 50 e finalmente 57 testes) Tj T*
+(automatizados ao longo das entregas\), gerando defasagens numéricas nos documentos anteriores) Tj T*
+(que foram integralmente saneadas nas versões revisadas geradas por esta ferramenta.) Tj T*
+(11. Conclusão Técnica) Tj T*
+(Após a auditoria cruzada e geração dos documentos revisados com backup SHA-256 preservado,) Tj T*
+(todos os relatórios principais refletem com exatidão a verdade empírica do repositório: 57) Tj T*
+(testes automatizados em 8 suítes \(100% aprovados\), 7 tabelas relacionais em SQLite3 \(modo) Tj T*
+(WAL\), senhas com hash bcryptjs \(12 salt rounds\), cookies HttpOnly com SameSite=Lax e distinção) Tj T*
+(transparente entre cobertura funcional de rotas e cobertura de código e entre sondagens) Tj T*
+(pontuais e disponibilidade mensal.) Tj T*
+(12. Recomendações) Tj T*
+(Recomendação 1: 1. Utilizar os arquivos da pasta 'auditoria_output/revisados/' para a) Tj T*
+(submissão acadêmica final.) Tj T*
+(Recomendação 2: 2. Caso deseje declarar percentual de cobertura de linhas de código \(c8\),) Tj T*
+(executar 'npx c8 node --test' e anexar o sumário ao relatório.) Tj T*
+(1/35) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3584 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(Recomendação 3: 3. Manter o arquivo PDF oficial do roteiro da disciplina na pasta docs/ caso) Tj T*
+(os links relativos locais sejam exigidos na entrega.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Campo | Especificação Verificada) Tj T*
+(Instituição | Centro Universitário Internacional UNINTER - Escola Superior Politécnica) Tj T*
+(Disciplina | Projeto Multidisciplinar - Trilha: Qualidade de Software \(2026\)) Tj T*
+(Docente Orientador | Prof. Me. Rodrigo Nascimento) Tj T*
+(Acadêmico Responsável | Ronaldo Coutinho) Tj T*
+(Sistema Auditado | Rede 'Raízes do Nordeste' \(Vitrine, Cardápio Multicanal, API Express e) Tj T*
+(Gestão SQLite WAL\)) Tj T*
+(Verdade Factual no Código \(src/\) | 57 testes automatizados em 8 suítes | 7 tabelas SQL |) Tj T*
+(bcrypt 12 rounds | SameSite=Lax) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Documento | Formato | Tamanho | SHA-256 \(Prefixo\) | Estrutura Extraída) Tj T*
+(avaliacao-do-sistema.md | MD | 22,519 B | 08039cb38f0ed0ac... | 29 tít. / 127 par. / 2 tab.) Tj T*
+(documentacao-completa-sistema-abnt.doc | DOC | 66,183 B | edd151cd70c6c86a... | 44 tít. / 121) Tj T*
+(par. / 12 tab.) Tj T*
+(documentacao-completa-sistema-abnt.docx | DOCX | 66,183 B | edd151cd70c6c86a... | 44 tít. /) Tj T*
+(121 par. / 12 tab.) Tj T*
+(documentacao-completa-sistema-abnt.md | MD | 3,167 B | 9395e9c1570c3363... | 4 tít. / 16 par.) Tj T*
+(/ 0 tab.) Tj T*
+(guia-passo-a-passo-melhorias-qualidade.md | MD | 11,927 B | 18cda822dea7ef70... | 14 tít. /) Tj T*
+(129 par. / 4 tab.) Tj T*
+(PLANO_TESTES.md | MD | 12,384 B | c3c38441dc092b61... | 5 tít. / 21 par. / 2 tab.) Tj T*
+(relatorio-consolidado-auditoria.docx | DOCX | 49,978 B | 494ed97176d49f04... | 13 tít. / 22) Tj T*
+(par. / 6 tab.) Tj T*
+(relatorio-consolidado-auditoria.md | MD | 37,973 B | 236f00600ef3574f... | 14 tít. / 26 par. /) Tj T*
+(5 tab.) Tj T*
+(relatorio-consolidado-auditoria.pdf | PDF | 45,715 B | da74a7b1aac84341... | 0 tít. / 519 par.) Tj T*
+(/ 0 tab.) Tj T*
+(relatorio-de-desenvolvimento.doc | DOC | 66,183 B | edd151cd70c6c86a... | 44 tít. / 121 par. /) Tj T*
+(12 tab.) Tj T*
+(relatorio-de-desenvolvimento.docx | DOCX | 66,183 B | edd151cd70c6c86a... | 44 tít. / 121 par.) Tj T*
+(/ 12 tab.) Tj T*
+(relatorio-de-desenvolvimento.md | MD | 40,970 B | 38c7fe8cb31c111b... | 35 tít. / 164 par. / 9) Tj T*
+(tab.) Tj T*
+(relatorio-de-revisao-do-sistema.md | MD | 17,052 B | 033f9ce1444ec62f... | 18 tít. / 93 par. /) Tj T*
+(3 tab.) Tj T*
+(relatorio-rascunho-apresentacao-banca.doc | DOC | 47,104 B | d1b7b5a34801c26b... | 0 tít. /) Tj T*
+(202 par. / 0 tab.) Tj T*
+(relatorio-rascunho-apresentacao-banca.md | MD | 18,899 B | 13f3b7aff92105cd... | 17 tít. / 75) Tj T*
+(par. / 9 tab.) Tj T*
+(relatorio-testes-backend.doc | DOC | 42,762 B | 1bf5f68753a2150b... | 6 tít. / 13 par. / 3 tab.) Tj T*
+(relatorio-testes-backend.docx | DOCX | 42,762 B | 1bf5f68753a2150b... | 6 tít. / 13 par. / 3) Tj T*
+(tab.) Tj T*
+(relatorio-testes-backend.md | MD | 10,758 B | f03444bd279a1129... | 5 tít. / 17 par. / 3 tab.) Tj T*
+(relatorio-testes-frontend.doc | DOC | 41,943 B | e8d85874605c2cea... | 6 tít. / 16 par. / 3) Tj T*
+(tab.) Tj T*
+(relatorio-testes-frontend.docx | DOCX | 41,943 B | e8d85874605c2cea... | 6 tít. / 16 par. / 3) Tj T*
+(tab.) Tj T*
+(relatorio-testes-frontend.md | MD | 8,882 B | af42ac0590e3fe09... | 5 tít. / 18 par. / 3 tab.) Tj T*
+(2/35) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 4407 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(relatorio-testes-qualidade-software.doc | DOC | 41,687 B | 7969e61e63a44ae6... | 6 tít. / 10) Tj T*
+(par. / 4 tab.) Tj T*
+(relatorio-testes-qualidade-software.docx | DOCX | 41,687 B | 7969e61e63a44ae6... | 6 tít. / 10) Tj T*
+(par. / 4 tab.) Tj T*
+(relatorio-testes-qualidade-software.md | MD | 7,823 B | d1c65a7f61fe0869... | 5 tít. / 13 par.) Tj T*
+(/ 4 tab.) Tj T*
+(REQUISITOS.md | MD | 10,684 B | 39a4441349af2a0e... | 7 tít. / 71 par. / 2 tab.) Tj T*
+(USO_DE_IA.md | MD | 1,499 B | 850f45054078efbd... | 1 tít. / 13 par. / 0 tab.) Tj T*
+(README.md | MD | 32,000 B | 8de1dca630dc9a4c... | 25 tít. / 251 par. / 6 tab.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Código | Item do Roteiro | Status | Evidência Verificada | Complemento) Tj T*
+(ROT-01 | 1. Contexto, Escopo \(In-Scope / Out-of-Scope\) e Multicanalidade | ATENDIDO | Seções) Tj T*
+(explícitas de In-Scope/Out-of-Scope e validação dos 5 canais em src/routes/orders.js e) Tj T*
+(src/faults.test.js. | Nenhum complemento estrutural necessário.) Tj T*
+(ROT-02 | 2. Arquitetura da Solução e Persistência Relacional | ATENDIDO | 7 tabelas reais em) Tj T*
+(src/db.js \(users, sessions, products, orders, unidades, estoque_movimentacoes,) Tj T*
+(financeiro_lancamentos\) com modo WAL e foreign_keys=ON. | Sincronizar documentos que ainda) Tj T*
+(citavam a tabela antiga 'order_items'.) Tj T*
+(ROT-03 | 3. Levantamento de Requisitos Funcionais e Casos de Uso \(UML\) | ATENDIDO | 8) Tj T*
+(Requisitos Funcionais \(RF-01 a RF-08\) e 9 Casos de Uso \(UC01 a UC09\) documentados com) Tj T*
+(critérios objetivos. | Nenhum.) Tj T*
+(ROT-04 | 4. Oito Requisitos de Qualidade Mensuráveis \(ISO/IEC 25010\) | ATENDIDO | 8 requisitos) Tj T*
+(mensuráveis \(RQ-01 a RQ-08 / RNF-01 a RNF-08\) especificados e testados em) Tj T*
+(src/qualidade.test.js. | Nenhum.) Tj T*
+(ROT-05 | 5. Planejamento da Qualidade \(QA Plan\) e Responsabilidades | ATENDIDO | Estratégia em) Tj T*
+(6 níveis, matriz RACI e Quality Gates documentados. | Nenhum.) Tj T*
+(ROT-06 | 6. Mínimo de 10 Cenários de Teste de Sistema \(Positivos e Negativos\) | ATENDIDO | 57) Tj T*
+(casos de teste automatizados reais implementados em 8 suítes no diretório src/ \(superando o) Tj T*
+(mínimo de 10\). | Unificar a contagem final de 57 testes em todos os relatórios anteriores que) Tj T*
+(citavam 35, 36, 44 ou 50.) Tj T*
+(ROT-07 | 7. Matriz de Rastreabilidade Bidirecional \(Requisito <-> Teste <-> Evidência\) | ATENDIDO) Tj T*
+(| Matrizes presentes vinculando RF-01..RF-08 e RQ-01..RQ-08 às suítes automatizadas. |) Tj T*
+(Padronizar os códigos CT-01..CT-18 em relatorio-de-revisao-do-sistema.md com o catálogo de) Tj T*
+(PLANO_TESTES.md.) Tj T*
+(ROT-08 | 8. Segurança da Aplicação \(Autenticação, RBAC, Anti-Fraude, Rate Limit, XSS/CSP\) |) Tj T*
+(ATENDIDO | Validado por src/app.test.js, src/faults.test.js e src/backend.test.js \(bcryptjs) Tj T*
+(custo 12, HMAC, Helmet CSP, RateLimiter 429\). | Corrigir menções residuais a '10 salt rounds') Tj T*
+(e 'SameSite=Strict' para '12 salt rounds' e 'SameSite=Lax'.) Tj T*
+(ROT-09 | 9. Privacidade e Conformidade com a LGPD \(Lei nº 13.709/2018\) | ATENDIDO | Checkbox) Tj T*
+(#register-lgpd-consent no frontend, validação lgpdConsent no backend \(HTTP 400 se recusado\) e) Tj T*
+(tabela de inventário LGPD. | Nenhum.) Tj T*
+(ROT-10 | 10. Planilha de Métricas e Indicadores de Qualidade \(SLA / SLO / KPIs\) | PARCIALMENTE) Tj T*
+(ATENDIDO | Tabelas de indicadores presentes com metas e resultados da suíte. | Explicitar nas) Tj T*
+(tabelas que '100% de cobertura' refere-se à cobertura funcional de rotas/requisitos \(e não) Tj T*
+(cobertura de código c8\) e que '100% de disponibilidade' refere-se à bateria pontual de testes) Tj T*
+(\(Regras 3, 4 e 5\).) Tj T*
+(ROT-11 | 11. Registro Obrigatório de Transparência no Uso de IA | ATENDIDO | Declaração) Tj T*
+(estruturada presente em docs/USO_DE_IA.md e na Seção 13 do relatório principal. | Nenhum.) Tj T*
+(ROT-12 | 12. Rascunho de Apresentação para Banca vs. Relatório Final | PARCIALMENTE ATENDIDO |) Tj T*
+(O cabeçalho de relatorio-rascunho-apresentacao-banca.md foi atualizado, mas as seções 2 a 10) Tj T*
+(ainda contêm campos '[Definir]' / '[Preencher]' do template inicial. | Revisão humana) Tj T*
+(3/35) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 4331 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(recomendada caso o rascunho de banca seja entregue junto ao relatório principal.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(ID | Sev. | Documento | Local | Categoria | Encontrado | Valor Factual | Tipo) Tj T*
+(INC-001 | ALTA | PLANO_TESTES.md | PLANO_TESTES.md:L18 | Quantidade Total de Testes | 35 Casos) Tj T*
+(de Teste Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-002 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 2\) | Quantidade Total de Testes | 35) Tj T*
+(Casos de Teste Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-003 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 3\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-004 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 4\) | Quantidade Total de Testes | 35) Tj T*
+(testes executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-005 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 5\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-006 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 6\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-007 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 7\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-008 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 8\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-009 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 9\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-010 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 13\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-011 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 14\) | Quantidade Total de Testes | 35) Tj T*
+(testes executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-012 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 15\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-013 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 16\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-014 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 17\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-015 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 18\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-016 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 19\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-017 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(4/35) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 4314 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 23\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-018 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 24\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-019 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 25\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-020 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 26\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-021 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 27\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-022 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 28\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-023 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 29\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-024 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 33\) | Quantidade Total de Testes | 35) Tj T*
+(testes executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-025 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 34\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-026 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 37\) | Quantidade Total de Testes | 50) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-027 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 38\) | Quantidade Total de Testes | 50) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-028 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 39\) | Quantidade Total de Testes | 50) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-029 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 40\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-030 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 41\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-031 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 42\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-032 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 43\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-033 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 44\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-034 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 4 \(Linha 45\) | Quantidade Total de Testes | 35) Tj T*
+(5/35) Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 15 0 R >>
+endobj
+15 0 obj
+<< /Length 4289 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-035 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 2\) | Quantidade Total de Testes | 35) Tj T*
+(Casos de Teste Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-036 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 3\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-037 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 5\) | Quantidade Total de Testes | 35) Tj T*
+(testes executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-038 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 6\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-039 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 7\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-040 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 9\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-041 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 11\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-042 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 12\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-043 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 15\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-044 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 17\) | Quantidade Total de Testes | 35) Tj T*
+(testes executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-045 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 18\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-046 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 19\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-047 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 21\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-048 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 23\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-049 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 24\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-050 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 27\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-051 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 28\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(6/35) Tj
+ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 17 0 R >>
+endobj
+17 0 obj
+<< /Length 4255 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(INC-052 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 29\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-053 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 30\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-054 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 31\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-055 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 32\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-056 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 33\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-057 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 40\) | Quantidade Total de Testes | 35) Tj T*
+(testes executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-058 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 41\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-059 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 47\) | Quantidade Total de Testes | 50) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-060 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 50\) | Quantidade Total de Testes | 50) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-061 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 51\) | Quantidade Total de Testes | 50) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-062 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 54\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-063 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 55\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-064 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 56\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-065 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 57\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-066 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 58\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-067 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 59\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-068 | MEDIA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 3 \(Linha 9\) | Segurança da Aplicação \(Bcrypt Cost\)) Tj T*
+(| 10 salt rounds | 12 salt rounds | Automática) Tj T*
+(INC-069 | MEDIA | relatorio-consolidado-auditoria.docx |) Tj T*
+(7/35) Tj
+ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 19 0 R >>
+endobj
+19 0 obj
+<< /Length 4419 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(relatorio-consolidado-auditoria.docx:Tabela 3 \(Linha 9\) | Segurança e Sessão \(Flag SameSite\) |) Tj T*
+(SameSite=Strict | SameSite=Lax | Automática) Tj T*
+(INC-070 | ALTA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 3 \(Linha 3\) | Arquitetura e Persistência \(Esquema) Tj T*
+(SQL\) | order_items | 7 tabelas reais: users, sessions, products, orders, unidades,) Tj T*
+(estoque_movimentacoes, financeiro_lancamentos | Automática) Tj T*
+(INC-071 | MEDIA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 13\) | Regras 3 e 4 - Cobertura de Testes) Tj T*
+(vs. Cobertura de Código | REL-INT-01 | relatorio-de-desenvolvimento.doc | 100% \(Auth, Pedidos,) Tj T*
+(Estoque, Finanças\) | 100% das rotas funcionais avaliadas \(Auth, Pedidos | 100% das rotas) Tj T*
+(funcionais avaliadas \(cobertura de linhas via c8 não aferida no relatório\) | Revisão Humana) Tj T*
+(INC-072 | MEDIA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 25\) | Regras 3 e 4 - Cobertura de Testes) Tj T*
+(vs. Cobertura de Código | REL-INT-01 | relatorio-de-desenvolvimento.docx | 100% \(Auth,) Tj T*
+(Pedidos, Estoque, Finanças\) | 100% das rotas funcionais avaliadas \(Auth, Pedido | 100% das) Tj T*
+(rotas funcionais avaliadas \(cobertura de linhas via c8 não aferida no relatório\) | Revisão) Tj T*
+(Humana) Tj T*
+(INC-073 | MEDIA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 38\) | Regras 3 e 4 - Cobertura de Testes) Tj T*
+(vs. Cobertura de Código | REL-INT-01 | relatorio-de-desenvolvimento.md | 100% \(Auth, Pedidos,) Tj T*
+(Estoque, Finanças\) | 100% das rotas funcionais avaliadas \(Auth, Pedidos, | 100% das rotas) Tj T*
+(funcionais avaliadas \(cobertura de linhas via c8 não aferida no relatório\) | Revisão Humana) Tj T*
+(INC-074 | MEDIA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 14\) | Regra 5 - Disponibilidade Mensal) Tj T*
+(vs. Sondagem Pontual | REL-INT-03 | relatorio-de-desenvolvimento.doc | 100% nas baterias de) Tj T*
+(homologação | 100% nas sondagens pontuais da suíte \(disponibilidade men | 100% de respostas) Tj T*
+(HTTP 200 na bateria pontual \(disponibilidade mensal contínua não monitorada em produção\) |) Tj T*
+(Revisão Humana) Tj T*
+(INC-075 | MEDIA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 14\) | Regra 5 - Disponibilidade Mensal) Tj T*
+(vs. Sondagem Pontual | REL-INT-03 | relatorio-de-desenvolvimento.doc | 100% nas baterias de) Tj T*
+(homologação | 100% nas sondagens pontuais da suíte \(disponibilidade men | 100% de respostas) Tj T*
+(HTTP 200 na bateria pontual \(disponibilidade mensal contínua não monitorada em produção\) |) Tj T*
+(Revisão Humana) Tj T*
+(INC-076 | MEDIA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 26\) | Regra 5 - Disponibilidade Mensal) Tj T*
+(vs. Sondagem Pontual | REL-INT-03 | relatorio-de-desenvolvimento.docx | 100% nas baterias de) Tj T*
+(homologação | 100% nas sondagens pontuais da suíte \(disponibilidade me | 100% de respostas) Tj T*
+(HTTP 200 na bateria pontual \(disponibilidade mensal contínua não monitorada em produção\) |) Tj T*
+(Revisão Humana) Tj T*
+(INC-077 | MEDIA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 26\) | Regra 5 - Disponibilidade Mensal) Tj T*
+(vs. Sondagem Pontual | REL-INT-03 | relatorio-de-desenvolvimento.docx | 100% nas baterias de) Tj T*
+(homologação | 100% nas sondagens pontuais da suíte \(disponibilidade me | 100% de respostas) Tj T*
+(HTTP 200 na bateria pontual \(disponibilidade mensal contínua não monitorada em produção\) |) Tj T*
+(Revisão Humana) Tj T*
+(INC-078 | MEDIA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 39\) | Regra 5 - Disponibilidade Mensal) Tj T*
+(vs. Sondagem Pontual | REL-INT-03 | relatorio-de-desenvolvimento.md | 100% nas baterias de) Tj T*
+(homologação | 100% nas sondagens pontuais da suíte \(disponibilidade mens | 100% de respostas) Tj T*
+(HTTP 200 na bateria pontual \(disponibilidade mensal contínua não monitorada em produção\) |) Tj T*
+(Revisão Humana) Tj T*
+(8/35) Tj
+ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 21 0 R >>
+endobj
+21 0 obj
+<< /Length 4287 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(INC-079 | MEDIA | relatorio-consolidado-auditoria.docx |) Tj T*
+(relatorio-consolidado-auditoria.docx:Tabela 5 \(Linha 39\) | Regra 5 - Disponibilidade Mensal) Tj T*
+(vs. Sondagem Pontual | REL-INT-03 | relatorio-de-desenvolvimento.md | 100% nas baterias de) Tj T*
+(homologação | 100% nas sondagens pontuais da suíte \(disponibilidade mens | 100% de respostas) Tj T*
+(HTTP 200 na bateria pontual \(disponibilidade mensal contínua não monitorada em produção\) |) Tj T*
+(Revisão Humana) Tj T*
+(INC-080 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 2\) | Quantidade Total de Testes | 35) Tj T*
+(Casos de Teste Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-081 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 3\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-082 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 4\) | Quantidade Total de Testes | 35) Tj T*
+(testes executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-083 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 5\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-084 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 6\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-085 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 7\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-086 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 8\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-087 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 9\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-088 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 13\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-089 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 14\) | Quantidade Total de Testes | 35) Tj T*
+(testes executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-090 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 15\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-091 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 16\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-092 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 17\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-093 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 18\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-094 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 19\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-095 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(9/35) Tj
+ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 23 0 R >>
+endobj
+23 0 obj
+<< /Length 4335 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 23\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-096 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 24\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-097 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 25\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-098 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 26\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-099 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 27\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-100 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 28\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-101 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 29\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-102 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 33\) | Quantidade Total de Testes | 35) Tj T*
+(testes executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-103 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 34\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-104 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 37\) | Quantidade Total de Testes | 50) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-105 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 38\) | Quantidade Total de Testes | 50) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-106 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 39\) | Quantidade Total de Testes | 50) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-107 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 40\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-108 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 41\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-109 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 42\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-110 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 43\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-111 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 44\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-112 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 62-108 \(Linha 45\) | Quantidade Total de Testes | 35) Tj T*
+(10/35) Tj
+ET
+endstream
+endobj
+24 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 25 0 R >>
+endobj
+25 0 obj
+<< /Length 4324 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-113 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 2\) | Quantidade Total de Testes | 35) Tj T*
+(Casos de Teste Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-114 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 3\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-115 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 5\) | Quantidade Total de Testes | 35) Tj T*
+(testes executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-116 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 6\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-117 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 7\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-118 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 9\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-119 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 11\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-120 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 12\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-121 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 15\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-122 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 17\) | Quantidade Total de Testes | 35) Tj T*
+(testes executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-123 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 18\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-124 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 19\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-125 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 21\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-126 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 23\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-127 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 24\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-128 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 27\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-129 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 28\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(11/35) Tj
+ET
+endstream
+endobj
+26 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 27 0 R >>
+endobj
+27 0 obj
+<< /Length 4286 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(INC-130 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 29\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-131 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 30\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-132 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 31\) | Quantidade Total de Testes | 35) Tj T*
+(Testes Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-133 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 32\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-134 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 33\) | Quantidade Total de Testes | 35) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-135 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 40\) | Quantidade Total de Testes | 35) Tj T*
+(testes executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-136 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 41\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-137 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 47\) | Quantidade Total de Testes | 50) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-138 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 50\) | Quantidade Total de Testes | 50) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-139 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 51\) | Quantidade Total de Testes | 50) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-140 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 54\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-141 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 55\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-142 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 56\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-143 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 57\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-144 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 58\) | Quantidade Total de Testes | 44) Tj T*
+(testes automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-145 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 59\) | Quantidade Total de Testes | 35) Tj T*
+(testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-146 | MEDIA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 46-59 \(Linha 9\) | Segurança da Aplicação \(Bcrypt) Tj T*
+(Cost\) | 10 salt rounds | 12 salt rounds | Automática) Tj T*
+(INC-147 | MEDIA | relatorio-consolidado-auditoria.md |) Tj T*
+(12/35) Tj
+ET
+endstream
+endobj
+28 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 29 0 R >>
+endobj
+29 0 obj
+<< /Length 4319 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(relatorio-consolidado-auditoria.md:Linhas 46-59 \(Linha 9\) | Segurança e Sessão \(Flag SameSite\)) Tj T*
+(| SameSite=Strict | SameSite=Lax | Automática) Tj T*
+(INC-148 | ALTA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 46-59 \(Linha 3\) | Arquitetura e Persistência) Tj T*
+(\(Esquema SQL\) | order_items | 7 tabelas reais: users, sessions, products, orders, unidades,) Tj T*
+(estoque_movimentacoes, financeiro_lancamentos | Automática) Tj T*
+(INC-149 | MEDIA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 13\) | Regras 3 e 4 - Cobertura de) Tj T*
+(Testes vs. Cobertura de Código | `REL-INT-01` | `relatorio-de-desenvolvimento.doc` | `100%) Tj T*
+(\(Auth, Pedidos, Estoque, Finanças\)` | `100% das rotas funcionais avaliadas \(Auth, | 100% das) Tj T*
+(rotas funcionais avaliadas \(cobertura de linhas via c8 não aferida no relatório\) | Revisão) Tj T*
+(Humana) Tj T*
+(INC-150 | MEDIA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 25\) | Regras 3 e 4 - Cobertura de) Tj T*
+(Testes vs. Cobertura de Código | `REL-INT-01` | `relatorio-de-desenvolvimento.docx` | `100%) Tj T*
+(\(Auth, Pedidos, Estoque, Finanças\)` | `100% das rotas funcionais avaliadas \(Auth, | 100% das) Tj T*
+(rotas funcionais avaliadas \(cobertura de linhas via c8 não aferida no relatório\) | Revisão) Tj T*
+(Humana) Tj T*
+(INC-151 | MEDIA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 38\) | Regras 3 e 4 - Cobertura de) Tj T*
+(Testes vs. Cobertura de Código | `REL-INT-01` | `relatorio-de-desenvolvimento.md` | `100%) Tj T*
+(\(Auth, Pedidos, Estoque, Finanças\)` | `100% das rotas funcionais avaliadas \(Auth, P | 100% das) Tj T*
+(rotas funcionais avaliadas \(cobertura de linhas via c8 não aferida no relatório\) | Revisão) Tj T*
+(Humana) Tj T*
+(INC-152 | MEDIA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 14\) | Regra 5 - Disponibilidade) Tj T*
+(Mensal vs. Sondagem Pontual | `REL-INT-03` | `relatorio-de-desenvolvimento.doc` | `100% nas) Tj T*
+(baterias de homologação` | `100% nas sondagens pontuais da suíte \(disponibilid | 100% de) Tj T*
+(respostas HTTP 200 na bateria pontual \(disponibilidade mensal contínua não monitorada em) Tj T*
+(produção\) | Revisão Humana) Tj T*
+(INC-153 | MEDIA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 14\) | Regra 5 - Disponibilidade) Tj T*
+(Mensal vs. Sondagem Pontual | `REL-INT-03` | `relatorio-de-desenvolvimento.doc` | `100% nas) Tj T*
+(baterias de homologação` | `100% nas sondagens pontuais da suíte \(disponibilid | 100% de) Tj T*
+(respostas HTTP 200 na bateria pontual \(disponibilidade mensal contínua não monitorada em) Tj T*
+(produção\) | Revisão Humana) Tj T*
+(INC-154 | MEDIA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 26\) | Regra 5 - Disponibilidade) Tj T*
+(Mensal vs. Sondagem Pontual | `REL-INT-03` | `relatorio-de-desenvolvimento.docx` | `100% nas) Tj T*
+(baterias de homologação` | `100% nas sondagens pontuais da suíte \(disponibili | 100% de) Tj T*
+(respostas HTTP 200 na bateria pontual \(disponibilidade mensal contínua não monitorada em) Tj T*
+(produção\) | Revisão Humana) Tj T*
+(INC-155 | MEDIA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 26\) | Regra 5 - Disponibilidade) Tj T*
+(Mensal vs. Sondagem Pontual | `REL-INT-03` | `relatorio-de-desenvolvimento.docx` | `100% nas) Tj T*
+(baterias de homologação` | `100% nas sondagens pontuais da suíte \(disponibili | 100% de) Tj T*
+(respostas HTTP 200 na bateria pontual \(disponibilidade mensal contínua não monitorada em) Tj T*
+(produção\) | Revisão Humana) Tj T*
+(INC-156 | MEDIA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 39\) | Regra 5 - Disponibilidade) Tj T*
+(Mensal vs. Sondagem Pontual | `REL-INT-03` | `relatorio-de-desenvolvimento.md` | `100% nas) Tj T*
+(baterias de homologação` | `100% nas sondagens pontuais da suíte \(disponibilida | 100% de) Tj T*
+(13/35) Tj
+ET
+endstream
+endobj
+30 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 31 0 R >>
+endobj
+31 0 obj
+<< /Length 4126 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(respostas HTTP 200 na bateria pontual \(disponibilidade mensal contínua não monitorada em) Tj T*
+(produção\) | Revisão Humana) Tj T*
+(INC-157 | MEDIA | relatorio-consolidado-auditoria.md |) Tj T*
+(relatorio-consolidado-auditoria.md:Linhas 111-172 \(Linha 39\) | Regra 5 - Disponibilidade) Tj T*
+(Mensal vs. Sondagem Pontual | `REL-INT-03` | `relatorio-de-desenvolvimento.md` | `100% nas) Tj T*
+(baterias de homologação` | `100% nas sondagens pontuais da suíte \(disponibilida | 100% de) Tj T*
+(respostas HTTP 200 na bateria pontual \(disponibilidade mensal contínua não monitorada em) Tj T*
+(produção\) | Revisão Humana) Tj T*
+(INC-158 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 154 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-159 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 157 | Quantidade Total de Testes | 35 testes) Tj T*
+(executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-160 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 161 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-161 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 164 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-162 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 167 | Quantidade Total de Testes | 35 Testes) Tj T*
+(Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-163 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 170 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-164 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 173 | Quantidade Total de Testes | 35 testes) Tj T*
+(aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-165 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 203 | Quantidade Total de Testes | 35 Testes) Tj T*
+(Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-166 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 206 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-167 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 209 | Quantidade Total de Testes | 35 testes) Tj T*
+(aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-168 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 228 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-169 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 231 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-170 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 234 | Quantidade Total de Testes | 35 Testes) Tj T*
+(Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-171 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 237 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-172 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 240 | Quantidade Total de Testes | 35 testes) Tj T*
+(14/35) Tj
+ET
+endstream
+endobj
+32 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 33 0 R >>
+endobj
+33 0 obj
+<< /Length 4119 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-173 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 243 | Quantidade Total de Testes | 35 Testes) Tj T*
+(Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-174 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 246 | Quantidade Total de Testes | 35 testes) Tj T*
+(aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-175 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 264 | Quantidade Total de Testes | 35 testes) Tj T*
+(executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-176 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 268 | Quantidade Total de Testes | 35 testes) Tj T*
+(aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-177 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 282 | Quantidade Total de Testes | 50 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-178 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 285 | Quantidade Total de Testes | 50 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-179 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 288 | Quantidade Total de Testes | 50 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-180 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 291 | Quantidade Total de Testes | 44 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-181 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 294 | Quantidade Total de Testes | 44 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-182 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 297 | Quantidade Total de Testes | 44 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-183 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 300 | Quantidade Total de Testes | 44 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-184 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 303 | Quantidade Total de Testes | 44 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-185 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 306 | Quantidade Total de Testes | 35 testes) Tj T*
+(aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-186 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 315 | Quantidade Total de Testes | 35 Casos de) Tj T*
+(Teste Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-187 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 317 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-188 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 322 | Quantidade Total de Testes | 35 testes) Tj T*
+(executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-189 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 324 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(15/35) Tj
+ET
+endstream
+endobj
+34 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 35 0 R >>
+endobj
+35 0 obj
+<< /Length 4103 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(INC-190 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 326 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-191 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 330 | Quantidade Total de Testes | 35 Testes) Tj T*
+(Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-192 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 334 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-193 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 336 | Quantidade Total de Testes | 35 testes) Tj T*
+(aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-194 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 345 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-195 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 349 | Quantidade Total de Testes | 35 testes) Tj T*
+(executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-196 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 351 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-197 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 353 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-198 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 357 | Quantidade Total de Testes | 35 Testes) Tj T*
+(Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-199 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 361 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-200 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 363 | Quantidade Total de Testes | 35 testes) Tj T*
+(aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-201 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 373 | Quantidade Total de Testes | 35 Testes) Tj T*
+(Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-202 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 375 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-203 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 377 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-204 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 379 | Quantidade Total de Testes | 35 testes) Tj T*
+(aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-205 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 381 | Quantidade Total de Testes | 35 Testes) Tj T*
+(Automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-206 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 383 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-207 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(16/35) Tj
+ET
+endstream
+endobj
+36 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 37 0 R >>
+endobj
+37 0 obj
+<< /Length 4128 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(relatorio-consolidado-auditoria.pdf:Fragmento 385 | Quantidade Total de Testes | 35 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-208 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 402 | Quantidade Total de Testes | 35 testes) Tj T*
+(executados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-209 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 404 | Quantidade Total de Testes | 35 testes) Tj T*
+(aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-210 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 419 | Quantidade Total de Testes | 50 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-211 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 426 | Quantidade Total de Testes | 50 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-212 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 428 | Quantidade Total de Testes | 50 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-213 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 434 | Quantidade Total de Testes | 44 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-214 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 436 | Quantidade Total de Testes | 44 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-215 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 438 | Quantidade Total de Testes | 44 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-216 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 440 | Quantidade Total de Testes | 44 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-217 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 442 | Quantidade Total de Testes | 44 testes) Tj T*
+(automatizados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-218 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 444 | Quantidade Total de Testes | 35 testes) Tj T*
+(aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-219 | MEDIA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 132 | Segurança da Aplicação \(Bcrypt Cost\) | 10) Tj T*
+(salt rounds | 12 salt rounds | Automática) Tj T*
+(INC-220 | MEDIA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 133 | Segurança e Sessão \(Flag SameSite\) |) Tj T*
+(SameSite=Strict | SameSite=Lax | Automática) Tj T*
+(INC-221 | ALTA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 113 | Arquitetura e Persistência \(Esquema SQL\) |) Tj T*
+(order_items | 7 tabelas reais: users, sessions, products, orders, unidades,) Tj T*
+(estoque_movimentacoes, financeiro_lancamentos | Automática) Tj T*
+(INC-222 | MEDIA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 454 | Regras 3 e 4 - Cobertura de Testes vs.) Tj T*
+(Cobertura de Código | 3\\\) | O relatório declara '100%' em indicador de cobertura de) Tj T*
+(rotas/fluxos. Pelas Regras de | 100% das rotas funcionais avaliadas \(cobertura de linhas via) Tj T*
+(c8 não aferida no relatório\) | Revisão Humana) Tj T*
+(INC-223 | MEDIA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 460 | Regra 5 - Disponibilidade Mensal vs.) Tj T*
+(17/35) Tj
+ET
+endstream
+endobj
+38 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 39 0 R >>
+endobj
+39 0 obj
+<< /Length 4388 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(Sondagem Pontual | 5\\\) | O documento associa meta de disponibilidade mensal \\\(>= 99,5%) Tj T*
+(mensal\\\) ao resultado '100% | 100% de respostas HTTP 200 na bateria pontual \(disponibilidade) Tj T*
+(mensal contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-224 | MEDIA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 460 | Regra 5 - Disponibilidade Mensal vs.) Tj T*
+(Sondagem Pontual | 5\\\) | O documento associa meta de disponibilidade mensal \\\(>= 99,5%) Tj T*
+(mensal\\\) ao resultado '100% | 100% de respostas HTTP 200 na bateria pontual \(disponibilidade) Tj T*
+(mensal contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-225 | MEDIA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 465 | Regra 5 - Disponibilidade Mensal vs.) Tj T*
+(Sondagem Pontual | 5\\\) | O documento associa meta de disponibilidade mensal \\\(>= 99,5%) Tj T*
+(mensal\\\) ao resultado '100% | 100% de respostas HTTP 200 na bateria pontual \(disponibilidade) Tj T*
+(mensal contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-226 | MEDIA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 465 | Regra 5 - Disponibilidade Mensal vs.) Tj T*
+(Sondagem Pontual | 5\\\) | O documento associa meta de disponibilidade mensal \\\(>= 99,5%) Tj T*
+(mensal\\\) ao resultado '100% | 100% de respostas HTTP 200 na bateria pontual \(disponibilidade) Tj T*
+(mensal contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-227 | MEDIA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 479 | Regra 5 - Disponibilidade Mensal vs.) Tj T*
+(Sondagem Pontual | apenas 100% de respostas HTTP 200 durante a execução da suíte, e não) Tj T*
+(disponibilidade mensal | 100% de respostas HTTP 200 na bateria pontual \(disponibilidade mensal) Tj T*
+(contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-228 | MEDIA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 484 | Regra 5 - Disponibilidade Mensal vs.) Tj T*
+(Sondagem Pontual | apenas 100% de respostas HTTP 200 durante a execução da suíte, e não) Tj T*
+(disponibilidade mensal | 100% de respostas HTTP 200 na bateria pontual \(disponibilidade mensal) Tj T*
+(contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-229 | MEDIA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 495 | Regra 5 - Disponibilidade Mensal vs.) Tj T*
+(Sondagem Pontual | apenas 100% de respostas HTTP 200 durante a execução da suíte, e não) Tj T*
+(disponibilidade mensal | 100% de respostas HTTP 200 na bateria pontual \(disponibilidade mensal) Tj T*
+(contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-230 | MEDIA | relatorio-consolidado-auditoria.pdf |) Tj T*
+(relatorio-consolidado-auditoria.pdf:Fragmento 500 | Regra 5 - Disponibilidade Mensal vs.) Tj T*
+(Sondagem Pontual | apenas 100% de respostas HTTP 200 durante a execução da suíte, e não) Tj T*
+(disponibilidade mensal | 100% de respostas HTTP 200 na bateria pontual \(disponibilidade mensal) Tj T*
+(contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-231 | ALTA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:L40 |) Tj T*
+(Quantidade Total de Testes | 35 testes automatizados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-232 | ALTA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:L42 |) Tj T*
+(Quantidade Total de Testes | 35 testes automatizados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-233 | ALTA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:L203 |) Tj T*
+(Quantidade Total de Testes | 35 Testes Automatizados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-234 | ALTA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:L205 |) Tj T*
+(Quantidade Total de Testes | 35 testes automatizados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-235 | ALTA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:L334 |) Tj T*
+(Quantidade Total de Testes | 35 testes automatizados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(18/35) Tj
+ET
+endstream
+endobj
+40 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 41 0 R >>
+endobj
+41 0 obj
+<< /Length 4359 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(Automática) Tj T*
+(INC-236 | ALTA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas) Tj T*
+(16-30 \(Linha 13\) | Quantidade Total de Testes | 35 Testes Automatizados | 57 testes) Tj T*
+(automatizados \(8 suítes\) | Automática) Tj T*
+(INC-237 | ALTA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas) Tj T*
+(83-94 \(Linha 10\) | Quantidade Total de Testes | 35 testes aprovados | 57 testes automatizados) Tj T*
+(\(8 suítes\) | Automática) Tj T*
+(INC-238 | MEDIA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas) Tj T*
+(270-278 \(Linha 3\) | Regras 3 e 4 - Cobertura de Testes vs. Cobertura de Código | **Cobertura) Tj T*
+(de Fluxos Críticos** | >= 80% das rotas de negócio | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(Mapeamento de rotas e testes de in | 100% das rotas funcionais avaliadas \(cobertura de linhas) Tj T*
+(via c8 não aferida no relatório\) | Revisão Humana) Tj T*
+(INC-239 | MEDIA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas) Tj T*
+(270-278 \(Linha 5\) | Regra 5 - Disponibilidade Mensal vs. Sondagem Pontual | **Disponibilidade) Tj T*
+(Operacional Simulada** | >= 99,5% mensal | 100% nas baterias de homologação | Sondagens na rota) Tj T*
+(/api/health durante testes | 100% de respostas HTTP 200 na bateria pontual \(disponibilidade) Tj T*
+(mensal contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-240 | MEDIA | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas) Tj T*
+(270-278 \(Linha 5\) | Regra 5 - Disponibilidade Mensal vs. Sondagem Pontual | **Disponibilidade) Tj T*
+(Operacional Simulada** | >= 99,5% mensal | 100% nas baterias de homologação | Sondagens na rota) Tj T*
+(/api/health durante testes | 100% de respostas HTTP 200 na bateria pontual \(disponibilidade) Tj T*
+(mensal contínua não monitorada em produção\) | Revisão Humana) Tj T*
+(INC-241 | ALTA | relatorio-de-revisao-do-sistema.md | relatorio-de-revisao-do-sistema.md:L19 |) Tj T*
+(Quantidade Total de Testes | 35 testes executados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-242 | ALTA | relatorio-de-revisao-do-sistema.md | relatorio-de-revisao-do-sistema.md:L172) Tj T*
+(| Quantidade Total de Testes | 35 testes aprovados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-243 | MEDIA | relatorio-de-revisao-do-sistema.md |) Tj T*
+(relatorio-de-revisao-do-sistema.md:Linhas 140-147 \(Linha 3\) | Regras 3 e 4 - Cobertura de) Tj T*
+(Testes vs. Cobertura de Código | **Cobertura de Testes das Rotas Críticas** | >= 80% dos fluxos) Tj T*
+(principais | 100% dos fluxos de Auth, Pedidos, Unidades, Estoque, Finanças e O | 100% das) Tj T*
+(rotas funcionais avaliadas \(cobertura de linhas via c8 não aferida no relatório\) | Revisão) Tj T*
+(Humana) Tj T*
+(INC-244 | MEDIA | relatorio-de-revisao-do-sistema.md |) Tj T*
+(relatorio-de-revisao-do-sistema.md:Linhas 112-134 | Identificação e Numeração de Casos de) Tj T*
+(Teste | **RF-01** | CT-01 | Listar e validar catálogo completo de 100 produtos. | 100 itens) Tj T*
+(com nomes únicos e atributos consistentes. | Padronizar conforme catálogo mestre) Tj T*
+(PLANO_TESTES.md \(CT-01 = Headers Helmet; CT-26/PR-01 = Catálogo 100 produtos\) | Revisão Humana) Tj T*
+(INC-245 | ALTA | relatorio-testes-backend.doc | relatorio-testes-backend.doc:Tabela 1 \(Linha) Tj T*
+(8\) | Quantidade Total de Testes | 50 testes automatizados | 57 testes automatizados \(8 suítes\)) Tj T*
+(| Automática) Tj T*
+(INC-246 | ALTA | relatorio-testes-backend.docx | relatorio-testes-backend.docx:Tabela 1 \(Linha) Tj T*
+(8\) | Quantidade Total de Testes | 50 testes automatizados | 57 testes automatizados \(8 suítes\)) Tj T*
+(| Automática) Tj T*
+(INC-247 | ALTA | relatorio-testes-backend.md | relatorio-testes-backend.md:Linhas 13-22 \(Linha) Tj T*
+(8\) | Quantidade Total de Testes | 50 testes automatizados | 57 testes automatizados \(8 suítes\)) Tj T*
+(| Automática) Tj T*
+(INC-248 | ALTA | relatorio-testes-frontend.doc | relatorio-testes-frontend.doc:Parágrafo 19 |) Tj T*
+(Quantidade Total de Testes | 44 testes automatizados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-249 | ALTA | relatorio-testes-frontend.doc | relatorio-testes-frontend.doc:Tabela 1 \(Linha) Tj T*
+(19/35) Tj
+ET
+endstream
+endobj
+42 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 43 0 R >>
+endobj
+43 0 obj
+<< /Length 4578 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(7\) | Quantidade Total de Testes | 44 testes automatizados | 57 testes automatizados \(8 suítes\)) Tj T*
+(| Automática) Tj T*
+(INC-250 | ALTA | relatorio-testes-frontend.docx | relatorio-testes-frontend.docx:Parágrafo 19) Tj T*
+(| Quantidade Total de Testes | 44 testes automatizados | 57 testes automatizados \(8 suítes\) |) Tj T*
+(Automática) Tj T*
+(INC-251 | ALTA | relatorio-testes-frontend.docx | relatorio-testes-frontend.docx:Tabela 1) Tj T*
+(\(Linha 7\) | Quantidade Total de Testes | 44 testes automatizados | 57 testes automatizados \(8) Tj T*
+(suítes\) | Automática) Tj T*
+(INC-252 | ALTA | relatorio-testes-frontend.md | relatorio-testes-frontend.md:Linhas 13-21) Tj T*
+(\(Linha 7\) | Quantidade Total de Testes | 44 testes automatizados | 57 testes automatizados \(8) Tj T*
+(suítes\) | Automática) Tj T*
+(INC-253 | ALTA | REQUISITOS.md | REQUISITOS.md:Linhas 27-36 \(Linha 9\) | Quantidade Total de) Tj T*
+(Testes | 35 testes aprovados | 57 testes automatizados \(8 suítes\) | Automática) Tj T*
+(INC-254 | BAIXA | docs/ \(Diretório Geral\) | Referências a) Tj T*
+(Roteiro_de_Atividade_Pratica_2026_Projeto_Qualidade_rev_0_3.pdf | Rastreabilidade de) Tj T*
+(Referências \(Roteiro Oficial\) | Link quebrado para) Tj T*
+(Roteiro_de_Atividade_Pratica_2026_Projeto_Qualidade_rev_0_3.pdf | Arquivo ausente em docs/ |) Tj T*
+(Revisão Humana) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Regra/ID | Documento Revisado | Valor Anterior | Valor Corrigido | Justificativa Factual) Tj T*
+(REL-DET-02 | PLANO_TESTES.md | 35 Casos de Teste Automatizados | 57 Casos de Teste) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-04 | relatorio-consolidado-auditoria.docx | 10 salt rounds | 12 salt rounds |) Tj T*
+(Padronização do custo bcryptjs para 12 salt rounds conforme src/db.js e src/routes/auth.js.) Tj T*
+(REL-DET-06 | relatorio-consolidado-auditoria.docx | SameSite=Strict | SameSite=Lax |) Tj T*
+(Alinhamento da flag SameSite do cookie de sessão com src/auth.js \(sameSite: 'lax'\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 Casos de Teste Automatizados | 57 Casos) Tj T*
+(de Teste Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes executados | 57 testes) Tj T*
+(executados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes aprovados | 57 testes aprovados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-INT-01 | relatorio-consolidado-auditoria.docx | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(100% das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.docx | 100% nas baterias de homologação | 100%) Tj T*
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade) Tj T*
+(mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.docx | 100% nas baterias de homologação | 100%) Tj T*
+(20/35) Tj
+ET
+endstream
+endobj
+44 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 45 0 R >>
+endobj
+45 0 obj
+<< /Length 4707 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade) Tj T*
+(mensal\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes executados | 57 testes) Tj T*
+(executados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes aprovados | 57 testes aprovados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-INT-01 | relatorio-consolidado-auditoria.docx | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(100% das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.docx | 100% nas baterias de homologação | 100%) Tj T*
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade) Tj T*
+(mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.docx | 100% nas baterias de homologação | 100%) Tj T*
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade) Tj T*
+(mensal\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes aprovados | 57 testes aprovados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-INT-01 | relatorio-consolidado-auditoria.docx | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(100% das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.docx | 100% nas baterias de homologação | 100%) Tj T*
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade) Tj T*
+(mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.docx | 100% nas baterias de homologação | 100%) Tj T*
+(21/35) Tj
+ET
+endstream
+endobj
+46 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 47 0 R >>
+endobj
+47 0 obj
+<< /Length 4816 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade) Tj T*
+(mensal\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes executados | 57 testes) Tj T*
+(executados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes aprovados | 57 testes aprovados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 50 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 50 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 50 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes aprovados | 57 testes aprovados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 Casos de Teste Automatizados | 57 Casos) Tj T*
+(de Teste Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 5 suítes | 8 suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes executados | 57 testes) Tj T*
+(executados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 5 suítes | 8 suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 5 Suítes | 8 Suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes aprovados | 57 testes aprovados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-INT-01 | relatorio-consolidado-auditoria.docx | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(100% das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.docx | 100% nas baterias de homologação | 100%) Tj T*
+(22/35) Tj
+ET
+endstream
+endobj
+48 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 49 0 R >>
+endobj
+49 0 obj
+<< /Length 4619 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade) Tj T*
+(mensal\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 5 suítes | 8 suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes executados | 57 testes) Tj T*
+(executados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 5 suítes | 8 suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 5 Suítes | 8 Suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes aprovados | 57 testes aprovados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-INT-01 | relatorio-consolidado-auditoria.docx | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(100% das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.docx | 100% nas baterias de homologação | 100%) Tj T*
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade) Tj T*
+(mensal\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes aprovados | 57 testes aprovados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 5 Suítes | 8 Suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 5 suítes | 8 suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 5 suítes | 8 suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 5 suítes | 8 suítes | Sincronização do) Tj T*
+(23/35) Tj
+ET
+endstream
+endobj
+50 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 51 0 R >>
+endobj
+51 0 obj
+<< /Length 4517 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-INT-01 | relatorio-consolidado-auditoria.docx | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(100% das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.docx | 100% nas baterias de homologação | 100%) Tj T*
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade) Tj T*
+(mensal\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes executados | 57 testes) Tj T*
+(executados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes aprovados | 57 testes aprovados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 5 suítes | 8 suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-INT-02 | relatorio-consolidado-auditoria.docx | 100% dos fluxos de Auth, Pedidos,) Tj T*
+(Unidades, Estoque, Finanças e Offline testados | 100% dos fluxos funcionais avaliados) Tj T*
+(\(cobertura de linhas de código via c8 não aferida\) | Qualificação obrigatória pelas Regras de) Tj T*
+(Integridade 3 e 4.) Tj T*
+(REL-INT-04 | relatorio-consolidado-auditoria.docx | 100% de uptime nas baterias de teste |) Tj T*
+(100% nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 7 suítes | 8 suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 6 suítes | 8 suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 50 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 7 suítes | 8 suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 6 suítes | 8 suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 50 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 50 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 7 suítes | 8 suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 6 suítes | 8 suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.docx | 35 testes aprovados | 57 testes aprovados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(24/35) Tj
+ET
+endstream
+endobj
+52 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 53 0 R >>
+endobj
+53 0 obj
+<< /Length 4483 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 5 suítes | 8 suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.docx | 5 suítes | 8 suítes | Sincronização do) Tj T*
+(total de suítes automatizadas para 8 suítes.) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.docx | 100% nas baterias de homologação | 100%) Tj T*
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade) Tj T*
+(mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.docx | 100% nas baterias de homologação | 100%) Tj T*
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade) Tj T*
+(mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.docx | 100% nas baterias de homologação | 100%) Tj T*
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade) Tj T*
+(mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.docx | 100% nas baterias de homologação | 100%) Tj T*
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade) Tj T*
+(mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.docx | 100% nas baterias de homologação | 100%) Tj T*
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade) Tj T*
+(mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.docx | 100% nas baterias de homologação | 100%) Tj T*
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade) Tj T*
+(mensal\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 Casos de Teste Automatizados | 57 Casos) Tj T*
+(de Teste Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes executados | 57 testes executados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes executados | 57 testes executados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(25/35) Tj
+ET
+endstream
+endobj
+54 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 55 0 R >>
+endobj
+55 0 obj
+<< /Length 4955 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes executados | 57 testes executados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 50 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 50 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 50 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 Casos de Teste Automatizados | 57 Casos) Tj T*
+(de Teste Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes executados | 57 testes executados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(26/35) Tj
+ET
+endstream
+endobj
+56 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 57 0 R >>
+endobj
+57 0 obj
+<< /Length 4939 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes executados | 57 testes executados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes executados | 57 testes executados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 50 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 50 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 50 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(27/35) Tj
+ET
+endstream
+endobj
+58 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 59 0 R >>
+endobj
+59 0 obj
+<< /Length 4224 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-consolidado-auditoria.md | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 5 Suítes | 8 Suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 5 Suítes | 8 Suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 5 Suítes | 8 Suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 7 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 6 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 7 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 6 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 7 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 6 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-consolidado-auditoria.md | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-04 | relatorio-consolidado-auditoria.md | 10 salt rounds | 12 salt rounds |) Tj T*
+(Padronização do custo bcryptjs para 12 salt rounds conforme src/db.js e src/routes/auth.js.) Tj T*
+(REL-DET-06 | relatorio-consolidado-auditoria.md | SameSite=Strict | SameSite=Lax | Alinhamento) Tj T*
+(da flag SameSite do cookie de sessão com src/auth.js \(sameSite: 'lax'\).) Tj T*
+(REL-INT-01 | relatorio-consolidado-auditoria.md | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(100% das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-01 | relatorio-consolidado-auditoria.md | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(100% das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(28/35) Tj
+ET
+endstream
+endobj
+60 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 61 0 R >>
+endobj
+61 0 obj
+<< /Length 5040 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-01 | relatorio-consolidado-auditoria.md | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(100% das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-01 | relatorio-consolidado-auditoria.md | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(100% das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-01 | relatorio-consolidado-auditoria.md | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(100% das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-01 | relatorio-consolidado-auditoria.md | 100% \(Auth, Pedidos, Estoque, Finanças\) |) Tj T*
+(100% das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-02 | relatorio-consolidado-auditoria.md | 100% dos fluxos de Auth, Pedidos, Unidades,) Tj T*
+(Estoque, Finanças e Offline testados | 100% dos fluxos funcionais avaliados \(cobertura de) Tj T*
+(linhas de código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3) Tj T*
+(e 4.) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(29/35) Tj
+ET
+endstream
+endobj
+62 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 63 0 R >>
+endobj
+63 0 obj
+<< /Length 4829 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(REL-INT-03 | relatorio-consolidado-auditoria.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-INT-03 | relatorio-consolidado-auditoria.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-INT-04 | relatorio-consolidado-auditoria.md | 100% de uptime nas baterias de teste | 100%) Tj T*
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5.) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.md | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.md | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.md | 35 Testes Automatizados | 57 Testes) Tj T*
+(Automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-desenvolvimento.md | 35 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-de-desenvolvimento.md | 5 Suítes | 8 Suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-de-desenvolvimento.md | 5 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-de-desenvolvimento.md | 5 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-de-desenvolvimento.md | 5 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-INT-01 | relatorio-de-desenvolvimento.md | 100% \(Auth, Pedidos, Estoque, Finanças\) | 100%) Tj T*
+(das rotas funcionais avaliadas \(Auth, Pedidos, Estoque, Finanças; cobertura de linhas de) Tj T*
+(código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3 e 4) Tj T*
+(\(diferenciação entre cobertura de fluxos e cobertura de código\).) Tj T*
+(REL-INT-03 | relatorio-de-desenvolvimento.md | 100% nas baterias de homologação | 100% nas) Tj T*
+(sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) | Qualificação) Tj T*
+(obrigatória pela Regra de Integridade 5 \(bateria pontual vs. disponibilidade mensal\).) Tj T*
+(REL-DET-02 | relatorio-de-revisao-do-sistema.md | 35 testes executados | 57 testes executados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-de-revisao-do-sistema.md | 35 testes aprovados | 57 testes aprovados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-de-revisao-do-sistema.md | 5 suítes | 8 suítes | Sincronização do total) Tj T*
+(30/35) Tj
+ET
+endstream
+endobj
+64 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 65 0 R >>
+endobj
+65 0 obj
+<< /Length 4310 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(de suítes automatizadas para 8 suítes.) Tj T*
+(REL-INT-02 | relatorio-de-revisao-do-sistema.md | 100% dos fluxos de Auth, Pedidos, Unidades,) Tj T*
+(Estoque, Finanças e Offline testados | 100% dos fluxos funcionais avaliados \(cobertura de) Tj T*
+(linhas de código via c8 não aferida\) | Qualificação obrigatória pelas Regras de Integridade 3) Tj T*
+(e 4.) Tj T*
+(REL-INT-04 | relatorio-de-revisao-do-sistema.md | 100% de uptime nas baterias de teste | 100%) Tj T*
+(nas sondagens pontuais da suíte \(disponibilidade mensal contínua não monitorada\) |) Tj T*
+(Qualificação obrigatória pela Regra de Integridade 5.) Tj T*
+(REL-DET-03 | relatorio-testes-backend.doc | 7 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-testes-backend.doc | 6 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-testes-backend.doc | 50 testes automatizados | 57 testes automatizados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-testes-backend.docx | 7 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-testes-backend.docx | 6 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-testes-backend.docx | 50 testes automatizados | 57 testes automatizados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-testes-backend.md | 50 testes automatizados | 57 testes automatizados |) Tj T*
+(Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | relatorio-testes-backend.md | 7 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | relatorio-testes-backend.md | 6 suítes | 8 suítes | Sincronização do total de) Tj T*
+(suítes automatizadas para 8 suítes.) Tj T*
+(REL-DET-02 | relatorio-testes-frontend.doc | 44 testes automatizados | 57 testes automatizados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-testes-frontend.doc | 44 testes automatizados | 57 testes automatizados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-testes-frontend.docx | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-testes-frontend.docx | 44 testes automatizados | 57 testes) Tj T*
+(automatizados | Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | relatorio-testes-frontend.md | 44 testes automatizados | 57 testes automatizados) Tj T*
+(| Sincronização da contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-02 | REQUISITOS.md | 35 testes aprovados | 57 testes aprovados | Sincronização da) Tj T*
+(contagem global de testes para 57 testes \(8 suítes\).) Tj T*
+(REL-DET-03 | REQUISITOS.md | 5 suítes | 8 suítes | Sincronização do total de suítes) Tj T*
+(automatizadas para 8 suítes.) Tj T*
+(REL-DET-03 | USO_DE_IA.md | 5 suítes | 8 suítes | Sincronização do total de suítes) Tj T*
+(automatizadas para 8 suítes.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(ID | Documento | Localização | Descrição da Pendência | Ação Recomendada) Tj T*
+(INC-071 | relatorio-consolidado-auditoria.docx | relatorio-consolidado-auditoria.docx:Tabela 5) Tj T*
+(\(Linha 13\) | O relatório declara '100%' em indicador de cobertura de rotas/fluxos. Pelas) Tj T*
+(Regras de Integridade 3 e 4, é obrigatório explicitar que se trata de cobertura funcional de) Tj T*
+(rotas/requisitos avaliados, e não cobertura de linhas/branches de código medida por c8. |) Tj T*
+(Adicionar nota de qualificação diferenciando cobertura funcional de rotas e cobertura de) Tj T*
+(código.) Tj T*
+(INC-072 | relatorio-consolidado-auditoria.docx | relatorio-consolidado-auditoria.docx:Tabela 5) Tj T*
+(31/35) Tj
+ET
+endstream
+endobj
+66 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 67 0 R >>
+endobj
+67 0 obj
+<< /Length 5037 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(\(Linha 25\) | O relatório declara '100%' em indicador de cobertura de rotas/fluxos. Pelas) Tj T*
+(Regras de Integridade 3 e 4, é obrigatório explicitar que se trata de cobertura funcional de) Tj T*
+(rotas/requisitos avaliados, e não cobertura de linhas/branches de código medida por c8. |) Tj T*
+(Adicionar nota de qualificação diferenciando cobertura funcional de rotas e cobertura de) Tj T*
+(código.) Tj T*
+(INC-073 | relatorio-consolidado-auditoria.docx | relatorio-consolidado-auditoria.docx:Tabela 5) Tj T*
+(\(Linha 38\) | O relatório declara '100%' em indicador de cobertura de rotas/fluxos. Pelas) Tj T*
+(Regras de Integridade 3 e 4, é obrigatório explicitar que se trata de cobertura funcional de) Tj T*
+(rotas/requisitos avaliados, e não cobertura de linhas/branches de código medida por c8. |) Tj T*
+(Adicionar nota de qualificação diferenciando cobertura funcional de rotas e cobertura de) Tj T*
+(código.) Tj T*
+(INC-074 | relatorio-consolidado-auditoria.docx | relatorio-consolidado-auditoria.docx:Tabela 5) Tj T*
+(\(Linha 14\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado) Tj T*
+('100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova) Tj T*
+(apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal) Tj T*
+(contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-075 | relatorio-consolidado-auditoria.docx | relatorio-consolidado-auditoria.docx:Tabela 5) Tj T*
+(\(Linha 14\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado) Tj T*
+('100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova) Tj T*
+(apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal) Tj T*
+(contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-076 | relatorio-consolidado-auditoria.docx | relatorio-consolidado-auditoria.docx:Tabela 5) Tj T*
+(\(Linha 26\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado) Tj T*
+('100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova) Tj T*
+(apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal) Tj T*
+(contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-077 | relatorio-consolidado-auditoria.docx | relatorio-consolidado-auditoria.docx:Tabela 5) Tj T*
+(\(Linha 26\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado) Tj T*
+('100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova) Tj T*
+(apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal) Tj T*
+(contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-078 | relatorio-consolidado-auditoria.docx | relatorio-consolidado-auditoria.docx:Tabela 5) Tj T*
+(\(Linha 39\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado) Tj T*
+('100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova) Tj T*
+(apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal) Tj T*
+(contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-079 | relatorio-consolidado-auditoria.docx | relatorio-consolidado-auditoria.docx:Tabela 5) Tj T*
+(\(Linha 39\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado) Tj T*
+('100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova) Tj T*
+(apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal) Tj T*
+(contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-149 | relatorio-consolidado-auditoria.md | relatorio-consolidado-auditoria.md:Linhas) Tj T*
+(111-172 \(Linha 13\) | O relatório declara '100%' em indicador de cobertura de rotas/fluxos.) Tj T*
+(Pelas Regras de Integridade 3 e 4, é obrigatório explicitar que se trata de cobertura) Tj T*
+(funcional de rotas/requisitos avaliados, e não cobertura de linhas/branches de código medida) Tj T*
+(por c8. | Adicionar nota de qualificação diferenciando cobertura funcional de rotas e) Tj T*
+(cobertura de código.) Tj T*
+(INC-150 | relatorio-consolidado-auditoria.md | relatorio-consolidado-auditoria.md:Linhas) Tj T*
+(111-172 \(Linha 25\) | O relatório declara '100%' em indicador de cobertura de rotas/fluxos.) Tj T*
+(Pelas Regras de Integridade 3 e 4, é obrigatório explicitar que se trata de cobertura) Tj T*
+(funcional de rotas/requisitos avaliados, e não cobertura de linhas/branches de código medida) Tj T*
+(por c8. | Adicionar nota de qualificação diferenciando cobertura funcional de rotas e) Tj T*
+(32/35) Tj
+ET
+endstream
+endobj
+68 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 69 0 R >>
+endobj
+69 0 obj
+<< /Length 4527 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(cobertura de código.) Tj T*
+(INC-151 | relatorio-consolidado-auditoria.md | relatorio-consolidado-auditoria.md:Linhas) Tj T*
+(111-172 \(Linha 38\) | O relatório declara '100%' em indicador de cobertura de rotas/fluxos.) Tj T*
+(Pelas Regras de Integridade 3 e 4, é obrigatório explicitar que se trata de cobertura) Tj T*
+(funcional de rotas/requisitos avaliados, e não cobertura de linhas/branches de código medida) Tj T*
+(por c8. | Adicionar nota de qualificação diferenciando cobertura funcional de rotas e) Tj T*
+(cobertura de código.) Tj T*
+(INC-152 | relatorio-consolidado-auditoria.md | relatorio-consolidado-auditoria.md:Linhas) Tj T*
+(111-172 \(Linha 14\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao) Tj T*
+(resultado '100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes) Tj T*
+(comprova apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade) Tj T*
+(mensal contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de) Tj T*
+(testes.) Tj T*
+(INC-153 | relatorio-consolidado-auditoria.md | relatorio-consolidado-auditoria.md:Linhas) Tj T*
+(111-172 \(Linha 14\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao) Tj T*
+(resultado '100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes) Tj T*
+(comprova apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade) Tj T*
+(mensal contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de) Tj T*
+(testes.) Tj T*
+(INC-154 | relatorio-consolidado-auditoria.md | relatorio-consolidado-auditoria.md:Linhas) Tj T*
+(111-172 \(Linha 26\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao) Tj T*
+(resultado '100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes) Tj T*
+(comprova apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade) Tj T*
+(mensal contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de) Tj T*
+(testes.) Tj T*
+(INC-155 | relatorio-consolidado-auditoria.md | relatorio-consolidado-auditoria.md:Linhas) Tj T*
+(111-172 \(Linha 26\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao) Tj T*
+(resultado '100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes) Tj T*
+(comprova apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade) Tj T*
+(mensal contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de) Tj T*
+(testes.) Tj T*
+(INC-156 | relatorio-consolidado-auditoria.md | relatorio-consolidado-auditoria.md:Linhas) Tj T*
+(111-172 \(Linha 39\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao) Tj T*
+(resultado '100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes) Tj T*
+(comprova apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade) Tj T*
+(mensal contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de) Tj T*
+(testes.) Tj T*
+(INC-157 | relatorio-consolidado-auditoria.md | relatorio-consolidado-auditoria.md:Linhas) Tj T*
+(111-172 \(Linha 39\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao) Tj T*
+(resultado '100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes) Tj T*
+(comprova apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade) Tj T*
+(mensal contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de) Tj T*
+(testes.) Tj T*
+(INC-222 | relatorio-consolidado-auditoria.pdf | relatorio-consolidado-auditoria.pdf:Fragmento) Tj T*
+(454 | O relatório declara '100%' em indicador de cobertura de rotas/fluxos. Pelas Regras de) Tj T*
+(Integridade 3 e 4, é obrigatório explicitar que se trata de cobertura funcional de) Tj T*
+(rotas/requisitos avaliados, e não cobertura de linhas/branches de código medida por c8. |) Tj T*
+(Adicionar nota de qualificação diferenciando cobertura funcional de rotas e cobertura de) Tj T*
+(código.) Tj T*
+(INC-223 | relatorio-consolidado-auditoria.pdf | relatorio-consolidado-auditoria.pdf:Fragmento) Tj T*
+(460 | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado '100%) Tj T*
+(nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova apenas 100%) Tj T*
+(33/35) Tj
+ET
+endstream
+endobj
+70 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 71 0 R >>
+endobj
+71 0 obj
+<< /Length 5159 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal contínua. |) Tj T*
+(Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-224 | relatorio-consolidado-auditoria.pdf | relatorio-consolidado-auditoria.pdf:Fragmento) Tj T*
+(460 | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado '100%) Tj T*
+(nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova apenas 100%) Tj T*
+(de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal contínua. |) Tj T*
+(Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-225 | relatorio-consolidado-auditoria.pdf | relatorio-consolidado-auditoria.pdf:Fragmento) Tj T*
+(465 | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado '100%) Tj T*
+(nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova apenas 100%) Tj T*
+(de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal contínua. |) Tj T*
+(Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-226 | relatorio-consolidado-auditoria.pdf | relatorio-consolidado-auditoria.pdf:Fragmento) Tj T*
+(465 | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado '100%) Tj T*
+(nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova apenas 100%) Tj T*
+(de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal contínua. |) Tj T*
+(Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-227 | relatorio-consolidado-auditoria.pdf | relatorio-consolidado-auditoria.pdf:Fragmento) Tj T*
+(479 | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado '100%) Tj T*
+(nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova apenas 100%) Tj T*
+(de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal contínua. |) Tj T*
+(Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-228 | relatorio-consolidado-auditoria.pdf | relatorio-consolidado-auditoria.pdf:Fragmento) Tj T*
+(484 | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado '100%) Tj T*
+(nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova apenas 100%) Tj T*
+(de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal contínua. |) Tj T*
+(Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-229 | relatorio-consolidado-auditoria.pdf | relatorio-consolidado-auditoria.pdf:Fragmento) Tj T*
+(495 | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado '100%) Tj T*
+(nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova apenas 100%) Tj T*
+(de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal contínua. |) Tj T*
+(Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-230 | relatorio-consolidado-auditoria.pdf | relatorio-consolidado-auditoria.pdf:Fragmento) Tj T*
+(500 | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado '100%) Tj T*
+(nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova apenas 100%) Tj T*
+(de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal contínua. |) Tj T*
+(Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-238 | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas 270-278) Tj T*
+(\(Linha 3\) | O relatório declara '100%' em indicador de cobertura de rotas/fluxos. Pelas Regras) Tj T*
+(de Integridade 3 e 4, é obrigatório explicitar que se trata de cobertura funcional de) Tj T*
+(rotas/requisitos avaliados, e não cobertura de linhas/branches de código medida por c8. |) Tj T*
+(Adicionar nota de qualificação diferenciando cobertura funcional de rotas e cobertura de) Tj T*
+(código.) Tj T*
+(INC-239 | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas 270-278) Tj T*
+(\(Linha 5\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado) Tj T*
+('100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova) Tj T*
+(apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal) Tj T*
+(contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-240 | relatorio-de-desenvolvimento.md | relatorio-de-desenvolvimento.md:Linhas 270-278) Tj T*
+(\(Linha 5\) | O documento associa meta de disponibilidade mensal \(>= 99,5% mensal\) ao resultado) Tj T*
+('100% nas baterias de homologação'. Pela Regra 5, uma bateria pontual de testes comprova) Tj T*
+(apenas 100% de respostas HTTP 200 durante a execução da suíte, e não disponibilidade mensal) Tj T*
+(34/35) Tj
+ET
+endstream
+endobj
+72 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 73 0 R >>
+endobj
+73 0 obj
+<< /Length 1715 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(contínua. | Qualificar o resultado como aferição pontual durante a execução da suíte de testes.) Tj T*
+(INC-243 | relatorio-de-revisao-do-sistema.md | relatorio-de-revisao-do-sistema.md:Linhas) Tj T*
+(140-147 \(Linha 3\) | O relatório declara '100%' em indicador de cobertura de rotas/fluxos.) Tj T*
+(Pelas Regras de Integridade 3 e 4, é obrigatório explicitar que se trata de cobertura) Tj T*
+(funcional de rotas/requisitos avaliados, e não cobertura de linhas/branches de código medida) Tj T*
+(por c8. | Adicionar nota de qualificação diferenciando cobertura funcional de rotas e) Tj T*
+(cobertura de código.) Tj T*
+(INC-244 | relatorio-de-revisao-do-sistema.md | relatorio-de-revisao-do-sistema.md:Linhas) Tj T*
+(112-134 | Divergência de identificação de casos de teste: em) Tj T*
+(relatorio-de-revisao-do-sistema.md, 'CT-01' refere-se ao catálogo de 100 produtos, enquanto em) Tj T*
+(PLANO_TESTES.md e relatorio-de-desenvolvimento.md 'CT-01' refere-se aos headers de segurança) Tj T*
+(HTTP \(Helmet\) e o catálogo é 'CT-26' / 'PR-01'. | Revisar e alinhar a numeração da tabela de) Tj T*
+(rastreabilidade com PLANO_TESTES.md.) Tj T*
+(INC-254 | docs/ \(Diretório Geral\) | Referências a) Tj T*
+(Roteiro_de_Atividade_Pratica_2026_Projeto_Qualidade_rev_0_3.pdf | Os documentos referenciam o) Tj T*
+(arquivo 'docs/Roteiro_de_Atividade_Pratica_2026_Projeto_Qualidade_rev_0_3.pdf', porém esse) Tj T*
+(arquivo PDF não está presente no diretório docs/ do repositório. | Anexar o PDF oficial do) Tj T*
+(roteiro na pasta docs/ ou indicar que o roteiro pertence ao AVA UNINTER.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(35/35) Tj
+ET
+endstream
+endobj
+xref
+0 74
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000358 00000 n 
+0000000455 00000 n 
+0000000581 00000 n 
+0000004647 00000 n 
+0000004773 00000 n 
+0000008409 00000 n 
+0000008535 00000 n 
+0000012994 00000 n 
+0000013122 00000 n 
+0000017506 00000 n 
+0000017634 00000 n 
+0000022001 00000 n 
+0000022129 00000 n 
+0000026471 00000 n 
+0000026599 00000 n 
+0000030907 00000 n 
+0000031035 00000 n 
+0000035507 00000 n 
+0000035635 00000 n 
+0000039975 00000 n 
+0000040103 00000 n 
+0000044491 00000 n 
+0000044619 00000 n 
+0000048996 00000 n 
+0000049124 00000 n 
+0000053463 00000 n 
+0000053591 00000 n 
+0000057963 00000 n 
+0000058091 00000 n 
+0000062270 00000 n 
+0000062398 00000 n 
+0000066570 00000 n 
+0000066698 00000 n 
+0000070854 00000 n 
+0000070982 00000 n 
+0000075163 00000 n 
+0000075291 00000 n 
+0000079732 00000 n 
+0000079860 00000 n 
+0000084272 00000 n 
+0000084400 00000 n 
+0000089031 00000 n 
+0000089159 00000 n 
+0000093919 00000 n 
+0000094047 00000 n 
+0000098916 00000 n 
+0000099044 00000 n 
+0000103716 00000 n 
+0000103844 00000 n 
+0000108414 00000 n 
+0000108542 00000 n 
+0000113078 00000 n 
+0000113206 00000 n 
+0000118214 00000 n 
+0000118342 00000 n 
+0000123334 00000 n 
+0000123462 00000 n 
+0000127739 00000 n 
+0000127867 00000 n 
+0000132960 00000 n 
+0000133088 00000 n 
+0000137970 00000 n 
+0000138098 00000 n 
+0000142461 00000 n 
+0000142589 00000 n 
+0000147679 00000 n 
+0000147807 00000 n 
+0000152387 00000 n 
+0000152515 00000 n 
+0000157727 00000 n 
+0000157855 00000 n 
+trailer
+<< /Size 74 /Root 1 0 R >>
+startxref
+159623
+%%EOF

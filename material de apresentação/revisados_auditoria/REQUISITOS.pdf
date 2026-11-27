@@ -1,0 +1,273 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 4072 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(DOCUMENTO: Documento Revisado: REQUISITOS.md) Tj T*
+(==========================================================================================) Tj T*
+() Tj T*
+(# Documento de Engenharia de Requisitos - Rede "Raízes do Nordeste") Tj T*
+() Tj T*
+(**Projeto Multidisciplinar - Trilha: Qualidade de Software \(UNINTER 2026\)**) Tj T*
+(**Docente:** Prof. Me. Rodrigo Nascimento | **Responsável:** Ronaldo Coutinho) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 1. Requisitos Funcionais \(RF\)) Tj T*
+() Tj T*
+(| ID | Requisito Funcional | Endpoints / Componentes | Critério de Aceitação Objetivo |) Tj T*
+(Situação |) Tj T*
+(|---|---|---|---|---|) Tj T*
+(| **RF-01** | **Gestão de Unidades Franqueadas:** Cadastrar e listar unidades da rede com) Tj T*
+(validação de sigla de UF e bloqueio de códigos duplicados. | `GET /api/unidades`<br>`POST) Tj T*
+(/api/unidades` | Cadastro válido retorna `HTTP 201`; código repetido retorna `HTTP 409`; sem) Tj T*
+(autorização retorna `HTTP 401`/`503`. | **Implementado e Homologado** |) Tj T*
+(| **RF-02** | **Catálogo Padronizado e Combos:** Manter cardápio de 100 produtos regionais) Tj T*
+(categorizados \(`Lanches`, `Pratos`, `Bebidas`, `Sobremesas`, `Ofertas`\), incluindo 21 combos) Tj T*
+(com itens inclusos e imagens locais. | `GET /api/products`<br>`POST / PUT / DELETE) Tj T*
+(/api/products`<br>`public/products.js` | 100 itens únicos com preços, ofertas \(0-100%\),) Tj T*
+(imagens locais em `/imagens/` e fallback por categoria; escrita restrita a `admin` e `loja`. |) Tj T*
+(**Implementado e Homologado** |) Tj T*
+(| **RF-03** | **Cadastro de Clientes e Consentimento LGPD:** Registrar clientes com validação) Tj T*
+(de consentimento explícito LGPD, e-mail único e senha criptografada com `bcryptjs` \(12) Tj T*
+(rounds\). | `POST /api/auth/register`<br>`public/login.html` | Senha nunca trafega ou persiste) Tj T*
+(em texto puro; `lgpdConsent: false` ou tag HTML no nome retorna `HTTP 400`; e-mail repetido) Tj T*
+(retorna `HTTP 409`. | **Implementado e Homologado** |) Tj T*
+(| **RF-04** | **Autenticação por Sessão e RBAC:** Autenticar perfis \(`cliente`, `loja`,) Tj T*
+(`admin`\) via cookies assinados HMAC \(`HttpOnly`, `Secure`, `SameSite=Lax`\) e bloquear) Tj T*
+(escalonamento de privilégio. | `POST /api/auth/login`<br>`POST /api/auth/logout`<br>`GET) Tj T*
+(/api/auth/me`<br>`POST /api/auth/migrate-local-users` | Sessões válidas por 7 dias persistidas) Tj T*
+(no banco; assinaturas forjadas ou expiradas retornam `HTTP 401`; migração força papel) Tj T*
+(`cliente`. | **Implementado e Homologado** |) Tj T*
+(| **RF-05** | **Pedidos Multicanal com Cálculo no Servidor:** Receber pedidos pelos canais) Tj T*
+(`WEB`, `APP`, `TOTEM`, `BALCAO` e `PICKUP` \(*Delivery*, *Retirada*, *Balcão*, *Totem*\),) Tj T*
+(recalculando preços e descontos no backend. | `POST /api/orders`<br>`GET /api/orders`<br>`POST) Tj T*
+(/api/orders/migrate-local`<br>`public/cliente.js` | Valores enviados pelo navegador são) Tj T*
+(ignorados e recalculados no servidor; clientes veem apenas seus próprios pedidos; migração é) Tj T*
+(idempotente por `legacyId`. | **Implementado e Homologado** |) Tj T*
+(| **RF-06** | **Acompanhamento e Ciclo Operacional do Pedido:** Permitir atualização do status) Tj T*
+(do pedido pela loja ou administração. | `PATCH) Tj T*
+(/api/orders/:id/status`<br>`public/operacional.js` | Aceita apenas status válidos \(`Em) Tj T*
+(preparo`, `Em rota`, `Concluído`, `Cancelado`\); bloqueia clientes \(`HTTP 403`\) e retorna `HTTP) Tj T*
+(404` para ID inexistente. | **Implementado e Homologado** |) Tj T*
+(| **RF-07** | **Controle de Estoque Auditado:** Consultar níveis de estoque \(Crítico <= 5,) Tj T*
+(Atenção 6-10, Normal > 10\) e registrar movimentações \(`entrada`, `saida`, `ajuste`\). | `GET) Tj T*
+(/api/estoque/resumo`<br>`GET /api/estoque/movimentacoes`<br>`POST) Tj T*
+(/api/estoque/movimentacao`<br>`public/gestao.js` | Acesso restrito a `admin` e `loja`; estoque) Tj T*
+(nunca fica negativo em saídas; gera trilha de auditoria com responsável, motivo e saldo) Tj T*
+(1/4) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 4007 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(anterior/novo. | **Implementado e Homologado** |) Tj T*
+(| **RF-08** | **Gestão Financeira \(Contas a Pagar e Receber\):** Cadastrar títulos financeiros,) Tj T*
+(consultar fluxo de caixa projetado/realizado, dar baixa \(`pago`/`pendente`\) e excluir) Tj T*
+(lançamentos. | `GET / POST /api/financeiro`<br>`GET /api/financeiro/resumo`<br>`PATCH) Tj T*
+(/api/financeiro/:id/status`<br>`DELETE /api/financeiro/:id` | Acesso restrito a `admin` e) Tj T*
+(`loja`; valida datas reais de calendário ISO \(`YYYY-MM-DD`\), valores positivos e sanitização) Tj T*
+(contra XSS. | **Implementado e Homologado** |) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 2. Requisitos Não Funcionais e de Qualidade Mensuráveis \(RNF / ISO 25010\)) Tj T*
+() Tj T*
+(**Feature Crítica Selecionada:** *Processamento Transacional de Pedidos Multicanal com Cálculo) Tj T*
+(Centralizado no Servidor e Gestão Integrada de Estoque/Financeiro*.) Tj T*
+() Tj T*
+(| ID | Atributo \(ISO/IEC 25010\) | Condição Mensurável / Meta | Método de Verificação |) Tj T*
+(Critério de Aceitação | Situação |) Tj T*
+(|---|---|---|---|---|---|) Tj T*
+(| **RNF-01** | **Desempenho \(Performance\)** | Tempo de resposta das rotas transacionais de) Tj T*
+(pedidos, estoque e catálogo inferior a `1500 ms` no percentil 95 \(p95\). | Cronometragem) Tj T*
+(automatizada via Supertest na suíte `node --test`. | Latência média < `250 ms` e p95 < `1500) Tj T*
+(ms`. | **Atendido** \(~180 ms\) |) Tj T*
+(| **RNF-02** | **Disponibilidade \(Availability\)** | Disponibilidade operacional simulada >=) Tj T*
+(`99,5%` com operação 100% autônoma offline \(zero CDNs externos\). | Monitoramento de) Tj T*
+(`/api/health` e execução da suíte `src/offline.test.js`. | `HTTP 200` em 100% das checagens e) Tj T*
+(zero dependências externas. | **Atendido** \(100% local\) |) Tj T*
+(| **RNF-03** | **Segurança \(Security - Anti-Fraude\)** | Rejeição absoluta de manipulação de) Tj T*
+(preços no cliente e neutralização de payloads XSS \(`<`, `>`\) e coerção de tipos \(`null`,) Tj T*
+(`boolean`\). | Testes de abuso em `src/app.test.js` e `src/faults.test.js`. | Total recalculado) Tj T*
+(no servidor; payloads maliciosos recebem `HTTP 400`. | **Atendido** |) Tj T*
+(| **RNF-04** | **Segurança \(Anti-Brute Force & Headers\)** | Bloqueio de força bruta no login) Tj T*
+(após 5 tentativas por IP em 15 min \(`HTTP 429`\) e presença de cabeçalhos Helmet/CSP. | Testes) Tj T*
+(automatizados em `src/app.test.js` \(CT-01 e CT-10\). | 6ª tentativa retorna `HTTP 429` com) Tj T*
+(cabeçalho `Retry-After`. | **Atendido** |) Tj T*
+(| **RNF-05** | **Usabilidade \(Usability\)** | Conclusão do pedido em <= 3 interações a partir do) Tj T*
+(carrinho e login demonstrativo em 1 clique. | Inspeção nos fluxos de `public/cliente.html` e) Tj T*
+(`public/login.html`. | Checkout em <= 3 cliques com feedback claro em `aria-live="polite"`. |) Tj T*
+(**Atendido** |) Tj T*
+(| **RNF-06** | **Confiabilidade e Persistência \(Reliability\)** | Persistência ACID em SQLite) Tj T*
+(\(`journal_mode = WAL`, `foreign_keys = ON`\) e idempotência na migração de pedidos/contas. |) Tj T*
+(Testes de reabertura de conexão e migração repetida \(`CT-14`, `CT-34`\). | Zero perda de dados) Tj T*
+(após reconexão e zero duplicação por `legacyId`. | **Atendido** |) Tj T*
+(| **RNF-07** | **Compatibilidade e Responsividade** | Adaptação fluida entre `320 px`) Tj T*
+(\(mobile/totem\) e `1920 px` \(desktop\) sem rolagem horizontal indevida. | Validação de CSS) Tj T*
+(Grid/Flexbox local em `public/style.css`. | 0 barras de rolagem horizontal e suporte a) Tj T*
+(`prefers-reduced-motion`. | **Atendido** |) Tj T*
+(| **RNF-08** | **Manutenibilidade e Testabilidade** | Suíte automatizada executável em comando) Tj T*
+(único \(`npm test`\) em banco temporário isolado em menos de 60 segundos. | Execução das 8) Tj T*
+(suítes \(`35 testes`\) via Node.js Test Runner. | 35/57 testes aprovados \(100% de sucesso\) em) Tj T*
+(~35 segundos. | **Atendido** |) Tj T*
+() Tj T*
+(---) Tj T*
+(2/4) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 2052 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+() Tj T*
+(## 3. Diagrama de Casos de Uso \(UML / Mermaid\)) Tj T*
+() Tj T*
+(```mermaid) Tj T*
+(flowchart LR) Tj T*
+(Cliente\(["? Cliente\\n\(WEB / APP / TOTEM\)"]\)) Tj T*
+(Loja\(["? Operador de Loja\\n\(BALCÃO / PICKUP\)"]\)) Tj T*
+(Admin\(["?? Administrador\\n\(Gestão Corporativa\)"]\)) Tj T*
+() Tj T*
+(subgraph Sistema["Sistema Integrado - Rede Raízes do Nordeste"]) Tj T*
+(UC1\("UC01: Cadastrar Conta com Consentimento LGPD"\)) Tj T*
+(UC2\("UC02: Autenticar por Sessão Segura \(RBAC\)"\)) Tj T*
+(UC3\("UC03: Explorar Cardápio e Realizar Pedido Multicanal"\)) Tj T*
+(UC4\("UC04: Recalcular Preços e Validar Ofertas no Servidor"\)) Tj T*
+(UC5\("UC05: Atualizar Status Operacional do Pedido"\)) Tj T*
+(UC6\("UC06: Gerenciar Catálogo de Produtos e Fotos"\)) Tj T*
+(UC7\("UC07: Controlar Estoque \(Entradas, Saídas e Ajustes\)"\)) Tj T*
+(UC8\("UC08: Gerenciar Contas a Pagar e a Receber"\)) Tj T*
+(UC9\("UC09: Cadastrar e Auditar Unidades Franqueadas"\)) Tj T*
+(end) Tj T*
+() Tj T*
+(Cliente --> UC1) Tj T*
+(Cliente --> UC2) Tj T*
+(Cliente --> UC3) Tj T*
+(UC3 -.->|"<<include>>"| UC4) Tj T*
+(UC3 -.->|"<<include>>"| UC2) Tj T*
+() Tj T*
+(Loja --> UC2) Tj T*
+(Loja --> UC5) Tj T*
+(Loja --> UC6) Tj T*
+(Loja --> UC7) Tj T*
+(Loja --> UC8) Tj T*
+() Tj T*
+(Admin --> UC2) Tj T*
+(Admin --> UC5) Tj T*
+(Admin --> UC6) Tj T*
+(Admin --> UC7) Tj T*
+(Admin --> UC8) Tj T*
+(Admin --> UC9) Tj T*
+(```) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 4. Especificações Detalhadas de Casos de Uso \(Modelo UNINTER\)) Tj T*
+() Tj T*
+(### UC01 - Cadastrar Cliente com Consentimento LGPD) Tj T*
+(- **Descrição:** Permite que um visitante crie uma conta de cliente com aceite explícito de) Tj T*
+(tratamento de dados \(LGPD\) e senha criptografada.) Tj T*
+(- **Ator Principal:** Cliente \(Web / Mobile\).) Tj T*
+(- **Pré-condições:** O e-mail informado ainda não deve estar cadastrado na tabela `users`.) Tj T*
+(- **Pós-condições:** Conta criada com perfil restrito `cliente` e senha salva como hash) Tj T*
+(`bcryptjs` \(custo 12\).) Tj T*
+(3/4) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 2095 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(- **Fluxo Base:**) Tj T*
+(1. O usuário acessa a tela de login \(`login.html`\) e aciona "Criar conta de cliente".) Tj T*
+(2. O usuário preenche Nome, E-mail, Senha \(8 a 128 caracteres\) e marca o termo de) Tj T*
+(consentimento LGPD.) Tj T*
+(3. O sistema valida os formatos, bloqueia tags HTML \(`<`, `>`\) e envia `POST) Tj T*
+(/api/auth/register`.) Tj T*
+(4. O servidor grava o registro e retorna `HTTP 201 Created`.) Tj T*
+(- **Fluxos Alternativos / Exceções:**) Tj T*
+(- *FA1 - Consentimento LGPD recusado:* O sistema bloqueia o envio e retorna `HTTP 400`.) Tj T*
+(- *FA2 - E-mail já existente:* O servidor retorna `HTTP 409 Conflict` \("Este e-mail já está) Tj T*
+(cadastrado."\).) Tj T*
+() Tj T*
+(### UC03 - Realizar Pedido Multicanal com Cálculo Centralizado) Tj T*
+(- **Descrição:** Permite ao cliente montar o carrinho, escolher loja, região, forma de) Tj T*
+(pagamento simulada e modalidade \(`Delivery`, `Retirada`, `Balcão` ou `Totem`\) e registrar o) Tj T*
+(pedido.) Tj T*
+(- **Ator Principal:** Cliente autenticado.) Tj T*
+(- **Pré-condições:** Usuário autenticado com perfil `cliente` e carrinho contendo entre 1 e 50) Tj T*
+(itens válidos.) Tj T*
+(- **Pós-condições:** Pedido persistido na tabela `orders` com status inicial `Em preparo` e) Tj T*
+(valor total recalculado pelo servidor.) Tj T*
+(- **Fluxo Base:**) Tj T*
+(1. O cliente filtra produtos no cardápio \(`cliente.html`\) e adiciona itens ao carrinho.) Tj T*
+(2. O cliente seleciona a unidade, região, modalidade de atendimento e forma de pagamento) Tj T*
+(\(`Pix`, `Cartão` ou `Dinheiro`\).) Tj T*
+(3. O cliente clica em "Finalizar pedido", disparando `POST /api/orders`.) Tj T*
+(4. O servidor consulta a tabela `products`, aplica os descontos promocionais oficiais) Tj T*
+(\(`offer`\), ignora qualquer preço adulterado vindo do cliente e retorna `HTTP 201`.) Tj T*
+(- **Regras de Negócio:**) Tj T*
+(- *RN01:* Nenhum valor monetário enviado pelo frontend é confiado pelo backend.) Tj T*
+(- *RN02:* Cada item do pedido deve ter quantidade inteira entre 1 e 100 unidades.) Tj T*
+(4/4) Tj
+ET
+endstream
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000140 00000 n 
+0000000237 00000 n 
+0000000363 00000 n 
+0000004487 00000 n 
+0000004613 00000 n 
+0000008672 00000 n 
+0000008798 00000 n 
+0000010902 00000 n 
+0000011030 00000 n 
+trailer
+<< /Size 12 /Root 1 0 R >>
+startxref
+13178
+%%EOF

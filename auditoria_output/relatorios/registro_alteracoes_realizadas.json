@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2026-11-21T10:48:32",
+    "timestamp": "2026-11-27T10:27:41",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\PLANO_TESTES.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\PLANO_TESTES.md",
     "id_inconsistencia": "REL-DET-02",
@@ -11,9 +11,42 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:32",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.doc",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.doc",
+    "timestamp": "2026-11-27T10:27:41",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-04",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "10 salt rounds",
+    "valor_novo": "12 salt rounds",
+    "justificativa": "Padronização do custo bcryptjs para 12 salt rounds conforme src/db.js e src/routes/auth.js.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:41",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-06",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "SameSite=Strict",
+    "valor_novo": "SameSite=Lax",
+    "justificativa": "Alinhamento da flag SameSite do cookie de sessão com src/auth.js (sameSite: 'lax').",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 Casos de Teste Automatizados",
+    "valor_novo": "57 Casos de Teste Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-DET-02",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "35 testes automatizados",
@@ -22,20 +55,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:32",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.doc",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.doc",
-    "id_inconsistencia": "REL-DET-03",
-    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
-    "valor_anterior": "5 suítes",
-    "valor_novo": "8 suítes",
-    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
-    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
-  },
-  {
-    "timestamp": "2026-11-21T10:48:32",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.doc",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.doc",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-DET-02",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "35 testes executados",
@@ -44,9 +66,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:32",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.doc",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.doc",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-DET-02",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "35 testes automatizados",
@@ -55,9 +77,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:32",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.doc",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.doc",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-DET-02",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "35 testes automatizados",
@@ -66,20 +88,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:32",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.doc",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.doc",
-    "id_inconsistencia": "REL-DET-03",
-    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
-    "valor_anterior": "5 suítes",
-    "valor_novo": "8 suítes",
-    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
-    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
-  },
-  {
-    "timestamp": "2026-11-21T10:48:32",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.doc",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.doc",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-DET-02",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "35 Testes Automatizados",
@@ -88,20 +99,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:32",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.doc",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.doc",
-    "id_inconsistencia": "REL-DET-03",
-    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
-    "valor_anterior": "5 Suítes",
-    "valor_novo": "8 Suítes",
-    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
-    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
-  },
-  {
-    "timestamp": "2026-11-21T10:48:32",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.doc",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.doc",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-DET-02",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "35 testes automatizados",
@@ -110,9 +110,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:32",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.doc",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.doc",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-DET-02",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "35 testes aprovados",
@@ -121,9 +121,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:32",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.doc",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.doc",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-INT-01",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "100% (Auth, Pedidos, Estoque, Finanças)",
@@ -132,9 +132,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:32",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.doc",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.doc",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-INT-03",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "100% nas baterias de homologação",
@@ -143,9 +143,20 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:32",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.docx",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.docx",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-DET-02",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "35 testes automatizados",
@@ -154,20 +165,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:32",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.docx",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.docx",
-    "id_inconsistencia": "REL-DET-03",
-    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
-    "valor_anterior": "5 suítes",
-    "valor_novo": "8 suítes",
-    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
-    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
-  },
-  {
-    "timestamp": "2026-11-21T10:48:33",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.docx",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.docx",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-DET-02",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "35 testes executados",
@@ -176,9 +176,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:33",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.docx",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.docx",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-DET-02",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "35 testes automatizados",
@@ -187,9 +187,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:33",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.docx",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.docx",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-DET-02",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "35 testes automatizados",
@@ -198,20 +198,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:33",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.docx",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.docx",
-    "id_inconsistencia": "REL-DET-03",
-    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
-    "valor_anterior": "5 suítes",
-    "valor_novo": "8 suítes",
-    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
-    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
-  },
-  {
-    "timestamp": "2026-11-21T10:48:33",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.docx",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.docx",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-DET-02",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "35 Testes Automatizados",
@@ -220,20 +209,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:33",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.docx",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.docx",
-    "id_inconsistencia": "REL-DET-03",
-    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
-    "valor_anterior": "5 Suítes",
-    "valor_novo": "8 Suítes",
-    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
-    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
-  },
-  {
-    "timestamp": "2026-11-21T10:48:33",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.docx",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.docx",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-DET-02",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "35 testes automatizados",
@@ -242,9 +220,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:33",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.docx",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.docx",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-DET-02",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "35 testes aprovados",
@@ -253,9 +231,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:33",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.docx",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.docx",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-INT-01",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "100% (Auth, Pedidos, Estoque, Finanças)",
@@ -264,9 +242,9 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:33",
-    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.docx",
-    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.docx",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
     "id_inconsistencia": "REL-INT-03",
     "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
     "valor_anterior": "100% nas baterias de homologação",
@@ -275,7 +253,2185 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:33",
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 Testes Automatizados",
+    "valor_novo": "57 Testes Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:42",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 Testes Automatizados",
+    "valor_novo": "57 Testes Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-01",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% (Auth, Pedidos, Estoque, Finanças)",
+    "valor_novo": "100% das rotas funcionais avaliadas (Auth, Pedidos, Estoque, Finanças; cobertura de linhas de código via c8 não aferida)",
+    "justificativa": "Qualificação obrigatória pelas Regras de Integridade 3 e 4 (diferenciação entre cobertura de fluxos e cobertura de código).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes executados",
+    "valor_novo": "57 testes executados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "50 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "50 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "50 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 Casos de Teste Automatizados",
+    "valor_novo": "57 Casos de Teste Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes executados",
+    "valor_novo": "57 testes executados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 Testes Automatizados",
+    "valor_novo": "57 Testes Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:43",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "5 Suítes",
+    "valor_novo": "8 Suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-01",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% (Auth, Pedidos, Estoque, Finanças)",
+    "valor_novo": "100% das rotas funcionais avaliadas (Auth, Pedidos, Estoque, Finanças; cobertura de linhas de código via c8 não aferida)",
+    "justificativa": "Qualificação obrigatória pelas Regras de Integridade 3 e 4 (diferenciação entre cobertura de fluxos e cobertura de código).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes executados",
+    "valor_novo": "57 testes executados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 Testes Automatizados",
+    "valor_novo": "57 Testes Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "5 Suítes",
+    "valor_novo": "8 Suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-01",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% (Auth, Pedidos, Estoque, Finanças)",
+    "valor_novo": "100% das rotas funcionais avaliadas (Auth, Pedidos, Estoque, Finanças; cobertura de linhas de código via c8 não aferida)",
+    "justificativa": "Qualificação obrigatória pelas Regras de Integridade 3 e 4 (diferenciação entre cobertura de fluxos e cobertura de código).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 Testes Automatizados",
+    "valor_novo": "57 Testes Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 Testes Automatizados",
+    "valor_novo": "57 Testes Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "5 Suítes",
+    "valor_novo": "8 Suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:44",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-01",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% (Auth, Pedidos, Estoque, Finanças)",
+    "valor_novo": "100% das rotas funcionais avaliadas (Auth, Pedidos, Estoque, Finanças; cobertura de linhas de código via c8 não aferida)",
+    "justificativa": "Qualificação obrigatória pelas Regras de Integridade 3 e 4 (diferenciação entre cobertura de fluxos e cobertura de código).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes executados",
+    "valor_novo": "57 testes executados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% dos fluxos de Auth, Pedidos, Unidades, Estoque, Finanças e Offline testados",
+    "valor_novo": "100% dos fluxos funcionais avaliados (cobertura de linhas de código via c8 não aferida)",
+    "justificativa": "Qualificação obrigatória pelas Regras de Integridade 3 e 4.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-04",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% de uptime nas baterias de teste",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "7 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "6 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "50 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "7 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "6 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "50 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "50 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "7 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "6 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:45",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.docx",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_DOCX_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 Casos de Teste Automatizados",
+    "valor_novo": "57 Casos de Teste Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes executados",
+    "valor_novo": "57 testes executados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 Testes Automatizados",
+    "valor_novo": "57 Testes Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes executados",
+    "valor_novo": "57 testes executados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:46",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 Testes Automatizados",
+    "valor_novo": "57 Testes Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 Testes Automatizados",
+    "valor_novo": "57 Testes Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 Testes Automatizados",
+    "valor_novo": "57 Testes Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes executados",
+    "valor_novo": "57 testes executados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "50 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "50 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "50 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 Casos de Teste Automatizados",
+    "valor_novo": "57 Casos de Teste Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:47",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes executados",
+    "valor_novo": "57 testes executados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 Testes Automatizados",
+    "valor_novo": "57 Testes Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes executados",
+    "valor_novo": "57 testes executados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 Testes Automatizados",
+    "valor_novo": "57 Testes Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 Testes Automatizados",
+    "valor_novo": "57 Testes Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 Testes Automatizados",
+    "valor_novo": "57 Testes Automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes executados",
+    "valor_novo": "57 testes executados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "50 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "50 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:48",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "50 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "44 testes automatizados",
+    "valor_novo": "57 testes automatizados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "35 testes aprovados",
+    "valor_novo": "57 testes aprovados",
+    "justificativa": "Sincronização da contagem global de testes para 57 testes (8 suítes).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "5 Suítes",
+    "valor_novo": "8 Suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "5 Suítes",
+    "valor_novo": "8 Suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "5 Suítes",
+    "valor_novo": "8 Suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "7 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "6 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "7 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:49",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "6 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "7 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "6 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "5 suítes",
+    "valor_novo": "8 suítes",
+    "justificativa": "Sincronização do total de suítes automatizadas para 8 suítes.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-04",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "10 salt rounds",
+    "valor_novo": "12 salt rounds",
+    "justificativa": "Padronização do custo bcryptjs para 12 salt rounds conforme src/db.js e src/routes/auth.js.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-DET-06",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "SameSite=Strict",
+    "valor_novo": "SameSite=Lax",
+    "justificativa": "Alinhamento da flag SameSite do cookie de sessão com src/auth.js (sameSite: 'lax').",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-01",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% (Auth, Pedidos, Estoque, Finanças)",
+    "valor_novo": "100% das rotas funcionais avaliadas (Auth, Pedidos, Estoque, Finanças; cobertura de linhas de código via c8 não aferida)",
+    "justificativa": "Qualificação obrigatória pelas Regras de Integridade 3 e 4 (diferenciação entre cobertura de fluxos e cobertura de código).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-01",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% (Auth, Pedidos, Estoque, Finanças)",
+    "valor_novo": "100% das rotas funcionais avaliadas (Auth, Pedidos, Estoque, Finanças; cobertura de linhas de código via c8 não aferida)",
+    "justificativa": "Qualificação obrigatória pelas Regras de Integridade 3 e 4 (diferenciação entre cobertura de fluxos e cobertura de código).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-01",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% (Auth, Pedidos, Estoque, Finanças)",
+    "valor_novo": "100% das rotas funcionais avaliadas (Auth, Pedidos, Estoque, Finanças; cobertura de linhas de código via c8 não aferida)",
+    "justificativa": "Qualificação obrigatória pelas Regras de Integridade 3 e 4 (diferenciação entre cobertura de fluxos e cobertura de código).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-01",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% (Auth, Pedidos, Estoque, Finanças)",
+    "valor_novo": "100% das rotas funcionais avaliadas (Auth, Pedidos, Estoque, Finanças; cobertura de linhas de código via c8 não aferida)",
+    "justificativa": "Qualificação obrigatória pelas Regras de Integridade 3 e 4 (diferenciação entre cobertura de fluxos e cobertura de código).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-01",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% (Auth, Pedidos, Estoque, Finanças)",
+    "valor_novo": "100% das rotas funcionais avaliadas (Auth, Pedidos, Estoque, Finanças; cobertura de linhas de código via c8 não aferida)",
+    "justificativa": "Qualificação obrigatória pelas Regras de Integridade 3 e 4 (diferenciação entre cobertura de fluxos e cobertura de código).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-01",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% (Auth, Pedidos, Estoque, Finanças)",
+    "valor_novo": "100% das rotas funcionais avaliadas (Auth, Pedidos, Estoque, Finanças; cobertura de linhas de código via c8 não aferida)",
+    "justificativa": "Qualificação obrigatória pelas Regras de Integridade 3 e 4 (diferenciação entre cobertura de fluxos e cobertura de código).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-02",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% dos fluxos de Auth, Pedidos, Unidades, Estoque, Finanças e Offline testados",
+    "valor_novo": "100% dos fluxos funcionais avaliados (cobertura de linhas de código via c8 não aferida)",
+    "justificativa": "Qualificação obrigatória pelas Regras de Integridade 3 e 4.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:50",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:51",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:51",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:51",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:51",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:51",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:51",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-03",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% nas baterias de homologação",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5 (bateria pontual vs. disponibilidade mensal).",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:51",
+    "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+    "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-consolidado-auditoria.md",
+    "id_inconsistencia": "REL-INT-04",
+    "tipo_acao": "SUBSTITUICAO_EVIDENCIADA",
+    "valor_anterior": "100% de uptime nas baterias de teste",
+    "valor_novo": "100% nas sondagens pontuais da suíte (disponibilidade mensal contínua não monitorada)",
+    "justificativa": "Qualificação obrigatória pela Regra de Integridade 5.",
+    "aprovado_por": "Auditoria Automatizada / Revisão Humana"
+  },
+  {
+    "timestamp": "2026-11-27T10:27:52",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.md",
     "id_inconsistencia": "REL-DET-02",
@@ -286,7 +2442,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:33",
+    "timestamp": "2026-11-27T10:27:52",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.md",
     "id_inconsistencia": "REL-DET-02",
@@ -297,7 +2453,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:33",
+    "timestamp": "2026-11-27T10:27:52",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.md",
     "id_inconsistencia": "REL-DET-02",
@@ -308,7 +2464,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:33",
+    "timestamp": "2026-11-27T10:27:52",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.md",
     "id_inconsistencia": "REL-DET-02",
@@ -319,7 +2475,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:33",
+    "timestamp": "2026-11-27T10:27:52",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.md",
     "id_inconsistencia": "REL-DET-02",
@@ -330,7 +2486,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:33",
+    "timestamp": "2026-11-27T10:27:52",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.md",
     "id_inconsistencia": "REL-DET-02",
@@ -341,7 +2497,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:33",
+    "timestamp": "2026-11-27T10:27:52",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.md",
     "id_inconsistencia": "REL-DET-02",
@@ -352,7 +2508,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:52",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.md",
     "id_inconsistencia": "REL-DET-03",
@@ -363,7 +2519,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:52",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.md",
     "id_inconsistencia": "REL-DET-03",
@@ -374,7 +2530,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:52",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.md",
     "id_inconsistencia": "REL-DET-03",
@@ -385,7 +2541,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:53",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.md",
     "id_inconsistencia": "REL-DET-03",
@@ -396,7 +2552,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:53",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.md",
     "id_inconsistencia": "REL-INT-01",
@@ -407,7 +2563,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:53",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-desenvolvimento.md",
     "id_inconsistencia": "REL-INT-03",
@@ -418,7 +2574,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:53",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-revisao-do-sistema.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-revisao-do-sistema.md",
     "id_inconsistencia": "REL-DET-02",
@@ -429,7 +2585,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:53",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-revisao-do-sistema.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-revisao-do-sistema.md",
     "id_inconsistencia": "REL-DET-02",
@@ -440,7 +2596,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:53",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-revisao-do-sistema.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-revisao-do-sistema.md",
     "id_inconsistencia": "REL-DET-03",
@@ -451,7 +2607,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:53",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-revisao-do-sistema.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-revisao-do-sistema.md",
     "id_inconsistencia": "REL-INT-02",
@@ -462,7 +2618,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:53",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-revisao-do-sistema.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-de-revisao-do-sistema.md",
     "id_inconsistencia": "REL-INT-04",
@@ -473,7 +2629,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:53",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-backend.doc",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-testes-backend.doc",
     "id_inconsistencia": "REL-DET-03",
@@ -484,7 +2640,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:53",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-backend.doc",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-testes-backend.doc",
     "id_inconsistencia": "REL-DET-03",
@@ -495,7 +2651,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:53",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-backend.doc",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-testes-backend.doc",
     "id_inconsistencia": "REL-DET-02",
@@ -506,7 +2662,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:53",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-backend.docx",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-testes-backend.docx",
     "id_inconsistencia": "REL-DET-03",
@@ -517,7 +2673,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:53",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-backend.docx",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-testes-backend.docx",
     "id_inconsistencia": "REL-DET-03",
@@ -528,7 +2684,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:34",
+    "timestamp": "2026-11-27T10:27:53",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-backend.docx",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-testes-backend.docx",
     "id_inconsistencia": "REL-DET-02",
@@ -539,7 +2695,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:35",
+    "timestamp": "2026-11-27T10:27:54",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-backend.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-testes-backend.md",
     "id_inconsistencia": "REL-DET-02",
@@ -550,7 +2706,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:35",
+    "timestamp": "2026-11-27T10:27:54",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-backend.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-testes-backend.md",
     "id_inconsistencia": "REL-DET-03",
@@ -561,7 +2717,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:35",
+    "timestamp": "2026-11-27T10:27:54",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-backend.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-testes-backend.md",
     "id_inconsistencia": "REL-DET-03",
@@ -572,7 +2728,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:35",
+    "timestamp": "2026-11-27T10:27:54",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-frontend.doc",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-testes-frontend.doc",
     "id_inconsistencia": "REL-DET-02",
@@ -583,7 +2739,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:35",
+    "timestamp": "2026-11-27T10:27:54",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-frontend.doc",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-testes-frontend.doc",
     "id_inconsistencia": "REL-DET-02",
@@ -594,7 +2750,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:36",
+    "timestamp": "2026-11-27T10:27:54",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-frontend.docx",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-testes-frontend.docx",
     "id_inconsistencia": "REL-DET-02",
@@ -605,7 +2761,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:36",
+    "timestamp": "2026-11-27T10:27:54",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-frontend.docx",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-testes-frontend.docx",
     "id_inconsistencia": "REL-DET-02",
@@ -616,7 +2772,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:36",
+    "timestamp": "2026-11-27T10:27:54",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-frontend.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\relatorio-testes-frontend.md",
     "id_inconsistencia": "REL-DET-02",
@@ -627,7 +2783,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:37",
+    "timestamp": "2026-11-27T10:27:55",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\REQUISITOS.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\REQUISITOS.md",
     "id_inconsistencia": "REL-DET-02",
@@ -638,7 +2794,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:37",
+    "timestamp": "2026-11-27T10:27:55",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\REQUISITOS.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\REQUISITOS.md",
     "id_inconsistencia": "REL-DET-03",
@@ -649,7 +2805,7 @@
     "aprovado_por": "Auditoria Automatizada / Revisão Humana"
   },
   {
-    "timestamp": "2026-11-21T10:48:37",
+    "timestamp": "2026-11-27T10:27:55",
     "documento_origem": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\USO_DE_IA.md",
     "documento_destino": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\revisados\\USO_DE_IA.md",
     "id_inconsistencia": "REL-DET-03",

@@ -1,0 +1,209 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 4191 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(DOCUMENTO: relatorio-testes-frontend.docx) Tj T*
+(==========================================================================================) Tj T*
+() Tj T*
+(RELATÓRIO DE TESTES DA LINHA DE FRONTEND
+REDE 'RAÍZES DO NORDESTE') Tj T*
+(Centro Universitário Internacional UNINTER - Projeto Multidisciplinar: Qualidade de Software) Tj T*
+(\(2026\)
+Acadêmico: Ronaldo Coutinho | Docente: Prof. Me. Rodrigo Nascimento) Tj T*
+(1. Resumo Executivo da Bateria de Testes de Frontend) Tj T*
+(Este documento registra os resultados da verificação completa de todos os módulos da linha de) Tj T*
+(frontend da aplicação web 'Raízes do Nordeste' \(localizados no diretório public/\). A bateria) Tj T*
+(avalia a sintaxe estática dos 9 scripts JavaScript, a estrutura semântica e de acessibilidade) Tj T*
+(das 5 páginas HTML5, o design system responsivo em public/style.css, a autonomia 100% offline) Tj T*
+(sem dependência de CDNs externos e os testes funcionais automatizados dos componentes em) Tj T*
+(src/frontend.test.js, src/products.test.js e src/offline.test.js.) Tj T*
+(2. Verificação Sintática e Estrutural dos Arquivos do Frontend) Tj T*
+(Todos os scripts que compõem a camada de apresentação foram submetidos à validação do) Tj T*
+(interpretador Node.js e à verificação de integridade de carregamento:) Tj T*
+(3. Detalhamento dos Casos de Teste Automatizados de Frontend) Tj T*
+(Abaixo estão listados todos os casos de teste executados diretamente sobre o código e a árvore) Tj T*
+(DOM simulada da linha de frontend:) Tj T*
+(4. Bugs de Frontend Diagnosticados e Corrigidos na Bateria) Tj T*
+(1. Arredondamento Financeiro na Vitrine: Em public/app.js, a função getDiscountedPrice\(\) foi) Tj T*
+(ajustada para arredondar o valor promocional em duas casas decimais \(Math.round\(... * 100\) /) Tj T*
+(100\), garantindo paridade exata com o carrinho e com o backend.) Tj T*
+(2. Coerção de Campos Numéricos Vazios nos Formulários: Em public/admin.js,) Tj T*
+(public/operacional.js e public/gestao.js, a conversão direta Number\(''\) resultava em 0. Os) Tj T*
+(formulários agora convertem strings vazias em NaN antes da validação, impedindo envios com) Tj T*
+(campos numéricos em branco.) Tj T*
+(3. Usabilidade do Cardápio e Controle de Estoque no Carrinho: Em public/cliente.js, produtos) Tj T*
+(sem oferta \(offer === 0\) não exibem mais o selo '-0%' nem o preço duplicado; produtos com) Tj T*
+(estoque 0 exibem 'Esgotado' com botão desabilitado; e o carrinho ganhou botões [-] e [+]) Tj T*
+(limitados ao estoque real.) Tj T*
+(4. Sincronização Multicanal e Atualização Pós-Compra: Em public/cliente.js, ao concluir o) Tj T*
+(pedido, o frontend agora envia o canal correspondente à modalidade escolhida \(WEB, PICKUP,) Tj T*
+(BALCAO, TOTEM\) e recarrega imediatamente o catálogo para exibir o novo saldo de estoque.) Tj T*
+(5. Sincronização Entre Abas de Gestão: Em public/admin.js, public/operacional.js e) Tj T*
+(public/gestao.js, a exclusão ou troca de foto de um produto sincroniza automaticamente todas) Tj T*
+(as tabelas abertas nas abas de visão geral, catálogo e estoque.) Tj T*
+(5. Parecer de Homologação do Frontend) Tj T*
+(Conclui-se que toda a linha de frontend do sistema 'Raízes do Nordeste' foi verificada e) Tj T*
+(aprovada sem erros sintáticos, visuais ou funcionais. Os 44 testes automatizados do) Tj T*
+(repositório \(incluindo os 18 testes dedicados exclusivamente à camada de frontend, catálogo e) Tj T*
+(operação offline\) executam com 100% de aprovação.) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Indicador de Qualidade de Frontend | Resultado Aferido) Tj T*
+(Arquivos JavaScript do Frontend Testados | 9 de 9 aprovados em validação sintática \(node) Tj T*
+(--check\) e funcional) Tj T*
+(Páginas HTML5 e Folha de Estilos Verificadas | 5 páginas HTML + 1 folha CSS + logomarca SVG +) Tj T*
+(100 imagens locais) Tj T*
+(Suíte Específica de Frontend \(src/frontend.test.js\) | 8 suítes de componentes executadas - 8) Tj T*
+(aprovadas \(0 falhas\)) Tj T*
+(Suíte de Catálogo e Imagens \(src/products.test.js\) | 4 testes unitários executados - 4) Tj T*
+(aprovados \(0 falhas\)) Tj T*
+(1/3) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3718 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(Suíte de Autonomia Offline \(src/offline.test.js\) | 6 testes de resiliência executados - 6) Tj T*
+(aprovados \(0 falhas\)) Tj T*
+(Suíte Completa do Projeto \(Frontend + Backend\) | 44 testes automatizados no total - 44) Tj T*
+(aprovados \(100% de sucesso\)) Tj T*
+(Dependências Externas de CDN \(Scripts/Fontes/CSS\) | 0 referências externas \(operação 100%) Tj T*
+(local e offline\)) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(Arquivo Frontend | Responsabilidade Técnica Testada | Status) Tj T*
+(public/config.js | Definição dinâmica de window.__APP_CONFIG__.apiBaseUrl para HTTP e file://) Tj T*
+(| APROVADO) Tj T*
+(public/products.js | Catálogo padrão de 100 itens, 21 combos, imagens locais, fallback, merge) Tj T*
+(e escape HTML | APROVADO) Tj T*
+(public/auth.js | Cliente HTTP fetch com credenciais, sessão /auth/me, visibilidade RBAC e) Tj T*
+(logout | APROVADO) Tj T*
+(public/app.js | Carrossel acessível da vitrine, cálculo de descontos \(2 casas decimais\) e) Tj T*
+(destaques | APROVADO) Tj T*
+(public/login.js | Formulário de login, cadastro com validação LGPD e botões de preenchimento) Tj T*
+(rápido | APROVADO) Tj T*
+(public/cliente.js | Cardápio categorizado, bloqueio de esgotados, controles [+] e [-] do) Tj T*
+(carrinho e checkout | APROVADO) Tj T*
+(public/admin.js | Indicadores executivos, resumo regional, inventário rápido e cadastro de) Tj T*
+(produtos | APROVADO) Tj T*
+(public/operacional.js | Rotina da unidade, checklist operacional, fila de pedidos e) Tj T*
+(atualização de status | APROVADO) Tj T*
+(public/gestao.js | Navegação por abas, controle de estoque auditado, contas a pagar/receber e) Tj T*
+(catálogo | APROVADO) Tj T*
+(public/index.html | Vitrine institucional, carrossel de ofertas, atalhos de categorias e) Tj T*
+(chamadas de ação | APROVADO) Tj T*
+(public/login.html | Interface de login único, cadastro com termo LGPD \(Lei nº 13.709/2018\) e) Tj T*
+(contas demo | APROVADO) Tj T*
+(public/cliente.html | Interface de cardápio público, carrinho com 4 modalidades multicanal e) Tj T*
+(histórico | APROVADO) Tj T*
+(public/admin.html | Painel administrativo restrito \(data-required-role='admin'\) com 4 abas) Tj T*
+(integradas | APROVADO) Tj T*
+(public/operacional.html | Painel operacional da loja \(data-required-role='loja,admin'\) com 4) Tj T*
+(abas integradas | APROVADO) Tj T*
+(public/style.css | Variáveis de cor da paleta nordestina, layout responsivo \(320px-1920px\) e) Tj T*
+(acessibilidade | APROVADO) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(ID | Suíte | Cenário de Frontend Verificado | Resultado) Tj T*
+(FE-01 | src/frontend.test.js | Configuração de apiBaseUrl, carregamento dos 100 produtos,) Tj T*
+(escapeRaizesHtml contra XSS e validação de tamanho/formato de imagem em) Tj T*
+(prepareRaizesProductImage | APROVADO) Tj T*
+(FE-02 | src/frontend.test.js | Consulta de sessão /auth/me, migração automática de contas) Tj T*
+(legadas do localStorage e aplicação de visibilidade RBAC nos elementos [data-admin-only],) Tj T*
+([data-staff-only], [data-loja-only] e [data-cliente-only] | APROVADO) Tj T*
+(FE-03 | src/frontend.test.js | Renderização dos 5 slides do carrossel de ofertas na página) Tj T*
+(inicial, 4 cartões de destaque e alternância de slides pelos botões anterior e próximo |) Tj T*
+(APROVADO) Tj T*
+(FE-04 | src/frontend.test.js | Preenchimento automático via botões de demonstração, bloqueio) Tj T*
+(2/3) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 2775 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(de cadastro quando o termo LGPD é desmarcado, criação de conta e redirecionamento pós-login |) Tj T*
+(APROVADO) Tj T*
+(FE-05 | src/frontend.test.js | Renderização das 5 categorias do cardápio, bloqueio de adição) Tj T*
+(de item com estoque zero, incremento/decremento com botões [+] e [-] no carrinho e mapeamento) Tj T*
+(de canal \(Totem -> TOTEM\) no checkout | APROVADO) Tj T*
+(FE-06 | src/frontend.test.js | Cálculo de indicadores do painel administrativo \(total de) Tj T*
+(produtos, pedidos, faturamento e ticket médio\), tabela de inventário e bloqueio de envio com) Tj T*
+(preço vazio \(''\) | APROVADO) Tj T*
+(FE-07 | src/frontend.test.js | Renderização da fila de pedidos na tela operacional da loja e) Tj T*
+(carregamento dinâmico das abas de Controle de Estoque, Contas a Pagar/Receber e Catálogo de) Tj T*
+(Produtos em gestao.js | APROVADO) Tj T*
+(FE-08 | src/frontend.test.js | Inspeção estrutural de acessibilidade \(lang='pt-BR', meta) Tj T*
+(viewport, aria-live='polite'\), presença do termo LGPD, opções multicanal e breakpoints) Tj T*
+(responsivos no CSS | APROVADO) Tj T*
+(PR-01 | src/products.test.js | Validação dos 100 produtos do cardápio sem IDs ou nomes) Tj T*
+(duplicados e com preços, estoques e descontos dentro dos limites | APROVADO) Tj T*
+(PR-02 | src/products.test.js | Verificação dos 21 combos promocionais com lista estruturada de) Tj T*
+(itensInclusos e descrições preenchidas | APROVADO) Tj T*
+(PR-03 | src/products.test.js | Mesclagem não destrutiva do catálogo \(mergeRaizesProducts\)) Tj T*
+(preservando edições e produtos personalizados | APROVADO) Tj T*
+(PR-04 | src/products.test.js | Resolução determinística das 100 imagens locais em /imagens/ e) Tj T*
+(das fotos de fallback por categoria em /images/products/ | APROVADO) Tj T*
+(OF-01 | src/offline.test.js | Recuperação automática dos 100 produtos padrão no navegador) Tj T*
+(quando a requisição à API falha por falta de conexão | APROVADO) Tj T*
+(OF-02 | src/offline.test.js | Ausência total de scripts, folhas de estilo ou @import apontando) Tj T*
+(para CDNs externos \(http/https\) nas páginas HTML e CSS | APROVADO) Tj T*
+(OF-03 | src/offline.test.js | Serviço HTTP 200 e MIME type correto para todas as 12 rotas) Tj T*
+(estáticas principais do frontend pelo Express | APROVADO) Tj T*
+(OF-04 | src/offline.test.js | Existência física no disco de todas as 100 imagens de produtos e) Tj T*
+(fotos de fallback referenciadas pelo frontend | APROVADO) Tj T*
+(OF-05 | src/offline.test.js | Paridade matemática exata no cálculo de preços com desconto) Tj T*
+(entre o frontend \(cliente.js e app.js\) e o backend \(orders.js\) | APROVADO) Tj T*
+(-------------------------------------------------------------------------------------) Tj T*
+(3/3) Tj
+ET
+endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000133 00000 n 
+0000000230 00000 n 
+0000000356 00000 n 
+0000004599 00000 n 
+0000004725 00000 n 
+0000008495 00000 n 
+0000008621 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+11448
+%%EOF

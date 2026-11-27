@@ -381,7 +381,7 @@ BT
 (---) Tj T*
 (## [PENDÊNCIAS DE AUDITORIA PARA REVISÃO HUMANA]) Tj T*
 (> Nota inserida pela Ferramenta de Auditoria Documental \(Módulo 4 - Regra de Integridade\):) Tj T*
-(- **[INC-035] \(Identificação e Numeração de Casos de Teste -) Tj T*
+(- **[INC-244] \(Identificação e Numeração de Casos de Teste -) Tj T*
 (relatorio-de-revisao-do-sistema.md:Linhas 112-134\):** Divergência de identificação de casos de) Tj T*
 (teste: em relatorio-de-revisao-do-sistema.md, 'CT-01' refere-se ao catálogo de 100 produtos,) Tj T*
 (enquanto em PLANO_TESTES.md e relatorio-de-desenvolvimento.md 'CT-01' refere-se aos headers de) Tj T*

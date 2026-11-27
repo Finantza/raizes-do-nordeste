@@ -1,0 +1,814 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R 24 0 R 26 0 R] /Count 12 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 2740 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(DOCUMENTO: Documento Revisado: README.md) Tj T*
+(==========================================================================================) Tj T*
+() Tj T*
+(# Raízes do Nordeste) Tj T*
+() Tj T*
+(Aplicação web didática para uma rede fictícia de lanchonetes. O projeto reúne uma vitrine,) Tj T*
+(áreas de cliente, administração e operação de loja e uma API Express com autenticação e) Tj T*
+(persistência.) Tj T*
+() Tj T*
+(> **Segurança:** contas, sessões, produtos, pedidos e unidades são persistidos no servidor. O) Tj T*
+(carrinho continua local ao navegador. O backend aplica autenticação e autorização; ainda) Tj T*
+(assim, antes de processar dados de pagamento reais, integre um provedor de pagamentos e faça a) Tj T*
+(revisão operacional descrita em [Limitações para produção]\(#segurança-e-limitações\).) Tj T*
+() Tj T*
+(## Conteúdo) Tj T*
+() Tj T*
+(- [Requisitos e execução]\(#requisitos-e-execução\)) Tj T*
+(- [Identidade visual e página inicial]\(#identidade-visual-e-página-inicial\)) Tj T*
+(- [Perfis e funcionalidades]\(#perfis-e-funcionalidades\)) Tj T*
+(- [Usuários e credenciais de teste]\(#usuários-e-credenciais-de-teste\)) Tj T*
+(- [Configuração e arquitetura]\(#configuração-e-arquitetura\)) Tj T*
+(- [Como os dados são armazenados]\(#como-os-dados-são-armazenados\)) Tj T*
+(- [API de autenticação, produtos e pedidos]\(#api-de-autenticação-produtos-e-pedidos\)) Tj T*
+(- [API de unidades]\(#api-de-unidades\)) Tj T*
+(- [Publicação]\(#publicação\)) Tj T*
+(- [Testes]\(#testes\)) Tj T*
+(- [Ferramenta de Auditoria e Correção Documental) Tj T*
+(\(Python\)]\(#ferramenta-de-auditoria-e-correção-documental-python\)) Tj T*
+(- [Avaliação acadêmica]\(#avaliação-acadêmica\)) Tj T*
+(- [Estrutura do projeto]\(#estrutura-do-projeto\)) Tj T*
+(- [Segurança e limitações]\(#segurança-e-limitações\)) Tj T*
+() Tj T*
+(## Requisitos e execução) Tj T*
+() Tj T*
+(- Node.js 20 ou superior \(recomendado\)) Tj T*
+(- npm) Tj T*
+() Tj T*
+(Na pasta que contém `package.json`, copie `.env.example` para `.env`, preencha os segredos e) Tj T*
+(inicie o servidor:) Tj T*
+() Tj T*
+(No PowerShell:) Tj T*
+() Tj T*
+(```powershell) Tj T*
+(Copy-Item .env.example .env) Tj T*
+(node -p "require\('node:crypto'\).randomBytes\(48\).toString\('base64url'\)") Tj T*
+(```) Tj T*
+() Tj T*
+(Copie o resultado aleatório para `RAIZES_SESSION_SECRET` no `.env`. As contas de teste padrão) Tj T*
+(já vêm pré-configuradas no banco local de desenvolvimento \(veja [Usuários e credenciais de) Tj T*
+(teste]\(#usuários-e-credenciais-de-teste\)\), ou você pode definir `RAIZES_DEV_ADMIN_*`,) Tj T*
+(`RAIZES_DEV_STORE_*` e `RAIZES_DEV_CLIENT_*` caso queira customizá-las. Não reutilize essas) Tj T*
+(senhas em produção.) Tj T*
+(1/12) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3188 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+() Tj T*
+(```bash) Tj T*
+(npm ci) Tj T*
+(npm run dev) Tj T*
+(```) Tj T*
+() Tj T*
+(Abra <http://localhost:3000>. O Express serve a aplicação a partir de `public/`; a página) Tj T*
+(inicial é `public/index.html`. Para iniciar sem o nodemon:) Tj T*
+() Tj T*
+(```bash) Tj T*
+(npm start) Tj T*
+(```) Tj T*
+() Tj T*
+(No Windows, também é possível executar [`iniciar-servidor.bat`]\(iniciar-servidor.bat\) para) Tj T*
+(iniciar o Express e abrir o navegador. O script [`test-offline.bat`]\(test-offline.bat\) roda a) Tj T*
+(suíte completa de testes automatizados, valida a integridade de sintaxe do frontend e dos) Tj T*
+(arquivos estáticos locais e, em seguida, chama o iniciador do servidor \(use o parâmetro) Tj T*
+(`--no-server` para apenas rodar a bateria de testes e verificações offline sem abrir o) Tj T*
+(navegador\). Para usar a API e as imagens de `src/imagens`, acesse a aplicação pelo endereço) Tj T*
+(servido pelo Express, não abra os HTMLs diretamente no navegador.) Tj T*
+() Tj T*
+(O servidor usa a variável de ambiente `PORT`, se definida; caso contrário, usa a porta `3000`.) Tj T*
+(Em desenvolvimento, os dados são guardados em SQLite \(`data/raizes.sqlite`\); defina) Tj T*
+(`DATABASE_URL` para usar PostgreSQL. Na primeira inicialização, o servidor importa unidades do) Tj T*
+(antigo `data/raizes.json` se o novo banco estiver vazio.) Tj T*
+() Tj T*
+(## Identidade visual e página inicial) Tj T*
+() Tj T*
+(- A identidade usa uma paleta inspirada na paisagem e na culinária nordestina: areia e barro) Tj T*
+(claro nos fundos, terracota na marca, amarelo-sol nos destaques e verde-cacto nos estados de) Tj T*
+(sucesso.) Tj T*
+(- A logomarca vetorial própria está em) Tj T*
+([`public/images/raizes-logo.svg`]\(public/images/raizes-logo.svg\). O mesmo símbolo é usado na) Tj T*
+(navegação das páginas e como favicon.) Tj T*
+(- A página inicial \(`public/index.html`\) organiza a chamada principal, os links para) Tj T*
+(categorias, produtos em oferta e acesso à área da loja.) Tj T*
+(- O carrossel de destaque da página inicial é montado a partir do catálogo: mostra até cinco) Tj T*
+(produtos com desconto, imagem, descrição, preço promocional, indicadores e controles) Tj T*
+(anterior/próximo. Ele avança automaticamente, pausa ao passar o mouse ou navegar por teclado e) Tj T*
+(respeita a preferência do sistema por movimento reduzido.) Tj T*
+(- O CSS de todas as páginas está centralizado em [`public/style.css`]\(public/style.css\); os) Tj T*
+(tokens de cor e os componentes comuns \(botões, navegação, cartões, formulários, métricas e) Tj T*
+(estados\) permitem manter uma aparência consistente entre os perfis.) Tj T*
+() Tj T*
+(## Perfis e funcionalidades) Tj T*
+() Tj T*
+(O fluxo normal começa na página inicial. A navegação leva ao cardápio, ao acesso de conta e às) Tj T*
+(áreas de administração/operação. As três áreas compartilham a tela de login, a exibição da) Tj T*
+(sessão, a navegação e a ação de sair.) Tj T*
+() Tj T*
+(- **Visitante:** explora a página inicial e o cardápio; o catálogo é carregado da API.) Tj T*
+(- **Cliente** \([`public/cliente.html`]\(public/cliente.html\)\): mantém o carrinho no navegador,) Tj T*
+(2/12) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 3577 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(cria pedidos autenticados no servidor e consulta seu histórico.) Tj T*
+(- **Administrador** \([`public/admin.html`]\(public/admin.html\)\): consulta métricas e) Tj T*
+(inventário; pode cadastrar e atualizar produtos.) Tj T*
+(- **Loja** \([`public/operacional.html`]\(public/operacional.html\)\): acompanha pedidos e) Tj T*
+(atualiza seus estados operacionais; também gerencia produtos.) Tj T*
+(- **Login compartilhado** \([`public/login.html`]\(public/login.html\) e) Tj T*
+([`public/login.js`]\(public/login.js\)\): registra clientes e autentica no servidor.) Tj T*
+(- **Sessão e perfis** \([`public/auth.js`]\(public/auth.js\)\): consulta `/api/auth/me`; o cookie) Tj T*
+(de sessão é `HttpOnly`, `Secure` e `SameSite=Lax`. As decisões de autorização são repetidas no) Tj T*
+(backend.) Tj T*
+(- **Catálogo** \([`public/products.js`]\(public/products.js\)\): mantém os 100 produtos iniciais) Tj T*
+(para exibição offline e carrega o catálogo persistido da API quando disponível.) Tj T*
+() Tj T*
+(O cadastro público cria novos perfis de cliente. Contas de administrador, loja e cliente) Tj T*
+(demonstrativo são gerenciadas via banco de dados ou semeadas em desenvolvimento a partir das) Tj T*
+(credenciais padrão e das variáveis `RAIZES_DEV_*`.) Tj T*
+() Tj T*
+(## Usuários e credenciais de teste) Tj T*
+() Tj T*
+(Para facilitar a exploração e os testes das três áreas da aplicação em ambiente de) Tj T*
+(desenvolvimento, o sistema conta com os seguintes perfis e credenciais pré-configurados:) Tj T*
+() Tj T*
+(| Perfil | E-mail / Usuário | Senha | Área de Acesso | Funcionalidades Principais |) Tj T*
+(|---|---|---|---|---|) Tj T*
+(| **Administrador** | `admin@raizes.com` | `admin12345678` |) Tj T*
+([`public/admin.html`]\(public/admin.html\) | Visão executiva completa: métricas de faturamento e) Tj T*
+(ticket médio, catálogo geral, cadastro/exclusão de itens, controle de estoque \(entradas,) Tj T*
+(saídas e ajustes de balanço\) e módulo financeiro de contas a pagar e receber |) Tj T*
+(| **Loja \(Operacional\)** | `loja@raizes.com` | `loja12345678` |) Tj T*
+([`public/operacional.html`]\(public/operacional.html\) | Painel operacional: fila de pedidos em) Tj T*
+(tempo real, atualização de status de pedidos \(*Em preparo*, *Em rota*, *Concluído*,) Tj T*
+(*Cancelado*\), gestão de catálogo, controle de estoque e finanças |) Tj T*
+(| **Cliente** | `cliente@raizes.com` | `cliente12345678` |) Tj T*
+([`public/cliente.html`]\(public/cliente.html\) | Cardápio visual com filtros, sacola de compras) Tj T*
+(multicanal \(*Delivery*, *Retirada*, *Balcão*, *Totem*\), cálculo automático de pedidos e) Tj T*
+(histórico de pedidos da conta *\(também é possível cadastrar novos clientes com consentimento) Tj T*
+(LGPD\)* |) Tj T*
+() Tj T*
+(> **Preenchimento Rápido no Login:** Na tela [`public/login.html`]\(public/login.html\), você) Tj T*
+(encontra botões de atalho de demonstração para carregar os dados de **Administrador**) Tj T*
+(\(`admin@raizes.com`\), **Perfil de Loja** \(`loja@raizes.com`\) e **Cliente**) Tj T*
+(\(`cliente@raizes.com`\) com apenas um clique.) Tj T*
+(>) Tj T*
+(> **Personalização das credenciais:** Caso deseje utilizar credenciais personalizadas,) Tj T*
+(configure as variáveis `RAIZES_DEV_ADMIN_EMAIL`/`RAIZES_DEV_ADMIN_PASSWORD`,) Tj T*
+(`RAIZES_DEV_STORE_EMAIL`/`RAIZES_DEV_STORE_PASSWORD` e) Tj T*
+(`RAIZES_DEV_CLIENT_EMAIL`/`RAIZES_DEV_CLIENT_PASSWORD` no arquivo `.env` \(as senhas devem) Tj T*
+(conter no mínimo 12 caracteres\).) Tj T*
+() Tj T*
+() Tj T*
+(## Configuração e arquitetura) Tj T*
+() Tj T*
+(3/12) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 3361 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(O sistema tem uma interface estática em `public/` e um serviço Express em `src/`. O servidor) Tj T*
+(publica os arquivos do frontend, disponibiliza imagens de `src/imagens` na rota `/imagens/` e) Tj T*
+(monta a API sob `/api`. Contas, sessões, catálogo, pedidos e unidades são armazenados no) Tj T*
+(banco; apenas o carrinho e a migração temporária de dados antigos usam `localStorage`.) Tj T*
+() Tj T*
+(Configuração do processo Node:) Tj T*
+() Tj T*
+(| Variável | Uso | Padrão |) Tj T*
+(|---|---|---|) Tj T*
+(| `PORT` | Porta HTTP do servidor Express | `3000` |) Tj T*
+(| `DATABASE_URL` | Conexão PostgreSQL; quando ausente, usa SQLite | Não definido |) Tj T*
+(| `RAIZES_DB_PATH` | Caminho do arquivo SQLite \(útil em desenvolvimento e testes\) |) Tj T*
+(`data/raizes.sqlite` |) Tj T*
+(| `RAIZES_SESSION_SECRET` | Chave de assinatura de sessões; pelo menos 32 bytes, obrigatória) Tj T*
+(em produção | Aleatória por processo em desenvolvimento |) Tj T*
+(| `RAIZES_API_ADMIN_TOKEN` | Token Bearer legado para cadastro de unidades; pelo menos 32) Tj T*
+(bytes | Não definido |) Tj T*
+(| `RAIZES_DEV_ADMIN_EMAIL` / `RAIZES_DEV_ADMIN_PASSWORD` | Semeia um administrador somente em) Tj T*
+(desenvolvimento; senha de pelo menos 12 caracteres | Não definido |) Tj T*
+(| `RAIZES_DEV_STORE_EMAIL` / `RAIZES_DEV_STORE_PASSWORD` | Semeia uma conta de loja somente em) Tj T*
+(desenvolvimento; senha de pelo menos 12 caracteres | Não definido |) Tj T*
+(| `RAIZES_DEV_CLIENT_EMAIL` / `RAIZES_DEV_CLIENT_PASSWORD` | Semeia um cliente somente em) Tj T*
+(desenvolvimento; senha de pelo menos 12 caracteres | Não definido |) Tj T*
+(| `RAIZES_CORS_ORIGINS` | Origens extras, separadas por vírgula, que podem acessar a API com) Tj T*
+(credenciais | Sem origens extras |) Tj T*
+() Tj T*
+(`public/config.js` define a URL-base da API para a origem atual. Para hospedar o frontend) Tj T*
+(separadamente, defina `window.__APP_CONFIG__.apiBaseUrl` antes dele e inclua a origem do) Tj T*
+(frontend em `RAIZES_CORS_ORIGINS`. O GitHub Pages não executa o backend; login, pedidos e) Tj T*
+(gerenciamento requerem uma API Express acessível.) Tj T*
+() Tj T*
+(### Imagens do catálogo) Tj T*
+() Tj T*
+(O catálogo tenta usar as imagens de produto geradas em `src/imagens`, disponibilizadas) Tj T*
+(localmente na rota `/imagens/`. Se uma imagem não carregar, a interface usa fotos de fallback) Tj T*
+(por categoria armazenadas em `public/images/products/`; fontes e licenças estão em) Tj T*
+([`public/images/products/SOURCES.md`]\(public/images/products/SOURCES.md\). No GitHub Pages, o) Tj T*
+(workflow copia as imagens geradas para a pasta estática `imagens/`.) Tj T*
+() Tj T*
+(Administrador e loja podem anexar JPG, PNG ou WebP de até 8 MB. O navegador redimensiona a) Tj T*
+(imagem para no máximo 640 × 480 pixels, converte para JPEG e a envia ao servidor junto ao) Tj T*
+(produto.) Tj T*
+() Tj T*
+(## Como os dados são armazenados) Tj T*
+() Tj T*
+(O banco armazena os dados do sistema; o navegador conserva somente o carrinho e os dados) Tj T*
+(legados enquanto a migração estiver pendente:) Tj T*
+() Tj T*
+(| Dados | Local | Persistência |) Tj T*
+(|---|---|---|) Tj T*
+(| Unidades \(`unidades`\) | SQLite ou PostgreSQL | Banco persistente |) Tj T*
+(| Usuários \(`users`, hash bcrypt\) e sessões \(`sessions`\) | SQLite ou PostgreSQL | Banco) Tj T*
+(4/12) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 3460 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(persistente |) Tj T*
+(| Produtos e inventário \(`products`\) | SQLite ou PostgreSQL | Banco persistente |) Tj T*
+(| Pedidos e estado operacional \(`orders`\) | SQLite ou PostgreSQL | Banco persistente |) Tj T*
+(| Movimentações de estoque \(`estoque_movimentacoes`\) | SQLite ou PostgreSQL | Banco) Tj T*
+(persistente |) Tj T*
+(| Lançamentos financeiros \(`financeiro_lancamentos`\) | SQLite ou PostgreSQL | Banco) Tj T*
+(persistente |) Tj T*
+(| Carrinho | `localStorage` do navegador | Por navegador e origem |) Tj T*
+() Tj T*
+(Chaves antigas do navegador são usadas somente para migração de contas, produtos e pedidos) Tj T*
+(quando os usuários autenticados acessam as telas. A migração mantém os dados locais se falhar.) Tj T*
+(O carrinho continua disponível em `raizes-storefront-cart`.) Tj T*
+() Tj T*
+(O catálogo inicial fica em `public/products.js`; os 100 produtos são importados para o banco) Tj T*
+(na primeira inicialização. O servidor recalcula os valores dos pedidos usando o catálogo) Tj T*
+(persistido e associa cada pedido à conta autenticada.) Tj T*
+() Tj T*
+(## API de autenticação, produtos, pedidos, estoque e financeiro) Tj T*
+() Tj T*
+(Base: `http://localhost:3000/api`. As rotas abaixo usam cookies de sessão assinados) Tj T*
+(\(`HttpOnly`, `Secure`, `SameSite=Lax`\) e mantidos no banco. O cadastro público cria sempre) Tj T*
+(`cliente` com validação de consentimento LGPD; o cliente não pode enviar um papel) Tj T*
+(privilegiado. Senhas têm hash `bcryptjs` \(12 salt rounds\) e nunca são devolvidas pela API.) Tj T*
+() Tj T*
+(| Método | Rota | Acesso | Uso |) Tj T*
+(|---|---|---|---|) Tj T*
+(| POST | `/auth/register` | Público \(limite: 10 req/15 min\) | Registrar cliente com) Tj T*
+(consentimento LGPD |) Tj T*
+(| POST | `/auth/login` | Público \(limite: 5 req/15 min por IP\) | Autenticar e emitir cookie de) Tj T*
+(sessão assinado |) Tj T*
+(| POST | `/auth/logout` | Público | Revogar sessão atual e limpar cookie |) Tj T*
+(| GET | `/auth/me` | Sessão válida | Consultar perfil autenticado no servidor |) Tj T*
+(| POST | `/auth/migrate-local-users` | Público \(limite: 3 req/15 min\) | Migrar contas legadas) Tj T*
+(para o perfil `cliente` |) Tj T*
+(| GET | `/products` | Público | Listar catálogo de produtos |) Tj T*
+(| POST | `/products` | `admin` ou `loja` | Criar novo produto no catálogo |) Tj T*
+(| POST | `/products/migrate-local` | `admin` | Migrar/atualizar produto legado no banco |) Tj T*
+(| PUT, DELETE | `/products/:id` | `admin` ou `loja` | Atualizar ou remover produto existente |) Tj T*
+(| GET | `/orders` | Sessão válida | Cliente consulta seus pedidos; `admin` e `loja` consultam) Tj T*
+(todos |) Tj T*
+(| POST | `/orders` | `cliente` | Criar pedido multicanal; preços e totais recalculados pelo) Tj T*
+(servidor |) Tj T*
+(| POST | `/orders/migrate-local` | `cliente` | Migrar pedidos locais com idempotência por) Tj T*
+(`legacyId` |) Tj T*
+(| PATCH | `/orders/:id/status` | `admin` ou `loja` | Atualizar estado operacional \(`Em) Tj T*
+(preparo`, `Em rota`, `Concluído`, `Cancelado`\) |) Tj T*
+(| GET | `/estoque/resumo` | `admin` ou `loja` | Consultar indicadores consolidados e níveis de) Tj T*
+(estoque |) Tj T*
+(| GET | `/estoque/movimentacoes` | `admin` ou `loja` | Listar histórico auditado de) Tj T*
+(movimentações de estoque |) Tj T*
+(| POST | `/estoque/movimentacao` | `admin` ou `loja` | Registrar `entrada`, `saida` ou) Tj T*
+(`ajuste` de estoque |) Tj T*
+(5/12) Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 15 0 R >>
+endobj
+15 0 obj
+<< /Length 2503 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(| GET | `/financeiro` | `admin` ou `loja` | Listar lançamentos de contas a pagar e a receber) Tj T*
+(\(com filtros\) |) Tj T*
+(| GET | `/financeiro/resumo` | `admin` ou `loja` | Consultar saldos realizado/projetado e) Tj T*
+(títulos vencidos |) Tj T*
+(| POST | `/financeiro` | `admin` ou `loja` | Criar lançamento financeiro \(`pagar` ou) Tj T*
+(`receber`\) |) Tj T*
+(| PATCH | `/financeiro/:id/status` | `admin` ou `loja` | Dar baixa \(`pago`\) ou reabrir) Tj T*
+(\(`pendente`\) lançamento |) Tj T*
+(| DELETE | `/financeiro/:id` | `admin` ou `loja` | Excluir lançamento financeiro |) Tj T*
+() Tj T*
+(Unidades continuam listáveis publicamente. Para criar uma unidade, pode-se usar o token) Tj T*
+(administrativo legado ou uma sessão autenticada com perfil `admin`. A API aplica um limite) Tj T*
+(geral persistente de 300 requisições por IP a cada 15 minutos, além do limite específico de) Tj T*
+(login.) Tj T*
+() Tj T*
+(## API de unidades) Tj T*
+() Tj T*
+(Base local: `http://localhost:3000/api`.) Tj T*
+() Tj T*
+(| Método | Rota | Resposta de sucesso | Descrição |) Tj T*
+(|---|---|---|---|) Tj T*
+(| GET | `/health` | `200` | Estado da API e nome da aplicação |) Tj T*
+(| GET | `/unidades` | `200` | Lista unidades em ordem alfabética pelo nome |) Tj T*
+(| POST | `/unidades` | `201` | Valida e cadastra uma unidade; exige token ou sessão admin |) Tj T*
+() Tj T*
+(### Cadastrar unidade) Tj T*
+() Tj T*
+(Configure primeiro um segredo forte de pelo menos 32 bytes na variável de ambiente) Tj T*
+(`RAIZES_API_ADMIN_TOKEN`. Não o coloque no JavaScript do navegador, em arquivos versionados,) Tj T*
+(nem em capturas de tela. Em hospedagem, configure-o no painel de variáveis secretas do) Tj T*
+(serviço. Se estiver ausente ou tiver menos de 32 bytes, o token legado é desabilitado \(`503`\);) Tj T*
+(administradores autenticados ainda podem cadastrar unidades.) Tj T*
+() Tj T*
+(No PowerShell, para iniciar o servidor local com um token aleatório temporário:) Tj T*
+() Tj T*
+(```powershell) Tj T*
+($env:RAIZES_API_ADMIN_TOKEN = node -p) Tj T*
+("require\('node:crypto'\).randomBytes\(32\).toString\('base64'\)") Tj T*
+(npm start) Tj T*
+(```) Tj T*
+() Tj T*
+(Envie um objeto JSON com os quatro campos obrigatórios e o cabeçalho `Authorization` contendo) Tj T*
+(o esquema Bearer e o token:) Tj T*
+() Tj T*
+(```json) Tj T*
+({) Tj T*
+("codigo": "RN-001",) Tj T*
+("nome": "Unidade Central",) Tj T*
+("cidade": "Natal",) Tj T*
+("estado": "RN") Tj T*
+(}) Tj T*
+(```) Tj T*
+(6/12) Tj
+ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 17 0 R >>
+endobj
+17 0 obj
+<< /Length 2090 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+() Tj T*
+(Exemplo usando PowerShell:) Tj T*
+() Tj T*
+(```powershell) Tj T*
+($dados = @{) Tj T*
+(codigo = "RN-001") Tj T*
+(nome = "Unidade Central") Tj T*
+(cidade = "Natal") Tj T*
+(estado = "RN") Tj T*
+(} | ConvertTo-Json) Tj T*
+() Tj T*
+(Invoke-RestMethod -Uri http://localhost:3000/api/unidades -Method Post -ContentType) Tj T*
+("application/json" -Headers @{ Authorization = \("Be" + "arer " + $env:RAIZES_API_ADMIN_TOKEN\)) Tj T*
+(} -Body $dados) Tj T*
+(```) Tj T*
+() Tj T*
+(Regras de validação do cadastro:) Tj T*
+() Tj T*
+(- Os quatro valores são obrigatórios e devem ser textos.) Tj T*
+(- O código aceita de 2 a 20 letras, números ou hífens; é normalizado para maiúsculas e não) Tj T*
+(pode se repetir.) Tj T*
+(- Nome e cidade aceitam até 120 e 100 caracteres, respectivamente.) Tj T*
+(- O estado deve conter exatamente duas letras; é normalizado para maiúsculas.) Tj T*
+(- Caracteres de controle e os sinais `<` e `>` são rejeitados.) Tj T*
+() Tj T*
+(Respostas de erro relevantes:) Tj T*
+() Tj T*
+(| HTTP | Situação |) Tj T*
+(|---|---|) Tj T*
+(| `400` | Corpo JSON inválido, campo ausente ou valor fora das regras |) Tj T*
+(| `403` | Origem não permitida pelo CORS |) Tj T*
+(| `401` | Token administrativo ausente ou inválido |) Tj T*
+(| `503` | Cadastro desabilitado porque o token não está configurado corretamente |) Tj T*
+(| `409` | Já existe uma unidade com o mesmo código |) Tj T*
+(| `429` | Limite de requisições da API excedido |) Tj T*
+(| `500` | Falha interna ao processar a requisição |) Tj T*
+() Tj T*
+(O CORS permite requisições sem `Origin`, origens locais `localhost`/`127.0.0.1` e origens) Tj T*
+(explicitamente listadas em `RAIZES_CORS_ORIGINS`. O token é uma credencial administrativa) Tj T*
+(compartilhada; prefira a sessão individual de administrador quando possível.) Tj T*
+() Tj T*
+(### Exemplo da verificação de saúde) Tj T*
+() Tj T*
+(```powershell) Tj T*
+(Invoke-RestMethod -Uri http://localhost:3000/api/health) Tj T*
+(```) Tj T*
+() Tj T*
+(Resposta:) Tj T*
+() Tj T*
+(```json) Tj T*
+({) Tj T*
+("status": "ok",) Tj T*
+(7/12) Tj
+ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 19 0 R >>
+endobj
+19 0 obj
+<< /Length 2841 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+("aplicacao": "Rede Raízes do Nordeste") Tj T*
+(}) Tj T*
+(```) Tj T*
+() Tj T*
+(## Publicação) Tj T*
+() Tj T*
+(### GitHub Pages) Tj T*
+() Tj T*
+(O workflow [`.github/workflows/pages.yml`]\(.github/workflows/pages.yml\) prepara e publica a) Tj T*
+(interface estática após cada envio à branch `main`; também pode ser executado manualmente pela) Tj T*
+(aba **Actions**. Na primeira execução, ele tenta habilitar o GitHub Pages automaticamente. Se) Tj T*
+(as permissões do workflow não permitirem essa alteração, um administrador deve selecionar) Tj T*
+(**Settings -> Pages -> Build and deployment -> Source -> GitHub Actions** e executar o workflow) Tj T*
+(novamente.) Tj T*
+() Tj T*
+(O artefato do Pages reúne os arquivos de `public/` e copia as imagens de `src/imagens` para) Tj T*
+(`imagens/`. O catálogo inicial permanece visível como fallback, mas login, pedidos, inventário) Tj T*
+(e dados de unidades requerem um backend Express; GitHub Pages não executa Node/Express.) Tj T*
+() Tj T*
+(Para este repositório, quando a implantação estiver concluída, o endereço esperado é) Tj T*
+(<https://finantza.github.io/raizes-do-nordeste/>.) Tj T*
+() Tj T*
+(### Render) Tj T*
+() Tj T*
+([`render.yaml`]\(render.yaml\) declara um serviço Node e um PostgreSQL para o backend. O Render) Tj T*
+(injeta `DATABASE_URL` e gera `RAIZES_SESSION_SECRET` e `RAIZES_API_ADMIN_TOKEN`; os dados não) Tj T*
+(dependem do disco efêmero do serviço web. Para SQLite fora do Render, mantenha) Tj T*
+(`data/raizes.sqlite` em um disco persistente e faça backups regulares. O plano gratuito do) Tj T*
+(PostgreSQL do Render tem limites/expiração próprios; selecione um plano com retenção adequada) Tj T*
+(para produção.) Tj T*
+() Tj T*
+(## Testes) Tj T*
+() Tj T*
+(Execute a suíte automatizada:) Tj T*
+() Tj T*
+(```bash) Tj T*
+(npm test) Tj T*
+(```) Tj T*
+() Tj T*
+(Os testes usam `node:test` e Supertest \(totalizando **57 testes automatizados** distribuídos) Tj T*
+(em 8 suítes: `app.test.js` [14], `faults.test.js` [7], `gestao.test.js` [5], `offline.test.js`) Tj T*
+([6], `products.test.js` [4], `frontend.test.js` [8], `backend.test.js` [6] e) Tj T*
+(`qualidade.test.js` [7]\) para verificar cabeçalhos/CSP, cadastro com LGPD e login com hash,) Tj T*
+(sessão/cookie/logout, bloqueio de força bruta \(HTTP 429\), autorização RBAC de rotas, rejeição) Tj T*
+(de payloads malformados/XSS/coerção de tipos, validação de estoque e financeiro, operação) Tj T*
+(multicanal, funcionamento 100% offline, qualidade de software \(ISO/IEC 25010\) e persistência) Tj T*
+(SQLite após reabrir a conexão. A suíte usa bancos temporários isolados, sem alterar os dados) Tj T*
+(locais.) Tj T*
+() Tj T*
+(Roteiro manual complementar:) Tj T*
+() Tj T*
+(1. Inicie o servidor e abra <http://localhost:3000>. Você pode usar as credenciais padrão de) Tj T*
+(8/12) Tj
+ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 21 0 R >>
+endobj
+21 0 obj
+<< /Length 4002 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(teste \(`admin@raizes.com`, `loja@raizes.com` ou `cliente@raizes.com`\) ou definir credenciais) Tj T*
+(personalizadas em `.env` para `RAIZES_DEV_*` \(senhas com no mínimo 12 caracteres\).) Tj T*
+(2. Faça login com o cliente de teste \(`cliente@raizes.com` / `cliente12345678`\) ou registre um) Tj T*
+(novo cliente, confira a criação de pedido e o histórico. Teste também a navegação e permissões) Tj T*
+(dos painéis de Administrador e Loja.) Tj T*
+(3. Em cada painel, confirme que a sessão aparece e que **Sair** encerra a sessão.) Tj T*
+(4. Tente abrir diretamente um painel sem sessão ou com perfil incorreto; o navegador deve) Tj T*
+(redirecionar e a API deve responder `401`/`403`.) Tj T*
+(5. Na página inicial, confira a marca, a paleta, o carrossel, controles e imagens; verifique o) Tj T*
+(layout em tela estreita e com preferência por movimento reduzido.) Tj T*
+(6. No perfil de cliente, confira as imagens do catálogo, filtre os produtos, adicione um ao) Tj T*
+(carrinho e confirme o preço promocional.) Tj T*
+(7. Nos perfis de administrador e loja, cadastre um produto com e sem foto e confirme que) Tj T*
+(aparece no inventário e no cardápio; tente enviar marcação HTML no nome e confirme a rejeição.) Tj T*
+(8. No perfil de loja, altere o estado de um pedido; confirme que o cliente vê a atualização e) Tj T*
+(não consegue atualizar o estado.) Tj T*
+(9. Com uma unidade de teste, consulte `/api/unidades`; depois tente cadastrá-la novamente e) Tj T*
+(confirme o HTTP `409`.) Tj T*
+() Tj T*
+(## Ferramenta de Auditoria e Correção Documental \(Python\)) Tj T*
+() Tj T*
+(O repositório inclui uma aplicação modular em Python \(3.10+\) para analisar, auditar, verificar) Tj T*
+(a conformidade com o Roteiro Acadêmico da UNINTER \(Qualidade de Software - 2026\), identificar) Tj T*
+(inconsistências entre relatórios e produzir versões revisadas rastreáveis sem inventar) Tj T*
+(métricas ou resultados.) Tj T*
+() Tj T*
+(### Arquitetura e Módulos \(`raiz do projeto`\)) Tj T*
+() Tj T*
+(- [`main.py`]\(main.py\) - Orquestrador CLI e pipeline completo dos 6 módulos.) Tj T*
+(- [`interface.py`]\(interface.py\) - Interface gráfica em Português Brasileiro compatível com) Tj T*
+(**Streamlit** \(`streamlit run interface.py`\) e com **Painel Web HTTP Local** integrado) Tj T*
+(\(`python interface.py` na porta `8501`\).) Tj T*
+(- [`leitor_documentos.py`]\(leitor_documentos.py\) - **Módulo 1:** Leitura e extração de) Tj T*
+(arquivos `DOCX`, `DOC`, `PDF`, `TXT`, `MD`, `CSV` e `XLSX`, além de inspeção direta da verdade) Tj T*
+(física do código-fonte \(`src/*.test.js`, `src/db.js`, `src/auth.js`\).) Tj T*
+(- [`consistencia.py`]\(consistencia.py\) - **Módulo 2:** Auditoria de consistência) Tj T*
+(interdocumental e aplicação rigorosa das 10 Regras de Integridade.) Tj T*
+(- [`auditoria.py`]\(auditoria.py\) - **Módulo 3:** Matriz de conformidade com o roteiro) Tj T*
+(acadêmico oficial da UNINTER \(`ROT-01` a `ROT-12`\).) Tj T*
+(- [`correcao.py`]\(correcao.py\) - **Módulo 4:** Correção documental não destrutiva após criação) Tj T*
+(de backup SHA-256, separando correções automáticas comprovadas de pendências para revisão) Tj T*
+(humana.) Tj T*
+(- [`gerador_relatorios.py`]\(gerador_relatorios.py\) - **Módulo 5:** Geração do Relatório) Tj T*
+(Consolidado de Auditoria com as 12 seções obrigatórias.) Tj T*
+(- [`exportacao.py`]\(exportacao.py\) - **Módulo 6:** Exportação automática de relatórios) Tj T*
+(revisados em `DOCX` e `PDF`, relatório consolidado em `DOCX` e `PDF`, planilha de auditoria em) Tj T*
+(`XLSX` \(4 abas\), registro de alterações em `JSON` e inconsistências em `CSV`.) Tj T*
+(- [`backup.py`]\(backup.py\) - Gestão de backups imutáveis com manifesto `SHA-256` antes de) Tj T*
+(qualquer alteração.) Tj T*
+(- [`logs.py`]\(logs.py\) - Logs estruturados e trilha de auditoria persistente.) Tj T*
+(- [`test_auditoria.py`]\(test_auditoria.py\) - Suíte de testes automatizados \(`unittest`\) da) Tj T*
+(própria ferramenta de auditoria.) Tj T*
+(9/12) Tj
+ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 23 0 R >>
+endobj
+23 0 obj
+<< /Length 2319 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+() Tj T*
+(### Instalação e Execução da Ferramenta de Auditoria) Tj T*
+() Tj T*
+(1. Instale as dependências no ambiente virtual Python \(`.venv`\):) Tj T*
+() Tj T*
+(```powershell) Tj T*
+(.\\.venv\\Scripts\\python.exe -m pip install -r requirements.txt) Tj T*
+(```) Tj T*
+() Tj T*
+(2. Execute a auditoria completa via linha de comando:) Tj T*
+() Tj T*
+(```powershell) Tj T*
+(.\\.venv\\Scripts\\python.exe main.py --dir docs --output auditoria_output) Tj T*
+(```) Tj T*
+() Tj T*
+(3. Execute a interface gráfica \(Streamlit ou Painel Web HTTP Local na porta 8501\):) Tj T*
+() Tj T*
+(```powershell) Tj T*
+(# Via Streamlit \(se instalado no ambiente\):) Tj T*
+(.\\.venv\\Scripts\\streamlit.exe run interface.py) Tj T*
+() Tj T*
+(# Ou diretamente via Python \(inicia o Painel Web Local caso Streamlit não esteja instalado\):) Tj T*
+(.\\.venv\\Scripts\\python.exe interface.py) Tj T*
+(```) Tj T*
+() Tj T*
+(4. Execute os testes automatizados da ferramenta de auditoria:) Tj T*
+() Tj T*
+(```powershell) Tj T*
+(.\\.venv\\Scripts\\python.exe -m unittest test_auditoria.py -v) Tj T*
+(```) Tj T*
+() Tj T*
+(## Avaliação acadêmica) Tj T*
+() Tj T*
+(O relatório de avaliação com resultados de testes, observações, limitações e melhorias) Tj T*
+(priorizadas está em [`docs/avaliacao-do-sistema.md`]\(docs/avaliacao-do-sistema.md\).) Tj T*
+() Tj T*
+(Um roteiro de estudo com etapas e campos para registrar sua própria análise e evidências está) Tj T*
+(em) Tj T*
+([`docs/guia-passo-a-passo-melhorias-qualidade.md`]\(docs/guia-passo-a-passo-melhorias-qualidade.) Tj T*
+(md\). Ele não substitui a atividade nem apresenta resultados de testes.) Tj T*
+() Tj T*
+(## Estrutura do projeto) Tj T*
+() Tj T*
+(```text) Tj T*
+(raizes-do-nordeste/) Tj T*
+(??? data/) Tj T*
+(?   ??? raizes.json             # Fonte legada somente para migração inicial) Tj T*
+(?   ??? raizes.sqlite           # Banco local de desenvolvimento \(modo WAL\)) Tj T*
+(??? docs/                       # Documentação acadêmica, planos de QA e relatórios) Tj T*
+(?   ??? PLANO_TESTES.md         # Plano de testes, cenários e matriz de rastreabilidade) Tj T*
+(?   ??? REQUISITOS.md           # Mapeamento de requisitos funcionais e não funcionais) Tj T*
+(?   ??? USO_DE_IA.md            # Registro de transparência sobre uso de IA) Tj T*
+(10/12) Tj
+ET
+endstream
+endobj
+24 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 25 0 R >>
+endobj
+25 0 obj
+<< /Length 4089 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(?   ??? avaliacao-do-sistema.md # Diagnóstico inicial e registro histórico de evolução) Tj T*
+(?   ??? guia-passo-a-passo-melhorias-qualidade.md) Tj T*
+(?   ??? relatorio-de-desenvolvimento.md   # Relatório técnico completo de desenvolvimento e QA) Tj T*
+(?   ??? relatorio-de-desenvolvimento.docx # Versão ABNT em Word \(.docx / .doc\)) Tj T*
+(?   ??? relatorio-de-revisao-do-sistema.md) Tj T*
+(??? public/                     # Arquivos servidos localmente pelo Express \(zero CDNs\)) Tj T*
+(?   ??? index.html              # Página inicial) Tj T*
+(?   ??? login.html              # Login compartilhado e cadastro com termo LGPD) Tj T*
+(?   ??? login.js                # Lógica de login, cadastro e atalhos de demonstração) Tj T*
+(?   ??? auth.js                 # Sessão, controle de perfis e redirecionamento) Tj T*
+(?   ??? cliente.html            # Interface de cardápio e checkout multicanal) Tj T*
+(?   ??? cliente.js              # Cardápio, carrinho local e pedidos) Tj T*
+(?   ??? products.js             # Catálogo inicial compartilhado de 100 produtos + fallback) Tj T*
+(offline) Tj T*
+(?   ??? admin.html              # Painel executivo e abas de gestão da rede) Tj T*
+(?   ??? admin.js                # Métricas administrativas e inventário rápido) Tj T*
+(?   ??? operacional.html        # Painel operacional da franquia/loja) Tj T*
+(?   ??? operacional.js          # Fila de pedidos, rotina e checklists da loja) Tj T*
+(?   ??? gestao.js               # Módulos compartilhados: Estoque, Financeiro e Catálogo) Tj T*
+(?   ??? app.js                  # Carrossel acessível e destaques da página inicial) Tj T*
+(?   ??? config.js               # Configuração de endereço da API) Tj T*
+(?   ??? images/) Tj T*
+(?   ?   ??? raizes-logo.svg     # Logomarca vetorial e favicon) Tj T*
+(?   ?   ??? products/           # Fotos locais de fallback por categoria e licenças) Tj T*
+(?   ??? style.css               # Design system e componentes responsivos) Tj T*
+(??? scripts/) Tj T*
+(?   ??? build_full_report.py    # Gerador automatizado dos relatórios .docx/.doc/.md) Tj T*
+(??? src/) Tj T*
+(?   ??? imagens/                # 100 imagens de produtos regionais servidas em /imagens/) Tj T*
+(?   ??? routes/) Tj T*
+(?   ?   ??? auth.js             # Registro \(LGPD\), login, sessão e migração de contas) Tj T*
+(?   ?   ??? estoque.js          # Resumo, histórico e movimentações de estoque) Tj T*
+(?   ?   ??? financeiro.js       # Contas a pagar/receber, resumo, baixa e exclusão) Tj T*
+(?   ?   ??? orders.js           # Pedidos multicanal, cálculo no servidor e status) Tj T*
+(?   ?   ??? products.js         # Catálogo CRUD e validação estrita de produtos) Tj T*
+(?   ?   ??? unidades.js         # Rotas e validações de unidades franqueadas) Tj T*
+(?   ??? app.js                  # Middleware Helmet/CSP, CORS, Rate Limiters e rotas Express) Tj T*
+(?   ??? auth.js                 # Cookies HMAC assinados e middlewares requireAuth/requireRole) Tj T*
+(?   ??? db.js                   # Camada de persistência híbrida \(SQLite WAL e PostgreSQL\)) Tj T*
+(?   ??? app.test.js             # Testes de integração da API, autenticação e segurança \(14) Tj T*
+(testes\)) Tj T*
+(?   ??? gestao.test.js          # Testes de controle de estoque, financeiro e RBAC \(5 testes\)) Tj T*
+(?   ??? offline.test.js         # Testes de autonomia 100% offline e assets locais \(6 testes\)) Tj T*
+(?   ??? products.test.js        # Testes unitários de integridade do catálogo e combos \(4) Tj T*
+(testes\)) Tj T*
+(?   ??? faults.test.js          # Testes negativos, casos de borda, falhas e coerção \(6 testes\)) Tj T*
+(?   ??? server.js               # Inicialização HTTP) Tj T*
+(??? package.json) Tj T*
+(??? render.yaml                 # Serviço web e PostgreSQL no Render) Tj T*
+(??? .env.example                # Modelo local de configuração \(sem segredos\)) Tj T*
+(??? iniciar-servidor.bat        # Inicializador rápido do servidor para Windows) Tj T*
+(??? test-offline.bat            # Verificador completo de testes e integridade offline) Tj T*
+(11/12) Tj
+ET
+endstream
+endobj
+26 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 27 0 R >>
+endobj
+27 0 obj
+<< /Length 1953 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(??? .github/workflows/pages.yml # Publicação da interface no GitHub Pages) Tj T*
+(```) Tj T*
+() Tj T*
+(O servidor Express publica `public/`. A pasta `docs/` contém outra cópia de páginas do) Tj T*
+(protótipo e não é a pasta servida pelo servidor atual.) Tj T*
+() Tj T*
+(## Segurança e limitações) Tj T*
+() Tj T*
+(- Configure `RAIZES_SESSION_SECRET` forte e persistente em produção; sem isso, as sessões) Tj T*
+(ficam inválidas após reinício. O servidor recusa inicialização de produção quando o segredo) Tj T*
+(está ausente/fraco.) Tj T*
+(- O cadastro público só pode criar clientes. Provisionar a primeira conta `admin`/`loja` de) Tj T*
+(produção ainda exige um procedimento operacional seguro; não habilite variáveis `RAIZES_DEV_*`) Tj T*
+(em produção.) Tj T*
+(- Configure HTTPS no proxy e origens CORS explícitas quando a interface estiver em outro) Tj T*
+(domínio. O cookie é sempre marcado `Secure`.) Tj T*
+(- O esquema suporta contas, catálogo, pedidos e unidades, mas não integra pagamento, estoque) Tj T*
+(transacional/concorrente, emissão fiscal nem isolamento multiunidade.) Tj T*
+(- As fotos do produto são aceitas em JPEG base64 limitado no corpo JSON; para catálogo grande,) Tj T*
+(substitua por armazenamento de objetos com URL assinada e limites de upload.) Tj T*
+(- O plano gratuito de banco hospedado pode expirar ou ter limites de backup; escolha) Tj T*
+(armazenamento gerenciado com retenção e monitoração adequadas para dados reais.) Tj T*
+(- O token administrativo de unidades permanece por compatibilidade; prefira autenticação) Tj T*
+(individual, guarde-o como segredo e implemente rotação se terceiros ainda dependerem dele.) Tj T*
+() Tj T*
+(Este projeto continua sendo didático. Antes de uso comercial, realize revisão de segurança,) Tj T*
+(provisionamento formal de perfis, backups/restauração testados, monitoramento, política de) Tj T*
+(retenção e integração de pagamentos.) Tj T*
+(12/12) Tj
+ET
+endstream
+endobj
+xref
+0 28
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000197 00000 n 
+0000000294 00000 n 
+0000000420 00000 n 
+0000003212 00000 n 
+0000003338 00000 n 
+0000006578 00000 n 
+0000006704 00000 n 
+0000010333 00000 n 
+0000010461 00000 n 
+0000013875 00000 n 
+0000014003 00000 n 
+0000017516 00000 n 
+0000017644 00000 n 
+0000020200 00000 n 
+0000020328 00000 n 
+0000022471 00000 n 
+0000022599 00000 n 
+0000025493 00000 n 
+0000025621 00000 n 
+0000029676 00000 n 
+0000029804 00000 n 
+0000032176 00000 n 
+0000032304 00000 n 
+0000036446 00000 n 
+0000036574 00000 n 
+trailer
+<< /Size 28 /Root 1 0 R >>
+startxref
+38580
+%%EOF

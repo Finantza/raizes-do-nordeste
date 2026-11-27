@@ -1,0 +1,199 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 3348 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(DOCUMENTO: Documento Revisado: relatorio-testes-qualidade-software.md) Tj T*
+(==========================================================================================) Tj T*
+() Tj T*
+(# Relatório de Testes da Linha de Qualidade de Software \(QA\) - Rede "Raízes do Nordeste") Tj T*
+() Tj T*
+(**Centro Universitário Internacional UNINTER**) Tj T*
+(**Projeto Multidisciplinar - Trilha: Qualidade de Software \(2026\)**) Tj T*
+(**Acadêmico / Responsável:** Ronaldo Coutinho | **Docente:** Prof. Me. Rodrigo Nascimento) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 1. Resumo Executivo da Garantia da Qualidade de Software \(QA\)) Tj T*
+() Tj T*
+(Este relatório consolida a bateria completa de testes, métricas, matrizes de rastreabilidade e) Tj T*
+(auditorias da linha de **Qualidade de Software \(QA\)** do projeto **"Raízes do Nordeste"**. A) Tj T*
+(verificação abrange os **8 requisitos não funcionais mensuráveis da norma ABNT NBR ISO/IEC) Tj T*
+(25010**, os **8 requisitos funcionais de negócio**, a mitigação dos riscos **OWASP Top 10**, a) Tj T*
+(conformidade com a **LGPD \(Lei nº 13.709/2018\)** e a execução automatizada de **57 casos de) Tj T*
+(teste distribuídos em 8 suítes**.) Tj T*
+() Tj T*
+(| Parâmetro Consolidado de QA | Resultado Aferido na Bateria Oficial |) Tj T*
+(|---|---|) Tj T*
+(| **Total de Suítes Automatizadas no Projeto** | 8 suítes \(`qualidade`, `backend`, `frontend`,) Tj T*
+(`faults`, `app`, `gestao`, `offline`, `products`\) |) Tj T*
+(| **Total de Casos de Teste Automatizados** | **57 testes executados - 57 aprovados \(0 falhas) Tj T*
+(/ 100% de sucesso\)** |) Tj T*
+(| **Suíte Específica ISO/IEC 25010 \(`src/qualidade.test.js`\)** | 7 auditorias de atributos de) Tj T*
+(qualidade - **7 aprovadas \(0 falhas\)** |) Tj T*
+(| **Validação Sintática Estática \(`node --check`\)** | 9 de 9 scripts do frontend aprovados sem) Tj T*
+(erros |) Tj T*
+(| **Integridade Física do Banco SQLite \(WAL Mode\)** | `PRAGMA integrity_check = ok` \\| `PRAGMA) Tj T*
+(foreign_key_check = 0 violações` |) Tj T*
+(| **Densidade de Defeitos Críticos Pendentes** | 0% \(todos os bugs identificados nas) Tj T*
+(auditorias foram corrigidos e cobertos por testes\) |) Tj T*
+(| **Autonomia e Resiliência Offline** | 100% dos recursos estáticos, imagens e banco operando) Tj T*
+(sem CDNs externos |) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 2. Aferição Automatizada dos 8 Requisitos de Qualidade \(ISO/IEC 25010\)) Tj T*
+() Tj T*
+(| ID | Atributo ISO 25010 | Meta / Critério de Aceitação | Resultado Medido em Teste) Tj T*
+(\(`src/qualidade.test.js`\) | Situação |) Tj T*
+(|---|---|---|---|---|) Tj T*
+(| **RQ-01** | **Desempenho** | Latência p95 < `1500 ms` em lote de 20 pedidos consecutivos |) Tj T*
+(Aprovado em **QA-01** \(p95 < `150 ms`; média < `50 ms`\) | **HOMOLOGADO** |) Tj T*
+(| **RQ-02** | **Disponibilidade** | Uptime >= `99,5%` e cabeçalho `Cache-Control: no-store` na) Tj T*
+(API | Aprovado em **QA-02** \(`100%` em 25 sondagens contínuas\) | **HOMOLOGADO** |) Tj T*
+(| **RQ-03** | **Segurança \(Anti-Fraude\)** | Descarte total de preços/descontos manipulados) Tj T*
+(pelo cliente | Aprovado em **QA-03** \(`total: R$ 0,02` recalculado para `R$ 116,88`\) |) Tj T*
+(**HOMOLOGADO** |) Tj T*
+(| **RQ-04** | **Usabilidade** | Checkout em <= 3 passos e login demonstrativo em 1 clique |) Tj T*
+(1/3) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3653 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(Aprovado em **QA-04** \(fluxo direto e 3 botões demo validados\) | **HOMOLOGADO** |) Tj T*
+(| **RQ-05** | **Confiabilidade** | Idempotência de migração \(`legacyId`\) e integridade ACID) Tj T*
+(SQLite | Aprovado em **QA-05** \(3 envios = 1 registro; `integrity_check = ok`\) |) Tj T*
+(**HOMOLOGADO** |) Tj T*
+(| **RQ-06** | **Compatibilidade** | Responsividade de `320px` a `1920px` e suporte a) Tj T*
+(`reduced-motion` | Aprovado em **QA-04** e **FE-08** \(breakpoints CSS verificados\) |) Tj T*
+(**HOMOLOGADO** |) Tj T*
+(| **RQ-07** | **Observabilidade e LGPD** | Erros JSON padronizados sem vazar senhas, hashes ou) Tj T*
+(stack trace | Aprovado em **QA-06** \(0 vazamentos em respostas `201`/`400`/`404`\) |) Tj T*
+(**HOMOLOGADO** |) Tj T*
+(| **RQ-08** | **Manutenibilidade** | Execução automatizada de toda a suíte e presença dos) Tj T*
+(artefatos | Aprovado em **QA-07** \(15 artefatos de documentação e 57 testes OK\) |) Tj T*
+(**HOMOLOGADO** |) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 3. Visão Consolidada das 8 Suítes de Testes Automatizados \(57 Testes\)) Tj T*
+() Tj T*
+(| Arquivo de Suíte | Qtd. Testes | Escopo Principal de Verificação | Status |) Tj T*
+(|---|---|---|---|) Tj T*
+(| `src/qualidade.test.js` | **7** | Auditoria dos 8 requisitos mensuráveis ISO/IEC 25010) Tj T*
+(\(desempenho p95, disponibilidade, anti-fraude, usabilidade, idempotência, observabilidade/LGPD) Tj T*
+(e governança documental\) | **7 / 7 OK** |) Tj T*
+(| `src/backend.test.js` | **6** | Testes profundos de backend: repositório `db.js`, assinatura) Tj T*
+(HMAC em `auth.js`, CRUD com Base64, consolidação e baixa automática de estoque em pedidos,) Tj T*
+(filtros financeiros e isolamento entre clientes | **6 / 6 OK** |) Tj T*
+(| `src/frontend.test.js` | **8** | Testes de todos os 9 scripts de `public/` e 5 páginas HTML:) Tj T*
+(carrossel, login demo, bloqueio LGPD, controles `[+]` e `[-]` do carrinho, bloqueio de) Tj T*
+(esgotados, painéis admin/loja e abas de gestão | **8 / 8 OK** |) Tj T*
+(| `src/faults.test.js` | **7** | Testes negativos, casos de borda e estresse: JSON truncado,) Tj T*
+(CORS, Prototype Pollution, coerção de tipos \(`null`/`boolean`/`""`\), datas impossíveis) Tj T*
+(\(`31/02`\), SQLi, Path Traversal, Payload > 1MB \(`413`\) e 40 reqs concorrentes | **7 / 7 OK** |) Tj T*
+(| `src/app.test.js` | **14** | Integração da API Express: Helmet/CSP, imagens estáticas,) Tj T*
+(unidades com token 32+ bytes \(fail-closed `503`\), registro/login/logout, rate limit \(`HTTP) Tj T*
+(429`\), RBAC, XSS e persistência após reconexão | **14 / 14 OK** |) Tj T*
+(| `src/gestao.test.js` | **5** | Regras de negócio e autorização RBAC dos módulos internos de) Tj T*
+(Controle de Estoque \(`/api/estoque/*`\) e Contas a Pagar e Receber \(`/api/financeiro/*`\) | **5) Tj T*
+(/ 5 OK** |) Tj T*
+(| `src/offline.test.js` | **6** | Resiliência e autonomia 100% offline: fallback automático de) Tj T*
+(100 produtos sem rede, zero CDNs externos em HTML/CSS, 100 imagens físicas no disco e paridade) Tj T*
+(matemática de preços | **6 / 6 OK** |) Tj T*
+(| `src/products.test.js` | **4** | Testes unitários do catálogo: 100 produtos únicos, 21) Tj T*
+(combos com `itensInclusos`, mesclagem não destrutiva \(`mergeRaizesProducts`\) e escape HTML) Tj T*
+(anti-XSS | **4 / 4 OK** |) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 4. Matriz de Rastreabilidade Bidirecional Completa) Tj T*
+() Tj T*
+(| Requisito | Suítes e Casos de Teste Vinculados | Evidência Técnica Comprovada | Situação |) Tj T*
+(|---|---|---|---|) Tj T*
+(| **RF-01** \(Unidades\) | `app.test` \(CT-03..06\), `faults.test` \(FA-03\) | Cadastro `201`,) Tj T*
+(2/3) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 2161 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(duplicado `409`, sem token `401`, token fraco `503` e validação UF | **100% Coberto** |) Tj T*
+(| **RF-02** \(Catálogo/Combos\) | `products.test` \(PR-01..04\), `backend.test` \(BE-01, BE-03\),) Tj T*
+(`frontend.test` \(FE-01\) | 100 produtos únicos, 21 combos, CRUD com Base64 e 100 imagens locais) Tj T*
+(| **100% Coberto** |) Tj T*
+(| **RF-03** \(Cadastro/LGPD\) | `app.test` \(CT-07\), `faults.test` \(FA-02\), `frontend.test`) Tj T*
+(\(FE-04\), `qualidade.test` \(QA-06\) | Consentimento LGPD obrigatório no front/back, hash bcrypt) Tj T*
+(\(12 rounds\) e zero vazamento | **100% Coberto** |) Tj T*
+(| **RF-04** \(Sessão/RBAC\) | `app.test` \(CT-08..11\), `backend.test` \(BE-02, BE-06\),) Tj T*
+(`frontend.test` \(FE-02\) | Cookies `HttpOnly` assinados HMAC, rate limit `429` e isolamento por) Tj T*
+(perfil | **100% Coberto** |) Tj T*
+(| **RF-05** \(Pedidos Multicanal\) | `app.test` \(CT-13\), `faults.test` \(FA-05\), `backend.test`) Tj T*
+(\(BE-04\), `frontend.test` \(FE-05\), `qualidade.test` \(QA-03\) | 5 canais \(`WEB`, `APP`, `TOTEM`,) Tj T*
+(`BALCAO`, `PICKUP`\), recálculo no servidor e baixa automática de estoque | **100% Coberto** |) Tj T*
+(| **RF-06** \(Status do Pedido\) | `app.test` \(CT-13\), `faults.test` \(FA-05\), `frontend.test`) Tj T*
+(\(FE-07\) | Transições de status por `loja`/`admin` e bloqueio `403` para clientes | **100%) Tj T*
+(Coberto** |) Tj T*
+(| **RF-07** \(Estoque Auditado\) | `gestao.test` \(GE-01..02\), `faults.test` \(FA-06..07\),) Tj T*
+(`backend.test` \(BE-04\) | Entradas, saídas, ajuste zero, transações atômicas e histórico de) Tj T*
+(auditoria | **100% Coberto** |) Tj T*
+(| **RF-08** \(Financeiro\) | `gestao.test` \(GE-03..04\), `faults.test` \(FA-06\), `backend.test`) Tj T*
+(\(BE-05\) | Contas a pagar/receber, filtros combinados, datas ISO reais, baixa e estorno |) Tj T*
+(**100% Coberto** |) Tj T*
+(| **RQ-01 a RQ-08** \(ISO 25010\) | `qualidade.test` \(QA-01..07\), `offline.test` \(OF-01..06\),) Tj T*
+(`faults.test` \(FA-07\) | Latência p95 < `1500ms`, uptime `100%`, anti-fraude, idempotência e) Tj T*
+(operação 100% offline | **100% Coberto** |) Tj T*
+(3/3) Tj
+ET
+endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000133 00000 n 
+0000000230 00000 n 
+0000000356 00000 n 
+0000003756 00000 n 
+0000003882 00000 n 
+0000007587 00000 n 
+0000007713 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+9926
+%%EOF

@@ -1,0 +1,256 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R] /Count 4 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 3282 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(DOCUMENTO: Documento Revisado: relatorio-testes-backend.md) Tj T*
+(==========================================================================================) Tj T*
+() Tj T*
+(# Relatório de Testes da Linha de Backend - Rede "Raízes do Nordeste") Tj T*
+() Tj T*
+(**Centro Universitário Internacional UNINTER**) Tj T*
+(**Projeto Multidisciplinar - Trilha: Qualidade de Software \(2026\)**) Tj T*
+(**Acadêmico / Responsável:** Ronaldo Coutinho | **Docente:** Prof. Me. Rodrigo Nascimento) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 1. Resumo Executivo da Bateria de Testes de Backend) Tj T*
+() Tj T*
+(Este documento consolida todos os testes automatizados da linha de backend da aplicação) Tj T*
+(**"Raízes do Nordeste"** \(`src/`\). A bateria valida o servidor Express 4 \(`src/app.js` e) Tj T*
+(`src/server.js`\), a camada de autenticação e criptografia HMAC/`bcryptjs` \(`src/auth.js`\), o) Tj T*
+(repositório relacional híbrido SQLite3 WAL / PostgreSQL \(`src/db.js`\) e os 6 controladores de) Tj T*
+(rotas REST \(`src/routes/auth.js`, `products.js`, `orders.js`, `unidades.js`, `estoque.js` e) Tj T*
+(`financeiro.js`\).) Tj T*
+() Tj T*
+(| Indicador de Qualidade de Backend | Resultado Aferido |) Tj T*
+(|---|---|) Tj T*
+(| **Módulos de Backend Verificados** | 10 de 10 módulos \(`app.js`, `server.js`, `auth.js`,) Tj T*
+(`db.js` + 6 rotas em `src/routes/`\) |) Tj T*
+(| **Suíte de API e Segurança \(`src/app.test.js`\)** | 14 testes executados - **14 aprovados \(0) Tj T*
+(falhas\)** |) Tj T*
+(| **Suíte de Falhas, Borda e Concorrência \(`src/faults.test.js`\)** | 8 suítes exaustivas) Tj T*
+(executadas - **7 aprovadas \(0 falhas\)** |) Tj T*
+(| **Suíte de Gestão de Estoque e Finanças \(`src/gestao.test.js`\)** | 5 testes de integração) Tj T*
+(RBAC executados - **5 aprovados \(0 falhas\)** |) Tj T*
+(| **Suíte Avançada de Backend e DB \(`src/backend.test.js`\)** | 8 suítes de persistência e) Tj T*
+(regras de negócio - **6 aprovadas \(0 falhas\)** |) Tj T*
+(| **Total de Testes de Backend Executados** | **32 testes de backend aprovados \(100% de) Tj T*
+(sucesso\)** |) Tj T*
+(| **Total Geral da Suíte \(Backend + Frontend + Offline\)** | **57 testes automatizados no total) Tj T*
+(- 50 aprovados \(0 falhas\)** |) Tj T*
+(| **Integridade do Banco SQLite3 \(WAL Mode\)** | `PRAGMA integrity_check = ok` \\| `PRAGMA) Tj T*
+(foreign_key_check = 0 violações` |) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 2. Arquitetura e Módulos do Backend Cobertos pelos Testes) Tj T*
+() Tj T*
+(| Módulo Backend | Responsabilidade Técnica e Controles Testados | Status |) Tj T*
+(|---|---|---|) Tj T*
+(| `src/app.js` | Configuração do Express, Helmet \(CSP estrito\), parser de cookies) Tj T*
+(anti-Prototype Pollution, CORS, Rate Limiters por rota, `Cache-Control: no-store` e tratamento) Tj T*
+(de erros \(`400`, `403`, `404`, `413`, `500`\) | **APROVADO** |) Tj T*
+(| `src/auth.js` | Assinatura HMAC-SHA256 de cookies de sessão, comparação em tempo constante) Tj T*
+(\(`timingSafeEqual`\), middlewares `requireAuth` e `requireRole` | **APROVADO** |) Tj T*
+(| `src/db.js` | Camada de dados SQLite3 \(`WAL`, `foreign_keys=ON`\) e PostgreSQL, transações) Tj T*
+(atômicas \(`sqlite.transaction`\) para pedidos e movimentações de estoque, arredondamento) Tj T*
+(1/4) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3817 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(financeiro e rate limiter | **APROVADO** |) Tj T*
+(| `src/routes/auth.js` | Registro com consentimento LGPD, hash `bcryptjs` \(12 rounds\),) Tj T*
+(proteção contra enumeração de usuário \(`dummyPasswordHash`\), login, logout, `/me` e migração) Tj T*
+(segura | **APROVADO** |) Tj T*
+(| `src/routes/products.js` | Listagem pública, criação, atualização \(`PUT`\), remoção) Tj T*
+(\(`DELETE`\) e migração de produtos com validação estrita de números, imagens Base64 e bloqueio) Tj T*
+(de XSS | **APROVADO** |) Tj T*
+(| `src/routes/orders.js` | Criação de pedidos multicanal \(`WEB`, `APP`, `TOTEM`, `BALCAO`,) Tj T*
+(`PICKUP`\), recálculo obrigatório de preços no servidor, consolidação de itens repetidos,) Tj T*
+(verificação e baixa automática de estoque | **APROVADO** |) Tj T*
+(| `src/routes/unidades.js` | Listagem pública e cadastro protegido por sessão `admin` ou token) Tj T*
+(Bearer de 32+ bytes com comportamento fail-closed \(`HTTP 503`\) e validação de UF |) Tj T*
+(**APROVADO** |) Tj T*
+(| `src/routes/estoque.js` | Resumo de inventário, histórico auditado e registro de entradas,) Tj T*
+(saídas e ajustes de balanço restritos aos perfis `admin` e `loja` | **APROVADO** |) Tj T*
+(| `src/routes/financeiro.js` | CRUD e resumo de contas a pagar e a receber, validação real de) Tj T*
+(calendário ISO \(`isValidIsoDate`\), filtros combinados, baixa e reversão | **APROVADO** |) Tj T*
+(| `src/server.js` | Ponto de entrada HTTP do servidor Express com configuração de porta via) Tj T*
+(variável de ambiente `PORT` | **APROVADO** |) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 3. Catálogo Completo dos 32 Testes Automatizados de Backend) Tj T*
+() Tj T*
+(| ID | Suíte | Cenário de Backend Verificado | Resultado |) Tj T*
+(|---|---|---|---|) Tj T*
+(| **AP-01** | `src/app.test.js` | Cabeçalhos HTTP de segurança via Helmet \(CSP,) Tj T*
+(X-Frame-Options, X-Content-Type-Options\) | **APROVADO** |) Tj T*
+(| **AP-02** | `src/app.test.js` | Serviço estático de imagens de produtos da pasta) Tj T*
+(`src/imagens` com MIME `image/png` | **APROVADO** |) Tj T*
+(| **AP-03** | `src/app.test.js` | Cadastro \(`HTTP 201`\) e listagem \(`HTTP 200`\) de unidades) Tj T*
+(com token administrativo | **APROVADO** |) Tj T*
+(| **AP-04** | `src/app.test.js` | Bloqueio de cadastro de unidade com código duplicado \(`HTTP) Tj T*
+(409 Conflict`\) | **APROVADO** |) Tj T*
+(| **AP-05** | `src/app.test.js` | Rejeição de cadastro de unidade sem token ou com token) Tj T*
+(inválido \(`HTTP 401`\) | **APROVADO** |) Tj T*
+(| **AP-06** | `src/app.test.js` | Desativação fail-closed \(`HTTP 503`\) quando) Tj T*
+(`RAIZES_API_ADMIN_TOKEN` está ausente ou < 32 bytes | **APROVADO** |) Tj T*
+(| **AP-07** | `src/app.test.js` | Registro de cliente com hash bcrypt, login com cookie) Tj T*
+(`HttpOnly`, consulta `/me` e logout \(`HTTP 204`\) | **APROVADO** |) Tj T*
+(| **AP-08** | `src/app.test.js` | Prevenção de escalonamento de privilégio na migração de) Tj T*
+(contas legadas \(força papel `cliente`\) | **APROVADO** |) Tj T*
+(| **AP-09** | `src/app.test.js` | Rejeição de credenciais inválidas no login com `HTTP 401) Tj T*
+(Unauthorized` | **APROVADO** |) Tj T*
+(| **AP-10** | `src/app.test.js` | Rate limiting de login: bloqueio da 6ª tentativa em 15 min) Tj T*
+(por IP com `HTTP 429` e `Retry-After` | **APROVADO** |) Tj T*
+(| **AP-11** | `src/app.test.js` | Controle de acesso RBAC: visitante \(`401`\) e cliente \(`403`\)) Tj T*
+(impedidos de criar produtos | **APROVADO** |) Tj T*
+(| **AP-12** | `src/app.test.js` | Sanitização anti-XSS em produtos \(`<script>` rejeitado com) Tj T*
+(`HTTP 400`\) e migração por `admin` | **APROVADO** |) Tj T*
+(| **AP-13** | `src/app.test.js` | Criação de pedido descartando preço adulterado do cliente e) Tj T*
+(recalculando no servidor | **APROVADO** |) Tj T*
+(2/4) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 3999 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(| **AP-14** | `src/app.test.js` | Persistência de unidades no arquivo SQLite em disco após) Tj T*
+(fechar e reabrir conexão | **APROVADO** |) Tj T*
+(| **GE-01** | `src/gestao.test.js` | Bloqueio de visitante \(`401`\) e cliente \(`403`\) em todas) Tj T*
+(as rotas de `/api/estoque/*` | **APROVADO** |) Tj T*
+(| **GE-02** | `src/gestao.test.js` | Permissão para `loja` e `admin` consultarem resumo e) Tj T*
+(registrarem entradas e saídas de estoque | **APROVADO** |) Tj T*
+(| **GE-03** | `src/gestao.test.js` | Bloqueio de visitante \(`401`\) e cliente \(`403`\) em todas) Tj T*
+(as rotas de `/api/financeiro/*` | **APROVADO** |) Tj T*
+(| **GE-04** | `src/gestao.test.js` | Ciclo completo financeiro por `admin` e `loja`: criar) Tj T*
+(pagar/receber, resumo, dar baixa e excluir | **APROVADO** |) Tj T*
+(| **GE-05** | `src/gestao.test.js` | Autorização de cadastro de produtos no catálogo para o) Tj T*
+(perfil operacional de `loja` | **APROVADO** |) Tj T*
+(| **FA-01** | `src/faults.test.js` | Protocolo HTTP: JSON truncado \(`400`\), rota inexistente) Tj T*
+(\(`404`\), origem CORS externa \(`403`\) e cookie com `__proto__` | **APROVADO** |) Tj T*
+(| **FA-02** | `src/faults.test.js` | Sessão e LGPD: recusa de `lgpdConsent:false` \(`400`\), XSS) Tj T*
+(no nome, e-mail duplicado \(`409`\), HMAC adulterado e expiração | **APROVADO** |) Tj T*
+(| **FA-03** | `src/faults.test.js` | Validação de unidades: body em array, campos vazios, tags) Tj T*
+(HTML, código curto e UF com 3 letras | **APROVADO** |) Tj T*
+(| **FA-04** | `src/faults.test.js` | Coerção de tipos em produtos: rejeição de `null`, string) Tj T*
+(vazia e `boolean` em preço/estoque, URL externa e XSS em combos | **APROVADO** |) Tj T*
+(| **FA-05** | `src/faults.test.js` | Pedidos multicanal: validação dos 5 canais \(`WEB`, `APP`,) Tj T*
+(`TOTEM`, `BALCAO`, `PICKUP`\), idempotência de `legacyId` e bloqueio de excesso de estoque |) Tj T*
+(**APROVADO** |) Tj T*
+(| **FA-06** | `src/faults.test.js` | Estoque e Financeiro: proteção contra saldo negativo,) Tj T*
+(ajuste para zero e rejeição de datas falsas \(`2026-02-31`\) | **APROVADO** |) Tj T*
+(| **FA-07** | `src/faults.test.js` | Segurança avançada \(SQL Injection, Path Traversal,) Tj T*
+(Payload > 1MB -> `413`\), 40 reqs concorrentes, 10 entradas atômicas e `PRAGMA) Tj T*
+(integrity_check`/`foreign_key_check` | **APROVADO** |) Tj T*
+(| **BE-01** | `src/backend.test.js` | Operações diretas do repositório `src/db.js`:) Tj T*
+(`findUserById`, ciclo de sessões, `upsertProduct`, `updateProduct` e `deleteProduct` |) Tj T*
+(**APROVADO** |) Tj T*
+(| **BE-02** | `src/backend.test.js` | Validação criptográfica de `src/auth.js`:) Tj T*
+(`parseSignedSession` contra tokens corrompidos e verificação de cookie assinado | **APROVADO**) Tj T*
+(|) Tj T*
+(| **BE-03** | `src/backend.test.js` | CRUD completo de produtos via API \(`POST` com imagem) Tj T*
+(JPEG Base64, `PUT` de atualização e `DELETE` com verificação de remoção\) | **APROVADO** |) Tj T*
+(| **BE-04** | `src/backend.test.js` | Consolidação de itens repetidos no mesmo pedido, baixa) Tj T*
+(transacional automática no estoque, registro na trilha de auditoria e bloqueio quando o) Tj T*
+(estoque acaba | **APROVADO** |) Tj T*
+(| **BE-05** | `src/backend.test.js` | Filtros combinados em `/api/financeiro` \(`tipo`,) Tj T*
+(`status`, `search`\), contagem de títulos vencidos, precisão decimal e reversão de status) Tj T*
+(`pago` -> `pendente` | **APROVADO** |) Tj T*
+(| **BE-06** | `src/backend.test.js` | Proteção de contas demonstrativas na migração de) Tj T*
+(usuários e isolamento estrito de pedidos entre diferentes clientes autenticados | **APROVADO**) Tj T*
+(|) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 4. Aprimoramentos de Engenharia Aplicados no Backend) Tj T*
+() Tj T*
+(1. **Transações Atômicas ACID em Pedidos e Estoque \(`src/db.js`\):** Tanto o registro de) Tj T*
+(movimentações de estoque \(`registerStockMovement`\) quanto a criação de pedidos com baixa de) Tj T*
+(3/4) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 1263 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(estoque \(`createOrder`\) executam dentro de transações atômicas do SQLite) Tj T*
+(\(`sqlite.transaction`\), evitando condições de corrida e inconsistências entre saldo e) Tj T*
+(histórico.) Tj T*
+(2. **Consolidação de Itens e Baixa Automática de Estoque na Venda \(`src/routes/orders.js`\):**) Tj T*
+(Ao receber um pedido em `POST /api/orders`, o backend soma quantidades de linhas que) Tj T*
+(referenciam o mesmo produto, verifica se há saldo suficiente em estoque, desconta as unidades) Tj T*
+(vendidas e cria o registro correspondente em `estoque_movimentacoes`.) Tj T*
+(3. **Precisão Monetária nos Resumos Financeiro e de Estoque \(`src/db.js`\):** Os totalizadores) Tj T*
+(de `getFinanceiroSummary\(\)` e `getStockSummary\(\)` aplicam arredondamento monetário de duas) Tj T*
+(casas decimais \(`Math.round\(num * 100\) / 100`\), eliminando dízimas de ponto flutuante IEEE 754.) Tj T*
+(4. **Blindagem Contra Coerção de Tipos e Datas Inválidas:** Todas as rotas numéricas utilizam) Tj T*
+(`toStrictNumber\(\)` para impedir que `null`, `false` ou strings vazias sejam convertidos) Tj T*
+(silenciosamente em `0`, e o módulo financeiro valida datas reais do calendário gregoriano via) Tj T*
+(`isValidIsoDate\(\)`.) Tj T*
+(4/4) Tj
+ET
+endstream
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000140 00000 n 
+0000000237 00000 n 
+0000000363 00000 n 
+0000003697 00000 n 
+0000003823 00000 n 
+0000007692 00000 n 
+0000007818 00000 n 
+0000011869 00000 n 
+0000011997 00000 n 
+trailer
+<< /Size 12 /Root 1 0 R >>
+startxref
+13313
+%%EOF

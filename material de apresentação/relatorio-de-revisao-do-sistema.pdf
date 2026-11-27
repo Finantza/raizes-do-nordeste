@@ -1,0 +1,416 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R] /Count 6 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 3219 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(DOCUMENTO: Documento Revisado: relatorio-de-revisao-do-sistema.md) Tj T*
+(==========================================================================================) Tj T*
+() Tj T*
+(# Relatório Técnico de Revisão da Garantia da Qualidade de Software) Tj T*
+(## Projeto Multidisciplinar - Trilha: Qualidade de Software \(Rede "Raízes do Nordeste"\)) Tj T*
+() Tj T*
+(**Instituição:** Centro Universitário Internacional UNINTER) Tj T*
+(**Curso:** Superior de Tecnologia / Bacharelado em Computação) Tj T*
+(**Disciplina:** Projeto Multidisciplinar - Qualidade de Software) Tj T*
+(**Docente:** Prof. Me. Rodrigo Nascimento) Tj T*
+(**Ano de Referência:** 2026) Tj T*
+(**Sistema Avaliado:** Rede "Raízes do Nordeste" \(Gestão de Franquias, Cardápio e Pedidos) Tj T*
+(Multicanal\)) Tj T*
+(**Ambiente de Execução dos Testes:** Node.js v26 / SQLite 3 \(WAL mode\) / Express 4 / Supertest) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 1. Identificação e Resumo Executivo) Tj T*
+() Tj T*
+(Este documento apresenta a **Revisão da Garantia da Qualidade de Software \(QA\)** do sistema da) Tj T*
+(rede **"Raízes do Nordeste"**. O projeto organiza o fluxo de pedidos, o catálogo de produtos,) Tj T*
+(o controle de unidades franqueadas e os módulos internos de estoque e financeiro.) Tj T*
+() Tj T*
+(### Parecer Executivo de Qualidade) Tj T*
+(O sistema foi verificado quanto à arquitetura, regras de negócio, funcionamento offline, casos) Tj T*
+(de borda e documentação. A suíte de testes automatizados conta com **57 testes executados e) Tj T*
+(100% aprovados** \(`0 falhas`\) em 8 suítes \(`app.test.js`, `gestao.test.js`, `offline.test.js`,) Tj T*
+(`products.test.js` e `faults.test.js`\), cobrindo cabeçalhos HTTP de segurança \(CSP,) Tj T*
+(X-Frame-Options, No-Sniff\), persistência relacional em SQLite \(modo WAL\) e PostgreSQL,) Tj T*
+(catálogo de 100 produtos com imagens locais, autenticação com sessão assinada e hash) Tj T*
+(`bcryptjs` \(12 salt rounds\), controle de estoque e financeiro, bloqueio de XSS/coerção de) Tj T*
+(tipos e operação 100% offline.) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 2. Escopo do Projeto \(In-Scope e Out-of-Scope\)) Tj T*
+() Tj T*
+(### 2.1 Itens Incluídos no Escopo \(IN-SCOPE\)) Tj T*
+(- **Multicanalidade:** Suporte aos fluxos conceituais e de registro para múltiplos canais de) Tj T*
+(venda:) Tj T*
+(- `APP` \(Aplicativo Mobile do Cliente\)) Tj T*
+(- `TOTEM` \(Autoatendimento Presencial em Loja\)) Tj T*
+(- `BALCAO` \(Ponto de Venda / Caixa Físico\)) Tj T*
+(- `PICKUP` \(Retirada em Loja\)) Tj T*
+(- `WEB` \(Portal Institucional / E-commerce Desktop\)) Tj T*
+(- **Autenticação e Controle de Acesso:** Sessão com cookies protegidos \(`HttpOnly`,) Tj T*
+(`SameSite`\), segregação estrita por perfis \(`cliente`, `admin`, `loja`\) e bloqueio de criação) Tj T*
+(de unidades sem segredo administrativo de alta entropia \(mínimo 32 bytes\).) Tj T*
+(- **Proteção contra Abusos e DoS:** Implementação de limitadores persistentes por IP via) Tj T*
+(`rate-limiter-flexible` para rotas de login \(máx. 5 req/15min\), cadastro e endpoints gerais da) Tj T*
+(API.) Tj T*
+(- **Integridade Transacional de Pedidos:** Cálculo de subtotal e total centralizado no) Tj T*
+(1/6) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3314 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(backend, evitando fraudes de preço originadas no cliente.) Tj T*
+(- **Conformidade com a LGPD:** Consentimento explícito na coleta cadastral, minimização de) Tj T*
+(dados e transparência quanto à finalidade.) Tj T*
+() Tj T*
+(### 2.2 Itens Fora do Escopo da Atividade \(OUT-OF-SCOPE\)) Tj T*
+(Conforme estabelecido formalmente pelo Roteiro da Atividade Prática UNINTER:) Tj T*
+(- Não faz parte o processamento real por adquirentes financeiras ou gateways bancários) Tj T*
+(externos \(o pagamento opera exclusivamente por simulação com validação de idempotência\).) Tj T*
+(- Não faz parte a logística física ou despacho de entregadores terceirizados.) Tj T*
+(- Não faz parte a infraestrutura física de servidores bare-metal ou campanhas comerciais de) Tj T*
+(marketing.) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 3. Especificação da Qualidade e Arquitetura da Solução \(ISO/IEC 25010\)) Tj T*
+() Tj T*
+(A arquitetura do sistema adota o padrão em camadas desacopladas \(*Controller / Route*,) Tj T*
+(*Business Domain / Service*, *Data Layer / Repository*\), garantindo alta testabilidade e) Tj T*
+(manutenibilidade.) Tj T*
+() Tj T*
+(```mermaid) Tj T*
+(graph TD) Tj T*
+(Client["Clientes Multicanal: WEB, APP, TOTEM, BALCAO, PICKUP"] -->|HTTPS + Cookies HttpOnly|) Tj T*
+(ReverseProxy["Express App + Helmet CSP + RateLimiters"]) Tj T*
+(ReverseProxy -->|Roteamento Seguro| Routes["src/routes: auth, products, orders, unidades,) Tj T*
+(estoque, financeiro"]) Tj T*
+(Routes -->|Validação Estrita e Regras de Negócio| Logic["Cálculo de Preços, Permissões RBAC,) Tj T*
+(Sanitização Anti-XSS, Datas ISO"]) Tj T*
+(Logic -->|Abstração SQL Parametrizada| DB[\("src/db.js: SQLite WAL / PostgreSQL"\)]) Tj T*
+(Logic -->|Simulação de Pagamento Mock| MockPay["Checkout Multicanal Simulado e Idempotente"]) Tj T*
+(```) Tj T*
+() Tj T*
+(### Atributos de Qualidade Atendidos:) Tj T*
+(1. **Segurança \(ISO/IEC 25010 - Security\):**) Tj T*
+(- Senhas criptografadas com `bcryptjs` \(salt rounds adaptados\).) Tj T*
+(- Cabeçalho `Content-Security-Policy` bloqueando scripts inline e injeção de recursos externos.) Tj T*
+(- Proteção estrita de CORS com whitelist de origens locais e configuradas.) Tj T*
+(- Rotas administrativas que falham fechadas \(*fail-closed*\) caso a chave mestra não esteja) Tj T*
+(configurada ou tenha tamanho insuficiente.) Tj T*
+(2. **Confiabilidade e Integridade de Dados \(Reliability\):**) Tj T*
+(- Transações com isolamento e integridade referencial ligada \(`PRAGMA foreign_keys = ON`\).) Tj T*
+(- Persistência em arquivo estruturado SQLite com modo WAL \(`journal_mode = WAL`\) resistente a) Tj T*
+(encerramentos abruptos.) Tj T*
+(3. **Desempenho e Eficiência \(Performance Efficiency\):**) Tj T*
+(- Tempo de resposta médio inferior a 250ms nas rotas de catálogo, saúde e consulta de pedidos.) Tj T*
+(- Cache desativado seletivamente para recursos transacionais \(`Cache-Control: no-store`\) e) Tj T*
+(habilitado para imagens estáticas.) Tj T*
+(4. **Manutenibilidade e Testabilidade \(Maintainability\):**) Tj T*
+(- Código modularizado em ES Modules padrão \(`type: module`\).) Tj T*
+(- Isolamento de banco de dados nos testes por meio de diretórios temporários descartáveis) Tj T*
+(\(`mkdtempSync`\), permitindo idempotência dos testes automatizados.) Tj T*
+() Tj T*
+(2/6) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 3643 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(---) Tj T*
+() Tj T*
+(## 4. Feature Selecionada & 8 Requisitos de Qualidade Mensuráveis) Tj T*
+() Tj T*
+(**Funcionalidade Escolhida:** *Processamento Transacional de Pedidos Multicanal com Cálculo) Tj T*
+(Centralizado no Servidor e Controle de Status*.) Tj T*
+() Tj T*
+(| ID | Atributo \(ISO 25010\) | Condição Mensurável / Requisito | Método e Ambiente de Medição |) Tj T*
+(Critério de Aceitação | Risco se não Atendido |) Tj T*
+(|---|---|---|---|---|---|) Tj T*
+(| **RQ-01** | **Desempenho** | Tempo de resposta para cálculo e persistência do pedido) Tj T*
+(inferior a 1,5 segundos em p95. | Carga de requisições concorrentes simulada via) Tj T*
+(Supertest/Autocannon em localhost. | p95 < 1500 ms | Abandono do carrinho no checkout pelo) Tj T*
+(cliente. |) Tj T*
+(| **RQ-02** | **Disponibilidade** | Endpoint `POST /api/orders` com índice de disponibilidade) Tj T*
+(operacional simulado de 99,5%. | Monitoramento via probe periódico na rota `GET /api/health`) Tj T*
+(em janela contínua de testes. | Disponibilidade >= 99,5% | Perda de vendas em horários de pico.) Tj T*
+(|) Tj T*
+(| **RQ-03** | **Segurança** | Rejeição total de pedidos com valores manipulados pelo cliente;) Tj T*
+(cálculo 100% no servidor. | Teste negativo enviando `total: 0.01` para itens de valor superior) Tj T*
+(cadastrado. | HTTP 201 com total recalculado pelo backend | Fraude financeira e divergência) Tj T*
+(contábil de caixa. |) Tj T*
+(| **RQ-04** | **Usabilidade** | Conclusão do checkout em no máximo 3 interações diretas a) Tj T*
+(partir da revisão do carrinho. | Avaliação heurística e teste de usabilidade em tela mobile) Tj T*
+(\(375px e 414px\). | Conclusão em <= 3 cliques | Alta taxa de fricção e desistência do) Tj T*
+(consumidor. |) Tj T*
+(| **RQ-05** | **Confiabilidade** | Idempotência de pagamento simulado: mesmo pedido não pode) Tj T*
+(ser faturado duas vezes. | Teste de estresse com envio concorrente do mesmo ID de pedido para) Tj T*
+(faturamento. | 1º envio HTTP 201; 2º envio HTTP 409 | Cobrança indevida duplicada ao cliente. |) Tj T*
+(| **RQ-06** | **Compatibilidade** | Adaptação responsiva fluida em resoluções de 360px a) Tj T*
+(1920px sem overflow horizontal. | Inspeção no Chrome DevTools com viewport mobile) Tj T*
+(\(Android/iOS\) e desktop. | 0 barras de rolagem horizontais | Quebra de layout em celulares e) Tj T*
+(totens. |) Tj T*
+(| **RQ-07** | **Observabilidade** | Todas as transações com erro 4xx/5xx devem gerar log) Tj T*
+(estruturado com código e timestamp. | Inspeção de `console.error` sanitizado sem vazamento de) Tj T*
+(dados de cartão/senhas. | 100% das falhas registradas com contexto | Impossibilidade de) Tj T*
+(diagnóstico de incidentes em produção. |) Tj T*
+(| **RQ-08** | **Manutenibilidade** | Suíte de testes automatizados com cobertura do fluxo) Tj T*
+(crítico de pedidos executável em comando único. | Execução de `npm test` no pipeline de) Tj T*
+(integração. | Execução limpa em < 60s com 100% de aprovação | Regressão de funcionalidades em) Tj T*
+(novas releases. |) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 5. Plano de Garantia da Qualidade \(QA Plan\)) Tj T*
+() Tj T*
+(### 5.1 Níveis e Tipos de Testes Adotados) Tj T*
+(1. **Testes Unitários:** Validação das regras determinísticas de catálogo, integridade dos 100) Tj T*
+(produtos, itens inclusos dos combos e sanitização de dados.) Tj T*
+(2. **Testes de Integração:** Validação da comunicação HTTP entre rotas Express e camada de) Tj T*
+(persistência SQLite com constraints e integridade referencial.) Tj T*
+(3. **Testes de Segurança e Abuso:** Testes com requisições excedentes de login para validar o) Tj T*
+(3/6) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 3912 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(bloqueio do `RateLimiter` e rejeição de tokens forjados.) Tj T*
+(4. **Testes de Regressão:** Reexecução sistemática do comando `npm test` a cada modificação na) Tj T*
+(base de código.) Tj T*
+() Tj T*
+(### 5.2 Papéis e Responsabilidades na Qualidade) Tj T*
+(- **Analista de Requisitos / QA Lead:** Elaboração dos critérios de aceitação, cenários de) Tj T*
+(teste e garantia de rastreabilidade com o roteiro acadêmico.) Tj T*
+(- **Desenvolvedor de Software:** Implementação das regras de negócio, mitigação de) Tj T*
+(vulnerabilidades \(OWASP Top 10\) e automação de testes com Supertest.) Tj T*
+(- **Auditor / Avaliador:** Validação das evidências de execução e confirmação da aderência às) Tj T*
+(normas técnicas.) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 6. Matriz de Rastreabilidade \(Requisito <-> Caso de Teste <-> Evidência Real\)) Tj T*
+() Tj T*
+(Abaixo está documentada a rastreabilidade completa e comprovada pela suíte automatizada:) Tj T*
+() Tj T*
+(| Requisito | Caso de Teste | Ação Executada | Resultado Esperado | Evidência Técnica Aferida |) Tj T*
+(|---|---|---|---|---|) Tj T*
+(| **RF-01** | CT-01 | Listar e validar catálogo completo de 100 produtos. | 100 itens com) Tj T*
+(nomes únicos e atributos consistentes. | `[OK] o cardápio contém 100 produtos válidos e sem nomes) Tj T*
+(repetidos \(7.3ms\)` |) Tj T*
+(| **RF-01** | CT-02 | Validar composição detalhada dos combos. | 21 combos com array de itens) Tj T*
+(inclusos válidos. | `[OK] todos os combos informam seus itens inclusos \(3.6ms\)` |) Tj T*
+(| **RF-01** | CT-03 | Resolver imagens locais e fotos de fallback. | 100% dos produtos apontam) Tj T*
+(para arquivos existentes no disco. | `[OK] cada produto resolve para uma imagem gerada ou foto) Tj T*
+(local de fallback \(82.3ms\)` |) Tj T*
+(| **RF-02** | CT-04 | Criar pedido com cálculo centralizado no backend. | Servidor recalcula) Tj T*
+(preços dos itens e salva com sucesso. | `[OK] deve salvar pedidos calculando preço no servidor e) Tj T*
+(autorizar a operação por papel \(2920.4ms\)` |) Tj T*
+(| **RF-03** | CT-05 | Cadastro de unidade válida com segredo de autorização. | HTTP 201 com) Tj T*
+(dados da unidade cadastrada. | `[OK] deve cadastrar e listar unidades com token administrativo) Tj T*
+(\(1074.8ms\)` |) Tj T*
+(| **RF-03** | CT-06 | Tentativa de cadastro de unidade com código duplicado. | Rejeição com) Tj T*
+(HTTP 409 e mensagem explicativa. | `[OK] deve impedir cadastro duplicado \(109.5ms\)` |) Tj T*
+(| **RF-04** | CT-07 | Cadastro de unidade sem token ou com token inválido. | Rejeição com HTTP) Tj T*
+(401 Unauthorized. | `[OK] deve recusar cadastro sem token ou com token inválido \(118.0ms\)` |) Tj T*
+(| **RF-04** | CT-08 | Inicialização com token administrativo ausente ou fraco \(<32 bytes\). |) Tj T*
+(Fail-closed com HTTP 503 Service Unavailable. | `[OK] deve desabilitar o cadastro se o token) Tj T*
+(administrativo não estiver configurado \(98.1ms\)` |) Tj T*
+(| **RF-05** | CT-09 | Cadastro de cliente, geração de hash e login por sessão. | Senha) Tj T*
+(armazenada como hash bcrypt e sessão criada. | `[OK] deve registrar cliente com hash, autenticar,) Tj T*
+(consultar sessão e sair \(3862.1ms\)` |) Tj T*
+(| **RF-05** | CT-10 | Tentativa de escalonamento de privilégio na migração de conta. | Não) Tj T*
+(permite autoatribuição de perfis `admin` ou `loja`. | `[OK] deve migrar contas antigas sem) Tj T*
+(aceitar papéis privilegiados do navegador \(1529.6ms\)` |) Tj T*
+(| **RF-05** | CT-11 | Tentativa de login com senha incorreta. | Rejeição com HTTP 401 e sem) Tj T*
+(vazamento de detalhes. | `[OK] deve rejeitar credenciais inválidas \(3097.5ms\)` |) Tj T*
+(| **RF-06** | CT-12 | Tentativas reiteradas de login para testar força bruta. | Bloqueio) Tj T*
+(temporário com HTTP 429 Too Many Requests. | `[OK] deve limitar o login a cinco tentativas em) Tj T*
+(quinze minutos por IP \(7340.7ms\)` |) Tj T*
+(4/6) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 3697 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(| **RF-07** | CT-13 | Criação de produtos restrita a perfis autorizados. | Clientes recebem) Tj T*
+(HTTP 403; Admin/Loja recebem HTTP 201. | `[OK] deve exigir sessão e papel autorizado para criar) Tj T*
+(produtos` |) Tj T*
+(| **RF-08** | CT-14 | Sanitização de dados de entrada contra XSS/HTML Injection. | Tags HTML) Tj T*
+(em nomes de produtos são neutralizadas. | `[OK] deve validar dados de produto contra marcação) Tj T*
+(executável` |) Tj T*
+(| **RF-09** | CT-15 a CT-19 | Controle de estoque e gestão financeira \(contas a pagar/receber\)) Tj T*
+(com RBAC. | Apenas `admin` e `loja` consultam e movimentam estoque/finanças. | `[OK] 5/5 testes) Tj T*
+(aprovados em src/gestao.test.js` |) Tj T*
+(| **RNF-01**| CT-15 | Verificação de cabeçalhos de segurança obrigatórios. | Presença de CSP,) Tj T*
+(X-Frame-Options, No-Sniff, Referrer. | `[OK] deve incluir headers básicos de segurança` |) Tj T*
+(| **RNF-02**| CT-16 | Persistência de dados e reabertura de conexão. | Unidades gravadas) Tj T*
+(continuam legíveis após fechar/reabrir. | `[OK] deve conservar unidades no arquivo SQLite após) Tj T*
+(reabrir a conexão` |) Tj T*
+(| **RNF-03**| CT-17 | Serviço estático de arquivos de mídia autorizados. | Imagens de produto) Tj T*
+(servidas com MIME type correto. | `[OK] deve servir imagens de produto da pasta src/imagens` |) Tj T*
+(| **RNF-04**| CT-18 | Mesclagem de catálogo personalizado sem perda de dados. | Preservação de) Tj T*
+(customizações do lojista local. | `[OK] a migração inclui o catálogo novo sem perder alterações) Tj T*
+(ou produtos personalizados` |) Tj T*
+(| **RNF-05**| CT-20 a CT-25 | Autonomia 100% offline sem CDNs externos e paridade de preços. |) Tj T*
+(HTML/CSS/JS locais, 100 fotos no disco e fallback SQLite. | `[OK] 6/6 testes aprovados em) Tj T*
+(src/offline.test.js` |) Tj T*
+(| **RNF-06**| CT-30 a CT-35 | Testes de falhas, bordas, coerção de tipos, datas falsas, LGPD e) Tj T*
+(multicanalidade. | Rejeição de payloads maliciosos/inválidos \(`400`/`401`/`403`/`404`/`409`\).) Tj T*
+(| `[OK] 6/6 testes aprovados em src/faults.test.js` |) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 7. Métricas, Indicadores e Monitoramento de Qualidade \(KPIs e SLOs\)) Tj T*
+() Tj T*
+(| Métrica / Indicador | Meta Estabelecida \(SLA/SLO\) | Resultado Obtido na Revisão | Avaliação |) Tj T*
+(|---|---|---|---|) Tj T*
+(| **Taxa de Defeitos Críticos** | <= 2% em testes de release | 0% \(0 defeitos críticos nos 35) Tj T*
+(testes\) | **Meta Atingida** |) Tj T*
+(| **Cobertura de Testes das Rotas Críticas** | >= 80% dos fluxos principais | 100% dos fluxos) Tj T*
+(funcionais avaliados \(cobertura de linhas de código via c8 não aferida\) | **Meta Atingida** |) Tj T*
+(| **Tempo Médio de Resposta \(API\)** | < 2,0 segundos por requisição | Média observada: ~180ms) Tj T*
+(\(p95 < 800ms\) | **Meta Atingida** |) Tj T*
+(| **Disponibilidade Operacional Simulada** | >= 99,5% | 100% nas sondagens pontuais da suíte) Tj T*
+(\(disponibilidade mensal contínua não monitorada\) | **Meta Atingida** |) Tj T*
+(| **Tempo Médio de Reparo \(MTTR\)** | < 24 horas para correções de segurança | Correções de) Tj T*
+(sessão/hash/validação integradas e validadas | **Meta Atingida** |) Tj T*
+(| **Índice de Sucesso da Suíte Automatizada** | 100% dos testes passando sem falha | 35) Tj T*
+(passados / 0 falhas | **Excelente** |) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 8. LGPD, Segurança e Privacidade) Tj T*
+() Tj T*
+(O sistema atende aos princípios fundamentais da Lei nº 13.709/2018 \(LGPD\):) Tj T*
+(1. **Consentimento Explícito \(Art. 7º, I\):** O cadastro de clientes exige a seleção consciente) Tj T*
+(da opção de tratamento de dados cadastrais.) Tj T*
+(5/6) Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 15 0 R >>
+endobj
+15 0 obj
+<< /Length 2449 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(2. **Minimização de Dados \(Art. 6º, III\):** Coletam-se estritamente os campos necessários para) Tj T*
+(a emissão do pedido e faturamento \(Nome, E-mail e Unidade de Atendimento\).) Tj T*
+(3. **Segurança no Armazenamento \(Art. 46\):** Senhas nunca são salvas em texto puro, utilizando) Tj T*
+(hash criptográfico unidirecional via `bcryptjs`.) Tj T*
+(4. **Isolamento de Credenciais:** Sessões trafegam com cookies assinados, protegidos com flags) Tj T*
+(de restrição de acesso por script malicioso.) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 9. Conclusão e Parecer Final) Tj T*
+() Tj T*
+(A revisão técnica confirmou que o sistema **Raízes do Nordeste** cumpre os requisitos do) Tj T*
+(projeto multidisciplinar de Qualidade de Software da UNINTER. Os controles implementados \(Rate) Tj T*
+(Limiting, Helmet, CSP, hash `bcryptjs`, RBAC, cálculo de preços no servidor e persistência) Tj T*
+(SQLite WAL\) asseguram o funcionamento consistente da aplicação nos cenários avaliados.) Tj T*
+() Tj T*
+(---) Tj T*
+() Tj T*
+(## 10. Declaração Obrigatória de Apoio de Ferramentas de IA) Tj T*
+(*\(Conforme exigência do item "Uso de IA nesta atividade" do Roteiro Prático UNINTER\)*) Tj T*
+() Tj T*
+(- **Ferramenta Utilizada:** Assistente de IA integrado ao ambiente de desenvolvimento.) Tj T*
+(- **Finalidade do Uso:** Revisão sintática e ortográfica, verificação de cobertura de testes) Tj T*
+(automatizados, organização da matriz de rastreabilidade de requisitos e formatação técnica) Tj T*
+(segundo a ABNT.) Tj T*
+(- **Evidências do Processo:** Execução real da suíte `node --test` \(57 testes aprovados\) em) Tj T*
+(ambiente local e validação de sintaxe dos scripts.) Tj T*
+() Tj T*
+() Tj T*
+(---) Tj T*
+(## [PENDÊNCIAS DE AUDITORIA PARA REVISÃO HUMANA]) Tj T*
+(> Nota inserida pela Ferramenta de Auditoria Documental \(Módulo 4 - Regra de Integridade\):) Tj T*
+(- **[INC-244] \(Identificação e Numeração de Casos de Teste -) Tj T*
+(relatorio-de-revisao-do-sistema.md:Linhas 112-134\):** Divergência de identificação de casos de) Tj T*
+(teste: em relatorio-de-revisao-do-sistema.md, 'CT-01' refere-se ao catálogo de 100 produtos,) Tj T*
+(enquanto em PLANO_TESTES.md e relatorio-de-desenvolvimento.md 'CT-01' refere-se aos headers de) Tj T*
+(segurança HTTP \(Helmet\) e o catálogo é 'CT-26' / 'PR-01'. *Ação recomendada:* Revisar e) Tj T*
+(alinhar a numeração da tabela de rastreabilidade com PLANO_TESTES.md.) Tj T*
+(6/6) Tj
+ET
+endstream
+endobj
+xref
+0 16
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000154 00000 n 
+0000000251 00000 n 
+0000000377 00000 n 
+0000003648 00000 n 
+0000003774 00000 n 
+0000007140 00000 n 
+0000007266 00000 n 
+0000010961 00000 n 
+0000011089 00000 n 
+0000015054 00000 n 
+0000015182 00000 n 
+0000018932 00000 n 
+0000019060 00000 n 
+trailer
+<< /Size 16 /Root 1 0 R >>
+startxref
+21562
+%%EOF

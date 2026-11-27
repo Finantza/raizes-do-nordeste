@@ -1,0 +1,342 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R] /Count 5 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 3036 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(DOCUMENTO: Documento Revisado: guia-passo-a-passo-melhorias-qualidade.md) Tj T*
+(==========================================================================================) Tj T*
+() Tj T*
+(# Guia passo a passo: aplicar melhorias de qualidade) Tj T*
+() Tj T*
+(## Finalidade deste guia) Tj T*
+() Tj T*
+(Este material é um roteiro de estudo e execução para ajudar você a analisar e melhorar o) Tj T*
+(sistema. **Não é um relatório acadêmico pronto nem substitui suas decisões, implementação,) Tj T*
+(testes ou análise.** Preencha os campos com o que você observar e fizer.) Tj T*
+() Tj T*
+(O roteiro da atividade restringe o uso de IA para produzir a solução, o código final e) Tj T*
+(respostas prontas. Se utilizar este guia, declare o uso da ferramenta conforme as instruções) Tj T*
+(do professor. Não apresente conteúdo sugerido por IA como se fosse uma análise ou evidência) Tj T*
+(produzida por você.) Tj T*
+() Tj T*
+(## Etapa 1 - Entenda o problema e o sistema atual) Tj T*
+() Tj T*
+(1. Leia o roteiro da atividade por inteiro e destaque os itens obrigatórios.) Tj T*
+(2. Inicie a aplicação seguindo as instruções do `README.md`.) Tj T*
+(3. Percorra cada perfil e observe o comportamento real, sem presumir que uma função existe) Tj T*
+(porque aparece na interface.) Tj T*
+(4. Consulte o código relacionado à função que está analisando e anote o que ele faz.) Tj T*
+(5. Diferencie os fatos observados das hipóteses.) Tj T*
+() Tj T*
+(**Anotações próprias**) Tj T*
+() Tj T*
+(- Funcionalidade analisada: __________________________________________) Tj T*
+(- Perfil ou usuário envolvido: ________________________________________) Tj T*
+(- Comportamento observado: ___________________________________________) Tj T*
+(- Evidência coletada \(tela, arquivo, teste ou resposta\): _______________) Tj T*
+(- Dúvidas a investigar: _______________________________________________) Tj T*
+() Tj T*
+(## Etapa 2 - Escolha uma funcionalidade e delimite o escopo) Tj T*
+() Tj T*
+(1. Escolha uma funcionalidade que possa ser analisada e testada no projeto.) Tj T*
+(2. Descreva onde ela começa e termina: dados de entrada, etapas, resultado e possíveis falhas.) Tj T*
+(3. Identifique os perfis, canais e unidades que podem participar do fluxo.) Tj T*
+(4. Separe o que será tratado nesta atividade do que não será implementado, como integrações) Tj T*
+(reais que o protótipo não possui.) Tj T*
+(5. Confirme com o professor se a funcionalidade escolhida atende à proposta da atividade.) Tj T*
+() Tj T*
+(**Delimitação**) Tj T*
+() Tj T*
+(- Funcionalidade: ____________________________________________________) Tj T*
+(- Incluído no trabalho: ______________________________________________) Tj T*
+(- Fora do escopo: ____________________________________________________) Tj T*
+(- Perfis, canais ou unidades considerados: ___________________________) Tj T*
+(- Justificativa da escolha, escrita por você: _________________________) Tj T*
+() Tj T*
+(## Etapa 3 - Levante requisitos funcionais e de qualidade) Tj T*
+() Tj T*
+(1/5) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3300 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(1. Registre o que o usuário precisa conseguir fazer como requisito funcional.) Tj T*
+(2. Para cada necessidade, escreva uma condição que possa ser verificada objetivamente.) Tj T*
+(3. Para a funcionalidade escolhida, elabore os oito requisitos de qualidade mensuráveis) Tj T*
+(exigidos no roteiro.) Tj T*
+(4. Considere atributos pertinentes, como desempenho, disponibilidade, segurança, usabilidade,) Tj T*
+(confiabilidade, compatibilidade, observabilidade e manutenibilidade.) Tj T*
+(5. Defina para cada requisito como será medido, em qual ambiente e qual resultado será) Tj T*
+(considerado aceitável.) Tj T*
+(6. Revise os requisitos para remover termos vagos, como "rápido", "seguro" ou "fácil", sem uma) Tj T*
+(medida ou critério associado.) Tj T*
+() Tj T*
+(**Ficha para cada requisito**) Tj T*
+() Tj T*
+(- Identificador: __________) Tj T*
+(- Necessidade atendida: _______________________________________________) Tj T*
+(- Condição mensurável definida por mim: _______________________________) Tj T*
+(- Método de medição: __________________________________________________) Tj T*
+(- Critério de aceitação: ______________________________________________) Tj T*
+(- Risco se não for atendido: _________________________________________) Tj T*
+() Tj T*
+(Duplique a ficha até documentar os requisitos necessários. Não use metas sem justificar como) Tj T*
+(elas serão medidas.) Tj T*
+() Tj T*
+(## Etapa 4 - Planeje a qualidade antes de alterar o sistema) Tj T*
+() Tj T*
+(1. Defina como mudanças serão revisadas antes de serem consideradas prontas.) Tj T*
+(2. Identifique quem será responsável por implementar, revisar, testar e aprovar cada mudança.) Tj T*
+(Em um projeto individual, registre as responsabilidades que você acumulou.) Tj T*
+(3. Monte um cronograma realista de análise, implementação, testes, correções e revisão.) Tj T*
+(4. Estabeleça critérios para bloquear uma entrega, por exemplo, falha crítica ou requisito) Tj T*
+(obrigatório não verificado.) Tj T*
+(5. Mantenha um registro de riscos, decisões e defeitos encontrados.) Tj T*
+() Tj T*
+(**Planejamento**) Tj T*
+() Tj T*
+(- Responsável pela implementação: ____________________________________) Tj T*
+(- Responsável pela revisão: __________________________________________) Tj T*
+(- Responsável pela validação de negócio: ______________________________) Tj T*
+(- Datas ou etapas do cronograma: ______________________________________) Tj T*
+(- Critérios para impedir a aprovação: __________________________________) Tj T*
+(- Principais riscos identificados: ____________________________________) Tj T*
+() Tj T*
+(## Etapa 5 - Desenhe os testes e a rastreabilidade) Tj T*
+() Tj T*
+(1. Escreva os casos de teste antes de executar as mudanças.) Tj T*
+(2. Inclua pelo menos dez cenários de sistema, positivos e negativos, como exige o roteiro. Os) Tj T*
+(cenários devem vir dos requisitos e das regras que você observou.) Tj T*
+(3. Para cada cenário, registre pré-condições, entradas, passos, resultado esperado e mensagens) Tj T*
+(de erro esperadas.) Tj T*
+(4. Planeje testes unitários, de integração, de sistema, regressão e aceitação.) Tj T*
+(5. Planeje também usabilidade, responsividade móvel, segurança e desempenho; indique quando) Tj T*
+(algum teste não puder ser executado e por quê.) Tj T*
+(2/5) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 2813 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(6. Associe cada requisito a um ou mais testes e a uma evidência identificável.) Tj T*
+() Tj T*
+(**Modelo de caso de teste em branco**) Tj T*
+() Tj T*
+(| Campo | Preenchimento próprio |) Tj T*
+(|---|---|) Tj T*
+(| ID e requisito relacionado | |) Tj T*
+(| Objetivo | |) Tj T*
+(| Pré-condições | |) Tj T*
+(| Entrada e passos | |) Tj T*
+(| Resultado esperado, incluindo erro ou mensagem | |) Tj T*
+(| Resultado observado | |) Tj T*
+(| Estado \(aprovado, reprovado, bloqueado, não executado\) | |) Tj T*
+(| Evidência e localização | |) Tj T*
+() Tj T*
+(**Rastreabilidade**) Tj T*
+() Tj T*
+(| Requisito | Caso\(s\) de teste | Evidência produzida | Estado |) Tj T*
+(|---|---|---|---|) Tj T*
+(| | | | |) Tj T*
+() Tj T*
+(Acrescente linhas até cobrir todos os requisitos. Não marque um teste como aprovado antes de) Tj T*
+(executá-lo.) Tj T*
+() Tj T*
+(## Etapa 6 - Implemente em mudanças pequenas e verificáveis) Tj T*
+() Tj T*
+(1. Leia o código e identifique o ponto responsável por cada etapa do fluxo.) Tj T*
+(2. Descreva a mudança que você pretende fazer e o comportamento que não deve regredir.) Tj T*
+(3. Implemente uma mudança por vez, seguindo os padrões existentes no projeto.) Tj T*
+(4. Evite tratar dados do navegador como se fossem uma validação confiável do servidor.) Tj T*
+(5. Para integrações que não existem, mantenha a simulação identificada como simulação; não) Tj T*
+(represente um pagamento, uma autorização ou uma persistência como reais.) Tj T*
+(6. Após cada mudança, execute os testes pertinentes e registre o resultado.) Tj T*
+(7. Se um teste falhar, investigue a causa antes de alterar outras partes.) Tj T*
+() Tj T*
+(**Registro da mudança**) Tj T*
+() Tj T*
+(- Problema que observei: ______________________________________________) Tj T*
+(- Arquivo ou componente que investiguei: ______________________________) Tj T*
+(- Alteração que decidi realizar: ______________________________________) Tj T*
+(- Comportamento existente a preservar: ________________________________) Tj T*
+(- Testes executados depois da mudança: ________________________________) Tj T*
+() Tj T*
+(## Etapa 7 - Trate dados pessoais e privacidade com cuidado) Tj T*
+() Tj T*
+(1. Faça um inventário dos dados solicitados, armazenados, exibidos e compartilhados.) Tj T*
+(2. Pergunte se cada dado é realmente necessário para a finalidade demonstrativa.) Tj T*
+(3. Explique ao usuário, em linguagem clara, a finalidade e o armazenamento que de fato existem.) Tj T*
+(4. Avalie como o usuário pode evitar fornecer dados ou remover dados demonstrativos, sem criar) Tj T*
+(controles que não funcionem.) Tj T*
+(5. Teste os fluxos de aceitação, recusa, cancelamento e remoção, quando aplicável.) Tj T*
+(6. Não inclua senhas, dados reais de clientes ou informações sensíveis nas evidências.) Tj T*
+(3/5) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 2754 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(7. Valide interpretações e obrigações legais com o professor ou pessoa qualificada. Este guia) Tj T*
+(não é aconselhamento jurídico nem certificação de conformidade com a LGPD.) Tj T*
+() Tj T*
+(**Inventário próprio**) Tj T*
+() Tj T*
+(| Dado observado | Finalidade real no protótipo | Onde fica armazenado | É necessário? | Ação) Tj T*
+(decidida |) Tj T*
+(|---|---|---|---|---|) Tj T*
+(| | | | | |) Tj T*
+() Tj T*
+(## Etapa 8 - Execute os testes e preserve evidências) Tj T*
+() Tj T*
+(1. Anote a versão do código, data, ambiente e navegador usados.) Tj T*
+(2. Preserve os dados locais antes de executar testes que possam redefini-los.) Tj T*
+(3. Execute primeiro os testes unitários e de integração; depois os de sistema e regressão.) Tj T*
+(4. Execute manualmente os cenários de aceitação e usabilidade com os perfis e dispositivos) Tj T*
+(previstos.) Tj T*
+(5. Registre tempos, respostas, erros e limitações do ambiente.) Tj T*
+(6. Guarde evidências sem expor credenciais ou dados pessoais.) Tj T*
+(7. Ao fim, restaure os dados que deveriam ser preservados e confirme que a aplicação continua) Tj T*
+(inicializando.) Tj T*
+() Tj T*
+(**Registro de execução**) Tj T*
+() Tj T*
+(- Data e hora: ___________________) Tj T*
+(- Versão ou estado do código: ___________________) Tj T*
+(- Ambiente e navegador: _________________________) Tj T*
+(- Testes executados e totais: ____________________) Tj T*
+(- Falhas encontradas: ___________________________) Tj T*
+(- Evidências e localização: ______________________) Tj T*
+(- Dados preservados/restaurados: _________________) Tj T*
+() Tj T*
+(## Etapa 9 - Meça indicadores sem inventar resultados) Tj T*
+() Tj T*
+(1. Para cada métrica obrigatória do roteiro, defina a fórmula, fonte dos dados, frequência de) Tj T*
+(coleta, meta e responsável.) Tj T*
+(2. Meça cobertura com uma ferramenta ou método declarado; não estime cobertura a partir da) Tj T*
+(quantidade de testes.) Tj T*
+(3. Meça desempenho em uma carga e ambiente descritos, registrando percentis e erros além da) Tj T*
+(média.) Tj T*
+(4. Trate disponibilidade como uma medição contínua por período definido; uma verificação) Tj T*
+(pontual não comprova disponibilidade mensal.) Tj T*
+(5. Colete satisfação com participantes e método declarados; não substitua opiniões reais por) Tj T*
+(suposições.) Tj T*
+(6. Calcule MTTR apenas quando houver registros de identificação, correção e disponibilização) Tj T*
+(de defeitos.) Tj T*
+(7. Separe metas planejadas de resultados efetivamente medidos.) Tj T*
+() Tj T*
+(| Indicador | Fórmula ou método definido por mim | Meta | Período/fonte | Resultado medido |) Tj T*
+(|---|---|---|---|---|) Tj T*
+(| Taxa de defeitos | | | | |) Tj T*
+(| Cobertura de testes | | | | |) Tj T*
+(4/5) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 1782 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(| Tempo de resposta | | | | |) Tj T*
+(| Disponibilidade | | | | |) Tj T*
+(| Satisfação | | | | |) Tj T*
+(| MTTR | | | | |) Tj T*
+() Tj T*
+(## Etapa 10 - Faça revisão final e organize seu próprio material) Tj T*
+() Tj T*
+(1. Confirme a rastreabilidade requisito -> teste -> evidência.) Tj T*
+(2. Verifique se todo resultado apresentado foi realmente observado ou medido.) Tj T*
+(3. Identifique testes bloqueados, não executados e limitações, sem ocultá-los.) Tj T*
+(4. Faça uma regressão dos fluxos que já funcionavam antes das mudanças.) Tj T*
+(5. Organize o trabalho conforme as seções e exigências de entrega do roteiro e as orientações) Tj T*
+(do professor.) Tj T*
+(6. Revise texto, referências, formatação e eventuais requisitos de ABNT por conta própria.) Tj T*
+(7. Declare o uso de IA se aproveitar este material, seguindo o formato solicitado pelo) Tj T*
+(professor.) Tj T*
+() Tj T*
+(## Registro de uso de IA) Tj T*
+() Tj T*
+(Preencha com transparência conforme a orientação institucional:) Tj T*
+() Tj T*
+(- Ferramenta utilizada: __________________________________________________) Tj T*
+(- Prompt ou pedido feito: ________________________________________________) Tj T*
+(- Parte deste guia consultada: ___________________________________________) Tj T*
+(- Como a orientação foi usada e que análise própria foi realizada: _________) Tj T*
+() Tj T*
+(## Referência principal) Tj T*
+() Tj T*
+(Roteiro de Atividade Prática de Projeto Multidisciplinar - Trilha Qualidade de Software, Rede) Tj T*
+("Raízes do Nordeste", revisão 0.3, 2026. Consulte o [arquivo fornecido pelo) Tj T*
+(professor]\(../Roteiro_de_Atividade_Pratica_2026_Projeto_Qualidade_rev_0_3.pdf\) para os) Tj T*
+(requisitos, critérios e regras de entrega oficiais.) Tj T*
+(5/5) Tj
+ET
+endstream
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000147 00000 n 
+0000000244 00000 n 
+0000000370 00000 n 
+0000003458 00000 n 
+0000003584 00000 n 
+0000006936 00000 n 
+0000007062 00000 n 
+0000009927 00000 n 
+0000010055 00000 n 
+0000012862 00000 n 
+0000012990 00000 n 
+trailer
+<< /Size 14 /Root 1 0 R >>
+startxref
+14825
+%%EOF

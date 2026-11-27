@@ -1,0 +1,197 @@
+{
+  "id_sessao": "20261127_102739_952822_auditoria_documental",
+  "criado_em": "2026-11-27T10:27:40",
+  "pasta_sessao": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental",
+  "total_arquivos": 27,
+  "arquivos": [
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\avaliacao-do-sistema.md",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\avaliacao-do-sistema.md",
+      "nome": "avaliacao-do-sistema.md",
+      "tamanho_bytes": 22519,
+      "sha256": "08039cb38f0ed0ac3974f896f87ebffad08a8debaab16de68a93cee18e91c24c"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\documentacao-completa-sistema-abnt.doc",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\documentacao-completa-sistema-abnt.doc",
+      "nome": "documentacao-completa-sistema-abnt.doc",
+      "tamanho_bytes": 66183,
+      "sha256": "edd151cd70c6c86a702da7e3741c52949a8266fbf4205d4f2bd660e494b1090e"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\documentacao-completa-sistema-abnt.docx",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\documentacao-completa-sistema-abnt.docx",
+      "nome": "documentacao-completa-sistema-abnt.docx",
+      "tamanho_bytes": 66183,
+      "sha256": "edd151cd70c6c86a702da7e3741c52949a8266fbf4205d4f2bd660e494b1090e"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\documentacao-completa-sistema-abnt.md",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\documentacao-completa-sistema-abnt.md",
+      "nome": "documentacao-completa-sistema-abnt.md",
+      "tamanho_bytes": 3167,
+      "sha256": "9395e9c1570c33638da06a1559534a789e913bc2f76db3a905acfc97c2c0de97"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\guia-passo-a-passo-melhorias-qualidade.md",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\guia-passo-a-passo-melhorias-qualidade.md",
+      "nome": "guia-passo-a-passo-melhorias-qualidade.md",
+      "tamanho_bytes": 11927,
+      "sha256": "18cda822dea7ef7026f97af42f912a38fc8a53b34d9ac24f5c711782bcbe3787"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\PLANO_TESTES.md",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\PLANO_TESTES.md",
+      "nome": "PLANO_TESTES.md",
+      "tamanho_bytes": 12384,
+      "sha256": "c3c38441dc092b6136250c36142045e0ca532798c8f31cd9737b6055ea1a9026"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.docx",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-consolidado-auditoria.docx",
+      "nome": "relatorio-consolidado-auditoria.docx",
+      "tamanho_bytes": 49978,
+      "sha256": "494ed97176d49f04191ecb1b23bed3f42b2ea780d1651248724cf3325ee3c4ef"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.md",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-consolidado-auditoria.md",
+      "nome": "relatorio-consolidado-auditoria.md",
+      "tamanho_bytes": 37973,
+      "sha256": "236f00600ef3574f89d0e9121ec6a38a72a583f31b07a9ffbaedf53a37115aa5"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-consolidado-auditoria.pdf",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-consolidado-auditoria.pdf",
+      "nome": "relatorio-consolidado-auditoria.pdf",
+      "tamanho_bytes": 45715,
+      "sha256": "da74a7b1aac843416e4a667bc50e8c83b0d896e892b13b5d2fce9a169f557f3d"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.doc",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-de-desenvolvimento.doc",
+      "nome": "relatorio-de-desenvolvimento.doc",
+      "tamanho_bytes": 66183,
+      "sha256": "edd151cd70c6c86a702da7e3741c52949a8266fbf4205d4f2bd660e494b1090e"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.docx",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-de-desenvolvimento.docx",
+      "nome": "relatorio-de-desenvolvimento.docx",
+      "tamanho_bytes": 66183,
+      "sha256": "edd151cd70c6c86a702da7e3741c52949a8266fbf4205d4f2bd660e494b1090e"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-desenvolvimento.md",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-de-desenvolvimento.md",
+      "nome": "relatorio-de-desenvolvimento.md",
+      "tamanho_bytes": 40970,
+      "sha256": "38c7fe8cb31c111be8103804b22ef7133aaff49e2b13b4f02de243d715e472f1"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-de-revisao-do-sistema.md",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-de-revisao-do-sistema.md",
+      "nome": "relatorio-de-revisao-do-sistema.md",
+      "tamanho_bytes": 17052,
+      "sha256": "033f9ce1444ec62f204d36e980facb210de02933fb520f30b0b69ca96ffecc0f"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-rascunho-apresentacao-banca.doc",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-rascunho-apresentacao-banca.doc",
+      "nome": "relatorio-rascunho-apresentacao-banca.doc",
+      "tamanho_bytes": 47104,
+      "sha256": "d1b7b5a34801c26b8c6f1dec8995679a80176e85c8a36d2fd97c34193070b0de"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-rascunho-apresentacao-banca.md",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-rascunho-apresentacao-banca.md",
+      "nome": "relatorio-rascunho-apresentacao-banca.md",
+      "tamanho_bytes": 18899,
+      "sha256": "13f3b7aff92105cdb2e15116e4d9657c5577cdd77068b8f1f6ce1994800ed541"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-backend.doc",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-testes-backend.doc",
+      "nome": "relatorio-testes-backend.doc",
+      "tamanho_bytes": 42762,
+      "sha256": "1bf5f68753a2150b7943e0072f009d117fd32f28dbd6990d31dc14f3cc2b44d3"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-backend.docx",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-testes-backend.docx",
+      "nome": "relatorio-testes-backend.docx",
+      "tamanho_bytes": 42762,
+      "sha256": "1bf5f68753a2150b7943e0072f009d117fd32f28dbd6990d31dc14f3cc2b44d3"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-backend.md",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-testes-backend.md",
+      "nome": "relatorio-testes-backend.md",
+      "tamanho_bytes": 10758,
+      "sha256": "f03444bd279a1129a92f33f20d1529960d08dca50868552f378ee2a4b688b79b"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-frontend.doc",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-testes-frontend.doc",
+      "nome": "relatorio-testes-frontend.doc",
+      "tamanho_bytes": 41943,
+      "sha256": "e8d85874605c2ceacd44d24a41d1a2edf419c6ddbe010690f8718c9b612d24bd"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-frontend.docx",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-testes-frontend.docx",
+      "nome": "relatorio-testes-frontend.docx",
+      "tamanho_bytes": 41943,
+      "sha256": "e8d85874605c2ceacd44d24a41d1a2edf419c6ddbe010690f8718c9b612d24bd"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-frontend.md",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-testes-frontend.md",
+      "nome": "relatorio-testes-frontend.md",
+      "tamanho_bytes": 8882,
+      "sha256": "af42ac0590e3fe09ba81b805b6d893e446be777eef88865fe5eff8eb02122b89"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-qualidade-software.doc",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-testes-qualidade-software.doc",
+      "nome": "relatorio-testes-qualidade-software.doc",
+      "tamanho_bytes": 41687,
+      "sha256": "7969e61e63a44ae6a80012ac1b1b99a87a37467d81695b519e987930524fd141"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-qualidade-software.docx",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-testes-qualidade-software.docx",
+      "nome": "relatorio-testes-qualidade-software.docx",
+      "tamanho_bytes": 41687,
+      "sha256": "7969e61e63a44ae6a80012ac1b1b99a87a37467d81695b519e987930524fd141"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\relatorio-testes-qualidade-software.md",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\relatorio-testes-qualidade-software.md",
+      "nome": "relatorio-testes-qualidade-software.md",
+      "tamanho_bytes": 7823,
+      "sha256": "d1c65a7f61fe0869c6eeb721e29e0d04c8dd9eb5db916876aa63530c0d5dd03a"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\REQUISITOS.md",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\REQUISITOS.md",
+      "nome": "REQUISITOS.md",
+      "tamanho_bytes": 10684,
+      "sha256": "39a4441349af2a0eab7c30adf775d1393eea6f318d39db521a6f654088d6ab74"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\docs\\USO_DE_IA.md",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\USO_DE_IA.md",
+      "nome": "USO_DE_IA.md",
+      "tamanho_bytes": 1499,
+      "sha256": "850f45054078efbd5533dcb3cd51af69e974ef7127d1f1772ea761cf4ff67964"
+    },
+    {
+      "arquivo_original": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\README.md",
+      "arquivo_backup": "E:\\documentos\\GitHub\\GitHub\\raizes do nordeste\\auditoria_output\\backups\\20261127_102739_952822_auditoria_documental\\README.md",
+      "nome": "README.md",
+      "tamanho_bytes": 32000,
+      "sha256": "8de1dca630dc9a4c66565d260ab8e1ebb747b05c4ecdfa9d0d2c803dcfaf6add"
+    }
+  ]
+}

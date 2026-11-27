@@ -1,0 +1,85 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 3729 >>
+stream
+BT
+/F1 9.5 Tf
+13 TL
+42 790 Td
+(DOCUMENTO: Documento Revisado: documentacao-completa-sistema-abnt.md) Tj T*
+(==========================================================================================) Tj T*
+() Tj T*
+(# DOCUMENTAÇÃO TÉCNICA COMPLETA E RELATÓRIO DE GARANTIA DA QUALIDADE \(PADRÃO ABNT\)) Tj T*
+(## SISTEMA DE GESTÃO INTEGRADA E CARDÁPIO MULTICANAL - REDE 'RAÍZES DO NORDESTE') Tj T*
+(**Instituição:** Centro Universitário Internacional UNINTER - Escola Superior Politécnica) Tj T*
+(**Disciplina:** Projeto Multidisciplinar - Trilha: Qualidade de Software \(2026\)) Tj T*
+(**Docente Orientador:** Prof. Me. Rodrigo Nascimento) Tj T*
+(**Acadêmico / Autor:** Ronaldo Coutinho) Tj T*
+() Tj T*
+(---) Tj T*
+(## RESUMO) Tj T*
+(Este documento apresenta a documentação técnica completa, nos padrões da Associação Brasileira) Tj T*
+(de Normas Técnicas \(ABNT NBR 14724, NBR 6023 e NBR ISO/IEC 25010\), do sistema de software) Tj T*
+(desenvolvido para a rede 'Raízes do Nordeste'. O projeto abrange uma plataforma web full-stack) Tj T*
+(multicanal \(WEB, APP, TOTEM, BALCÃO e PICKUP\) em Node.js e Express 4 com persistência híbrida) Tj T*
+(em SQLite3 \(modo WAL\) e PostgreSQL, 5 páginas HTML e 9 módulos JavaScript 100% locais \(zero) Tj T*
+(CDNs\), catálogo de 100 produtos regionais \(com 21 combos e 100 imagens locais\), autenticação) Tj T*
+(via cookies assinados por HMAC-SHA256 \(`HttpOnly`, `Secure`, `SameSite=Lax`\), hash `bcryptjs`) Tj T*
+(\(`12 salt rounds`\), RBAC \(`cliente`, `loja` e `admin`\), recálculo obrigatório de preços e) Tj T*
+(baixa atômica de estoque no servidor, módulos de Controle de Estoque e Contas a Pagar/Receber,) Tj T*
+(**57 testes automatizados em 8 suítes Node.js \(100% aprovados\)** e uma **Ferramenta de) Tj T*
+(Auditoria e Correção Documental em Python 3 \(11 módulos e 5 testes automatizados\)**.) Tj T*
+() Tj T*
+(**Palavras-chave:** Qualidade de Software. Engenharia de Requisitos. ISO/IEC 25010. LGPD.) Tj T*
+(Node.js. SQLite WAL. Testes Automatizados. Auditoria Documental em Python.) Tj T*
+() Tj T*
+(---) Tj T*
+(## 1. ARQUITETURA E COMPOSIÇÃO COMPLETA DO SISTEMA) Tj T*
+(- **Backend \(`src/`\):** `server.js`, `app.js` \(Helmet CSP, Anti-Prototype Pollution, CORS, 4) Tj T*
+(Rate Limiters, `Cache-Control: no-store`\), `auth.js` \(HMAC-SHA256 + `timingSafeEqual` +) Tj T*
+(`SameSite=Lax`\), `db.js` \(7 tabelas SQLite WAL / PostgreSQL: `users`, `sessions`, `unidades`,) Tj T*
+(`products`, `orders`, `estoque_movimentacoes`, `financeiro_lancamentos`\) e 6 roteadores em) Tj T*
+(`src/routes/` \(`auth.js`, `products.js`, `orders.js`, `unidades.js`, `estoque.js`,) Tj T*
+(`financeiro.js`\) totalizando **21 endpoints REST**.) Tj T*
+(- **Frontend \(`public/`\):** 5 páginas HTML \(`index.html`, `login.html`, `cliente.html`,) Tj T*
+(`admin.html`, `operacional.html`\), `style.css` e 9 módulos JavaScript \(`config.js`,) Tj T*
+(`products.js`, `auth.js`, `app.js`, `login.js`, `cliente.js`, `admin.js`, `operacional.js`,) Tj T*
+(`gestao.js`\) operando 100% offline.) Tj T*
+(- **Suíte Automatizada Node.js \(`57 testes automatizados` em `8 suítes`\):** `src/app.test.js`) Tj T*
+(\(14\), `src/faults.test.js` \(7\), `src/gestao.test.js` \(5\), `src/offline.test.js` \(6\),) Tj T*
+(`src/products.test.js` \(4\), `src/frontend.test.js` \(8\), `src/backend.test.js` \(6\) e) Tj T*
+(`src/qualidade.test.js` \(7\) - **57 aprovados / 0 falhas**.) Tj T*
+(- **Ferramenta de Auditoria Documental Python \(`11 módulos`\):** `main.py`, `interface.py`,) Tj T*
+(`leitor_documentos.py`, `consistencia.py`, `auditoria.py`, `correcao.py`,) Tj T*
+(`gerador_relatorios.py`, `exportacao.py`, `backup.py`, `logs.py` e `test_auditoria.py` \(**5) Tj T*
+(testes automatizados aprovados**\).) Tj T*
+(1/1) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000218 00000 n 
+0000000344 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+4125
+%%EOF
